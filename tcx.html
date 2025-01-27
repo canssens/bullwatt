@@ -52,7 +52,7 @@
                         if (xhr.status >= 200 && xhr.status < 300) {
                             console.log('Reponse:', JSON.parse(xhr.responseText));
                             let obj = JSON.parse(xhr.responseText);
-                            document.getElementById("list_tcx").innerHTML += '<a href="'+obj["filename"]+'">'+element["startTime"]+'</a>';
+                            document.getElementById("list_tcx").innerHTML += '<a href="'+obj["filename"]+'?dl=yes" download>'+element["startTime"]+'</a>';
                             document.getElementById("list_tcx").innerHTML += "<br />";
                         } else {
                             console.error('Erreur:', xhr.status, xhr.statusText);
