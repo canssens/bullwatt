@@ -1,0 +1,74 @@
+<html>
+    <head>
+
+        <title>TCX export</title>
+        <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+    </head>
+    <body>
+        <h1>Your TCX files</h1>
+
+        <p>This page is temporary while we integrate Strava connectivity.</p>
+        
+        <div id="list_tcx">
+
+        </div>
+        <br />
+        <h2>Strava</h2>
+        <a href="https://www.strava.com/upload/select">Upload on Strava</a>
+
+
+    <script>
+        var myUUID = null;
+    </script>
+      
+    <script src="./assets/utils.js"></script>    
+
+    <script>
+        let activities = null;
+        
+        let activitiesJson = localStorage.activities;
+        if(activitiesJson != null && activitiesJson != "")
+        {
+            activities = JSON.parse(activitiesJson);
+            activities["activities"].forEach(element => {
+                console.log(element["startTime"]);
+            
+                  
+                    const url = 'api_tcx.php';
+
+                    element["UUID"] = myUUID;
+                    
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', url);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+
+                    xhr.onload = function() {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            console.log('Reponse:', JSON.parse(xhr.responseText));
+                            let obj = JSON.parse(xhr.responseText);
+                            document.getElementById("list_tcx").innerHTML += '<a href="'+obj["filename"]+'">'+element["startTime"]+'</a>';
+                            document.getElementById("list_tcx").innerHTML += "<br />";
+                        } else {
+                            console.error('Erreur:', xhr.status, xhr.statusText);
+                        }
+                    };
+
+                    xhr.onerror = function() {
+                        console.error('Erreur de reseau');
+                    };
+
+                    xhr.send(JSON.stringify(element));
+                        
+
+            });
+
+        }
+    </script>
+    </body>
+</html>
