@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Charles Anssens">
+    <title>BullWatt</title>
+
+    <!--<link rel="stylesheet" href="./assets/bootstrap.css">-->
+    <link rel="stylesheet" href="./assets/bootstrap2.css">
+    <!-- Custom styles for this template -->
+    <link href="./assets/cover.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/github_contribution.js"></script>
+    <link href="./assets/github_contribution.css" media="all" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    
+  </head>
+  <body class="d-flex h-100 text-center text-bg-dark">
+
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">BullWatt</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#features">Features</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#faq">FAQ</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="px-3">
+        <br />
+        <br />
+        <h1>Empower your home trainer training with watts control</h1>
+        <p class="lead">BullWatt uses ERG mode, which automatically sets your resistance to a precise power target according to your cadence. This ensures a constant Watt effort and you are free to choose and change the Watt target.</p>
+        <p class="lead">
+          <a href="star-bike.html" class="btn btn-lg btn-light fw-bold border-white bg-white">Start NOW</a>
+          
+        </p>
+
+        <h1>Your training density</h1>
+
+        <div id="densityTraining"></div>
+
+        <br />
+
+
+        <div class="b-example-divider"></div>
+        <h1 id="features">Features</h1>
+
+        
+          <span class="badge text-bg-warning rounded-pill">BETA</span>
+
+        <div class="b-example-divider"></div>
+        <h1 id="faq">FAQ</h1>
+        
+        <h3>Why did I build BullWatt?</h3>
+        <p>I was bored by long loading time to ride in others apps. 
+          My goal is to get a fast way to launch an activity and record it.
+          For me, a good session means working on wattage zones, which is why wattage control is the only option.
+        </p>
+
+        <h3>How it works?</h3>
+        <p>Click on Start, then click on Connect, you could adjust your power with buttons or key arrows (up,down,left,right) that's it and don't forget to click on Stop to store the activity.</p>
+
+        <h3>What is the FTMS?</h3>
+        <p>Bluetooth FTMS (Fitness Machine Service) is a Bluetooth profile that enables standardized communication between fitness equipment and apps for data exchange and control.</p>
+
+        <h3>How to export the activity recorded?</h3>
+        <p>You could find all your sessions stored in TCX format <a href="tcx.html">here</a>. The last sessions are stored in your browser, there is no server side backup/save.</p>
+
+        <h3>What are the requirements?</h3>
+        <p>A computer with Google Chrome, a home trainer or an exercice bike compatible with Bluetooth FTMS and with the support of setting a target power (ERG mode= the resistance automatically changes in function of your cadence to deliver a constant wattage.).</p>
+
+        <h3>It doesn't detect my connected product!</h3>
+        <p>Check the requirements, you could send me an email to discuss.</p>
+
+        <h3>List of known devices supported</h3>
+        <p>
+          <ul>
+            <li>Domyos Challenge Bike</li>
+          </ul>
+        </p>
+
+
+
+
+        <div class="b-example-divider"></div>
+        <h1 id="contact">Contact</h1>
+        <p>email : charles@barbicane.com</p>
+        <p><a href="https://wa.me/33659746415">WhatsApp</a></p>
+
+      </main>
+
+
+
+      <footer class="mt-auto text-white-50">
+        <p>BullWatt - template with BootStrap - MDO</p>
+        Copyright (c) 2015 Github Contribution Graph by bachvtuan - http://dethoima.com
+      </footer>
+    </div>
+
+    <script>
+      var myUUID = null;
+    </script>
+
+    <script src="./assets/bootstrap.js"></script>
+    <script src="./assets/utils.js"></script>
+
+    
+    <script>
+      let dataDate = getActivitiesDate();
+      
+    $('#densityTraining').github_graph( {
+      // Default is null will display date before 365 days from now
+      //start_date: Date Time object
+      //Default is empty list
+      data: dataDate,
+      //colors:['rgba(0,0,0,0.3)','#d6e685','#8cc665','#44a340','#44a340'],
+      // single text and plural text
+      texts: ['completed training','completed trainings']
+    });
+  </script>
+
+    </body>
+</html>
