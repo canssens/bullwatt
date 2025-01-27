@@ -145,6 +145,26 @@
               <td>
                 <span  class="indicators" >AVG</span>
                 <br/>
+                <span  id="valueTabPowerAVG" >0</span>
+             </td>
+              <td  id="valueTabPower" style="font-size: 300%;">
+                0
+              </td>
+              <td>
+                <span  class="indicators" >BEST</span>
+                <br/>
+                <span  id="valueTabPowerBEST" >0</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <td width="33%">
+          <table>
+            <tr>
+              <td>
+                <span  class="indicators" >AVG</span>
+                <br/>
                 <span  id="valueTabSpeedAVG" >0</span>
              </td>
               <td  id="valueTabSpeed" style="font-size: 300%;">
@@ -160,26 +180,6 @@
         
         </td>
 
-
-        <td width="33%">
-          <table>
-            <tr>
-              <td>
-                <span  class="indicators" >AVG</span>
-                <br/>
-                <span  id="valueTabPowerAVG" >0</span>
-             </td>
-              <td  id="valueTabPower" style="font-size: 300%;">
-                0
-              </td>
-              <td>
-                <span  class="indicators" >BEST</span>
-                <br/>
-                <span  id="valueTabPowerBEST" >0</span>
-              </td>
-            </tr>
-          </table>
-        </td>
       </tr>
     </table>
 
@@ -324,9 +324,7 @@
           optionalServices: optionalServices
         });
 
-        //addRow("dataTable", "name", bluetoothDevice.name);
-        //addRow("dataTable", "Id", bluetoothDevice.id);
-        //addRow("dataTable", "Connected", bluetoothDevice.gatt.connected);
+
 
         
     }
@@ -364,30 +362,7 @@
       //addRow("dataTable", "Model Number", enc.decode(valueModel));
       
 
-      /*
-      SerialCharacteristic = await service.getCharacteristic(parseInt('0x2A25'));
-      const valueSerial = await SerialCharacteristic.readValue();
-      log('> Serial Name String ' + enc.decode(valueSerial));
       
-
-      HardwareCharacteristic = await service.getCharacteristic(parseInt('0x2A27'));
-      const valueHardware = await HardwareCharacteristic.readValue();
-      //addRow("dataTable", "Hardware Revision", enc.decode(valueHardware));
-
-
-      
-      FirmwareCharacteristic = await service.getCharacteristic(parseInt('0x2A26'));
-      const valueFirmware = await FirmwareCharacteristic.readValue();
-      //addRow("dataTable", "Firmware Revision", enc.decode(valueFirmware));
-
-      if(testExistingSoftwareRevision)
-      {
-      SoftwareCharacteristic = await service.getCharacteristic(parseInt('0x2A28'));
-      const valueSoftware = await SoftwareCharacteristic.readValue();
-      //addRow("dataTable", "Software Revision", enc.decode(valueSoftware));
-      }
-      //else addRow("dataTable", "Software Revision", "Not Found");
-      */
 
       //Test services
        service2 = await server.getPrimaryService(parseInt('0x00001826-0000-1000-8000-00805f9b34fb'));
@@ -470,52 +445,7 @@
       await characteristic.writeValue(buffer);
     }
 
-/*
-    function connect() {
-      console.log('Requesting FTMS Bluetooth Device...');
-      navigator.bluetooth.requestDevice({
-            filters:[{
-                services: [serviceFTMS],
-            }],
-              //acceptAllDevices: true,
-              optionalServices: ['heart_rate']}).
-        then(device => {
-        console.log('Connecting to GATT Server...');
-        return device.gatt.connect();
-      })
-      .then(server => {
-        console.log('Getting Service...');
-        bluetoothDevice = server;
-        return server.getPrimaryService(serviceFTMS);
-      })
-      .then(service => {
-        console.log('Getting Characteristic...');
-        FTMSService = service;
-        return service.getCharacteristic(indoorBikeData);
-      })
-      .then(characteristic => {
-        var indoorBikeDataCharacteristic = characteristic;
-        return indoorBikeDataCharacteristic.startNotifications().then(_ => {
-          console.log('> Notifications started');
-          
-          //Start Chrono
-          startTime = new Date();
-          setInterval(handler, 1000);
-          handler();
 
-          //Start Notif
-          indoorBikeDataCharacteristic.addEventListener('characteristicvaluechanged', handleNotifications);
-
-          document.getElementById("readFTMSMeasure").textContent = "CONNECTED";
-
-        });
-      })
-      .catch(error => {
-        console.log('Argh! ' + error);
-      });
-      
-    }
-      */
 
     function getMax(tab) {
       return Math.round(Math.max(...tab));
