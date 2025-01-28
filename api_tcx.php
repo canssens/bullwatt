@@ -31,7 +31,8 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
     <Intensity>Active</Intensity>
     <!--<Cadence>57</Cadence>-->
     <TriggerMethod>Manual</TriggerMethod>
-    <Track>';
+    <Track>
+    ';
 
     foreach($json['timeseries'] as $value)
     {
@@ -42,10 +43,13 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
             <DistanceMeters>'.$value['distance'].'</DistanceMeters>
             <Cadence>'.$value['cadence'].'</Cadence>
             <Extensions>
-            <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">';
+            <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+            ';
 
-        if(isset($value['speed']))  $xml .= '<Speed>'.($value['speed']/ 3.6).'</Speed>';
-        if(isset($value['power']))  $xml .= '<Watts>'.$value['power'].'</Watts>';
+        if(isset($value['speed']))  $xml .= '<Speed>'.($value['speed']/ 3.6).'</Speed>
+        ';
+        if(isset($value['power']))  $xml .= '<Watts>'.$value['power'].'</Watts>
+        ';
             
         $xml .= '
             </TPX>
@@ -55,7 +59,8 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
     }
 
 
-    $xml .= '    </Track>
+    $xml .= '    
+    </Track>
     </Lap>
     </Activity>
     </Activities>
