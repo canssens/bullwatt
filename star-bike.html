@@ -254,9 +254,9 @@
         {
             time : now,
             power : power,
-            speed : speed,
+            speed : parseFloat(speed).toFixed(2),
             cadence : cadence,
-            distance : (activity.distance*1000)
+            distance : parseFloat(activity.distance*1000).toFixed(2)
         };
 
         activity.timeseries.push(point);
@@ -479,8 +479,10 @@
       let min = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
       let sec = Math.floor((timeElapsed % (1000 * 60)) / 1000);
 
-      
-      document.getElementById("elapsedTimer").textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+      if(hours<1)
+        document.getElementById("elapsedTimer").textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+      else 
+        document.getElementById("elapsedTimer").textContent = (hours < 10 ? "0" + hours : hours) + ":" + (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
   };
 
 
