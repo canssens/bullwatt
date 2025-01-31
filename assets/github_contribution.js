@@ -171,7 +171,7 @@ if (!String.prototype.formatString) {
             
             //Fixed size for now with width= 721 and height = 110
             var wire_html = 
-              '<svg width="721" height="110" viewBox="0 0 721 110"  class="js-calendar-graph-svg">'+
+              '<svg width="100%" height="110" viewBox="0 0 721 110"  class="js-calendar-graph-svg">'+
                 '<g transform="translate(20, 20)">'+
                   loop_html +
                 '</g>'+
