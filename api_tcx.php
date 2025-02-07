@@ -43,7 +43,7 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
             <DistanceMeters>'.$value['distance'].'</DistanceMeters>
             <Cadence>'.$value['cadence'].'</Cadence>
             <Extensions>
-            <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+                <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
             ';
 
         if(isset($value['speed']))  $xml .= '<Speed>'.($value['speed']/ 3.6).'</Speed>
@@ -52,7 +52,7 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
         ';
             
         $xml .= '
-            </TPX>
+                </TPX>
             </Extensions>
         </Trackpoint>';
         
