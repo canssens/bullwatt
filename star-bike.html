@@ -609,50 +609,57 @@
     }); 
 
     document.querySelector('#stopButton').addEventListener('click', function() {
-      //Close BLE connection
-      if (bluetoothDevice) {
-        if (bluetoothDevice.gatt.connected && FTMSMeasureCharacteristic) {
-          bluetoothDevice.gatt.disconnect();
+      if (confirm('Are you sure you want to stop?')) {
+        //Close BLE connection
+        if (bluetoothDevice) {
+          if (bluetoothDevice.gatt.connected && FTMSMeasureCharacteristic) {
+            bluetoothDevice.gatt.disconnect();
+          }
         }
+
+        // TODO refactor
+        power = 0;
+        document.querySelector('#valueTabPower').textContent = power;
+
+
+        if(wakeLock != null)
+        {
+          wakeLock.release(); //await...
+          console.log('Wakelock stopped.');
+          wakeLock = null; 
+        }
+
+        document.getElementById("readFTMSMeasure").textContent = "Connect";
+        //stop timers
+        clearInterval(intervalTimerId);
+        clearInterval(intervalGraphId);
+
+        // Persist the activity
+        // TODO
+        const activityJson = JSON.stringify(activity);
+        let activities = null;
+        let activitiesJson = localStorage.activities;
+        if(activitiesJson == null || activitiesJson == "")
+        {
+          activities = JSON.parse('{"activities": []}');
+        }
+        else 
+        {    
+          activities = JSON.parse(activitiesJson);
+        }
+        activities.activities.push(activity);
+
+        const newActivitiesJson = JSON.stringify(activities);
+        localStorage.activities = newActivitiesJson;
+
+        //disable button
+        document.querySelector('#stopButton').disabled = true;
+        console.log('Activity stopped.');
+      } else {
+        // Do nothing!
+        console.log('Do not stop.');
       }
-
-      // TODO refactor
-      power = 0;
-      document.querySelector('#valueTabPower').textContent = power;
-
-
-      if(wakeLock != null)
-      {
-        wakeLock.release(); //await...
-        console.log('Wakelock stopped.');
-        wakeLock = null; 
-      }
-
-      document.getElementById("readFTMSMeasure").textContent = "Connect";
-      //stop timers
-      clearInterval(intervalTimerId);
-      clearInterval(intervalGraphId);
-
-      // Persist the activity
-      // TODO
-      const activityJson = JSON.stringify(activity);
-      let activities = null;
-      let activitiesJson = localStorage.activities;
-      if(activitiesJson == null || activitiesJson == "")
-      {
-        activities = JSON.parse('{"activities": []}');
-      }
-      else 
-      {    
-        activities = JSON.parse(activitiesJson);
-      }
-      activities.activities.push(activity);
-
-      const newActivitiesJson = JSON.stringify(activities);
-      localStorage.activities = newActivitiesJson;
-
-      //disable button
-      document.querySelector('#stopButton').disabled = true;
+      
 
     });
 
