@@ -81,14 +81,14 @@
         <table>
           <tr>
             <td>
-              <button type="button" id="buttonDecreaseWatt">-10 ↓</button>
+              <button type="button" id="buttonDecreaseWatt" disabled>-10 ↓</button>
 
            </td>
             <td  id="valueTabControlWatt">
               50 W
             </td>
             <td>
-              <button type="button" id="buttonIncreaseWatt">+10 ↑</button>
+              <button type="button" id="buttonIncreaseWatt" disabled>+10 ↑</button>
             </td>
           </tr>
         </table>
@@ -293,6 +293,8 @@
 
           document.getElementById("readFTMSMeasure").textContent = "CONNECTED";
           document.querySelector('#stopButton').disabled = false;
+          document.querySelector('#buttonIncreaseWatt').disabled = false;
+          document.querySelector('#buttonDecreaseWatt').disabled = false;
 
         
 
