@@ -7,6 +7,10 @@ function myUUID() {
     );
     localStorage.myuuid = myUUID;
   }
+  // Cookie
+  const expirationDate = new Date();
+  expirationDate.setFullYear(expirationDate.getFullYear() + 100);
+  document.cookie = "userBullWatt="+myUUID+";expires="+expirationDate.toUTCString()+";path=/";
 }
 
 myUUID();
@@ -26,4 +30,35 @@ function getActivitiesDate() {
       }
       return activitiesDate;
     }
-  
+
+
+function checkConnectionStrava()
+{
+  let url = 'strava.php';
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+
+  xhr.onload = function() {
+      if (xhr.status >= 200 && xhr.status < 300) {
+          console.log('Reponse:', JSON.parse(xhr.responseText));
+          let obj = JSON.parse(xhr.responseText);
+          console.log(obj);
+          if(obj["message"]=="logged")
+          {
+            console.log("logged");
+            document.getElementById("stravaLink").innerHTML = "logout Strava";
+            document.getElementById("stravaLink").href = "strava.php?logout=true";
+          }
+      } else {
+          console.error('Erreur:', xhr.status, xhr.statusText);
+      }
+  };
+
+  xhr.onerror = function() {
+      console.error('Erreur de reseau');
+  };
+
+  xhr.send();
+}
+
+checkConnectionStrava();

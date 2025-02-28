@@ -81,14 +81,14 @@
         <table>
           <tr>
             <td>
-              <button type="button" id="buttonDecreaseWatt">-10</button>
+              <button type="button" id="buttonDecreaseWatt">-10 ↓</button>
 
            </td>
             <td  id="valueTabControlWatt">
               50 W
             </td>
             <td>
-              <button type="button" id="buttonIncreaseWatt">+10</button>
+              <button type="button" id="buttonIncreaseWatt">+10 ↑</button>
             </td>
           </tr>
         </table>
@@ -655,6 +655,34 @@
         //disable button
         document.querySelector('#stopButton').disabled = true;
         console.log('Activity stopped.');
+
+        // SEND TO STRAVA
+                    const url = 'strava_upload.php';
+
+                    activity["UUID"] = myUUID;
+                    
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', url);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+
+                    xhr.onload = function() {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            console.log('Reponse:', JSON.parse(xhr.responseText));
+                            let obj = JSON.parse(xhr.responseText);
+                            console.log(obj);
+                        } else {
+                            console.error('Erreur:', xhr.status, xhr.statusText);
+                        }
+                    };
+
+                    xhr.onerror = function() {
+                        console.error('Erreur de reseau');
+                    };
+
+                    xhr.send(JSON.stringify(activity));
+
+
       } else {
         // Do nothing!
         console.log('Do not stop.');
