@@ -10,6 +10,7 @@ $UUID = $_COOKIE["userBullWatt"];
 
 $answer = array();
 $answer["status"] = "error";
+$answer["status_strava"] = "ko";
 
 include('strava_refresh.php');
 
@@ -135,6 +136,7 @@ if($UUID != null)
 
         $answer["message"] = $response;
         $answer["status"] = "ok";
+        $answer["status_strava"] = "ok";
     }
 
 }
