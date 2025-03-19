@@ -54,6 +54,26 @@
           font-size: 2vw; 
           text-align: center;
         }
+
+
+        .popup {
+          display: none; /* Initially hidden */
+          position: fixed; /* Fixed position to center on screen */
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); /* Center the pop-up */
+          width: 300px;
+          background-color: white;
+          border: 5px solid yellow;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          z-index: 1000; /* Ensure it's on top */
+          font-family: system-ui;
+        }
+
+        .popup-content {
+          padding: 20px;
+          text-align: center;
+        }
       </style>
     
   </head>
@@ -107,7 +127,14 @@
 
 
 
-
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <p>Thank you</p>
+    <a id="popup_tcx_link" href="" download>TCX File</a>
+    <p id="popup_strava_upload">Not connected</p>
+    <a href="index.html">Return home page</a>
+  </div>
+</div>
 
 
 <div id="containerData">
@@ -658,6 +685,12 @@
         document.querySelector('#stopButton').disabled = true;
         console.log('Activity stopped.');
 
+        // display the pop up
+        const popup = document.getElementById('popup');
+        popup.style.display = 'block'; // Show the pop-up
+        const popup_tcx_link = document.getElementById('popup_tcx_link');
+        const popup_strava_upload = document.getElementById('popup_strava_upload');
+
         // SEND TO STRAVA
                     const url = 'strava_upload.php';
 
@@ -672,6 +705,15 @@
                         if (xhr.status >= 200 && xhr.status < 300) {
                             console.log('Reponse:', JSON.parse(xhr.responseText));
                             let obj = JSON.parse(xhr.responseText);
+
+                            popup_tcx_link.href = obj.filename + "?dl=ok";
+
+                            if(obj.status_strava == "ok")
+                            {
+                              popup_strava_upload.textContent = "Strava upload OK";
+                            }
+                            
+
                             console.log(obj);
                         } else {
                             console.error('Erreur:', xhr.status, xhr.statusText);
