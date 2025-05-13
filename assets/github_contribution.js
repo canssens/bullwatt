@@ -230,7 +230,7 @@ if (!String.prototype.formatString) {
           }
   
           var settings = $.extend({
-            colors: ['#eeeeee','#d6e685','#8cc665','#44a340','#44a340'],
+            colors: ['#eeeeee','#44a340','#44a340'],
             border:{
               radius: 2,
               hover_color: "#999"

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        #histogramContainer {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .bar {
+            fill: steelblue;
+        }
+        .bar-label {
+            fill: black;
+            font-size: 12px;
+            text-anchor: middle;
+        }
+        .axis text {
+            font-size: 12px;
+        }
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        /* Style for the stepped line */
+        .line {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 2px;
+            shape-rendering: crispEdges; /* Ensure sharp edges for the steps */
+        }
+
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto p-8 bg-white rounded-lg shadow-md">
+        <h1 class="text-3xl font-semibold text-blue-600 text-center mb-6">Training Designer</h1>
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Training Properties</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="trainingName" class="block text-gray-700 text-sm font-bold mb-2">Training Name:</label>
+                    <input type="text" id="trainingName" value="My Training" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="trainingDescription" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
+                    <input type="text" id="trainingDescription" value="A description of my training." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="trainingDuration" class="block text-gray-700 text-sm font-bold mb-2">Duration:</label>
+                    <input type="text" id="trainingDuration" value="A eDuration of my training." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="timeUnit" class="block text-gray-700 text-sm font-bold mb-2">Time Unit:</label>
+                    <input type="text" id="timeUnit" value="seconds" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label for="valueUnit" class="block text-gray-700 text-sm font-bold mb-2">Value Unit:</label>
+                    <input type="text" id="valueUnit" value="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                 <div>
+                    <label for="creationDate" class="block text-gray-700 text-sm font-bold mb-2">Creation Date:</label>
+                    <input type="text" id="creationDate"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" readonly>
+                </div>
+                <div>
+                    <label for="source" class="block text-gray-700 text-sm font-bold mb-2">Source:</label>
+                    <input type="text" id="source" value="User Input" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Phases</h2>
+            <div id="phasesContainer" class="space-y-4">
+                </div>
+            <button id="addPhaseButton" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Phase</button>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">JSON Output</h2>
+            <pre id="jsonOutput" class="bg-gray-200 border rounded p-4 overflow-auto text-sm">
+<code>
+{
+  "training_name": "Descriptive name of the training",
+  "description": "Detailed description of the time training and its context.",
+  "duration": 0,
+  "units": {
+    "time": "seconds",
+    "value": "Unit of the value (e.g., °C, mV, Hz, number)"
+  },
+  "phases": [
+    {
+      "start": 0,
+      "value": 25.5,
+      "notes": "Description or annotation specific to this phase (optional)."
+    }
+  ],
+  "creation_date": "2024-10-27T10:00:00Z",
+  "source": "Name or description of the data source (optional)."
+}
+</code>
+            </pre>
+            <button id="copyJsonButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2">Copy JSON to Clipboard</button>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Visualization</h2>
+            <div id="histogramContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        const trainingNameInput = document.getElementById('trainingName');
+        const trainingDescriptionInput = document.getElementById('trainingDescription');
+        const trainingDurationInput = document.getElementById('trainingDuration');
+        const timeUnitInput = document.getElementById('timeUnit');
+        const valueUnitInput = document.getElementById('valueUnit');
+        const phasesContainer = document.getElementById('phasesContainer');
+        const addPhaseButton = document.getElementById('addPhaseButton');
+        const jsonOutput = document.getElementById('jsonOutput');
+        const creationDateInput = document.getElementById('creationDate');
+        const sourceInput = document.getElementById('source');
+        const copyJsonButton = document.getElementById('copyJsonButton');
+        const histogramContainer = document.getElementById('histogramContainer');
+
+        function generateISO8601Date() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timezoneOffset = now.getTimezoneOffset();
+            const timezoneSign = timezoneOffset > 0 ? '-' : '+';
+            const timezoneHours = String(Math.floor(Math.abs(timezoneOffset) / 60)).padStart(2, '0');
+            const timezoneMinutes = String(Math.abs(timezoneOffset) % 60).padStart(2, '0');
+
+            return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${timezoneSign}${timezoneHours}:${timezoneMinutes}`;
+        }
+
+        creationDateInput.value = generateISO8601Date();
+
+        let phaseCount = 0; // Keep track of the number of phases
+        let phasesData = []; // Store phase data for visualization
+
+        function createPhaseInput() {
+            phaseCount++;
+            const phaseDiv = document.createElement('div');
+            phaseDiv.classList.add('phase-input-group', 'border', 'rounded-md', 'p-4', 'bg-gray-50');
+            phaseDiv.innerHTML = `
+                <h3 class="text-lg font-semibold text-gray-700 mb-2">Phase ${phaseCount}</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="start${phaseCount}" class="block text-gray-700 text-sm font-bold mb-2">Start (${timeUnitInput.value}):</label>
+                        <input type="number" id="start${phaseCount}" value="0" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label for="value${phaseCount}" class="block text-gray-700 text-sm font-bold mb-2">Value (${valueUnitInput.value}):</label>
+                        <input type="text" id="value${phaseCount}" value="25.5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                     <div>
+                        <label for="notes${phaseCount}" class="block text-gray-700 text-sm font-bold mb-2">Notes:</label>
+                        <input type="text" id="notes${phaseCount}" value="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                </div>
+                <button class="removePhaseButton bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline mt-2" onclick="removePhase(this)">Remove Phase</button>
+            `;
+            phasesContainer.appendChild(phaseDiv);
+            updateJsonOutput(); // Update JSON output whenever a new phase is added
+        }
+
+        function removePhase(buttonElement) {
+            buttonElement.parentNode.remove();
+            updateJsonOutput(); // Update JSON output when a phase is removed
+            phaseCount--;
+             // Renumber the phases
+             const phaseDivs = phasesContainer.querySelectorAll('.phase-input-group');
+             phaseDivs.forEach((phaseDiv, index) => {
+                const phaseNumber = index + 1;
+                phaseDiv.querySelector('h3').textContent = `Phase ${phaseNumber}`;
+                phaseDiv.querySelector(`label[for="start${index + 1}"]`).textContent = `Start (${timeUnitInput.value}):`;
+                phaseDiv.querySelector(`label[for="value${index + 1}"]`).textContent = `Value (${valueUnitInput.value}):`;
+             });
+        }
+
+        function updateJsonOutput() {
+            const phases = [];
+            const phaseInputs = phasesContainer.querySelectorAll('.phase-input-group');
+            phaseInputs.forEach(phaseInput => {
+                const start = parseFloat(phaseInput.querySelector('input[id^="start"]').value);
+                const value = phaseInput.querySelector('input[id^="value"]').value;
+                const notes = phaseInput.querySelector('input[id^="notes"]').value;
+                phases.push({ start, value, notes });
+            });
+
+             phasesData = phases.map(phase => ({
+                time: phase.start,
+                value: parseFloat(phase.value)
+            }));
+
+            const trainingName = trainingNameInput.value;
+            const description = trainingDescriptionInput.value;
+            const duration = trainingDurationInput.value;
+            const timeUnit = timeUnitInput.value;
+            const valueUnit = valueUnitInput.value;
+            const creationDate = creationDateInput.value;
+            const source = sourceInput.value;
+
+            const jsonData = {
+                training_name: trainingName,
+                description: description,
+                duration : duration,
+                units: {
+                    time: timeUnit,
+                    value: valueUnit,
+                },
+                phases: phases,
+                creation_date: creationDate,
+                source: source,
+            };
+
+            const indentedJson = JSON.stringify(jsonData, null, 2);
+            jsonOutput.innerHTML = `<pre class="bg-gray-200 border rounded p-4 overflow-auto text-sm"><code>${indentedJson}</code></pre>`;
+            renderHistogram();
+        }
+
+        trainingNameInput.addEventListener('input', updateJsonOutput);
+        trainingDescriptionInput.addEventListener('input', updateJsonOutput);
+        trainingDurationInput.addEventListener('input', updateJsonOutput);
+        timeUnitInput.addEventListener('input', updateJsonOutput);
+        valueUnitInput.addEventListener('input', updateJsonOutput);
+        addPhaseButton.addEventListener('click', createPhaseInput);
+
+
+        // Event listener for dynamically added phase inputs
+        phasesContainer.addEventListener('input', (event) => {
+            if (event.target.tagName === 'INPUT') {
+                updateJsonOutput();
+            }
+        });
+
+        // Initial phase on load
+        createPhaseInput();
+
+        copyJsonButton.addEventListener('click', () => {
+            const jsonString = jsonOutput.querySelector('code').textContent;
+            navigator.clipboard.writeText(jsonString).then(() => {
+                alert('JSON copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        });
+
+        function renderHistogram() {
+            const data = phasesData;
+            const container = d3.select(histogramContainer);
+            container.selectAll("*").remove();
+
+            if (!data || data.length === 0) {
+                container.html("<p>No data to display.</p>");
+                return;
+            }
+
+            const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+            const width = histogramContainer.offsetWidth - margin.left - margin.right;
+            const height = histogramContainer.offsetHeight - margin.top - margin.bottom;
+
+            const svg = container
+                .append("svg")
+                .attr("width", histogramContainer.offsetWidth)
+                .attr("height", histogramContainer.offsetHeight)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            const x = d3.scaleLinear().range([0, width]);
+            const y = d3.scaleLinear().range([height, 0]);
+
+            const maxTime = d3.max(data, d => d.time);
+            const maxValue = d3.max(data, d => d.value);
+
+            x.domain([0, maxTime]);
+            y.domain([0, maxValue]);
+
+            // Create the stepped line
+            let line = d3.line()
+                .x(function(d) { return x(d.time); })
+                .y(function(d) { return y(d.value); });
+
+            // Prepare the data for the stepped line - IMPORTANT
+            const steppedData = [];
+            data.forEach((phase, index) => {
+                steppedData.push({ time: phase.time, value: phase.value });
+                if (index < data.length - 1) {
+                    steppedData.push({ time: data[index+1].time, value: phase.value });
+                }
+            });
+
+            // Draw the line
+            svg.append("path")
+                .datum(steppedData)
+                .attr("class", "line")
+                .attr("d", line);
+
+            // Add labels for the value at the beginning of each phase
+            svg.selectAll(".value-label")
+                .data(data)
+                .enter().append("text")
+                .attr("class", "value-label")
+                .attr("x", d => x(d.time) + 5)  // Adjust for positioning
+                .attr("y", d => y(d.value) - 10) // Adjust for positioning
+                .text(d => d.value.toFixed(1));
+
+            // Axes
+            svg.append("g")
+                .attr("class", "x-axis axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x).tickSizeOuter(0));
+
+            svg.append("g")
+                .attr("class", "y-axis axis")
+                .call(d3.axisLeft(y).tickSizeOuter(0));
+        }
+    </script>
+</body>
+</html>

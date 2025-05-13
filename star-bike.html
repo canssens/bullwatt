@@ -210,7 +210,9 @@
       </tr>
     </table>
 
-    <div id="graphPower" style="width:100%;height: 20vh;"></div>
+    <div style="width:100%;height: 20vh;">
+        <div id="graphPower" style="width: 100%;  height: 100%;"></div>
+  </div>
 </div>
 
 
@@ -232,6 +234,7 @@
     var power = 0;
     var cadence = 0;
     var currentPower = 50;
+    var timeElapsed = 0;
     
     
     const serviceFTMS = 0x1826;
@@ -501,6 +504,8 @@
 
 
     var handler = function() {
+
+      // Display time elasped
       var mdate = new Date();
       timeElapsed = mdate - startTime;
 
@@ -512,6 +517,29 @@
         document.getElementById("elapsedTimer").textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
       else 
         document.getElementById("elapsedTimer").textContent = (hours < 10 ? "0" + hours : hours) + ":" + (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+
+      // Control the training session
+      if(trainingSession !== null)
+      { 
+
+       console.log('> Training session active');
+
+        for (let i = 0; i < trainingContent.phases.length; i++) {
+          const phase = trainingContent.phases[i];
+          
+          if( phase.start < (timeElapsed/1000) && trainingCurrentPhase < i)
+          { 
+            console.log('> Phase ' + i + ' start');
+            trainingCurrentPhase = i;
+            currentPower = phase.value;
+            //setResistance(controlPointCharacteristic, phase.value);
+            updateWatt(0);
+            handlerGraph();
+          }
+           
+
+        }
+      }
   };
 
 
@@ -536,7 +564,7 @@
         for (let i = 0; i < value.byteLength; i++) {
             a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
         }
-        console.log('> ' + a.join(' '));
+        //console.log('> ' + a.join(' '));
 
         flags = value.getUint16(0, /*littleEndian=*/true);
         nextPosition = 4 // 2octets for flags, 2octets for instant speed
@@ -749,6 +777,14 @@
     async function updateWatt(val)
     {
       if (controlPointCharacteristic != null) {
+        
+        // Update global training if in session
+        if(trainingSession == true)
+        {
+          myTrainingFTP = myTrainingFTP + val;
+          calculateGraph();
+        }
+      
         currentPower = currentPower + val;
         if(currentPower<0) currentPower = 0;
         if(currentPower>600) currentPower = 600;
@@ -799,15 +835,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.js"></script>
     <script src="./assets/utils.js"></script>
+    <script src="./assets/training.js"></script>
 
 
     <script>
 
+      //declare global variables
+      var trainingSession = null;
+      var trainingId = null;
+      var trainingContent = null;
+      var trainingGraph = null;
+      var trainingCurrentPhase = -1;
+      var myTrainingFTP = getFTP();
+
+        // Appeler la fonction lorsque la page est chargée
+       // window.onload = getParameters;
+       getParameters();
+
         //Init chart
-       
         var domPower = document.getElementById('graphPower');
     
-       var chartPower = echarts.init(domPower, null, { renderer: 'canvas', useDirtyRect: false  });
+       var chartPower = echarts.init(domPower);
 
     
         var option;
@@ -817,7 +865,7 @@
           //  },
         backgroundColor: '#000',
         xAxis: {
-            type: 'category',
+            type: 'value',
             splitLine:{ show: false },
             axisLine: { show: false },
             axisTick: { show: false },
@@ -845,11 +893,34 @@
 
         function updateCharts()
         {
-            
-            option.series[0].data = dataPowerDisplay;
-            //option.title.text = "Power";
-            chartPower.setOption(option);
+            if(trainingSession == null)
+            {
+              option.series[0].data = dataPowerDisplay;
+            }
+            else
+            {
+              option.series[0].data = trainingGraph;
+              option.series[0].step = 'end';
 
+
+              option.series[0].markLine = { // Ajout de la configuration markLine
+                label: {
+                    show: false,
+                  },
+                  data: [
+                    {
+                      xAxis: (timeElapsed/1000), // Valeur de l'axe des x où afficher la ligne
+                      lineStyle: {
+                        color: 'red',
+                        width: 2,
+                        type: 'dotted' //or solid
+                      }
+                    }
+                  ]
+                }; 
+            }
+
+            chartPower.setOption(option);
         }
 
 
