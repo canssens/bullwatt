@@ -1,0 +1,46 @@
+[
+    {
+    "id": "training1",
+    "training_name": "First training",
+    "description": "Relax session",
+    "duration": 10,
+    "units": {
+      "time": "seconds",
+      "value": "Unit of the value % W"
+    },
+    "phases": [
+      {
+        "start": 0,
+        "value": 0.4,
+        "notes": "Description or annotation specific to this phase (optional)."
+      },
+      {
+        "start": 10,
+        "value": 0.5,
+        "notes": "Another note for phase 2."
+      },
+      {
+        "start": 60,
+        "value": 0.6,
+        "notes": null
+      },
+      {
+        "start": 300,
+        "value": 0.75,
+        "notes": "End of the sequence."
+      },
+      {
+        "start": 1200,
+        "value": 0.6,
+        "notes": "End of the sequence."
+      },
+      {
+        "start": 1500,
+        "value": 0.4,
+        "notes": "End of the sequence."
+      }
+    ],
+    "creation_date": "2024-10-27T10:00:00Z",
+    "source": "Name or description of the data source (optional)."
+  }
+]

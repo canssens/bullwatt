@@ -62,3 +62,21 @@ function checkConnectionStrava()
 }
 
 
+function updateSliderValue(value) {
+  const valueDisplay = document.getElementById("sliderValue");
+  valueDisplay.innerHTML = value;
+  // save locally the FTP value
+  localStorage.myFTP = value;
+}
+
+function getFTP() {
+  let ftp = localStorage.myFTP;
+  if(ftp == null || ftp == "")
+  {
+    ftp = 200;
+  }
+  return ftp;
+}
+
+
+
