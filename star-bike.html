@@ -529,9 +529,10 @@
           
           if( phase.start < (timeElapsed/1000) && trainingCurrentPhase < i)
           { 
-            console.log('> Phase ' + i + ' start');
+            console.log('> Phase ' + i + ' start , value' + phase.value + ' W');
             trainingCurrentPhase = i;
-            currentPower = phase.value;
+            currentPower = parseInt(phase.value * myTrainingFTP);
+            console.log('> Phase ' + i + ' set power to ' + currentPower + ' W');
             //setResistance(controlPointCharacteristic, phase.value);
             updateWatt(0);
             handlerGraph();
@@ -544,7 +545,8 @@
 
 
   var handlerGraph = function() {
-    dataPowerDisplay.push(currentPower);
+    //dataPowerDisplay.push(currentPower);
+    dataPowerDisplay.push([(timeElapsed/1000), currentPower]);
     updateCharts();
   };
 
@@ -765,26 +767,29 @@
 
 
     document.querySelector('#buttonIncreaseWatt').addEventListener('click', function() {
+        updateFTP(10);
         updateWatt(10);
     });
 
     document.querySelector('#buttonDecreaseWatt').addEventListener('click', function() {
+        updateFTP(-10);
         updateWatt(-10);
     });
 
-
+   function updateFTP(val){
+      // Update global training if in session
+      if(trainingSession == true)
+        {
+          myTrainingFTP = myTrainingFTP + val;
+          calculateGraph();
+        }
+    }
 
     async function updateWatt(val)
     {
       if (controlPointCharacteristic != null) {
         
-        // Update global training if in session
-        if(trainingSession == true)
-        {
-          myTrainingFTP = myTrainingFTP + val;
-          calculateGraph();
-        }
-      
+        
         currentPower = currentPower + val;
         if(currentPower<0) currentPower = 0;
         if(currentPower>600) currentPower = 600;
@@ -864,12 +869,25 @@
           //    text: 'Power'
           //  },
         backgroundColor: '#000',
-        xAxis: {
+        /*xAxis: {
             type: 'value',
             splitLine:{ show: false },
             axisLine: { show: false },
             axisTick: { show: false },
             axisLabel: { show: false }
+        },*/
+        xAxis: {
+            type: 'value', 
+            splitLine:{ show: false },
+            axisLine: { show: false },
+            axisTick: { show: false },
+            axisLabel: {
+                formatter: function (value, index) {
+                    // value is the data value in seconds
+                    var minutes = value / 60;
+                    return minutes.toFixed(0) + ' min'; // Format to one decimal place and add ' min'
+                }
+            }
         },
         yAxis: {
             type: 'value'
@@ -896,10 +914,12 @@
             if(trainingSession == null)
             {
               option.series[0].data = dataPowerDisplay;
+              option.series[0].step = 'end';
             }
             else
             {
-              option.series[0].data = trainingGraph;
+              //option.series[0].data = trainingGraph;
+              option.series[0].data = mergeArraysByDuration(dataPowerDisplay, trainingGraph, (timeElapsed/1000));
               option.series[0].step = 'end';
 
 
@@ -932,18 +952,22 @@
           switch (event.key) {
             case "ArrowDown":
               // Do something for "down arrow" key press.
+              updateFTP(-10);
               updateWatt(-10);
               break;
             case "ArrowUp":
               // Do something for "up arrow" key press.
+              updateFTP(10);
               updateWatt(10);
               break;
             case "ArrowLeft":
               // Do something for "left arrow" key press.
+              updateFTP(-1);
               updateWatt(-1);
               break;
             case "ArrowRight":
               // Do something for "right arrow" key press.
+              updateFTP(1);
               updateWatt(1);
               break;
             default:
