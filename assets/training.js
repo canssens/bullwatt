@@ -58,3 +58,34 @@ function calculateGraph()
 
 }
 
+
+function mergeArraysByDuration(array1, array2, mergeDuration) {
+  const mergedArray = [];
+
+  // Add elements from array1 up to the mergeDuration
+  for (const element of array1) {
+    const [duration, value] = element;
+    if (duration <= mergeDuration) {
+      mergedArray.push(element);
+    } else {
+      // Assuming arrays are sorted by duration, we can stop early
+      break;
+    }
+  }
+
+  // Add elements from array2 after the mergeDuration
+  for (const element of array2) {
+    const [duration, value] = element;
+    if (duration > mergeDuration) {
+      mergedArray.push(element);
+    }
+  }
+
+  // Note: This assumes the input arrays are sorted by duration.
+  // If they are not sorted, you would need to sort them first or
+  // adjust the logic to iterate through both arrays completely
+  // and check the duration condition for each element.
+
+  return mergedArray;
+}
+
