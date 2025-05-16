@@ -248,13 +248,44 @@
                 type: 'value',
                 axisLabel: { show: false }
             },
+            visualMap: {
+              show: false,
+              pieces: [
+                {
+                  gt: 0,
+                  lte: .6,
+                  color: '#93CE07'
+                },
+                {
+                  gt: .6,
+                  lte: .75,
+                  color: '#FBDB0F'
+                },
+                {
+                  gt: .75,
+                  lte: .9,
+                  color: '#FC7D02'
+                },
+                {
+                  gt: .9,
+                  lte: 1.05,
+                  color: '#FD0100'
+                },
+                {
+                  gt: 1.05,
+                  lte: 1.2,
+                  color: '#AA069F'
+                },
+                {
+                  gt: 1.2,
+                  color: '#AC3B2A'
+                }
+              ]
+            },
             series: [
                 {
                 data: trainingGraph,
                 type: 'line',
-                lineStyle: { // Style de la ligne
-                  color: 'yellow' // Couleur jaune
-                },
                 smooth: false,
                 step: 'end'
                 }
