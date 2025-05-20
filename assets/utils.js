@@ -70,8 +70,8 @@ function updateSliderValue(value) {
 }
 
 function getFTP() {
-  let ftp = localStorage.myFTP;
-  if(ftp == null || ftp == "")
+  let ftp = parseInt(localStorage.myFTP);
+  if(ftp == null || ftp == "" || ftp == 0)
   {
     ftp = 200;
   }
