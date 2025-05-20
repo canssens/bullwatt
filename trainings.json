@@ -42,5 +42,62 @@
     ],
     "creation_date": "2024-10-27T10:00:00Z",
     "source": "Name or description of the data source (optional)."
+  },
+  {
+    "id": "training2",
+    "training_name": "My Training",
+    "description": "A description of my training.",
+    "duration": "1800",
+    "units": {
+      "time": "seconds",
+      "value": "number"
+    },
+    "phases": [
+      {
+        "start": 0,
+        "value": "0.5",
+        "notes": ""
+      },
+      {
+        "start": 1,
+        "value": "0.5",
+        "notes": ""
+      },
+      {
+        "start": 60,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 120,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 180,
+        "value": "0.8",
+        "notes": ""
+      }
+      ,
+      {
+        "start": 240,
+        "value": "0.9",
+        "notes": ""
+      }
+      ,
+      {
+        "start": 300,
+        "value": "1",
+        "notes": ""
+      }
+      ,
+      {
+        "start": 360,
+        "value": "1.2",
+        "notes": ""
+      }
+    ],
+    "creation_date": "2025-05-16T16:47:06+02:00",
+    "source": "User Input"
   }
 ]
