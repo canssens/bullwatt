@@ -71,7 +71,7 @@ function updateSliderValue(value) {
 
 function getFTP() {
   let ftp = parseInt(localStorage.myFTP);
-  if(typeof ftp === 'undefined' || ftp == null || ftp == "" || ftp == 0)
+  if(typeof ftp === 'undefined' || ftp == null || ftp == "" || ftp == 0 || isNaN(ftp))
   {
     ftp = 200;
   }
