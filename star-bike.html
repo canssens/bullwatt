@@ -263,7 +263,8 @@
         endTime : 0,
         duration : 0,
         distance : 0,
-        timeseries : []
+        timeseries : [],
+        name : "BullWatt Training",
     }; 
 
 
@@ -693,6 +694,13 @@
         clearInterval(intervalTimerId);
         clearInterval(intervalGraphId);
 
+        //update the activity name if training session
+        if(trainingSession == true)
+        {
+          activity.name = "BullWatt : " + trainingContent.training_name;
+        }
+
+
         // Persist the activity
         // TODO
         const activityJson = JSON.stringify(activity);
@@ -709,6 +717,7 @@
         }
         activities.activities.push(activity);
 
+        // save activities in Local Storage
         const newActivitiesJson = JSON.stringify(activities);
         localStorage.activities = newActivitiesJson;
 
