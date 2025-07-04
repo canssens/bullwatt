@@ -2,8 +2,8 @@
     {
     "id": "training1",
     "training_name": "First training",
-    "description": "Relax session",
-    "duration": 10,
+    "description": "Relax session 25min",
+    "duration": 1500,
     "units": {
       "time": "seconds",
       "value": "Unit of the value % W"
@@ -46,7 +46,7 @@
   {
     "id": "training2",
     "training_name": "1min Training",
-    "description": "Every min a change",
+    "description": "Every min a change 22min",
     "duration": "1320",
     "units": {
       "time": "seconds",
@@ -185,7 +185,7 @@
   {
     "id": "efficient1",
     "training_name": "Efficient time",
-    "description": "Efficient quality and time",
+    "description": "Efficient quality and time 30min",
     "duration": "1800",
     "units": {
       "time": "seconds",
@@ -289,7 +289,7 @@
   {
     "id": "sst30min",
     "training_name": "SST 30min",
-    "description": "SST 30min - endurance",
+    "description": "Endurance - SST 30min",
     "duration": "1850",
     "units": {
       "time": "seconds",
@@ -371,7 +371,7 @@
   {
     "id": "sst55min",
     "training_name": "SST 55min",
-    "description": "SST 55min - endurance",
+    "description": "Endurance - SST 55min",
     "duration": "3300",
     "units": {
       "time": "seconds",
