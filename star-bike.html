@@ -700,6 +700,7 @@
         let activitiesJson = localStorage.activities;
         if(activitiesJson == null || activitiesJson == "")
         {
+          // init collection
           activities = JSON.parse('{"activities": []}');
         }
         else 
