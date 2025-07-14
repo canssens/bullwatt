@@ -185,7 +185,7 @@
   {
     "id": "efficient1",
     "training_name": "Efficient time",
-    "description": "Efficient quality and time 30min",
+    "description": "Quality and time 30min",
     "duration": "1800",
     "units": {
       "time": "seconds",
