@@ -18,9 +18,11 @@ if($UUID != null)
 {
     //prepare TCX
     $json = json_decode(file_get_contents('php://input'), true);
-            
-    $filenameKey = $UUID ."-". md5($json['startTime']);
     
+    $activity_name = $json['name'];
+
+
+    $filenameKey = $UUID ."-". md5($json['startTime']);
     $filename = "./output_tcx/".$filenameKey.".tcx";
     
     if (!file_exists($filename)) {
@@ -101,7 +103,6 @@ if($UUID != null)
         $api_url = 'https://www.strava.com/api/v3/uploads';
 
         // Données de l'activité
-        $activity_name = 'BullWatt Training';
         $activity_type = 'Ride'; // Course, Vélo, Natation, etc.
         $activity_private = 0; // 0 pour public, 1 pour privé
 

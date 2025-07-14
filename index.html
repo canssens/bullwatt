@@ -62,6 +62,45 @@
 
 
         <div class="b-example-divider"></div>
+        <h1 id="trainingsession">Training sessions</h1>
+        
+        <div class="mb-4">
+          <h2>Setup</h2>
+            
+          <div class="d-flex align-items-center justify-content-between">
+            <!-- for future feature to use max power instead FTP
+            <div class="d-flex align-items-center me-4">
+              <label class="form-check-label me-2" for="optionSwitch">FTP / Max W</label>
+              <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="optionSwitch">
+              </div>
+            </div>
+            -->
+            <div class="d-flex align-items-center flex-grow-1">
+              <label for="valueSlider" class="form-label me-2">Power: <span id="sliderValue">225</span></label>
+              <input type="range" class="form-range w-100" id="valueSlider" min="150" max="300" step="1" value="225" oninput="updateSliderValue(this.value)">
+            </div>
+            </div>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="trainingCards">
+          <!-- template 
+          <div class="col">
+            <div class="card h-100">
+              <a href="star-bike.html?training=training1">
+              <img src="./assets/card1.jpg" class="card-img-top" alt="Card 1">
+              <div class="card-body">
+                <h5 class="card-title">Card Title 1</h5>
+                <p class="card-text">This is a description for card 1.</p>
+              </div>
+            </a>
+            </div>
+          </div>
+        -->
+          
+        </div>
+
+
+        <div class="b-example-divider"></div>
         <h1 id="features">Features</h1>
         <img src="./assets/bullwatt_features.png" width="100%" alt="preview of the features"/>
         
@@ -122,6 +161,7 @@
       var myUUID = null;
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.js"></script>
     <script src="./assets/bootstrap.js"></script>
     <script src="./assets/utils.js"></script>
 
@@ -139,6 +179,133 @@
       texts: ['completed training','completed trainings']
     });
 
+
+    // load training data
+    function loadTrainingDataHomePage() {
+      // load Json file data
+      let trainingSessionData = null;
+      fetch('./trainings.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Process the JSON data here      
+          //return data;
+          console.log(data);
+          trainingSessionData = data;
+          trainingSessionData.forEach(element => {
+            console.log(element.id);
+            console.log(element.training_name);
+            console.log(element.duration);
+
+            data = [];
+
+            // from trainingContent, get the data from phases
+            // for each phase, get the data from the graph
+            for (let i = 0; i < element.phases.length; i++) {
+              const phase = element.phases[i];
+              data.push([phase.start, phase.value]);
+            }
+            console.log("data : " + data);
+
+            trainingGraph = data;
+
+            //append card to the trainingCards div
+            $('#trainingCards').append(`
+            <div class="col">
+            <div class="card h-100">
+              <a href="star-bike.html?training=`+element.id+`">
+                <div class="card-body">
+                <h5 class="card-title">`+element.training_name+`</h5>
+                <p class="card-text">`+element.description+`</p>
+              </div>
+              <div id="chartTraining`+element.id+`" style="width: 100%;height:100%;"></div>
+
+            </a>
+            </div>
+          </div>`);
+
+            // create the chart
+            var chartDom = document.getElementById('chartTraining' + element.id);
+            var myChart = echarts.init(chartDom);
+            var option;
+            option = {
+              //title: {
+              //    text: 'Power'
+              //  },
+            backgroundColor: '#000',
+            xAxis: {
+                type: 'value',
+                splitLine:{ show: false },
+                axisLine: { show: false },
+                axisTick: { show: false },
+                axisLabel: { show: false }
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: { show: false }
+            },
+            visualMap: {
+              show: false,
+              pieces: [
+                {
+                  gt: 0,
+                  lte: .6,
+                  color: '#93CE07'
+                },
+                {
+                  gt: .6,
+                  lte: .75,
+                  color: '#FBDB0F'
+                },
+                {
+                  gt: .75,
+                  lte: .9,
+                  color: '#FC7D02'
+                },
+                {
+                  gt: .9,
+                  lte: 1.05,
+                  color: '#FD0100'
+                },
+                {
+                  gt: 1.05,
+                  lte: 1.2,
+                  color: '#AA069F'
+                },
+                {
+                  gt: 1.2,
+                  color: '#AC3B2A'
+                }
+              ]
+            },
+            series: [
+                {
+                data: trainingGraph,
+                type: 'line',
+                smooth: false,
+                step: 'end'
+                }
+            ]
+            };
+
+            // Use the specified configurations and data to show the chart.
+            myChart.setOption(option);
+          });
+  
+
+
+        })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
+
+    }
+
+    loadTrainingDataHomePage();
 
     //Update status strava connection
     checkConnectionStrava();
