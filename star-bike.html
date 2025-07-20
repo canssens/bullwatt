@@ -922,13 +922,47 @@
         yAxis: {
             type: 'value'
         },
+        visualMap: {
+              show: false,
+              pieces: [
+                {
+                  gt: 0,
+                  lte: .6 * myTrainingFTP,
+                  color: '#93CE07'
+                },
+                {
+                  gt: .6 * myTrainingFTP,
+                  lte: .75 * myTrainingFTP,
+                  color: '#FBDB0F'
+                },
+                {
+                  gt: .75 * myTrainingFTP,
+                  lte: .9 * myTrainingFTP,
+                  color: '#FC7D02'
+                },
+                {
+                  gt: .9 * myTrainingFTP,
+                  lte: 1.05 * myTrainingFTP,
+                  color: '#FD0100'
+                },
+                {
+                  gt: 1.05 * myTrainingFTP,
+                  lte: 1.2 * myTrainingFTP,
+                  color: '#AA069F'
+                },
+                {
+                  gt: 1.2 * myTrainingFTP,
+                  color: '#AC3B2A'
+                }
+              ]
+            },
         series: [
             {
             data: [],
             type: 'line',
-            lineStyle: { // Style de la ligne
-              color: 'yellow' // Couleur jaune
-            },
+            //lineStyle: { // Style de la ligne
+            //  color: 'yellow' // Couleur jaune
+            //},
             smooth: false,
             animationDuration : 0,
             animationDurationUpdate : 0,
