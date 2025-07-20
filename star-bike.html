@@ -249,6 +249,13 @@
     // The wake lock sentinel.
     var wakeLock = null;
 
+    var athleteWeight = 70;
+
+    if(localStorage.athleteWeight != null && localStorage.athleteWeight != "")
+    {
+      athleteWeight = parseFloat(localStorage.athleteWeight);
+    }            
+
 
     var servicesList = [
     ['FTMS', '00001826-0000-1000-8000-00805f9b34fb'],
@@ -499,7 +506,9 @@
 
     function getSpeedFromWatt(watt)
     {
-      var speed_calculated = 0.7 * Math.sqrt(watt); // m per s
+      //var speed_calculated = 0.7 * Math.sqrt(watt); // m per s
+      //with athlete weight
+      var speed_calculated = 0.7 * Math.sqrt(watt) * (1-athleteWeight/(1000)); // m per s
       return speed_calculated * 3.6;
     }
 

@@ -107,6 +107,11 @@ elseif(isset($arr["access_token"])==true)
 {
     $answer["status"] = "ok";
     $answer["message"] = "logged";
+
+    $answer["athlete.id"] = $arr["athlete.id"];
+    $answer["athlete.sex"] = $arr["athlete.sex"];
+    $answer["athlete.weight"] = $arr["athlete.weight"];
+
 }
 
 
