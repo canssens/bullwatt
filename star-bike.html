@@ -89,6 +89,7 @@
         CONTROL
         <br />
         <button id="readFTMSMeasure">Connect BLE</button>
+        <button id="pauseResumeButton" disabled>Pause</button>
         <button id="stopButton" disabled>Stop</button>
       </td>
       <td>DISTANCE</td>
@@ -246,6 +247,11 @@
     var intervalTimerId = null;
     var intervalGraphId = null;
 
+    // Pause/Resume functionality
+    var isPaused = false;
+    var pausedTime = 0;
+    var pauseStartTime = null;
+
     // The wake lock sentinel.
     var wakeLock = null;
 
@@ -324,6 +330,7 @@
 
           document.getElementById("readFTMSMeasure").textContent = "CONNECTED";
           document.querySelector('#stopButton').disabled = false;
+          document.querySelector('#pauseResumeButton').disabled = false;
           document.querySelector('#buttonIncreaseWatt').disabled = false;
           document.querySelector('#buttonDecreaseWatt').disabled = false;
 
@@ -508,7 +515,11 @@
 
       // Display time elasped
       var mdate = new Date();
-      timeElapsed = mdate - startTime;
+      if (isPaused) {
+        // Don't update time while paused
+        return;
+      }
+      timeElapsed = mdate - startTime - pausedTime;
 
       let hours = Math.floor((timeElapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       let min = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
@@ -993,6 +1004,33 @@
         true,
 );
 
+    // Pause/Resume button functionality
+    document.getElementById('pauseResumeButton').addEventListener('click', function() {
+        if (isPaused) {
+            // Resume functionality
+            isPaused = false;
+            
+            // Calculate total paused time and add it to the running total
+            if (pauseStartTime) {
+                pausedTime += new Date().getTime() - pauseStartTime.getTime();
+                pauseStartTime = null;
+            }
+            
+            // Change button text back to "Pause"
+            document.getElementById('pauseResumeButton').textContent = 'Pause';
+            
+            console.log('Session resumed');
+        } else {
+            // Pause functionality
+            isPaused = true;
+            pauseStartTime = new Date();
+            
+            // Change button text to "Resume"
+            document.getElementById('pauseResumeButton').textContent = 'Resume';
+            
+            console.log('Session paused');
+        }
+    });
 
     
 </script>    
