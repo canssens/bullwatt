@@ -78,7 +78,7 @@
     
   </head>
 
-  <body  style="margin:0px;width: 100%;">
+  <body  style="margin:0px;width: 100%;background-color: black;">
     
     
 <div id="containerTimer">
@@ -254,6 +254,13 @@
 
     // The wake lock sentinel.
     var wakeLock = null;
+
+    var athleteWeight = 70;
+
+    if(localStorage.athleteWeight != null && localStorage.athleteWeight != "")
+    {
+      athleteWeight = parseFloat(localStorage.athleteWeight);
+    }            
 
 
     var servicesList = [
@@ -506,7 +513,9 @@
 
     function getSpeedFromWatt(watt)
     {
-      var speed_calculated = 0.7 * Math.sqrt(watt); // m per s
+      //var speed_calculated = 0.7 * Math.sqrt(watt); // m per s
+      //with athlete weight
+      var speed_calculated = 0.7 * Math.sqrt(watt) * (1-athleteWeight/(1000)); // m per s
       return speed_calculated * 3.6;
     }
 
@@ -913,13 +922,47 @@
         yAxis: {
             type: 'value'
         },
+        visualMap: {
+              show: false,
+              pieces: [
+                {
+                  gt: 0,
+                  lte: .6 * myTrainingFTP,
+                  color: '#93CE07'
+                },
+                {
+                  gt: .6 * myTrainingFTP,
+                  lte: .75 * myTrainingFTP,
+                  color: '#FBDB0F'
+                },
+                {
+                  gt: .75 * myTrainingFTP,
+                  lte: .9 * myTrainingFTP,
+                  color: '#FC7D02'
+                },
+                {
+                  gt: .9 * myTrainingFTP,
+                  lte: 1.05 * myTrainingFTP,
+                  color: '#FD0100'
+                },
+                {
+                  gt: 1.05 * myTrainingFTP,
+                  lte: 1.2 * myTrainingFTP,
+                  color: '#AA069F'
+                },
+                {
+                  gt: 1.2 * myTrainingFTP,
+                  color: '#AC3B2A'
+                }
+              ]
+            },
         series: [
             {
             data: [],
             type: 'line',
-            lineStyle: { // Style de la ligne
-              color: 'yellow' // Couleur jaune
-            },
+            //lineStyle: { // Style de la ligne
+            //  color: 'yellow' // Couleur jaune
+            //},
             smooth: false,
             animationDuration : 0,
             animationDurationUpdate : 0,

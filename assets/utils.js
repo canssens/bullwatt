@@ -49,6 +49,15 @@ function checkConnectionStrava()
             document.getElementById("stravaLink").innerHTML = "logout Strava";
             document.getElementById("stravaLink").href = "strava.php?logout=true";
           }
+
+          //manage the athlete data : weight
+          if(obj["athlete.weight"] != null && obj["athlete.weight"] != "")
+          {
+            //persist in local storage the weight obj["athlete.weight"];
+            localStorage.athleteWeight = obj["athlete.weight"];
+          }
+          
+
       } else {
           console.error('Erreur:', xhr.status, xhr.statusText);
       }
