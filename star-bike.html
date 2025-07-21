@@ -545,7 +545,7 @@
       if(trainingSession !== null)
       { 
 
-       console.log('> Training session active');
+       //console.log('> Training session active');
 
         for (let i = 0; i < trainingContent.phases.length; i++) {
           const phase = trainingContent.phases[i];
@@ -556,13 +556,15 @@
             console.log('> Phase ' + i + ' start , value' + phase.value + ' W');
             trainingCurrentPhase = i;
             currentPower = parseInt(phase.value * myTrainingFTP);
-            console.log('> Phase ' + i + ' set power to ' + currentPower + ' W');
+            //console.log('> Phase ' + i + ' set power to ' + currentPower + ' W');
             //setResistance(controlPointCharacteristic, phase.value);
             updateWatt(0);
             handlerGraph();
             break;
           }
         }
+
+        //console.log('> Training session active phase '+ trainingCurrentPhase);
 
         // Build list of current and 4 next phases
         let initText ="";
@@ -602,7 +604,7 @@
         document.getElementById("trainingSessionNextSteps").innerHTML = trainingNextSteps;
 
 
-        // determine the next phase start in function of phase.start
+        
       }
   };
 
@@ -922,7 +924,7 @@
       var trainingId = null;
       var trainingContent = null;
       var trainingGraph = null;
-      var trainingCurrentPhase = -1;
+      var trainingCurrentPhase = 0;
       var myTrainingFTP = getFTP();
 
         // Appeler la fonction lorsque la page est chargée
