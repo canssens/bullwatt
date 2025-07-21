@@ -572,7 +572,7 @@
           const phase = trainingContent.phases[y];
           if(y == trainingCurrentPhase)
           {
-            initText = phase.value + '% FTP';
+            initText = (phase.value*100) + '% FTP';
             initRefTime = (timeElapsed/1000);
           }
           else
@@ -584,15 +584,20 @@
             let durationTextFormat  = "";
 
             if(min<1)
-            durationTextFormat =  (sec < 10 ? "0" + sec : sec);
+            durationTextFormat =  (sec < 10 ? "0" + sec : sec) + 'sec';
+            else if(sec == 0) durationTextFormat = min + "min";
             else 
-            durationTextFormat = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+            durationTextFormat =  min + "min " + (sec < 10 ? "0" + sec : sec) + 'sec';
 
-            trainingNextSteps += '<br>' + durationTextFormat + '@' + initText;
+            trainingNextSteps += '<br>' + durationTextFormat + ' @ ' + initText;
             initRefTime = phase.start;
-            initText = phase.value + '% FTP';
+            initText = (phase.value * 100) + '% FTP';
           }
-          
+          if((y-trainingCurrentPhase) >= 5) 
+          {
+            trainingNextSteps += '<br>...';
+            break; // only 5 next steps
+          }
         }
         document.getElementById("trainingSessionNextSteps").innerHTML = trainingNextSteps;
 
