@@ -8,7 +8,7 @@ FTP réglable par slider sur la home page
 
 - afficher ma vitesse et ftp en fonction de mon poids pendant la seance. 
 
-TODO : prendre en compte le poids Strava
+DONE : prendre en compte le poids Strava
 
 - afficher les tronçons de la séance et la durée des tronçons faits / à venir
 
@@ -23,7 +23,7 @@ TODO : Ajouter un Gong sound
 
 - pause / start / stop de la séance en cours
 
-TODO : Ajouter button pause
+DONE : Ajouter button pause
 
 - bouton ou accès rapide pour simplifier ou rendre plus dure la séance (+/- d'intensité)
 
