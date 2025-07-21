@@ -571,7 +571,10 @@
         let initRefTime = 0;
         let trainingNextSteps = "";
         for (let y = trainingCurrentPhase; y < trainingContent.phases.length; y++) {
-          const phase = trainingContent.phases[y];
+          let phase = null
+          if(trainingCurrentPhase == -1) phase = trainingContent.phases[0];
+          else phase = trainingContent.phases[y];
+
           if(y == trainingCurrentPhase)
           {
             initText = (phase.value*100) + '% FTP';
@@ -924,7 +927,7 @@
       var trainingId = null;
       var trainingContent = null;
       var trainingGraph = null;
-      var trainingCurrentPhase = 0;
+      var trainingCurrentPhase = -1;
       var myTrainingFTP = getFTP();
 
         // Appeler la fonction lorsque la page est chargée
