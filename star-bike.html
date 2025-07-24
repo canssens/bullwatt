@@ -563,7 +563,7 @@
       if(trainingSession !== null)
       { 
 
-       console.log('> Training session active');
+       //console.log('> Training session active');
 
         for (let i = 0; i < trainingContent.phases.length; i++) {
           const phase = trainingContent.phases[i];
@@ -574,7 +574,7 @@
             console.log('> Phase ' + i + ' start , value' + phase.value + ' W');
             trainingCurrentPhase = i;
             currentPower = parseInt(phase.value * myTrainingFTP);
-            console.log('> Phase ' + i + ' set power to ' + currentPower + ' W');
+            //console.log('> Phase ' + i + ' set power to ' + currentPower + ' W');
             //setResistance(controlPointCharacteristic, phase.value);
             updateWatt(0);
             handlerGraph();
@@ -582,15 +582,20 @@
           }
         }
 
+        //console.log('> Training session active phase '+ trainingCurrentPhase);
+
         // Build list of current and 4 next phases
         let initText ="";
         let initRefTime = 0;
         let trainingNextSteps = "";
         for (let y = trainingCurrentPhase; y < trainingContent.phases.length; y++) {
-          const phase = trainingContent.phases[y];
+          let phase = null
+          if(trainingCurrentPhase == -1) phase = trainingContent.phases[0];
+          else phase = trainingContent.phases[y];
+
           if(y == trainingCurrentPhase)
           {
-            initText = phase.value + '% FTP';
+            initText = (phase.value*100) + '% FTP';
             initRefTime = (timeElapsed/1000);
           }
           else
@@ -602,20 +607,25 @@
             let durationTextFormat  = "";
 
             if(min<1)
-            durationTextFormat =  (sec < 10 ? "0" + sec : sec);
+            durationTextFormat =  (sec < 10 ? "0" + sec : sec) + 'sec';
+            else if(sec == 0) durationTextFormat = min + "min";
             else 
-            durationTextFormat = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+            durationTextFormat =  min + "min " + (sec < 10 ? "0" + sec : sec) + 'sec';
 
-            trainingNextSteps += '<br>' + durationTextFormat + '@' + initText;
+            trainingNextSteps += '<br>' + durationTextFormat + ' @ ' + initText;
             initRefTime = phase.start;
-            initText = phase.value + '% FTP';
+            initText = (phase.value * 100) + '% FTP';
           }
-          
+          if((y-trainingCurrentPhase) >= 5) 
+          {
+            trainingNextSteps += '<br>...';
+            break; // only 5 next steps
+          }
         }
         document.getElementById("trainingSessionNextSteps").innerHTML = trainingNextSteps;
 
 
-        // determine the next phase start in function of phase.start
+        
       }
   };
 

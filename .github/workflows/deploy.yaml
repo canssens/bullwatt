@@ -1,0 +1,24 @@
+name: Deploy Production via SCP
+
+on:
+  push:
+    branches:
+      - main # Le workflow se déclenchera à chaque push sur la branche 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Utilise un runner Linux hébergé par GitHub
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Télécharge le code du dépôt
+
+      - name: Deploy via SCP
+        uses: appleboy/scp-action@v1 # Utilise l'action SCP d'appleboy
+        with:
+          host: ${{ secrets.SSH_HOST }}           # Adresse IP ou nom d'hôte du serveur
+          username: ${{ secrets.SSH_USER }}       # Nom d'utilisateur SSH sur le serveur
+          password: ${{ secrets.SSH_PASSWORD }} # Clé privée SSH (stockée en tant que secret)
+          port: 22                                # Port SSH (par défaut 22)
+          source: "*"                        # Le chemin des fichiers à copier depuis le runner
+          target: "."          # Le chemin de destination sur le serveur
