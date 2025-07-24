@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}       # Nom d'utilisateur SSH sur le serveur
           password: ${{ secrets.SSH_PASSWORD }} # Clé privée SSH (stockée en tant que secret)
           port: 22                                # Port SSH (par défaut 22)
-          source: "index.html"                        # Le chemin des fichiers à copier depuis le runner
+          source: "*"                        # Le chemin des fichiers à copier depuis le runner
           target: "."          # Le chemin de destination sur le serveur
