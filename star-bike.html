@@ -728,6 +728,7 @@
 
 <script>
 
+    // Initialize the activity
     document.querySelector('#readFTMSMeasure').addEventListener('click', function() {
       if (isWebBluetoothEnabled()) {
         connectBLE();
@@ -735,6 +736,7 @@
       }
     }); 
 
+    // Finish the activity
     document.querySelector('#stopButton').addEventListener('click', function() {
       if (confirm('Are you sure you want to stop?')) {
         //Close BLE connection
@@ -895,6 +897,15 @@
         console.error(`${err.name}, ${err.message}`);
       }
     };
+
+    // check wakelock status when the user's focus is back to your tab (website) again
+    window.addEventListener("focus", () => {
+        if( wakeLock === null) {
+          requestWakeLock();
+        } else {
+          console.log('Wake Lock is already active');
+        }
+    });
 
 
    
