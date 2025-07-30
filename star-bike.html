@@ -74,6 +74,23 @@
           padding: 20px;
           text-align: center;
         }
+
+        .button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 0.4em 0.4em;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 0.8em;
+        }
+        .button:hover {
+          background-color: #45a049;
+        }
+        .button:disabled {
+          background-color: #777777;
+          color: #666666;
+        }
       </style>
     
   </head>
@@ -88,9 +105,10 @@
       <td>
         CONTROL
         <br />
-        <button id="readFTMSMeasure">Connect BLE</button>
-        <button id="pauseResumeButton" disabled>Pause</button>
-        <button id="stopButton" disabled>Stop</button>
+        <button id="readFTMSMeasure" class="button">Start</button>
+        <button id="pauseResumeButton" class="button" disabled>Pause</button>
+        <button id="stopButton" class="button" disabled>Stop</button>
+
       </td>
       <td>DISTANCE</td>
     </tr>
@@ -104,14 +122,14 @@
         <table>
           <tr>
             <td>
-              <button type="button" id="buttonDecreaseWatt" disabled>-10 ↓</button>
+              <button type="button" class="button" id="buttonDecreaseWatt" disabled>-10 ↓</button>
 
            </td>
             <td  id="valueTabControlWatt">
               50 W
             </td>
             <td>
-              <button type="button" id="buttonIncreaseWatt" disabled>+10 ↑</button>
+              <button type="button" class="button" id="buttonIncreaseWatt" disabled>+10 ↑</button>
             </td>
           </tr>
         </table>
