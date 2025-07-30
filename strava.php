@@ -9,6 +9,7 @@ $UUID = $_COOKIE["userBullWatt"];
 
 $answer = array();
 $answer["status"] = "error";
+$answer["athlete.history"] = [];
 
 include('strava_refresh.php');
 
