@@ -148,7 +148,7 @@ if($UUID != null)
         $arr_history[] = $new_activity;
         $answer["athlete.history"] = $arr_history;
         //save history
-        $content_history = json_encode($arr);
+        $content_history = json_encode($arr_history);
         file_put_contents($filename_history, $content_history);
 
         $answer["message"] = $response;
