@@ -23,10 +23,24 @@ function getActivitiesDate() {
       if(activitiesJson != null && activitiesJson != "")
       {
         activities = JSON.parse(activitiesJson);
+
         activities["activities"].forEach(element => {
           let dateactivity = Date.parse(element.startTime);
-          activitiesDate.push(dateactivity);          
+          activitiesDate.push(dateactivity);
+          
+          
+          //purge activity timeseries older than 1 month
+          let now = new Date();
+          let oneMonthAgo = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate());
+          if(dateactivity < oneMonthAgo.getTime())
+          {
+            element.timeseries = [];
+          }
+
         });
+
+        // save the activities back to local storage
+        localStorage.activities = JSON.stringify(activities);
       }
       return activitiesDate;
     }
