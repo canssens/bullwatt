@@ -312,13 +312,27 @@
             // Use the specified configurations and data to show the chart.
             myChart.setOption(option);
           });
-  
 
+
+          // Add card to ask contact to add new training session
+          $('#trainingCards').append(`
+                    <div class="col">
+                    <div class="card h-100">
+                      <a href="#contact">
+                        <div class="card-body">
+                        <h5 class="card-title">Need more training ?</h5>
+                        <p class="card-text">Contact me</p>
+                      </div>
+                    </a>
+                    </div>
+                  </div>`);
 
         })
         .catch(error => {
           console.error('There was a problem with the fetch operation:', error);
         });
+
+        
 
     }
 
