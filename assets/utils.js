@@ -48,6 +48,7 @@ function getActivitiesDate() {
 
 function checkConnectionStrava()
 {
+  console.log('Checking Strava connection status...');
   let url = 'strava.php';
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url);
@@ -73,12 +74,12 @@ function checkConnectionStrava()
           
 
       } else {
-          console.error('Erreur:', xhr.status, xhr.statusText);
+          console.error('Error:', xhr.status, xhr.statusText);
       }
   };
 
   xhr.onerror = function() {
-      console.error('Erreur de reseau');
+      console.error('Error strava connection');
   };
 
   xhr.send();
