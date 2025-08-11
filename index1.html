@@ -270,11 +270,11 @@
     <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="container text-center">
-            <h1>Unlock Your Home Trainer's Potential with Easy Watts Control</h1>
+            <h1>Instantly launch a watt-controlled session on your indoor home trainer</h1>
             <p class="lead">BullWatt uses ERG mode, which automatically sets your resistance to a precise power target according to your cadence. This ensures a constant Watt effort and you are free to choose and change the Watt target.</p>
             <div class="mt-4">
                 <a href="star-bike.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-bolt me-2"></i> Start a Free Session Now
+                    <i class="fas fa-bolt me-2"></i> Start a training session Now
                 </a>
             </div>
             
@@ -512,7 +512,7 @@
                 <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
                     <h5 class="mb-3">BullWatt</h5>
                     <p class="small text-muted mb-0">Precise power control for indoor cycling enthusiasts.</p>
-                    <p class="small text-muted mt-3">&copy; 2023 BullWatt. All rights reserved.</p>
+                    <p class="small text-muted mt-3">2025 BullWatt</p>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end">
                     <div class="mb-3">
@@ -526,12 +526,14 @@
                         <a href="#contact">Contact</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </div>
+                    <!--
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -756,6 +758,14 @@
                 data: dataDate,
                 texts: ['completed training', 'completed trainings']
             });
+
+            // Load the FTP value for the id slide valueSlider
+            const ftpValue = getFTP(); // Assuming this function is defined in utils.js
+            if (ftpValue) {
+                document.getElementById('valueSlider').value = ftpValue;
+                document.getElementById('sliderValue').textContent = ftpValue;
+            }
+
         });
     </script>
 </body>
