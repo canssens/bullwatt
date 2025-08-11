@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fast and simple tool to control by watt your training session with your home trainer or connected bike">
+    <meta name="author" content="Charles Anssens">
+    <title>BullWatt</title>
+
+    <!--<link rel="stylesheet" href="./assets/bootstrap.css">-->
+    <link rel="stylesheet" href="./assets/bootstrap2.css">
+    <!-- Custom styles for this template -->
+    <link href="./assets/cover.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/github_contribution.js"></script>
+    <link href="./assets/github_contribution.css" media="all" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+   
+    
+  </head>
+  <body class="d-flex h-100 text-center text-bg-dark">
+
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">BullWatt</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#trainingsession">Training sessions</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#features">Features</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#faq">FAQ</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#contact">Contact</a>
+            <a id="stravaLink" class="nav-link fw-bold py-1 px-0" href="https://www.strava.com/oauth/authorize?scope=activity:write&client_id=147822&response_type=code&redirect_uri=https://www.bullwatt.com/strava.php"><img src="./assets/btn_strava_connectwith_orange.png" alt="Connect to Strava" style="width: 70%; height: auto;" /></a>
+            
+          </nav>
+        </div>
+      </header>
+
+      <main class="px-3">
+        <br />
+        <br />
+        <h1>Unlock Your Home Trainer's Potential with Easy Watts Control</h1>
+        <p class="lead">BullWatt uses ERG mode, which automatically sets your resistance to a precise power target according to your cadence. This ensures a constant Watt effort and you are free to choose and change the Watt target.</p>
+        <p class="lead">
+          <a href="star-bike.html" class="btn btn-lg btn-light fw-bold border-white bg-white">Start NOW a free session</a>
+        </p>
+
+        <span class="badge text-bg-warning rounded-pill">Beta</span>
+        <span class="badge text-bg-success rounded-pill">Easy / simple</span>
+        <span class="badge text-bg-success rounded-pill">Minimalism</span>
+        <span class="badge text-bg-success rounded-pill">Fast / No Loading </span>
+        <span class="badge text-bg-success rounded-pill">No Ads</span>
+        <span class="badge text-bg-success rounded-pill">No Registration</span>
+               
+
+        <br />
+        <br />
+        <div class="b-example-divider"></div>
+
+        <h1>Your training density</h1>
+        <p class="lead">This graph shows your training density for the last 365 days. The more you train, the more you will see the green squares.</p>
+
+        <div id="densityTraining"></div>
+
+        <br />
+
+
+        <div class="b-example-divider"></div>
+        <h1 id="trainingsession">Training sessions</h1>
+        
+        <div class="mb-4">
+          <h2>Setup</h2>
+            
+          <div class="d-flex align-items-center justify-content-between">
+            <!-- for future feature to use max power instead FTP
+            <div class="d-flex align-items-center me-4">
+              <label class="form-check-label me-2" for="optionSwitch">FTP / Max W</label>
+              <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="optionSwitch">
+              </div>
+            </div>
+            -->
+            <div class="d-flex align-items-center flex-grow-1">
+              <label for="valueSlider" class="form-label me-2">Power: <span id="sliderValue">225</span></label>
+              <input type="range" class="form-range w-100" id="valueSlider" min="150" max="300" step="1" value="225" oninput="updateSliderValue(this.value)">
+            </div>
+            </div>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="trainingCards">
+          <!-- template 
+          <div class="col">
+            <div class="card h-100">
+              <a href="star-bike.html?training=training1">
+              <img src="./assets/card1.jpg" class="card-img-top" alt="Card 1">
+              <div class="card-body">
+                <h5 class="card-title">Card Title 1</h5>
+                <p class="card-text">This is a description for card 1.</p>
+              </div>
+            </a>
+            </div>
+          </div>
+        -->
+          
+        </div>
+
+
+        <div class="b-example-divider"></div>
+        <h1 id="features">Features</h1>
+        <img src="./assets/bullwatt_features.png" width="100%" alt="preview of the features"/>
+        
+          
+
+        <div class="b-example-divider"></div>
+        <h1 id="faq">FAQ</h1>
+        
+        <h2>Why did I build BullWatt?</h2>
+        <p>I was bored by long loading time to ride in others apps. 
+          My goal is to get a fast way to launch an activity and record it.
+          For me, a good session means working on wattage zones, which is why wattage control is the only option.
+        </p>
+
+        <h2>How it works?</h2>
+        <p>Click on Start, then click on Connect, you could adjust your power with buttons or key arrows (up,down,left,right) that's it and don't forget to click on Stop to store the activity.</p>
+
+        <h2>What is the FTMS?</h2>
+        <p>Bluetooth FTMS (Fitness Machine Service) is a Bluetooth profile that enables standardized communication between fitness equipment and apps for data exchange and control.</p>
+
+        <h2>How to export the activity recorded?</h2>
+        <p>You could find all your sessions stored in <a href="tcx.html">TCX format</a>. The last sessions are registered in your browser, there is no server side backup/save.</p>
+
+        <h2>What are the requirements?</h2>
+        <p>A computer with Google Chrome, a home trainer or an exercice bike compatible with Bluetooth FTMS and with the support of setting a target power (ERG mode= the resistance automatically changes in function of your cadence to deliver a constant wattage.).</p>
+
+        <h2>My laptop or tablet is running on battery, how do I keep it from sleeping?</h2>
+        <p>We use the same mechanism like Youtube to prevent sleeping, you have to keep the training tab visible, you can split your screen with split screen feature for example to watch Youtube or Netflix...</p>
+
+        <h2>It doesn't detect my connected product!</h2>
+        <p>Check the requirements, you could send me an email to discuss.</p>
+
+        <h2>List of known devices supported</h2>
+        <p>
+          <ul>
+            <li>Domyos Challenge Bike</li>
+          </ul>
+        </p>
+
+
+
+
+        <div class="b-example-divider"></div>
+        <h1 id="contact">Contact</h1>
+        <p>email : charles@superbarbicane.com</p>
+        <p><a href="https://wa.me/33659746415">WhatsApp</a></p>
+
+      </main>
+
+
+
+      <footer class="mt-auto text-white-50">
+        <p>BullWatt - template with BootStrap - MDO</p>
+        <p>Copyright (c) 2015 Github Contribution Graph by bachvtuan - http://dethoima.com</p>
+        <p><a href="privacy.html">Data policy</a></p>
+        <img src="./assets/api_logo_cptblWith_strava_stack_white.png" alt="Compatible with Strava" />
+      </footer>
+    </div>
+
+    <script>
+      var myUUID = null;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.js"></script>
+    <script src="./assets/bootstrap.js"></script>
+    <script src="./assets/utils.js"></script>
+
+    
+    <script>
+      let dataDate = getActivitiesDate();
+
+    $('#densityTraining').github_graph( {
+      // Default is null will display date before 365 days from now
+      //start_date: Date Time object
+      //Default is empty list
+      data: dataDate,
+      //colors:['rgba(0,0,0,0.3)','#d6e685','#8cc665','#44a340','#44a340'],
+      // single text and plural text
+      texts: ['completed training','completed trainings']
+    });
+
+
+    // load training data
+    function loadTrainingDataHomePage() {
+      // load Json file data
+      let trainingSessionData = null;
+      fetch('./trainings.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Process the JSON data here      
+          //return data;
+          console.log(data);
+          trainingSessionData = data;
+          trainingSessionData.forEach(element => {
+            console.log(element.id);
+            console.log(element.training_name);
+            console.log(element.duration);
+
+            data = [];
+
+            // from trainingContent, get the data from phases
+            // for each phase, get the data from the graph
+            for (let i = 0; i < element.phases.length; i++) {
+              const phase = element.phases[i];
+              data.push([phase.start, phase.value]);
+            }
+            console.log("data : " + data);
+
+            trainingGraph = data;
+
+            //append card to the trainingCards div
+            $('#trainingCards').append(`
+            <div class="col">
+            <div class="card h-100">
+              <a href="star-bike.html?training=`+element.id+`">
+                <div class="card-body">
+                <h5 class="card-title">`+element.training_name+`</h5>
+                <p class="card-text">`+element.description+`</p>
+              </div>
+              <div id="chartTraining`+element.id+`" style="width: 100%;height:100%;"></div>
+
+            </a>
+            </div>
+          </div>`);
+
+            // create the chart
+            var chartDom = document.getElementById('chartTraining' + element.id);
+            var myChart = echarts.init(chartDom);
+            var option;
+            option = {
+              //title: {
+              //    text: 'Power'
+              //  },
+            backgroundColor: '#000',
+            xAxis: {
+                type: 'value',
+                splitLine:{ show: false },
+                axisLine: { show: false },
+                axisTick: { show: false },
+                axisLabel: { show: false }
+            },
+            yAxis: {
+                type: 'value',
+                min: 'dataMin',
+                axisLabel: { show: false }
+            },
+            visualMap: {
+              show: false,
+              pieces: [
+                {
+                  gt: 0,
+                  lte: .6,
+                  color: '#93CE07'
+                },
+                {
+                  gt: .6,
+                  lte: .75,
+                  color: '#FBDB0F'
+                },
+                {
+                  gt: .75,
+                  lte: .9,
+                  color: '#FC7D02'
+                },
+                {
+                  gt: .9,
+                  lte: 1.05,
+                  color: '#FD0100'
+                },
+                {
+                  gt: 1.05,
+                  lte: 1.2,
+                  color: '#AA069F'
+                },
+                {
+                  gt: 1.2,
+                  color: '#AC3B2A'
+                }
+              ]
+            },
+            series: [
+                {
+                data: trainingGraph,
+                type: 'line',
+                smooth: false,
+                step: 'end'
+                }
+            ]
+            };
+
+            // Use the specified configurations and data to show the chart.
+            myChart.setOption(option);
+          });
+
+
+          // Add card to ask contact to add new training session
+          $('#trainingCards').append(`
+                    <div class="col">
+                    <div class="card h-100">
+                      <a href="#contact">
+                        <div class="card-body">
+                        <h5 class="card-title">Need more training ?</h5>
+                        <p class="card-text">Contact me</p>
+                      </div>
+                    </a>
+                    </div>
+                  </div>`);
+
+        })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
+
+        
+
+    }
+
+    loadTrainingDataHomePage();
+
+    //Update status strava connection
+    checkConnectionStrava();
+  </script>
+
+    </body>
+</html>
