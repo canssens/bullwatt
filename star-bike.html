@@ -282,6 +282,11 @@
 
     var athleteWeight = 70;
 
+    // Declare sound assets
+    var audio_bip1 = new Audio('assets/beep1.mp3');
+    var audio_bip2 = new Audio('assets/beep2.mp3');
+
+
     if(localStorage.athleteWeight != null && localStorage.athleteWeight != "")
     {
       athleteWeight = parseFloat(localStorage.athleteWeight);
@@ -605,7 +610,7 @@
           }
           else
           {
-            duration = phase.start - initRefTime;
+            duration = parseInt(phase.start - initRefTime);
             let min = Math.floor((duration % ( 60 * 60)) / ( 60));
             let sec = Math.floor((duration % ( 60)));
 
@@ -620,6 +625,14 @@
             trainingNextSteps += '<br>' + durationTextFormat + ' @ ' + initText;
             initRefTime = phase.start;
             initText = (phase.value * 100) + '% FTP';
+
+            // launch sound play
+            if(duration == 2 || duration == 1) {
+              audio_bip1.play();
+            }
+            if(duration == 0) {
+              audio_bip2.play();
+            }
           }
           if((y-trainingCurrentPhase) >= 5) 
           {
