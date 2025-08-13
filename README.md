@@ -61,3 +61,15 @@ const download = () => {
   img.src = url;
 };
 ```
+
+
+
+
+======
+
+
+var img = new Image();
+img.src = chartPower.getDataURL({
+    pixelRatio: 2,
+    backgroundColor: '#fff'
+});
