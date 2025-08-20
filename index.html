@@ -274,7 +274,7 @@
             <h1>Instantly launch a watt-controlled session on your indoor home trainer</h1>
             <p class="lead">BullWatt uses ERG mode, which automatically sets your resistance to a precise power target according to your cadence. This ensures a constant Watt effort and you are free to choose and change the Watt target.</p>
             <div class="mt-4">
-                <a href="star-bike.html" class="btn btn-primary btn-lg">
+                <a href="#trainingsession" class="btn btn-primary btn-lg">
                     <i class="fas fa-bolt me-2"></i> Start a training session Now
                 </a>
             </div>
@@ -324,6 +324,19 @@
                 </div>
                 
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="trainingCards">
+                    <!-- Training cards Free session here -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="star-bike.html" class="text-decoration-none text-dark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Free session</h5>
+                                    <p class="card-text">You manage the power target</p>
+                                    <img src="./assets/bullwatt_features.png" alt="BullWatt free session" class="img-fluid rounded shadow" style="width: auto; max-height: 100px;margin: auto;display: block;">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
                     <!-- Training cards will be dynamically inserted here -->
                 </div>
             </div>
@@ -586,9 +599,9 @@
           console.log(data);
           trainingSessionData = data;
           trainingSessionData.forEach(element => {
-            console.log(element.id);
-            console.log(element.training_name);
-            console.log(element.duration);
+            //console.log(element.id);
+            //console.log(element.training_name);
+            //console.log(element.duration);
 
             data = [];
 
