@@ -35,6 +35,7 @@ if($UUID != null)
     <Activities>
     <Activity Sport="Biking">
     <Id>'.$json['startTime'].'</Id>
+    <Notes>'.$json['deviceName'].'</Notes>
     <Lap StartTime="'.$json['startTime'].'">
         <TotalTimeSeconds>'.$json['duration'].'</TotalTimeSeconds>
         <DistanceMeters>'.($json['distance']*1000).'</DistanceMeters>
@@ -43,7 +44,7 @@ if($UUID != null)
         <Intensity>Active</Intensity>
         <!--<Cadence>57</Cadence>-->
         <TriggerMethod>Manual</TriggerMethod>
-        <Track>
+            <Track>
         ';
     
         foreach($json['timeseries'] as $value)
@@ -51,11 +52,11 @@ if($UUID != null)
     
             $xml .= '
                 <Trackpoint>
-                <Time>'.$value['time'].'</Time>
-                <DistanceMeters>'.$value['distance'].'</DistanceMeters>
-                <Cadence>'.$value['cadence'].'</Cadence>
-                <Extensions>
-                    <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+                    <Time>'.$value['time'].'</Time>
+                    <DistanceMeters>'.$value['distance'].'</DistanceMeters>
+                    <Cadence>'.$value['cadence'].'</Cadence>
+                    <Extensions>
+                        <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
                 ';
     
             if(isset($value['speed']))  $xml .= '<Speed>'.($value['speed']/ 3.6).'</Speed>
@@ -72,9 +73,9 @@ if($UUID != null)
     
     
         $xml .= '    
-        </Track>
-        </Lap>
-        </Activity>
+                    </Track>
+                </Lap>
+            </Activity>
         </Activities>
         </TrainingCenterDatabase>';
     

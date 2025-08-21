@@ -308,6 +308,7 @@
         distance : 0,
         timeseries : [],
         name : "BullWatt Training",
+        deviceName : "Web Bluetooth",
     }; 
 
 
@@ -428,17 +429,19 @@
         if(element.uuid.includes("2a28")) testExistingSoftwareRevision = true;
       });
 
+      let deviceName = "";
       ManufacturerCharacteristic = await service.getCharacteristic(parseInt('0x2A29'));
       const value = await ManufacturerCharacteristic.readValue();
       console.log("Manufacturer Name" + enc.decode(value));
-      //addRow("dataTable", "Manufacturer Name", enc.decode(value));
+      deviceName = enc.decode(value) + ' : ';
       
 
       ModelCharacteristic = await service.getCharacteristic(parseInt('0x2A24'));
       const valueModel = await ModelCharacteristic.readValue();
       console.log("Model Number" + enc.decode(valueModel));
-      //addRow("dataTable", "Model Number", enc.decode(valueModel));
+      deviceName += enc.decode(valueModel);
       
+      activity.deviceName = deviceName;
 
       
 
