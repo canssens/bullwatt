@@ -620,5 +620,129 @@
     ],
     "creation_date": "2025-05-25T11:10:39+02:00",
     "source": "User Input"
-  }  
+  },
+  {
+  "id": "kamel65min",
+  "training_name": "Kamel 65min",
+  "description": "Kamel Training 65min",
+  "duration": "3900",
+  "units": {
+    "time": "seconds",
+    "value": "number"
+  },
+  "phases": [
+    {
+      "start": 0,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 240,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 420,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 600,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 720,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 900,
+      "value": "1.2",
+      "notes": ""
+    },
+    {
+      "start": 930,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 990,
+      "value": "1.2",
+      "notes": ""
+    },
+    {
+      "start": 1020,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 1320,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 1350,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 1860,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 1920,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 2220,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 2280,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 2760,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 2820,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 3120,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 3200,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 3660,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 3720,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 3900,
+      "value": "0.5",
+      "notes": ""
+    }
+  ],
+  "creation_date": "2025-09-08T09:50:05+02:00",
+  "source": "User Input"
+}  
 ]
