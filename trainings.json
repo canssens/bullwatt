@@ -533,6 +533,85 @@
         ]
     },
     {
+        "id": "endsoft50min",
+        "training_name": "Endurance soft",
+        "description": "Endurance soft 50min",
+        "duration": "3000",
+        "units": {
+            "time": "seconds",
+            "value": "text"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 360,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 840,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1200,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 1320,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1560,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 1680,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1920,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 2040,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2280,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 2880,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-09-19T07:08:39+02:00",
+        "source": "User Input"
+    },
+    {
         "id": "solid50min",
         "training_name": "Solid 50min",
         "description": "Solid endurance training 50min",
@@ -691,6 +770,150 @@
         "source": "User Input"
     },
     {
+        "id": "sprint10",
+        "training_name": "10 Sprints",
+        "description": "Sprints 60min",
+        "duration": "3600",
+        "units": {
+            "time": "seconds",
+            "value": "text"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 60,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 120,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1380,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 1400,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1560,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 1580,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1740,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 1760,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1920,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 1940,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2100,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 2120,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2280,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 2300,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2460,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 2480,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2640,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 2660,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2820,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 2840,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 3020,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 3180,
+                "value": "2",
+                "notes": ""
+            },
+            {
+                "start": 3200,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 3600,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-09-19T07:13:17+02:00",
+        "source": "User Input"
+    },
+    {
         "id": "kamel65min",
         "training_name": "Kamel 65min",
         "description": "Kamel Training 65min",
@@ -812,6 +1035,125 @@
             }
         ],
         "creation_date": "2025-09-08T09:50:05+02:00",
+        "source": "User Input"
+    },
+    {
+        "id": "tempo82min",
+        "training_name": "Tempo 82",
+        "description": "Tempo 82min",
+        "duration": "4920",
+        "units": {
+            "time": "seconds",
+            "value": "text"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 930,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 990,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1020,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 1050,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1080,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1380,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1560,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 2160,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 2340,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 2880,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 3360,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 3570,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 4170,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 4350,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 4650,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 4920,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-09-19T07:18:58+02:00",
         "source": "User Input"
     }
 ]

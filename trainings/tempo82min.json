@@ -1,0 +1,119 @@
+{
+  "id": "tempo82min",
+  "training_name": "Tempo 82",
+  "description": "Tempo 82min",
+  "duration": "4920",
+  "units": {
+    "time": "seconds",
+    "value": "text"
+  },
+  "phases": [
+    {
+      "start": 0,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 300,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 900,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 930,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 960,
+      "value": "0.9",
+      "notes": ""
+    },
+    {
+      "start": 990,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 1020,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 1050,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 1080,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 1380,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 1560,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 2160,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 2340,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 2880,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 3000,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 3360,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 3570,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 4170,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 4350,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 4650,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 4920,
+      "value": "0.5",
+      "notes": ""
+    }
+  ],
+  "creation_date": "2025-09-19T07:18:58+02:00",
+  "source": "User Input"
+}

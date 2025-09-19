@@ -1,0 +1,79 @@
+{
+  "id": "endsoft50min",
+  "training_name": "Endurance soft",
+  "description": "Endurance soft 50min",
+  "duration": "3000",
+  "units": {
+    "time": "seconds",
+    "value": "text"
+  },
+  "phases": [
+    {
+      "start": 0,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 360,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 840,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 960,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 1200,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 1320,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 1560,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 1680,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 1920,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 2040,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 2280,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 2880,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 3000,
+      "value": "0.5",
+      "notes": ""
+    }
+  ],
+  "creation_date": "2025-09-19T07:08:39+02:00",
+  "source": "User Input"
+}
