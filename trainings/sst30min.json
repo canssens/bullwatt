@@ -1,0 +1,82 @@
+  {
+    "id": "sst30min",
+    "training_name": "SST 30min",
+    "description": "Endurance - SST 30min",
+    "duration": "1850",
+    "units": {
+      "time": "seconds",
+      "value": "number"
+    },
+    "phases": [
+      {
+        "start": 0,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 150,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 300,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 450,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 600,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 750,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 900,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 1050,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 1200,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 1350,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 1500,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 1650,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 1800,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 1850,
+        "value": "0.6",
+        "notes": ""
+      }
+    ]
+    }

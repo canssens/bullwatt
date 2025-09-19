@@ -1,0 +1,169 @@
+{
+    "id": "flash_burn",
+    "training_name": "Flash Burn",
+    "description": "Flash Burn 16min",
+    "duration": "960",
+    "units": {
+      "time": "seconds",
+      "value": "number"
+    },
+    "phases": [
+      {
+        "start": 0,
+        "value": "0.5",
+        "notes": ""
+      },
+      {
+        "start": 30,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 60,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 90,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 120,
+        "value": "0.85",
+        "notes": ""
+      },
+      {
+        "start": 160,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 180,
+        "value": "0.85",
+        "notes": ""
+      },
+      {
+        "start": 220,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 240,
+        "value": "0.85",
+        "notes": ""
+      },
+      {
+        "start": 280,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 300,
+        "value": "0.85",
+        "notes": ""
+      },
+      {
+        "start": 360,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 390,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 420,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 450,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 480,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 510,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 540,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 600,
+        "value": "1",
+        "notes": ""
+      },
+      {
+        "start": 620,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 660,
+        "value": "1",
+        "notes": ""
+      },
+      {
+        "start": 680,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 720,
+        "value": "1",
+        "notes": ""
+      },
+      {
+        "start": 740,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 780,
+        "value": "1.2",
+        "notes": ""
+      },
+      {
+        "start": 790,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 840,
+        "value": "1.2",
+        "notes": ""
+      },
+      {
+        "start": 850,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 900,
+        "value": "1.2",
+        "notes": ""
+      },
+      {
+        "start": 910,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 960,
+        "value": "0.6",
+        "notes": ""
+      }
+    ],
+    "creation_date": "2025-05-25T11:37:24+02:00",
+    "source": "User Input"
+  }

@@ -1,0 +1,104 @@
+  {
+    "id": "efficient1",
+    "training_name": "Efficient time",
+    "description": "Quality and time 30min",
+    "duration": "1800",
+    "units": {
+      "time": "seconds",
+      "value": "number"
+    },
+    "phases": [
+      {
+        "start": 0,
+        "value": "0.5",
+        "notes": ""
+      },
+      {
+        "start": 60,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 120,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 180,
+        "value": "0.75",
+        "notes": ""
+      },
+      {
+        "start": 360,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 420,
+        "value": "1",
+        "notes": ""
+      },
+      {
+        "start": 480,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 570,
+        "value": "0.75",
+        "notes": ""
+      },
+      {
+        "start": 750,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 870,
+        "value": "1",
+        "notes": ""
+      },
+      {
+        "start": 990,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 1080,
+        "value": "0.75",
+        "notes": ""
+      },
+      {
+        "start": 1260,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 1440,
+        "value": "1",
+        "notes": ""
+      },
+      {
+        "start": 1620,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 1700,
+        "value": "0.75",
+        "notes": ""
+      },
+      {
+        "start": 1760,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 1800,
+        "value": "0.5",
+        "notes": ""
+      }
+    ],
+    "creation_date": "2025-05-20T10:32:20+02:00",
+    "source": "User Input"
+  }

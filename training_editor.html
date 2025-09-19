@@ -71,6 +71,10 @@
             <h2 class="text-xl font-semibold text-gray-800 mb-4">Training Properties</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
+                    <label for="trainingId" class="block text-gray-700 text-sm font-bold mb-2">Training Id:</label>
+                    <input type="text" id="trainingId" value="My Training ID" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
                     <label for="trainingName" class="block text-gray-700 text-sm font-bold mb-2">Training Name:</label>
                     <input type="text" id="trainingName" value="My Training" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
@@ -88,7 +92,7 @@
                 </div>
                 <div>
                     <label for="valueUnit" class="block text-gray-700 text-sm font-bold mb-2">Value Unit:</label>
-                    <input type="text" id="valueUnit" value="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <input type="text" id="valueUnit" value="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                  <div>
                     <label for="creationDate" class="block text-gray-700 text-sm font-bold mb-2">Creation Date:</label>
@@ -113,6 +117,7 @@
             <pre id="jsonOutput" class="bg-gray-200 border rounded p-4 overflow-auto text-sm">
 <code>
 {
+  "id" : "trainingId",
   "training_name": "Descriptive name of the training",
   "description": "Detailed description of the time training and its context.",
   "duration": 0,
@@ -142,6 +147,7 @@
     </div>
 
     <script>
+        const trainingIdInput = document.getElementById('trainingId');
         const trainingNameInput = document.getElementById('trainingName');
         const trainingDescriptionInput = document.getElementById('trainingDescription');
         const trainingDurationInput = document.getElementById('trainingDuration');
@@ -185,11 +191,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="start${phaseCount}" class="block text-gray-700 text-sm font-bold mb-2">Start (${timeUnitInput.value}):</label>
-                        <input type="number" id="start${phaseCount}" value="0" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <input type="text" id="start${phaseCount}" value="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                     <div>
                         <label for="value${phaseCount}" class="block text-gray-700 text-sm font-bold mb-2">Value (${valueUnitInput.value}):</label>
-                        <input type="text" id="value${phaseCount}" value="25.5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <input type="text" id="value${phaseCount}" value="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                     </div>
                      <div>
                         <label for="notes${phaseCount}" class="block text-gray-700 text-sm font-bold mb-2">Notes:</label>
@@ -231,6 +237,7 @@
                 value: parseFloat(phase.value)
             }));
 
+            const trainingId = trainingIdInput.value;
             const trainingName = trainingNameInput.value;
             const description = trainingDescriptionInput.value;
             const duration = trainingDurationInput.value;
@@ -240,6 +247,7 @@
             const source = sourceInput.value;
 
             const jsonData = {
+                id: trainingId,
                 training_name: trainingName,
                 description: description,
                 duration : duration,

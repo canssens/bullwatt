@@ -1,748 +1,817 @@
 [
-  {
-    "id": "flash_burn",
-    "training_name": "Flash Burn",
-    "description": "Flash Burn 16min",
-    "duration": "960",
-    "units": {
-      "time": "seconds",
-      "value": "number"
-    },
-    "phases": [
-      {
-        "start": 0,
-        "value": "0.5",
-        "notes": ""
-      },
-      {
-        "start": 30,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 60,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 90,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 120,
-        "value": "0.85",
-        "notes": ""
-      },
-      {
-        "start": 160,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 180,
-        "value": "0.85",
-        "notes": ""
-      },
-      {
-        "start": 220,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 240,
-        "value": "0.85",
-        "notes": ""
-      },
-      {
-        "start": 280,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 300,
-        "value": "0.85",
-        "notes": ""
-      },
-      {
-        "start": 360,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 390,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 420,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 450,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 480,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 510,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 540,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 600,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 620,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 660,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 680,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 720,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 740,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 780,
-        "value": "1.2",
-        "notes": ""
-      },
-      {
-        "start": 790,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 840,
-        "value": "1.2",
-        "notes": ""
-      },
-      {
-        "start": 850,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 900,
-        "value": "1.2",
-        "notes": ""
-      },
-      {
-        "start": 910,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 960,
-        "value": "0.6",
-        "notes": ""
-      }
-    ],
-    "creation_date": "2025-05-25T11:37:24+02:00",
-    "source": "User Input"
-  },
-   {
-    "id": "training2",
-    "training_name": "1min Training",
-    "description": "Every min a change 22min",
-    "duration": "1320",
-    "units": {
-      "time": "seconds",
-      "value": "number"
-    },
-    "phases": [
-      {
-        "start": 0,
-        "value": "0.5",
-        "notes": ""
-      },
-      {
-        "start": 1,
-        "value": "0.5",
-        "notes": ""
-      },
-      {
-        "start": 60,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 120,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 180,
-        "value": "0.8",
-        "notes": ""
-      }
-      ,
-      {
-        "start": 240,
-        "value": "0.9",
-        "notes": ""
-      }
-      ,
-      {
-        "start": 300,
-        "value": "1",
-        "notes": ""
-      }
-      ,
-      {
-        "start": 360,
-        "value": "0.9",
-        "notes": ""
-      }
-      ,
-      {
-        "start": 420,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 480,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 540,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 600,
-        "value": "0.5",
-        "notes": ""
-      },
-      {
-        "start": 660,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 720,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 780,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 840,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 900,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 960,
-        "value": "1.2",
-        "notes": ""
-      },
-      {
-        "start": 1020,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 1080,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1140,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 1200,
-        "value": "0.7",
-        "notes": ""
-      } ,
-      {
-        "start": 1260,
-        "value": "0.6",
-        "notes": ""
-      }
-      ,
-      {
-        "start": 1320,
-        "value": "0.5",
-        "notes": ""
-      }      
-    ],
-    "creation_date": "2025-05-16T16:47:06+02:00",
-    "source": "User Input"
-  },
     {
-    "id": "training1",
-    "training_name": "First training",
-    "description": "Relax session 25min",
-    "duration": 1500,
-    "units": {
-      "time": "seconds",
-      "value": "Unit of the value % W"
-    },
-    "phases": [
-      {
-        "start": 0,
-        "value": 0.4,
-        "notes": "Description or annotation specific to this phase (optional)."
-      },
-      {
-        "start": 30,
-        "value": 0.5,
-        "notes": "Another note for phase 2."
-      },
-      {
-        "start": 60,
-        "value": 0.6,
-        "notes": null
-      },
-      {
-        "start": 300,
-        "value": 0.75,
-        "notes": "End of the sequence."
-      },
-      {
-        "start": 1200,
-        "value": 0.6,
-        "notes": "End of the sequence."
-      },
-      {
-        "start": 1500,
-        "value": 0.4,
-        "notes": "End of the sequence."
-      }
-    ],
-    "creation_date": "2024-10-27T10:00:00Z",
-    "source": "Name or description of the data source (optional)."
-  },
-  {
-    "id": "efficient1",
-    "training_name": "Efficient time",
-    "description": "Quality and time 30min",
-    "duration": "1800",
-    "units": {
-      "time": "seconds",
-      "value": "number"
-    },
-    "phases": [
-      {
-        "start": 0,
-        "value": "0.5",
-        "notes": ""
-      },
-      {
-        "start": 60,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 120,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 180,
-        "value": "0.75",
-        "notes": ""
-      },
-      {
-        "start": 360,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 420,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 480,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 570,
-        "value": "0.75",
-        "notes": ""
-      },
-      {
-        "start": 750,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 870,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 990,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 1080,
-        "value": "0.75",
-        "notes": ""
-      },
-      {
-        "start": 1260,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1440,
-        "value": "1",
-        "notes": ""
-      },
-      {
-        "start": 1620,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1700,
-        "value": "0.75",
-        "notes": ""
-      },
-      {
-        "start": 1760,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 1800,
-        "value": "0.5",
-        "notes": ""
-      }
-    ],
-    "creation_date": "2025-05-20T10:32:20+02:00",
-    "source": "User Input"
-  },
-  {
-    "id": "sst30min",
-    "training_name": "SST 30min",
-    "description": "Endurance - SST 30min",
-    "duration": "1850",
-    "units": {
-      "time": "seconds",
-      "value": "number"
-    },
-    "phases": [
-      {
-        "start": 0,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 150,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 300,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 450,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 600,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 750,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 900,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1050,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 1200,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1350,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 1500,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1650,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 1800,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 1850,
-        "value": "0.6",
-        "notes": ""
-      }
-    ]
-    },
-  {
-    "id": "sst55min",
-    "training_name": "SST 55min",
-    "description": "Endurance - SST 55min",
-    "duration": "3300",
-    "units": {
-      "time": "seconds",
-      "value": "number"
-    },
-    "phases": [
-      {
-        "start": 0,
-        "value": "0.6",
-        "notes": ""
-      },
-      {
-        "start": 150,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 300,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 600,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 900,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1200,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 1500,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 1800,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 2100,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 2400,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 2700,
-        "value": "0.9",
-        "notes": ""
-      },
-      {
-        "start": 3000,
-        "value": "0.8",
-        "notes": ""
-      },
-      {
-        "start": 3150,
-        "value": "0.7",
-        "notes": ""
-      },
-      {
-        "start": 3300,
-        "value": "0.6",
-        "notes": ""
-      }
-    ],
-    "creation_date": "2025-05-25T11:10:39+02:00",
-    "source": "User Input"
-  },
-  {
-  "id": "kamel65min",
-  "training_name": "Kamel 65min",
-  "description": "Kamel Training 65min",
-  "duration": "3900",
-  "units": {
-    "time": "seconds",
-    "value": "number"
-  },
-  "phases": [
-    {
-      "start": 0,
-      "value": "0.5",
-      "notes": ""
+        "id": "flash_burn",
+        "training_name": "Flash Burn",
+        "description": "Flash Burn 16min",
+        "duration": "960",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 30,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 60,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 90,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 120,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 160,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 180,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 220,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 240,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 280,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 360,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 390,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 420,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 450,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 480,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 510,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 540,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 620,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 660,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 680,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 720,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 740,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 780,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 790,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 840,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 850,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 910,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "0.6",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-05-25T11:37:24+02:00",
+        "source": "User Input"
     },
     {
-      "start": 240,
-      "value": "0.5",
-      "notes": ""
+        "id": "training2",
+        "training_name": "1min Training",
+        "description": "Every min a change 22min",
+        "duration": "1320",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 1,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 60,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 120,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 180,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 240,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 360,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 420,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 480,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 540,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 660,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 720,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 780,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 840,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1020,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 1080,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1140,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1200,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1260,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1320,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-05-16T16:47:06+02:00",
+        "source": "User Input"
     },
     {
-      "start": 420,
-      "value": "0.7",
-      "notes": ""
+        "id": "training1",
+        "training_name": "First training",
+        "description": "Relax session 25min",
+        "duration": 1500,
+        "units": {
+            "time": "seconds",
+            "value": "Unit of the value % W"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": 0.4,
+                "notes": "Description or annotation specific to this phase (optional)."
+            },
+            {
+                "start": 30,
+                "value": 0.5,
+                "notes": "Another note for phase 2."
+            },
+            {
+                "start": 60,
+                "value": 0.6,
+                "notes": null
+            },
+            {
+                "start": 300,
+                "value": 0.75,
+                "notes": "End of the sequence."
+            },
+            {
+                "start": 1200,
+                "value": 0.6,
+                "notes": "End of the sequence."
+            },
+            {
+                "start": 1500,
+                "value": 0.4,
+                "notes": "End of the sequence."
+            }
+        ],
+        "creation_date": "2024-10-27T10:00:00Z",
+        "source": "Name or description of the data source (optional)."
     },
     {
-      "start": 600,
-      "value": "0.8",
-      "notes": ""
+        "id": "efficient1",
+        "training_name": "Efficient time",
+        "description": "Quality and time 30min",
+        "duration": "1800",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 60,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 120,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 180,
+                "value": "0.75",
+                "notes": ""
+            },
+            {
+                "start": 360,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 420,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 480,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 570,
+                "value": "0.75",
+                "notes": ""
+            },
+            {
+                "start": 750,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 870,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 990,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1080,
+                "value": "0.75",
+                "notes": ""
+            },
+            {
+                "start": 1260,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1440,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 1620,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1700,
+                "value": "0.75",
+                "notes": ""
+            },
+            {
+                "start": 1760,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-05-20T10:32:20+02:00",
+        "source": "User Input"
     },
     {
-      "start": 720,
-      "value": "0.5",
-      "notes": ""
+        "id": "sst30min",
+        "training_name": "SST 30min",
+        "description": "Endurance - SST 30min",
+        "duration": "1850",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 150,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 450,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 750,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1050,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1200,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1350,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1650,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1850,
+                "value": "0.6",
+                "notes": ""
+            }
+        ]
     },
     {
-      "start": 900,
-      "value": "1.2",
-      "notes": ""
+        "id": "solid50min",
+        "training_name": "Solid 50min",
+        "description": "Solid endurance training 50min",
+        "duration": "3000",
+        "units": {
+            "time": "seconds",
+            "value": "text"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 180,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 210,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 330,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 480,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1080,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1320,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1920,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 2220,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 2820,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-09-17T20:40:10+02:00",
+        "source": "User Input"
     },
     {
-      "start": 930,
-      "value": "0.5",
-      "notes": ""
+        "id": "sst55min",
+        "training_name": "SST 55min",
+        "description": "Endurance - SST 55min",
+        "duration": "3300",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 150,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1200,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 2100,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 2400,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 2700,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 3150,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 3300,
+                "value": "0.6",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-05-25T11:10:39+02:00",
+        "source": "User Input"
     },
     {
-      "start": 990,
-      "value": "1.2",
-      "notes": ""
-    },
-    {
-      "start": 1020,
-      "value": "0.5",
-      "notes": ""
-    },
-    {
-      "start": 1320,
-      "value": "1",
-      "notes": ""
-    },
-    {
-      "start": 1350,
-      "value": "0.8",
-      "notes": ""
-    },
-    {
-      "start": 1860,
-      "value": "1",
-      "notes": ""
-    },
-    {
-      "start": 1920,
-      "value": "0.5",
-      "notes": ""
-    },
-    {
-      "start": 2220,
-      "value": "1",
-      "notes": ""
-    },
-    {
-      "start": 2280,
-      "value": "0.8",
-      "notes": ""
-    },
-    {
-      "start": 2760,
-      "value": "1",
-      "notes": ""
-    },
-    {
-      "start": 2820,
-      "value": "0.5",
-      "notes": ""
-    },
-    {
-      "start": 3120,
-      "value": "1",
-      "notes": ""
-    },
-    {
-      "start": 3200,
-      "value": "0.8",
-      "notes": ""
-    },
-    {
-      "start": 3660,
-      "value": "1",
-      "notes": ""
-    },
-    {
-      "start": 3720,
-      "value": "0.5",
-      "notes": ""
-    },
-    {
-      "start": 3900,
-      "value": "0.5",
-      "notes": ""
+        "id": "kamel65min",
+        "training_name": "Kamel 65min",
+        "description": "Kamel Training 65min",
+        "duration": "3900",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 240,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 420,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 720,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 930,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 990,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1020,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 1320,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 1350,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1860,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 1920,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 2220,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 2280,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 2760,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 2820,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 3120,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 3200,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 3660,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 3720,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 3900,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2025-09-08T09:50:05+02:00",
+        "source": "User Input"
     }
-  ],
-  "creation_date": "2025-09-08T09:50:05+02:00",
-  "source": "User Input"
-}  
 ]

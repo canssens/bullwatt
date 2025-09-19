@@ -1,0 +1,85 @@
+
+  {
+    "id": "sst55min",
+    "training_name": "SST 55min",
+    "description": "Endurance - SST 55min",
+    "duration": "3300",
+    "units": {
+      "time": "seconds",
+      "value": "number"
+    },
+    "phases": [
+      {
+        "start": 0,
+        "value": "0.6",
+        "notes": ""
+      },
+      {
+        "start": 150,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 300,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 600,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 900,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 1200,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 1500,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 1800,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 2100,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 2400,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 2700,
+        "value": "0.9",
+        "notes": ""
+      },
+      {
+        "start": 3000,
+        "value": "0.8",
+        "notes": ""
+      },
+      {
+        "start": 3150,
+        "value": "0.7",
+        "notes": ""
+      },
+      {
+        "start": 3300,
+        "value": "0.6",
+        "notes": ""
+      }
+    ],
+    "creation_date": "2025-05-25T11:10:39+02:00",
+    "source": "User Input"
+  }
