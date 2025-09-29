@@ -231,9 +231,46 @@
                 padding: 3rem 0;
             }
         }
+        /* Browser Warning Banner */
+        .browser-warning {
+            display: none;
+            background-color: #ffc107;
+            
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 1080; /* Above navbar */
+            border-bottom: 1px solid #ffeeba;
+        }
+        
+        .browser-warning.show {
+            display: block;
+        }
     </style>
+    <script>
+        // Detect if the browser is not Chrome
+        function isNotChrome() {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            // Check if 'chrome' is in the user agent and it's not Edge or other Chrome-based browsers
+            return !userAgent.includes('chrome') || userAgent.includes('edg/');
+        }
+        
+        // Show warning banner if not using Chrome
+        document.addEventListener('DOMContentLoaded', function() {
+            if (isNotChrome()) {
+                document.getElementById('browserWarning').classList.add('show');
+            }
+        });
+    </script>
 </head>
 <body class="d-flex flex-column h-100">
+    <!-- Browser Warning Banner -->
+    <div id="browserWarning" class="browser-warning">
+        <div class="container text-center py-2">
+            WARNING : BullWatt requires Google Chrome in order to manage the Bluetooth connection
+        </div>
+    </div>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
