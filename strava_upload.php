@@ -114,6 +114,7 @@ if($UUID != null)
             'activity_type' => $activity_type,
             'private' => $activity_private,
             'trainer' => '1',
+            'sport_type' => 'VirtualRide',
             'data_type' => 'tcx',
             'file' => new CURLFile($tcx_file_path)
         );
