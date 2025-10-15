@@ -85,6 +85,25 @@ function checkConnectionStrava()
   xhr.send();
 }
 
+function pushTechnicalLog(messageLog)
+{
+  let url = 'technical_log.php';
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("POST", url, true);
+
+  // Send the proper header information along with the request
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  xhr.onreadystatechange = () => {
+    // Call a function when the state changes.
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      // Request finished. Do processing here.
+    }
+  };
+  xhr.send("uuid="+myUUID+"&log="+encodeURIComponent(messageLog));
+}
+
 
 function updateSliderValue(value) {
   const valueDisplay = document.getElementById("sliderValue");

@@ -246,6 +246,28 @@
 
   <script>
 
+    console.log('BullWatt Training');
+    
+    // define a new console
+    var console=(function(oldCons){
+        return {
+            log: function(text){
+                oldCons.log(text);
+                pushTechnicalLog(text);
+
+            },
+            error: function (text) {
+                oldCons.error(text);
+                pushTechnicalLog(text);
+            }
+        };
+    }(window.console));
+
+    //Then redefine the old console
+    window.console = console;
+
+    var samplingLog = 20;
+
     var myUUID = null;
 
     var bluetoothDevice;
@@ -677,7 +699,14 @@
         for (let i = 0; i < value.byteLength; i++) {
             a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
         }
-        //console.log('> ' + a.join(' '));
+
+        if(samplingLog >0)
+        {
+          samplingLog--;
+          console.log('> ' + a.join(' '));
+        }
+        
+        
 
         flags = value.getUint16(0, /*littleEndian=*/true);
         nextPosition = 4 // 2octets for flags, 2octets for instant speed
@@ -714,7 +743,11 @@
 
         if (typeof posInstPower != "undefined")
         {
-          //console.log('> POWER ' + (value.getInt16(posInstPower, /*littleEndian=*/true)));
+          if(samplingLog >0)
+          {
+            samplingLog--;
+            console.log('> POWER ' + (value.getInt16(posInstPower, /*littleEndian=*/true)));
+          }
           power = value.getInt16(posInstPower, /*littleEndian=*/true);
           document.querySelector('#valueTabPower').textContent = power;
           dataPower.push(power);
@@ -737,7 +770,11 @@
 
         if (typeof posInstCadence != "undefined")
         {
-          //console.log('> Cadence ' + (value.getUint16(posInstCadence, /*littleEndian=*/true)*0.5));
+          if(samplingLog >0)
+          {
+            samplingLog--;
+            console.log('> Cadence ' + (value.getUint16(posInstCadence, /*littleEndian=*/true)*0.5));
+          }
           cadence =  (value.getUint16(posInstCadence, /*littleEndian=*/true)*0.5);
           document.querySelector('#valueTabCadence').textContent = cadence;
           dataCadence.push(cadence);
@@ -797,7 +834,7 @@
         if(wakeLock != null)
         {
           wakeLock.release(); //await...
-          console.log('Wakelock stopped.');
+          //console.log('Wakelock stopped.');
           wakeLock = null; 
         }
 
@@ -932,10 +969,10 @@
       try {
         wakeLock = await navigator.wakeLock.request('screen');
         wakeLock.addEventListener('release', () => {
-          console.log('Wake Lock was released');
+          //console.log('Wake Lock was released');
           wakeLock = null;
         });
-        console.log('Wake Lock is active');
+        //console.log('Wake Lock is active');
       } catch (err) {
         console.error(`${err.name}, ${err.message}`);
       }
