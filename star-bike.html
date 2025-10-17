@@ -277,6 +277,7 @@
     var dataSpeed = [];
     var dataPower = [];
     var dataCadence = [];
+    var dataHR = [];
     var dataPowerDisplay = [];
     var speed = 0;
     var power = 0;
@@ -385,9 +386,7 @@
           handlerGraph();
           
 
-          //Start Notif
-          //indoorBikeDataCharacteristic.addEventListener('characteristicvaluechanged', handleNotifications);
-
+         
           document.getElementById("readFTMSMeasure").textContent = "CONNECTED";
           document.querySelector('#stopButton').disabled = false;
           document.querySelector('#pauseResumeButton').disabled = false;
@@ -491,13 +490,7 @@
     }
     
 
-/*
-      await FTMSCharacteristic.startNotifications();
 
-        log('> Notifications started');
-        FTMSCharacteristic.addEventListener('characteristicvaluechanged',
-            handleNotifications);
-      */
 
     // FTMS Streaming Indoor Bike Data
       console.log('Getting FTMS Service...');
@@ -512,11 +505,16 @@
     // Init Control
     console.log('Getting Control point Characteristic...');
     controlPointCharacteristic = await service4.getCharacteristic(FTMSControlPoint);
+    controlPointCharacteristic.addEventListener('characteristicvaluechanged',
+          handleControlPointChanged);
+    await controlPointCharacteristic.startNotifications();
 
     // Request control of the fitness machine
+    console.log('Requesting control of the fitness machine...');
     await requestControl(controlPointCharacteristic);
 
     // Write to the control point to set the resistance to currentPower W
+    console.log('Setting initial resistance ...');
     await setResistance(controlPointCharacteristic, currentPower);
 
     console.log('Resistance set to currentPower W');
@@ -527,6 +525,7 @@
     async function requestControl(characteristic) {
       // Command to request control: OpCode = 0x00
       const buffer = new Uint8Array([0x00]);
+      console.log('Control requested buffer built');
 
       // Write the request control command to the characteristic
       await characteristic.writeValue(buffer);
@@ -685,7 +684,26 @@
   };
 
 
-    
+    /* This function will be called when `readValue` resolves and
+     * characteristic value changes since `characteristicvaluechanged` event
+     * listener has been added. */
+    function handleControlPointChanged(event) {
+      let value = event.target.value;
+        let a = [];
+        // Convert raw data bytes to hex values just for the sake of showing something.
+        // In the "real" world, you'd use data.getUint8, data.getUint16 or even
+        // TextDecoder to process raw data bytes.
+        for (let i = 0; i < value.byteLength; i++) {
+            a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
+        }
+
+        if(samplingLog >0)
+        {
+          samplingLog--;
+          console.log('ControlPoint> ' + a.join(' '));
+        }
+      }
+        
   
     
     /* This function will be called when `readValue` resolves and
