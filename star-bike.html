@@ -417,9 +417,10 @@
 
 
       console.log('Requesting any Bluetooth Device...');
+
       bluetoothDevice = await navigator.bluetooth.requestDevice({
         filters:[{
-            services: [parseInt('0x180A')],
+            services: [parseInt('0x1826')],
         }],
           //acceptAllDevices: true,
           optionalServices: optionalServices
