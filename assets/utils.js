@@ -101,7 +101,16 @@ function pushTechnicalLog(messageLog)
       // Request finished. Do processing here.
     }
   };
-  xhr.send("uuid="+myUUID+"&log="+encodeURIComponent(messageLog));
+
+  if(samplingLog == 0)
+  {
+    samplingLog = -1;
+    xhr.send("done=1&uuid="+myUUID+"&log="+encodeURIComponent(messageLog));
+  }
+  else 
+  {
+    xhr.send("uuid="+myUUID+"&log="+encodeURIComponent(messageLog));
+    }
 }
 
 
