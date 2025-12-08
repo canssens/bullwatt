@@ -24,7 +24,7 @@ if($UUID != null)
 
 
     $filenameKey = $UUID ."-". md5($json['startTime']);
-    $filename = "./output_tcx/".$filenameKey.".tcx";
+    $filename = "../output_tcx/".$filenameKey.".tcx";
     
     if (!file_exists($filename)) {
         
@@ -139,7 +139,7 @@ if($UUID != null)
         curl_close($ch);
 
         // append activity to history
-        $filename_history = "./user_session/strava/".$arr["athlete.id"].".json";
+        $filename_history = "../user_session/strava/".$arr["athlete.id"].".json";
         $new_activity = [
             "name" => $activity_name,
             "startTime" => $json['startTime'],

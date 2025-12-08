@@ -9,7 +9,7 @@ if (!preg_match('/^[a-zA-Z0-9\-_]+$/', $uuid)) {
     die('Invalid UUID format');
 }
 
-$filename = './technical_log/tl_' . $uuid . '.log';
+$filename = '../technical_log/tl_' . $uuid . '.log';
 
 file_put_contents($filename, $msg."\n", FILE_APPEND | LOCK_EX);
 

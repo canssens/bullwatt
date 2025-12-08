@@ -49,7 +49,7 @@ function getActivitiesDate() {
 function checkConnectionStrava()
 {
   console.log('Checking Strava connection status...');
-  let url = 'strava.php';
+  let url = './service/strava.php';
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url);
 
@@ -62,7 +62,7 @@ function checkConnectionStrava()
           {
             console.log("logged");
             document.getElementById("stravaLink").innerHTML = "logout Strava";
-            document.getElementById("stravaLink").href = "strava.php?logout=true";
+            document.getElementById("stravaLink").href = "/service/strava.php?logout=true";
           }
 
           //manage the athlete data : weight
@@ -87,7 +87,7 @@ function checkConnectionStrava()
 
 function pushTechnicalLog(messageLog)
 {
-  let url = 'technical_log.php';
+  let url = './service/technical_log.php';
   const xhr = new XMLHttpRequest();
 
   xhr.open("POST", url, true);

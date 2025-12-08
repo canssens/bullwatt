@@ -13,7 +13,7 @@ $answer = [];
 
 $filenameKey = $json['UUID'] ."-". md5($json['startTime']);
 
-$filename = "./output_tcx/".$filenameKey.".tcx";
+$filename = "../output_tcx/".$filenameKey.".tcx";
 
 if (!file_exists($filename)) {
 
