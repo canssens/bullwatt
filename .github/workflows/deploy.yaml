@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4 # Télécharge le code du dépôt
+        with:
+          # Ajout de ces deux lignes pour inclure les submodules
+          submodules: true
 
       - name: Deploy via SCP
         uses: appleboy/scp-action@v1 # Utilise l'action SCP d'appleboy
