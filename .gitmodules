@@ -1,0 +1,3 @@
+[submodule "dependencies/auuki"]
+	path = dependencies/auuki
+	url = https://github.com/canssens/Auuki.git

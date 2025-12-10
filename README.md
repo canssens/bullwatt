@@ -29,9 +29,9 @@
 
 
 ```
-git submodule add https://github.com/moncompte/outil-partage.git dependances/outil
+git submodule add https://github.com/canssens/Auuki.git dependencies/auuki
 git add .
-git commit -m "Add submodule xxx"
+git commit -m "Add submodule Auuki"
 ```
 
 
