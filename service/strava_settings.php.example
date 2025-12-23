@@ -1,0 +1,8 @@
+<?php
+// VAR
+$CLIENT_ID = "";
+$CLIENT_SECRET = "";
+$STRAVA_ACCESS_TOKEN_URI = "https://www.strava.com/oauth/token";
+$REDIRECT_URI = "https://www.xxxx.com";
+
+?>
