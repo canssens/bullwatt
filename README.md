@@ -9,9 +9,9 @@
 
 ## ✨ Features
 
-| ![Image 1](https://www.bullwatt.com/assets/bullwatt_features.png) | ![Image 2](https://www.bullwatt.com/assets/bullwatt_features.png) |
+| ![Image 1](https://www.bullwatt.com/assets/bullwatt_homepage.png) | ![Image 2](https://www.bullwatt.com/assets/bullwatt_trainings.png) |
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| ![Image 3](https://www.bullwatt.com/assets/bullwatt_features.png) | ![Image 4](https://www.bullwatt.com/assets/bullwatt_features.png) |
+| ![Image 3](https://www.bullwatt.com/assets/bullwatt_features.png) | ![Image 4](https://www.bullwatt.com/assets/bullwatt_session.png) |
 
 # Intro
 
