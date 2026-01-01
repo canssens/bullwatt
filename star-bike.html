@@ -584,6 +584,8 @@
       dataSpeed.push(res.speed);
       dataPower.push(res.power);
       dataCadence.push(res.cadence);
+      cadence = res.cadence;
+      power = res.power;
 
       document.querySelector('#valueTabPower').textContent = res.power;
       document.querySelector('#valueTabPowerAVG').textContent = getAvg(dataPower);
@@ -592,18 +594,16 @@
       // if we have power we prefer to calculate the speed
       speed = getSpeedFromWatt(res.power);
 
-       //Speed management
-        document.querySelector('#valueTabSpeed').textContent = Math.round(speed);
-        document.querySelector('#valueTabSpeedAVG').textContent = getAvg(dataSpeed);
-        document.querySelector('#valueTabSpeedBEST').textContent = getMax(dataSpeed);
+      //Speed management
+      document.querySelector('#valueTabSpeed').textContent = Math.round(speed);
+      document.querySelector('#valueTabSpeedAVG').textContent = getAvg(dataSpeed);
+      document.querySelector('#valueTabSpeedBEST').textContent = getMax(dataSpeed);
 
-        document.querySelector('#valueTabCadence').textContent = res.cadence;
-         document.querySelector('#valueTabCadenceAVG').textContent = getAvg(dataCadence);
-        document.querySelector('#valueTabCadenceBEST').textContent = getMax(dataCadence);
+      document.querySelector('#valueTabCadence').textContent = res.cadence;
+      document.querySelector('#valueTabCadenceAVG').textContent = getAvg(dataCadence);
+      document.querySelector('#valueTabCadenceBEST').textContent = getMax(dataCadence);
        
-
-          //dataHR.push(hr);
-          updateActivity();
+      updateActivity();
 
     }
     
