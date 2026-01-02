@@ -401,6 +401,7 @@ FodyWeavers.xsd
 
 .DS_Store
 
+# specific to this project
 output_tcx/
-
 strava_settings.php
+copilot-instructions.md
