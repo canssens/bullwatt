@@ -56,14 +56,7 @@ if($file != null && isset($_GET['code'])!=true)
             // Save user session
             file_put_contents($filename, $content);
 
-            // load history
-            $filename_history = "../user_session/strava/".$arr["athlete.id"].".json";
-            $file_history = file_get_contents($filename_history, true);
-            if($file_history != false && $file_history != null)
-            {
-                $arr_history = json_decode($file_history, true);
-                $answer["athlete.history"] = $arr_history;
-            }
+
             
 
         }

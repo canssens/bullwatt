@@ -9,7 +9,6 @@ $UUID = $_COOKIE["userBullWatt"];
 
 $answer = array();
 $answer["status"] = "error";
-$answer["athlete.history"] = [];
 
 include('strava_refresh.php');
 
@@ -112,6 +111,8 @@ elseif(isset($arr["access_token"])==true)
     $answer["athlete.id"] = $arr["athlete.id"];
     $answer["athlete.sex"] = $arr["athlete.sex"];
     $answer["athlete.weight"] = $arr["athlete.weight"];
+
+    // get by strava api athlete history
 
 }
 

@@ -11,7 +11,6 @@ $UUID = $_COOKIE["userBullWatt"];
 $answer = array();
 $answer["status"] = "error";
 $answer["status_strava"] = "ko";
-$answer["athlete.history"] = [];
 
 include('strava_refresh.php');
 
@@ -138,20 +137,7 @@ if($UUID != null)
         // Fermeture de cURL
         curl_close($ch);
 
-        // append activity to history
-        $filename_history = "../user_session/strava/".$arr["athlete.id"].".json";
-        $new_activity = [
-            "name" => $activity_name,
-            "startTime" => $json['startTime'],
-            "endTime" => $json['endTime'],
-            "duration" => $json['duration'],
-            "distance" => $json['distance'],
-        ];
-        $arr_history[] = $new_activity;
-        $answer["athlete.history"] = $arr_history;
-        //save history
-        $content_history = json_encode($arr_history);
-        file_put_contents($filename_history, $content_history);
+        
 
         $answer["message"] = $response;
         $answer["status"] = "ok";
