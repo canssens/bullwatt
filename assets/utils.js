@@ -110,7 +110,7 @@ function pushTechnicalLog(messageLog)
   else 
   {
     xhr.send("uuid="+myUUID+"&log="+encodeURIComponent(messageLog));
-    }
+  }
 }
 
 
