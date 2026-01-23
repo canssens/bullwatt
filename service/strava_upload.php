@@ -16,7 +16,7 @@ include('strava_refresh.php');
 
 if($UUID != null)
 {
-    //prepare TCX
+    // Prepare TCX
     $json = json_decode(file_get_contents('php://input'), true);
     
     $activity_name = $json['name'];
@@ -93,21 +93,21 @@ if($UUID != null)
     }
     else
     {
-        //SEND Activity to strava
+        // Send activity to Strava
         $actual_file = realpath($filename);
 
-        // Remplacez ces valeurs par vos informations
+        // Replace these values with your information
         $access_token = $arr["access_token"];
         $tcx_file_path = $actual_file;
 
-        // URL de l'API Strava pour les téléchargements d'activités
+        // Strava API URL for activity uploads
         $api_url = 'https://www.strava.com/api/v3/uploads';
 
-        // Données de l'activité
-        $activity_type = 'Ride'; // Course, Vélo, Natation, etc.
-        $activity_private = 0; // 0 pour public, 1 pour privé
+        // Activity data
+        $activity_type = 'Ride'; // Running, Cycling, Swimming, etc.
+        $activity_private = 0; // 0 for public, 1 for private
 
-        // Création du tableau des données à envoyer
+        // Create the data array to send
         $data = array(
             'name' => $activity_name,
             'activity_type' => $activity_type,
@@ -118,10 +118,10 @@ if($UUID != null)
             'file' => new CURLFile($tcx_file_path)
         );
 
-        // Initialisation de cURL
+        // Initialize cURL
         $ch = curl_init($api_url);
 
-        // Configuration des options de cURL
+        // Configure cURL options
         curl_setopt_array($ch, array(
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HTTPHEADER => array(
@@ -131,10 +131,10 @@ if($UUID != null)
             CURLOPT_POSTFIELDS => $data
         ));
 
-        // Exécution de la requête
+        // Execute the request
         $response = curl_exec($ch);
 
-        // Fermeture de cURL
+        // Close cURL
         curl_close($ch);
 
         
