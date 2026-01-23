@@ -12,8 +12,9 @@ $answer["status_strava"] = "ko";
 
 include('strava_refresh.php');
 
-if($UUID != null && isset($access_token))
+if($UUID != null && isset($arr["access_token"])==false)
 {
+    $access_token = $arr["access_token"];
     // Strava API URL for activity get
     $api_url = 'https://www.strava.com/api/v3/athlete/activities';
 
