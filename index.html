@@ -824,11 +824,8 @@
             checkConnectionStrava();
             
             // Initialize training density graph
-            const dataDate = getActivitiesDate(); // Assuming this function is defined in utils.js
-            $('#densityTraining').github_graph({
-                data: dataDate,
-                texts: ['completed training', 'completed trainings']
-            });
+            getActivitiesDate(); // and also update the graph widget
+
 
             // Load the FTP value for the id slide valueSlider
             const ftpValue = getFTP(); // Assuming this function is defined in utils.js

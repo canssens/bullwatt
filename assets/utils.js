@@ -42,7 +42,45 @@ function getActivitiesDate() {
         // save the activities back to local storage
         localStorage.activities = JSON.stringify(activities);
       }
-      return activitiesDate;
+
+      $('#densityTraining').github_graph({
+        data: activitiesDate,
+        texts: ['completed training', 'completed trainings']
+      });
+
+    // load Strava activities
+    let url = './service/strava_get_activities.php';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            console.log('Reponse:', JSON.parse(xhr.responseText));
+            let obj = JSON.parse(xhr.responseText);
+            console.log(obj);
+            if(obj["message"]=="logged")
+            {
+              activitiesDate = obj["activities_date"];
+              $('#densityTraining').github_graph({
+              data: activitiesDate,
+              texts: ['completed training', 'completed trainings']
+            }); 
+            }
+            
+
+        } else {
+            console.error('Error:', xhr.status, xhr.statusText);
+        }
+    };
+
+    xhr.onerror = function() {
+        console.error('Error strava connection');
+    };
+
+    xhr.send();
+
+    
+
     }
 
 
