@@ -296,7 +296,7 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a id="stravaLink" class="nav-link" href="https://www.strava.com/oauth/authorize?scope=activity:write,activity:read&client_id=147822&response_type=code&redirect_uri=https://www.bullwatt.com/service/strava.php">
+                        <a id="stravaLink" class="nav-link" href="https://www.strava.com/oauth/authorize">
                             <img src="./assets/btn_strava_connectwith_orange.png" alt="Connect to Strava" style="height: 30px; width: auto;" />
                         </a>
                     </li>
@@ -655,7 +655,7 @@
               const phase = element.phases[i];
               data.push([phase.start, phase.value]);
             }
-            console.log("data : " + data);
+            //console.log("data : " + data);
 
             trainingGraph = data;
 
@@ -821,6 +821,11 @@
         // Initialize training data when the page loads
         document.addEventListener('DOMContentLoaded', function() {
             loadTrainingDataHomePage();
+
+            // Finalize build link to Strava login
+            // TODO : remove client_id from code
+            document.getElementById("stravaLink").href = "https://www.strava.com/oauth/authorize?scope=activity:write,activity:read&client_id=147822&response_type=code&redirect_uri=" + document.URL + "service/strava.php";
+            
             checkConnectionStrava();
             
             // Initialize training density graph
