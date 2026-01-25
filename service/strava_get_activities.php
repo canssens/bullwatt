@@ -12,7 +12,7 @@ $answer["status_strava"] = "ko";
 
 include('strava_refresh.php');
 
-if($UUID != null && isset($arr["access_token"])==false)
+if($UUID != null && isset($arr["access_token"])==true)
 {
     $access_token = $arr["access_token"];
     // Strava API URL for activity get
@@ -58,7 +58,6 @@ if($UUID != null && isset($arr["access_token"])==false)
         }
     }
 
-    $answer["message"] = $response;
     $answer["status"] = "ok";
     $answer["status_strava"] = "ok";
     $answer["activities_date"] = $activities_date_list;

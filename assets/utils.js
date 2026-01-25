@@ -58,9 +58,14 @@ function getActivitiesDate() {
             console.log('Reponse:', JSON.parse(xhr.responseText));
             let obj = JSON.parse(xhr.responseText);
             console.log(obj);
-            if(obj["message"]=="logged")
+            if(obj["status"]=="ok")
             {
-              activitiesDate = obj["activities_date"];
+                obj["activities_date"].forEach(element => {
+                  let dateactivity = Date.parse(element);
+                  activitiesDate.push(dateactivity);
+                  });
+
+
               $('#densityTraining').github_graph({
               data: activitiesDate,
               texts: ['completed training', 'completed trainings']

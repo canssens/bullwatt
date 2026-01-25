@@ -50,7 +50,7 @@ function calculateGraph()
     data.push([phase.start, powerPhase]);
   }
 
-  console.log("data : " + data);
+  //console.log("data : " + data);
 
   trainingGraph = data;
 
