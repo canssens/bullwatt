@@ -1,11 +1,8 @@
 # new features
 
 ## Backlog
-TODO : Ajouter un Gong sound
-TODO connecter mon cardio/ montre et savoir combien de kcal j'ai brulé
-TODO : Bug premiere phase
-TODO : Fusion de session (centralisation Strava)
-TODO : Picture densité d'entrainement
+TODO connecter my cardio/ watch 
+TODO : Picture density training
 
 ### new feature
 export img from SVG load training
