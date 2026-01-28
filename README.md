@@ -36,4 +36,6 @@ git commit -m "Add submodule Auuki"
 
 
 ## Quick Start
-
+- Copy strava_settings.php.example to strava_settings.php in order to use Strava Connection
+- Load the submodule Auuki
+- Launch Docker `docker compose up`
