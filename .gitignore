@@ -406,4 +406,4 @@ output_tcx/
 user_session/
 strava_settings.php
 copilot-instructions.md
-technical_log.php
+*.private.php

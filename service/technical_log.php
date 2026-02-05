@@ -13,14 +13,5 @@ $filename = '../technical_log/tl_' . $uuid . '.log';
 
 file_put_contents($filename, $msg."\n", FILE_APPEND | LOCK_EX);
 
-if($done==1)
-{
-    //read the log file and email it
-    $logContent = file_get_contents($filename);
-    $to = 'charles@superbarbicane.com';
-    $subject = 'Technical Log from UUID: ' . $uuid;
-    $headers = 'From: BullWatt <charles@superbarbicane.com>\r\nReply-To: charles@superbarbicane.com';
-    mail($to, $subject, $logContent, $headers);
-}
 
 ?>
