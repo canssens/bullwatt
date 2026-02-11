@@ -1,0 +1,119 @@
+{
+  "id": "alpehuez01",
+  "training_name": "Alpe d'Huez",
+  "description": "A training inspirated by the Alpe d'Huez 55min",
+  "duration": "3300",
+  "units": {
+    "time": "seconds",
+    "value": "text"
+  },
+  "phases": [
+    {
+      "start": 0,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 250,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 500,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 600,
+      "value": "1.1",
+      "notes": ""
+    },
+    {
+      "start": 700,
+      "value": "1.2",
+      "notes": ""
+    },
+    {
+      "start": 900,
+      "value": "0.9",
+      "notes": ""
+    },
+    {
+      "start": 950,
+      "value": "1.2",
+      "notes": ""
+    },
+    {
+      "start": 1000,
+      "value": "0.9",
+      "notes": ""
+    },
+    {
+      "start": 1100,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 1300,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 1400,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 1600,
+      "value": "0.9",
+      "notes": ""
+    },
+    {
+      "start": 2000,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 2030,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 2060,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 2100,
+      "value": "1",
+      "notes": ""
+    },
+    {
+      "start": 2130,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 2200,
+      "value": "0.9",
+      "notes": ""
+    },
+    {
+      "start": 2900,
+      "value": "0.8",
+      "notes": ""
+    },
+    {
+      "start": 3100,
+      "value": "0.7",
+      "notes": ""
+    },
+    {
+      "start": 3300,
+      "value": "0.5",
+      "notes": ""
+    }
+  ],
+  "creation_date": "2026-02-11T21:04:21+01:00",
+  "source": "User Input"
+}
