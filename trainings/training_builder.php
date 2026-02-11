@@ -1,6 +1,6 @@
 <?php
 // list all json file in the trainings directory then concatenate them into one json array
-$files = glob('./trainings/*.json');
+$files = glob('./catalog/*.json');
 $trainings = [];
 foreach ($files as $file) {
     $content = file_get_contents($file);

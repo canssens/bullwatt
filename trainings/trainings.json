@@ -686,6 +686,125 @@
         "source": "User Input"
     },
     {
+        "id": "alpehuez01",
+        "training_name": "Alpe d'Huez",
+        "description": "A training inspirated by the Alpe d'Huez 55min",
+        "duration": "3300",
+        "units": {
+            "time": "seconds",
+            "value": "text"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 250,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 500,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "1.1",
+                "notes": ""
+            },
+            {
+                "start": 700,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 950,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1000,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1100,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1300,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 1400,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1600,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 2000,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2030,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 2060,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 2100,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 2130,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 2200,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 2900,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 3100,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 3300,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-02-11T21:04:21+01:00",
+        "source": "User Input"
+    },
+    {
         "id": "sst55min",
         "training_name": "SST 55min",
         "description": "Endurance - SST 55min",
@@ -1154,6 +1273,115 @@
             }
         ],
         "creation_date": "2025-09-19T07:18:58+02:00",
+        "source": "User Input"
+    },
+    {
+        "id": "ventoux01",
+        "training_name": "Ventoux by Bedoin",
+        "description": "A training inspirated by the Ventoux 1h30",
+        "duration": "5400",
+        "units": {
+            "time": "seconds",
+            "value": "text"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 250,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 750,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1750,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 2000,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 2150,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 2750,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 3500,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 3600,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 3700,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 3800,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 3900,
+                "value": "0.7",
+                "notes": ""
+            },
+            {
+                "start": 4050,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 4500,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 5250,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 5400,
+                "value": "0.6",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-02-09T13:14:49+01:00",
         "source": "User Input"
     }
 ]
