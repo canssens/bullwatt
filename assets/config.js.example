@@ -1,0 +1,5 @@
+const APP_CONFIG = {
+    BASE_URL: "",
+    STRAVA_APP_ID: "",
+    FEEDBACK_FORM_URL: ""
+};

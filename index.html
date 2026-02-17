@@ -247,6 +247,7 @@
             display: block;
         }
     </style>
+    <script src="./assets/config.js"></script>
     <script>
         // Detect if the browser is not Chrome
         function isNotChrome() {
@@ -824,7 +825,7 @@
 
             // Finalize build link to Strava login
             // TODO : remove client_id from code
-            document.getElementById("stravaLink").href = "https://www.strava.com/oauth/authorize?scope=activity:write,activity:read&client_id=147822&response_type=code&redirect_uri=" + document.URL + "service/strava.php";
+            document.getElementById("stravaLink").href = "https://www.strava.com/oauth/authorize?scope=activity:write,activity:read&client_id=" + APP_CONFIG.STRAVA_APP_ID + "&response_type=code&redirect_uri=" + document.URL + "service/strava.php";
             
             checkConnectionStrava();
             

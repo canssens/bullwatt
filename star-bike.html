@@ -92,7 +92,7 @@
           color: #666666;
         }
       </style>
-    
+    <script src="assets/config.js"></script>
   </head>
 
   <body  style="margin:0px;width: 100%;background-color: black;">
@@ -153,6 +153,8 @@
     <p>Thank you</p>
     <a id="popup_tcx_link" href="" download>TCX File</a>
     <p id="popup_strava_upload">Not connected</p>
+    <p>📣 Want to see an improvement? <a id="popup_feedback_link" href="" target="_blank">Give us your feedback</a></p>
+    <br />
     <a href="index.html">Return home page</a>
   </div>
 </div>
@@ -680,6 +682,10 @@
         // display the pop up
         const popup = document.getElementById('popup');
         popup.style.display = 'block'; // Show the pop-up
+
+        const popup_feedback_link = document.getElementById('popup_feedback_link');
+        popup_feedback_link.href = APP_CONFIG.FEEDBACK_FORM_URL;
+
         const popup_tcx_link = document.getElementById('popup_tcx_link');
         const popup_strava_upload = document.getElementById('popup_strava_upload');
 
@@ -713,7 +719,7 @@
                     };
 
                     xhr.onerror = function() {
-                        console.error('Erreur de reseau');
+                        console.error('Network Error');
                     };
 
                     xhr.send(JSON.stringify(activity));
