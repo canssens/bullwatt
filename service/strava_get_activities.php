@@ -43,24 +43,34 @@ if($UUID != null && isset($arr["access_token"])==true)
     // Request execution
     $response = curl_exec($ch);
 
+    // Check status code
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    if ($http_code != 200) {
+        $answer["message"] = "Strava API error: HTTP code " . $http_code;
+
+    }
+    else
+        {
+                        // Analyze response
+                $activities = json_decode($response, true);
+
+                $activities_date_list = [];
+
+                foreach ($activities as $activity) {
+                    if ($activity['type'] === $activity_type) {
+                        // Process the activity as needed
+                        $activities_date_list[] = $activity['start_date'];
+                    }
+            }
+
+            $answer["status"] = "ok";
+            $answer["status_strava"] = "ok";
+            $answer["activities_date"] = $activities_date_list;
+        }
     // Closing cURL
     curl_close($ch);
 
-    // Analyze response
-    $activities = json_decode($response, true);
 
-    $activities_date_list = [];
-
-    foreach ($activities as $activity) {
-        if ($activity['type'] === $activity_type) {
-            // Process the activity as needed
-            $activities_date_list[] = $activity['start_date'];
-        }
-    }
-
-    $answer["status"] = "ok";
-    $answer["status_strava"] = "ok";
-    $answer["activities_date"] = $activities_date_list;
 
 }
 else $answer["message"] = "no cookie";
