@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BullWatt - Fast and simple tool to control your indoor cycling training by watt with your home trainer or connected bike. Perfect for structured workouts with precise power targets.">
+    <meta name="keywords" content="indoor cycling, home trainer, connected bike, watt control, ERG mode, cycling workout, power training, cycling app, fitness">
+    <meta name="author" content="Charles Anssens">
+    <meta name="robots" content="index, follow">
+    <title>BullWatt - {TITLE}</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --accent-color: #ffc107;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fc;
+        }
+        
+        /* Navigation */
+        .navbar {
+            padding: 1rem 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color);
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4e73df 0%, #2c3e50 100%);
+            color: white;
+            padding: 6rem 0;
+            margin-bottom: 4rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero h1 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            color: black;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e05f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* Badges */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Features */
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* FAQ */
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e3e6f0;
+            border-radius: 8px !important;
+            overflow: hidden;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(78, 115, 223, 0.05);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 1rem 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+        /* Browser Warning Banner */
+        .browser-warning {
+            display: none;
+            background-color: #ffc107;
+            
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 1080; /* Above navbar */
+            border-bottom: 1px solid #ffeeba;
+        }
+        
+        .browser-warning.show {
+            display: block;
+        }
+    </style>
+    <script src="../assets/config.js"></script>
+    <script>
+        // Detect if the browser is not Chrome
+        function isNotChrome() {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            // Check if 'chrome' is in the user agent and it's not Edge or other Chrome-based browsers
+            return !userAgent.includes('chrome') || userAgent.includes('edg/');
+        }
+        
+        // Show warning banner if not using Chrome
+        document.addEventListener('DOMContentLoaded', function() {
+            if (isNotChrome()) {
+                document.getElementById('browserWarning').classList.add('show');
+            }
+        });
+    </script>
+</head>
+<body class="d-flex flex-column h-100">
+    <!-- Browser Warning Banner -->
+    <div id="browserWarning" class="browser-warning">
+        <div class="container text-center py-2">
+            WARNING : BullWatt requires Google Chrome in order to manage the Bluetooth connection
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">BullWatt</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html?#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html?#trainingsession">Training Sessions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html?#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html?#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html?#how-to">How To</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html?#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="flex-shrink-0">
+        <!-- Training Density Section -->
+        <section class="section bg-light" id="training-density">
+            <div class="container">
+                <h1 class="section-title">{TITLE}</h1>
+                <p class="text-center mb-5">{CONTENT}</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <p class="text-center mb-5">{CONTENT}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Contact Section -->
+        <section class="section bg-light" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <p class="lead mb-5">Have questions or feedback? We'd love to hear from you!</p>
+                        <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
+                            <a href="mailto:charles@superbarbicane.com" class="btn btn-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i> Email Us
+                            </a>
+                            <a href="https://wa.me/33659746415" class="btn btn-success btn-lg">
+                                <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                    <h5 class="mb-3">BullWatt</h5>
+                    <p class="small mb-0">Precise power control for indoor cycling enthusiasts.</p>
+                    <p class="small mb-0">Github <a href="https://github.com/canssens/bullwatt" target="_blank">BullWatt Repository</a></p>
+                    <p class="small mt-3">2026 BullWatt</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end">
+                    <div class="mb-3">
+                        <img src="./assets/api_logo_cptblWith_strava_stack_white.png" alt="Compatible with Strava" style="height: 40px;" class="mb-3">
+                    </div>
+                    <div class="footer-links mb-3">
+                        <a href="#home">Home</a>
+                        <a href="#trainingsession">Training</a>
+                        <a href="#features">Features</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                    
+                    <div class="social-links">
+                    <!--
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    -->
+                        <a href="https://www.strava.com/clubs/bullwatt" target="_blank" aria-label="Strava"><img class="fab" src="./assets/strava-icon.svg" alt="Strava logo"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+</body>
+</html>
