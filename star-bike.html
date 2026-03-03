@@ -1,173 +1,280 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>BullWatt Activity</title>  
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BullWatt Activity</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
 
-    <style>
-        td { 
-          font-size: 2vw; 
-          /*border: 1px dotted white;   
+  <style>
+    td {
+      font-size: max(2vw, 14px);
+      /*border: 1px dotted white;   
           border-collapse: collapse;*/
-          padding-left: 0.2em;
-          padding-right: 0.2em;
-        }
-        
-        #containerData {
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          color : white;
-          font-family: system-ui;
-          text-align: center;
-        }
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+    }
 
-        .indicators 
-        {
-          font-size: 50%;
-        }
+    #containerData {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      font-family: system-ui;
+      text-align: center;
+    }
 
-        table
-        { 
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .indicators {
+      font-size: max(50%, 11px);
+    }
 
-        #containerTimer
-        {
-          position: absolute;
-          top: 0;
-          width: 100%;
-          color : white;
-          font-family: system-ui;
-          /*padding: 15px;*/
-          font-size: 2vw; 
-          text-align: center;
-        }
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #containerTimer {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      color: white;
+      font-family: system-ui;
+      /*padding: 15px;*/
+      font-size: max(2vw, 14px);
+      text-align: center;
+    }
 
 
-        .popup {
-          display: none; /* Initially hidden */
-          position: fixed; /* Fixed position to center on screen */
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%); /* Center the pop-up */
-          width: 300px;
-          background-color: white;
-          border: 5px solid yellow;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          z-index: 1000; /* Ensure it's on top */
-          font-family: system-ui;
-        }
+    .popup {
+      display: none;
+      /* Initially hidden */
+      position: fixed;
+      /* Fixed position to center on screen */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* Center the pop-up */
+      width: 300px;
+      background-color: white;
+      border: 5px solid yellow;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      /* Ensure it's on top */
+      font-family: system-ui;
+    }
 
-        .popup-content {
-          padding: 20px;
-          text-align: center;
-        }
+    .popup-content {
+      padding: 20px;
+      text-align: center;
+    }
 
-        .button {
-          background-color: #4CAF50;
-          color: white;
-          padding: 0.4em 0.4em;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-size: 0.8em;
-        }
-        .button:hover {
-          background-color: #45a049;
-        }
-        .button:disabled {
-          background-color: #777777;
-          color: #666666;
-        }
-      </style>
-    <script src="assets/config.js"></script>
-  </head>
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.4em 0.6em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: max(0.8em, 13px);
+      /* Minimum touch targets for mobile */
+      min-height: 44px;
+      min-width: 44px;
+      touch-action: manipulation;
+    }
 
-  <body  style="margin:0px;width: 100%;background-color: black;">
-    
-    
-<div id="containerTimer">
-  <table style="width:100%">
-    <tr>
-      <td>TIME</td>
-      <td>
-        CONTROL
-        <br />
-        <button id="startConnection" class="button">Start</button>
-        <button id="pauseResumeButton" class="button" disabled>Pause</button>
-        <button id="stopButton" class="button" disabled>Stop</button>
+    .button:hover {
+      background-color: #45a049;
+    }
 
-      </td>
-      <td>DISTANCE</td>
-    </tr>
-    <tr>
-      <td width="33%" valign="top">
-        <div id="elapsedTimer">00:00</div>
-        <div id="trainingSessionNextSteps" class="indicators">
-        </div>
-      </td>
-      <td width="33%" valign="top">
-        <table>
-          <tr>
-            <td>
-              <button type="button" class="button" id="buttonDecreaseWatt" disabled>-10 ↓</button>
+    .button:disabled {
+      background-color: #777777;
+      color: #666666;
+    }
 
-           </td>
-            <td  id="valueTabControlWatt">
-              50 W
-            </td>
-            <td>
-              <button type="button" class="button" id="buttonIncreaseWatt" disabled>+10 ↑</button>
-            </td>
-          </tr>
-        </table>
-      
-      </td>
+    /* ===== Mobile Responsive Improvements ===== */
+    @media (max-width: 768px) {
+
+      /* --- Global: larger base font for all table cells --- */
+      td {
+        font-size: 5vw !important;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+      }
+
+      /* --- containerTimer: top bar --- */
+      #containerTimer {
+        font-size: 5vw;
+        padding-top: 4px;
+      }
+
+      /* Timer & Distance: larger values */
+      #elapsedTimer {
+        font-size: 7vw;
+      }
+
+      #valueDistance {
+        font-size: 7vw;
+      }
+
+      /* Watt control value */
+      #valueTabControlWatt {
+        font-size: 6vw !important;
+        white-space: nowrap;
+      }
+
+      /* --- containerData: bottom bar --- */
+      #containerData {
+        font-size: 5vw;
+        overflow: hidden;
+      }
+
+      /* Prevent inner metric tables from overflowing their parent td */
+      #containerData table table {
+        width: 100%;
+        table-layout: fixed;
+      }
+
+      /* Each outer td already has width:33% — ensure content wraps inside it */
+      #containerData>table>tbody>tr>td,
+      #containerData>table>tr>td {
+        overflow: hidden;
+        max-width: 0;
+        width: 33%;
+      }
+
+      /* Main metric values (CADENCE / POWER / SPEED) */
+      #valueTabCadence,
+      #valueTabPower,
+      #valueTabSpeed {
+        font-size: 200% !important;
+      }
+
+      /* AVG / BEST indicator labels and values */
+      .indicators {
+        font-size: 80% !important;
+      }
+
+      #valueTabCadenceAVG,
+      #valueTabCadenceBEST,
+      #valueTabPowerAVG,
+      #valueTabPowerBEST,
+      #valueTabSpeedAVG,
+      #valueTabSpeedBEST {
+        font-size: 4vw !important;
+      }
+
+      /* --- Buttons: large touch targets --- */
+      .button {
+        min-height: 44px;
+        min-width: 48px;
+        font-size: 3.5vw;
+        padding: 10px 12px;
+        border-radius: 8px;
+        touch-action: manipulation;
+      }
+
+      /* Add spacing between the control and watt button rows */
+      #containerTimer table table {
+        margin-top: 4px;
+      }
+
+      /* Training session next steps */
+      #trainingSessionNextSteps {
+        font-size: 3.5vw !important;
+      }
+
+      /* Graph height on mobile */
+      #containerData>div:first-child {
+        height: 28vh !important;
+      }
+    }
+  </style>
+  <script src="assets/config.js"></script>
+</head>
+
+<body style="margin:0px;width: 100%;background-color: black;">
 
 
-      <td width="33%" valign="top">
-        <span  id="valueDistance" >0</span> KM
-      </td>
-    </tr>
-  </table>
-  
+  <div id="containerTimer">
+    <table style="width:100%">
+      <tr>
+        <td>TIME</td>
+        <td>
+          CONTROL
+          <br />
+          <button id="startConnection" class="button">Start</button>
+          <button id="pauseResumeButton" class="button" disabled>Pause</button>
+          <button id="stopButton" class="button" disabled>Stop</button>
 
-</div>
+        </td>
+        <td>DISTANCE</td>
+      </tr>
+      <tr>
+        <td width="33%" valign="top">
+          <div id="elapsedTimer">00:00</div>
+          <div id="trainingSessionNextSteps" class="indicators">
+          </div>
+        </td>
+        <td width="33%" valign="top">
+          <table>
+            <tr>
+              <td>
+                <button type="button" class="button" id="buttonDecreaseWatt" disabled>-10 ↓</button>
+
+              </td>
+              <td id="valueTabControlWatt">
+                50 W
+              </td>
+              <td>
+                <button type="button" class="button" id="buttonIncreaseWatt" disabled>+10 ↑</button>
+              </td>
+            </tr>
+          </table>
+
+        </td>
 
 
+        <td width="33%" valign="top">
+          <span id="valueDistance">0</span> KM
+        </td>
+      </tr>
+    </table>
 
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <p>Thank you</p>
-    <a id="popup_tcx_link" href="" download>TCX File</a>
-    <p id="popup_strava_upload">Not connected</p>
-    <p>📣 Want to see an improvement? <a id="popup_feedback_link" href="" target="_blank">Give us your feedback</a></p>
-    <br />
-    <a href="index.html">Return home page</a>
+
   </div>
-</div>
 
-<!--
 
--->  
 
-<div id="containerData">
-
-  <div style="width:100%;height: 30vh;">
-        <div id="graphPower" style="width: 100%;  height: 100%;"></div>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Thank you</p>
+      <a id="popup_tcx_link" href="" download>TCX File</a>
+      <p id="popup_strava_upload">Not connected</p>
+      <p>📣 Want to see an improvement? <a id="popup_feedback_link" href="" target="_blank">Give us your feedback</a>
+      </p>
+      <br />
+      <a href="index.html">Return home page</a>
+    </div>
   </div>
+
+  <!--
+
+-->
+
+  <div id="containerData">
+
+    <div style="width:100%;height: 30vh;">
+      <div id="graphPower" style="width: 100%;  height: 100%;"></div>
+    </div>
 
     <table style="width:100%">
       <tr>
@@ -180,17 +287,17 @@
           <table>
             <tr>
               <td>
-                <span  class="indicators">AVG</span>
-                <br/>
-                <span  id="valueTabCadenceAVG" >0</span>
-             </td>
-              <td  id="valueTabCadence" style="font-size: 300%;">
+                <span class="indicators">AVG</span>
+                <br />
+                <span id="valueTabCadenceAVG">0</span>
+              </td>
+              <td id="valueTabCadence" style="font-size: 300%;">
                 0
               </td>
               <td>
-                <span  class="indicators" >BEST</span>
-                <br/>
-                <span  id="valueTabCadenceBEST" >0</span>
+                <span class="indicators">BEST</span>
+                <br />
+                <span id="valueTabCadenceBEST">0</span>
               </td>
             </tr>
           </table>
@@ -201,17 +308,17 @@
           <table>
             <tr>
               <td>
-                <span  class="indicators" >AVG</span>
-                <br/>
-                <span  id="valueTabPowerAVG" >0</span>
-             </td>
-              <td  id="valueTabPower" style="font-size: 300%;">
+                <span class="indicators">AVG</span>
+                <br />
+                <span id="valueTabPowerAVG">0</span>
+              </td>
+              <td id="valueTabPower" style="font-size: 300%;">
                 0
               </td>
               <td>
-                <span  class="indicators" >BEST</span>
-                <br/>
-                <span  id="valueTabPowerBEST" >0</span>
+                <span class="indicators">BEST</span>
+                <br />
+                <span id="valueTabPowerBEST">0</span>
               </td>
             </tr>
           </table>
@@ -221,27 +328,27 @@
           <table>
             <tr>
               <td>
-                <span  class="indicators" >AVG</span>
-                <br/>
-                <span  id="valueTabSpeedAVG" >0</span>
-             </td>
-              <td  id="valueTabSpeed" style="font-size: 300%;">
+                <span class="indicators">AVG</span>
+                <br />
+                <span id="valueTabSpeedAVG">0</span>
+              </td>
+              <td id="valueTabSpeed" style="font-size: 300%;">
                 0
               </td>
               <td>
-                <span  class="indicators" >BEST</span>
-                <br/>
-                <span  id="valueTabSpeedBEST" >0</span>
+                <span class="indicators">BEST</span>
+                <br />
+                <span id="valueTabSpeedBEST">0</span>
               </td>
             </tr>
           </table>
-        
+
         </td>
 
       </tr>
     </table>
 
-</div>
+  </div>
 
 
 
@@ -249,20 +356,20 @@
   <script>
 
     console.log('BullWatt Training');
-    
-    // define a new console
-    var console=(function(oldCons){
-        return {
-            log: function(text){
-                oldCons.log(text);
-                pushTechnicalLog(text);
 
-            },
-            error: function (text) {
-                oldCons.error(text);
-                pushTechnicalLog(text);
-            }
-        };
+    // define a new console
+    var console = (function (oldCons) {
+      return {
+        log: function (text) {
+          oldCons.log(text);
+          pushTechnicalLog(text);
+
+        },
+        error: function (text) {
+          oldCons.error(text);
+          pushTechnicalLog(text);
+        }
+      };
     }(window.console));
 
     //Then redefine the old console
@@ -286,11 +393,11 @@
     var cadence = 0;
     var currentPower = 50;
     var timeElapsed = 0;
-    
+
 
     var connectableDevice = null;
 
-    
+
 
     var intervalTimerId = null;
     var intervalGraphId = null;
@@ -310,67 +417,65 @@
     var audio_bip2 = new Audio('assets/beep2.mp3');
 
 
-    if(localStorage.athleteWeight != null && localStorage.athleteWeight != "")
-    {
+    if (localStorage.athleteWeight != null && localStorage.athleteWeight != "") {
       athleteWeight = parseFloat(localStorage.athleteWeight);
-    }            
+    }
 
 
 
     var activity;
     activity = {
-        startTime : 0,
-        endTime : 0,
-        duration : 0,
-        distance : 0,
-        timeseries : [],
-        name : "BullWatt Training",
-        deviceName : "Web Bluetooth",
-    }; 
+      startTime: 0,
+      endTime: 0,
+      duration: 0,
+      distance: 0,
+      timeseries: [],
+      name: "BullWatt Training",
+      deviceName: "Web Bluetooth",
+    };
 
 
-    function updateActivity()
-    {
-        now = new Date();
-        if(activity.endTime != 0)
-        {
-            delta = now.getTime() - activity.endTime.getTime();
-            distanceDelta = speed * delta / 3600000;
-            activity.distance = activity.distance + distanceDelta;
-            dist = parseFloat(activity.distance).toFixed(2);
-            document.getElementById("valueDistance").textContent = dist;
-        }
+    function updateActivity() {
+      now = new Date();
+      if (activity.endTime != 0) {
+        delta = now.getTime() - activity.endTime.getTime();
+        distanceDelta = speed * delta / 3600000;
+        activity.distance = activity.distance + distanceDelta;
+        dist = parseFloat(activity.distance).toFixed(2);
+        document.getElementById("valueDistance").textContent = dist;
+      }
 
-        var point;
-        point = 
-        {
-            time : now,
-            power : power,
-            speed : parseFloat(speed).toFixed(2),
-            cadence : cadence,
-            distance : parseFloat(activity.distance*1000).toFixed(2)
-        };
+      var point;
+      point =
+      {
+        time: now,
+        power: power,
+        speed: parseFloat(speed).toFixed(2),
+        cadence: cadence,
+        distance: parseFloat(activity.distance * 1000).toFixed(2)
+      };
 
-        activity.timeseries.push(point);
-        
-        activity.endTime = now;
-        activity.duration = (activity.endTime.getTime() - activity.startTime.getTime())/1000;
+      activity.timeseries.push(point);
+
+      activity.endTime = now;
+      activity.duration = (activity.endTime.getTime() - activity.startTime.getTime()) / 1000;
     }
 
     async function connectBLE() {
       try {
-        if(connectableDevice == null) 
-        {
-        const filter = {filters: [
-        {services: ['00001826-0000-1000-8000-00805f9b34fb']}
-        ]};
+        if (connectableDevice == null) {
+          const filter = {
+            filters: [
+              { services: ['00001826-0000-1000-8000-00805f9b34fb'] }
+            ]
+          };
           const device = await navigator.bluetooth.requestDevice(filter);
-          connectableDevice = Connectable({device, onConnected: handleOnConnected, onData: handleOnData });
-          await connectableDevice.connect({ }); 
-              
+          connectableDevice = Connectable({ device, onConnected: handleOnConnected, onData: handleOnData });
+          await connectableDevice.connect({});
+
           //Start Chrono
           startTime = new Date();
-          activity.startTime = startTime; 
+          activity.startTime = startTime;
           intervalTimerId = setInterval(handler, 1000);
           handler();
 
@@ -378,9 +483,9 @@
           //start timer Watt Graph
           intervalGraphId = setInterval(handlerGraph, 5000);
           handlerGraph();
-          
 
-         
+
+
           document.getElementById("startConnection").textContent = "CONNECTED";
           document.querySelector('#stopButton').disabled = false;
           document.querySelector('#pauseResumeButton').disabled = false;
@@ -388,8 +493,8 @@
           document.querySelector('#buttonDecreaseWatt').disabled = false;
 
         }
-      
-      } catch(error) {
+
+      } catch (error) {
         console.log('Argh! ' + error);
       }
     }
@@ -397,25 +502,25 @@
 
 
     function handleOnConnected(event) {
-        //connectable
-        connectableDevice.services.trainer.start();
-        connectableDevice.services.trainer.setPowerTarget({power: currentPower});
-        connectableDevice.services.trainer.characteristics.measurement.startNotificationsWithRetry(handleNotifications);
+      //connectable
+      connectableDevice.services.trainer.start();
+      connectableDevice.services.trainer.setPowerTarget({ power: currentPower });
+      connectableDevice.services.trainer.characteristics.measurement.startNotificationsWithRetry(handleNotifications);
 
-        activity.deviceName = connectableDevice.getName();
-      }
+      activity.deviceName = connectableDevice.getName();
+    }
 
-      function handleOnData(event) {
-        //console.log(event);
-        }
-
-
-    
-
-  
+    function handleOnData(event) {
+      //console.log(event);
+    }
 
 
- 
+
+
+
+
+
+
 
 
 
@@ -425,26 +530,25 @@
 
     function getAvg(tab) {
       var sum = 0;
-      for( var i = 0; i < tab.length; i++ ){
-          sum += parseInt( tab[i], 10 ); //don't forget to add the base
+      for (var i = 0; i < tab.length; i++) {
+        sum += parseInt(tab[i], 10); //don't forget to add the base
       }
 
-      var avg = Math.round(sum/tab.length);
+      var avg = Math.round(sum / tab.length);
       return avg;
     }
 
 
 
-    function getSpeedFromWatt(watt)
-    {
+    function getSpeedFromWatt(watt) {
       //var speed_calculated = 0.7 * Math.sqrt(watt); // m per s
       //with athlete weight
-      var speed_calculated = 0.7 * Math.sqrt(watt) * (1-athleteWeight/(1000)); // m per s
+      var speed_calculated = 0.7 * Math.sqrt(watt) * (1 - athleteWeight / (1000)); // m per s
       return speed_calculated * 3.6;
     }
 
 
-    var handler = function() {
+    var handler = function () {
 
       // Display time elasped
       var mdate = new Date();
@@ -458,23 +562,21 @@
       let min = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
       let sec = Math.floor((timeElapsed % (1000 * 60)) / 1000);
 
-      if(hours<1)
+      if (hours < 1)
         document.getElementById("elapsedTimer").textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
-      else 
+      else
         document.getElementById("elapsedTimer").textContent = (hours < 10 ? "0" + hours : hours) + ":" + (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
 
       // Control if it is a training session
-      if(trainingSession !== null)
-      { 
+      if (trainingSession !== null) {
 
-       //console.log('> Training session active');
+        //console.log('> Training session active');
 
         for (let i = 0; i < trainingContent.phases.length; i++) {
           const phase = trainingContent.phases[i];
-          
+
           //launch a new phase of the training, update watt, etc...
-          if( phase.start < (timeElapsed/1000) && trainingCurrentPhase < i)
-          { 
+          if (phase.start < (timeElapsed / 1000) && trainingCurrentPhase < i) {
             console.log('> Phase ' + i + ' start , value' + phase.value + ' W');
             trainingCurrentPhase = i;
             currentPower = parseInt(phase.value * myTrainingFTP);
@@ -488,34 +590,32 @@
         //console.log('> Training session active phase '+ trainingCurrentPhase);
 
         // Build list of current and 4 next phases
-        let initText ="";
+        let initText = "";
         let initRefTime = 0;
         let trainingNextSteps = "";
         for (let y = trainingCurrentPhase; y < trainingContent.phases.length; y++) {
           let phase = null
-          if(trainingCurrentPhase == -1) phase = trainingContent.phases[0];
+          if (trainingCurrentPhase == -1) phase = trainingContent.phases[0];
           else phase = trainingContent.phases[y];
 
-          if(y == trainingCurrentPhase)
-          {
-            initText = (phase.value*100) + '% FTP';
-            initRefTime = (timeElapsed/1000);
+          if (y == trainingCurrentPhase) {
+            initText = (phase.value * 100) + '% FTP';
+            initRefTime = (timeElapsed / 1000);
           }
-          else
-          {
+          else {
             duration = parseInt(phase.start - initRefTime);
-            let min = Math.floor((duration % ( 60 * 60)) / ( 60));
-            let sec = Math.floor((duration % ( 60)));
+            let min = Math.floor((duration % (60 * 60)) / (60));
+            let sec = Math.floor((duration % (60)));
 
-            let durationTextFormat  = "";
+            let durationTextFormat = "";
 
-            if(min<1)
-            durationTextFormat =  (sec < 10 ? "0" + sec : sec) + 'sec';
-            else if(sec == 0) durationTextFormat = min + "min";
-            else 
-            durationTextFormat =  min + "min " + (sec < 10 ? "0" + sec : sec) + 'sec';
+            if (min < 1)
+              durationTextFormat = (sec < 10 ? "0" + sec : sec) + 'sec';
+            else if (sec == 0) durationTextFormat = min + "min";
+            else
+              durationTextFormat = min + "min " + (sec < 10 ? "0" + sec : sec) + 'sec';
 
-            if(trainingNextSteps == "")
+            if (trainingNextSteps == "")
               trainingNextSteps = '<br><span style="font-size: 2vw">' + durationTextFormat + ' @ ' + initText + "</span>";
             else
               trainingNextSteps += '<br>' + durationTextFormat + ' @ ' + initText;
@@ -523,16 +623,15 @@
             initText = (phase.value * 100) + '% FTP';
 
             // launch sound play
-            if(duration == 2 || duration == 1) {
+            if (duration == 2 || duration == 1) {
               audio_bip1.play();
             }
-            if(duration == 0) {
+            if (duration == 0) {
               audio_bip2.play();
             }
           }
 
-          if((y-trainingCurrentPhase) >= 5) 
-          {
+          if ((y - trainingCurrentPhase) >= 5) {
             trainingNextSteps += '<br>...';
             break; // only 5 next steps
           }
@@ -540,16 +639,16 @@
         document.getElementById("trainingSessionNextSteps").innerHTML = trainingNextSteps;
 
 
-        
+
       }
-  };
+    };
 
 
-  var handlerGraph = function() {
-    //dataPowerDisplay.push(currentPower);
-    dataPowerDisplay.push([(timeElapsed/1000), currentPower]);
-    updateCharts();
-  };
+    var handlerGraph = function () {
+      //dataPowerDisplay.push(currentPower);
+      dataPowerDisplay.push([(timeElapsed / 1000), currentPower]);
+      updateCharts();
+    };
 
 
     /* This function will be called when `readValue` resolves and
@@ -557,32 +656,30 @@
      * listener has been added. */
     function handleControlPointChanged(event) {
       let value = event.target.value;
-        let a = [];
-        // Convert raw data bytes to hex values just for the sake of showing something.
-        // In the "real" world, you'd use data.getUint8, data.getUint16 or even
-        // TextDecoder to process raw data bytes.
-        for (let i = 0; i < value.byteLength; i++) {
-            a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
-        }
-
-        if(samplingLog >0)
-        {
-          samplingLog--;
-          console.log('ControlPoint> ' + a.join(' '));
-        }
+      let a = [];
+      // Convert raw data bytes to hex values just for the sake of showing something.
+      // In the "real" world, you'd use data.getUint8, data.getUint16 or even
+      // TextDecoder to process raw data bytes.
+      for (let i = 0; i < value.byteLength; i++) {
+        a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
       }
-        
-  
+
+      if (samplingLog > 0) {
+        samplingLog--;
+        console.log('ControlPoint> ' + a.join(' '));
+      }
+    }
+
+
     function handleNotifications(event) {
 
       const res = indoorBikeData.decode(event);
 
-      if(samplingLog >0)
-        {
-          samplingLog--;
-          console.log(res);
-        }
- 
+      if (samplingLog > 0) {
+        samplingLog--;
+        console.log(res);
+      }
+
       dataSpeed.push(res.speed);
       dataPower.push(res.power);
       dataCadence.push(res.cadence);
@@ -604,27 +701,27 @@
       document.querySelector('#valueTabCadence').textContent = res.cadence;
       document.querySelector('#valueTabCadenceAVG').textContent = getAvg(dataCadence);
       document.querySelector('#valueTabCadenceBEST').textContent = getMax(dataCadence);
-       
+
       updateActivity();
 
     }
-    
-</script>
+
+  </script>
 
 
 
-<script>
+  <script>
 
     // Initialize the activity
-    document.querySelector('#startConnection').addEventListener('click', function() {
+    document.querySelector('#startConnection').addEventListener('click', function () {
       if (isWebBluetoothEnabled()) {
         connectBLE();
         requestWakeLock();
       }
-    }); 
+    });
 
     // Finish the activity
-    document.querySelector('#stopButton').addEventListener('click', function() {
+    document.querySelector('#stopButton').addEventListener('click', function () {
       if (confirm('Are you sure you want to stop?')) {
         //Close BLE connection
         if (connectableDevice.isConnected()) {
@@ -637,11 +734,10 @@
         document.querySelector('#valueTabPower').textContent = power;
 
 
-        if(wakeLock != null)
-        {
+        if (wakeLock != null) {
           wakeLock.release(); //await...
           //console.log('Wakelock stopped.');
-          wakeLock = null; 
+          wakeLock = null;
         }
 
         document.getElementById("startConnection").textContent = "Connect";
@@ -650,8 +746,7 @@
         clearInterval(intervalGraphId);
 
         //update the activity name if training session
-        if(trainingSession == true)
-        {
+        if (trainingSession == true) {
           activity.name = "BullWatt : " + trainingContent.training_name;
         }
 
@@ -660,13 +755,11 @@
         const activityJson = JSON.stringify(activity);
         let activities = null;
         let activitiesJson = localStorage.activities;
-        if(activitiesJson == null || activitiesJson == "")
-        {
+        if (activitiesJson == null || activitiesJson == "") {
           // init collection
           activities = JSON.parse('{"activities": []}');
         }
-        else 
-        {    
+        else {
           activities = JSON.parse(activitiesJson);
         }
         activities.activities.push(activity);
@@ -690,89 +783,86 @@
         const popup_strava_upload = document.getElementById('popup_strava_upload');
 
         // SEND TO STRAVA
-                    const url = '/service/strava_upload.php';
+        const url = '/service/strava_upload.php';
 
-                    activity["UUID"] = myUUID;
-                    
+        activity["UUID"] = myUUID;
 
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', url);
-                    xhr.setRequestHeader('Content-Type', 'application/json');
 
-                    xhr.onload = function() {
-                        if (xhr.status >= 200 && xhr.status < 300) {
-                            console.log('Reponse:', JSON.parse(xhr.responseText));
-                            let obj = JSON.parse(xhr.responseText);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        xhr.setRequestHeader('Content-Type', 'application/json');
 
-                            popup_tcx_link.href = obj.filename + "?dl=ok";
+        xhr.onload = function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            console.log('Reponse:', JSON.parse(xhr.responseText));
+            let obj = JSON.parse(xhr.responseText);
 
-                            if(obj.status_strava == "ok")
-                            {
-                              popup_strava_upload.textContent = "Strava upload OK";
-                            }
-                            
+            popup_tcx_link.href = obj.filename + "?dl=ok";
 
-                            console.log(obj);
-                        } else {
-                            console.error('Erreur:', xhr.status, xhr.statusText);
-                        }
-                    };
+            if (obj.status_strava == "ok") {
+              popup_strava_upload.textContent = "Strava upload OK";
+            }
 
-                    xhr.onerror = function() {
-                        console.error('Network Error');
-                    };
 
-                    xhr.send(JSON.stringify(activity));
+            console.log(obj);
+          } else {
+            console.error('Erreur:', xhr.status, xhr.statusText);
+          }
+        };
+
+        xhr.onerror = function () {
+          console.error('Network Error');
+        };
+
+        xhr.send(JSON.stringify(activity));
 
 
       } else {
         // Do nothing!
         console.log('Do not stop.');
       }
-      
+
 
     });
 
 
-    document.querySelector('#buttonIncreaseWatt').addEventListener('click', function() {
-        updateFTP(10);
-        updateWatt(10);
+    document.querySelector('#buttonIncreaseWatt').addEventListener('click', function () {
+      updateFTP(10);
+      updateWatt(10);
     });
 
-    document.querySelector('#buttonDecreaseWatt').addEventListener('click', function() {
-        updateFTP(-10);
-        updateWatt(-10);
+    document.querySelector('#buttonDecreaseWatt').addEventListener('click', function () {
+      updateFTP(-10);
+      updateWatt(-10);
     });
 
-   function updateFTP(val){
+    function updateFTP(val) {
       // Update global training if in session
-      if(trainingSession == true)
-        {
-          myTrainingFTP = myTrainingFTP + val;
-          calculateGraph();
-        }
+      if (trainingSession == true) {
+        myTrainingFTP = myTrainingFTP + val;
+        calculateGraph();
+      }
     }
 
-    async function updateWatt(val)
-    {
-      if (connectableDevice.isConnected()) { 
-        
-        
+    async function updateWatt(val) {
+      if (connectableDevice.isConnected()) {
+
+
         currentPower = currentPower + val;
-        if(currentPower<0) currentPower = 0;
-        if(currentPower>600) currentPower = 600;
+        if (currentPower < 0) currentPower = 0;
+        if (currentPower > 600) currentPower = 600;
 
         console.log('Resistance set to currentPower W');
 
         document.querySelector('#valueTabControlWatt').textContent = currentPower + " W";
         //await setResistance(controlPointCharacteristic, currentPower);
-        connectableDevice.services.trainer.setPowerTarget({power: currentPower});
+        connectableDevice.services.trainer.setPowerTarget({ power: currentPower });
         handlerGraph();
       }
       else console.log('Not connected');
 
     }
-  
+
 
     // Function that attempts to request a wake lock.
     const requestWakeLock = async () => {
@@ -790,333 +880,331 @@
 
     // check wakelock status when the user's focus is back to your tab (website) again
     window.addEventListener("focus", () => {
-        if( wakeLock === null) {
-          requestWakeLock();
-        } else {
-          console.log('Wake Lock is already active');
-        }
+      if (wakeLock === null) {
+        requestWakeLock();
+      } else {
+        console.log('Wake Lock is already active');
+      }
     });
 
 
-   
+
     function isWebBluetoothEnabled() {
       if (navigator.bluetooth) {
-        
+
         return true;
       } else {
         ChromeSamples.setStatus('Web Bluetooth API is not available.\n' +
-            'Please make sure the "Experimental Web Platform features" flag is enabled.');
+          'Please make sure the "Experimental Web Platform features" flag is enabled.');
         return false;
       }
     }
-    
+
 
   </script>
 
-    <!-- source https://gist.github.com/GraemeFulton/22fc3fb72a14ce4711c2 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.js"></script>
-    <script type="module" src="./assets/connectable.js"></script>
-    <script src="./assets/utils.js"></script>
-    <script src="./assets/training.js"></script>
+  <!-- source https://gist.github.com/GraemeFulton/22fc3fb72a14ce4711c2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.js"></script>
+  <script type="module" src="./assets/connectable.js"></script>
+  <script src="./assets/utils.js"></script>
+  <script src="./assets/training.js"></script>
 
 
-    <script>
+  <script>
 
-      //declare global variables
-      var trainingSession = null;
-      var trainingId = null;
-      var trainingContent = null;
-      var trainingGraph = null;
-      var trainingCurrentPhase = -1;
-      var myTrainingFTP = getFTP();
+    //declare global variables
+    var trainingSession = null;
+    var trainingId = null;
+    var trainingContent = null;
+    var trainingGraph = null;
+    var trainingCurrentPhase = -1;
+    var myTrainingFTP = getFTP();
 
-        // Appeler la fonction lorsque la page est chargée
-       // window.onload = getParameters;
-       getParameters();
+    // Appeler la fonction lorsque la page est chargée
+    // window.onload = getParameters;
+    getParameters();
 
-        //Init chart
-        var domPower = document.getElementById('graphPower');
-    
-       var chartPower = echarts.init(domPower);
+    //Init chart
+    var domPower = document.getElementById('graphPower');
 
-    
-        var option;
-        option = {
-          //title: {
-          //    text: 'Power'
-          //  },
-        backgroundColor: '#0000',
-        /*xAxis: {
-            type: 'value',
-            splitLine:{ show: false },
-            axisLine: { show: false },
-            axisTick: { show: false },
-            axisLabel: { show: false }
-        },*/
-        xAxis: {
-            type: 'value', 
-            splitLine:{ show: false },
-            axisLine: { show: false },
-            axisTick: { show: false },
-            axisLabel: {
-                formatter: function (value, index) {
-                    // value is the data value in seconds
-                    var minutes = value / 60;
-                    return minutes.toFixed(0) + ' min'; // Format to one decimal place and add ' min'
-                }
-            }
-        },
-        yAxis: {
-            type: 'value',
-            min: 'dataMin'
-        },
-        visualMap: {
-              show: false,
-              pieces: [
-                {
-                  gt: 0,
-                  lte: .6 * myTrainingFTP,
-                  color: '#93CE07'
-                },
-                {
-                  gt: .6 * myTrainingFTP,
-                  lte: .75 * myTrainingFTP,
-                  color: '#FBDB0F'
-                },
-                {
-                  gt: .75 * myTrainingFTP,
-                  lte: .9 * myTrainingFTP,
-                  color: '#FC7D02'
-                },
-                {
-                  gt: .9 * myTrainingFTP,
-                  lte: 1.05 * myTrainingFTP,
-                  color: '#FD0100'
-                },
-                {
-                  gt: 1.05 * myTrainingFTP,
-                  lte: 1.2 * myTrainingFTP,
-                  color: '#AA069F'
-                },
-                {
-                  gt: 1.2 * myTrainingFTP,
-                  color: '#AC3B2A'
-                }
-              ]
-            },
-        series: [
-            {
-            data: [],
-            type: 'line',
-            //lineStyle: { // Style de la ligne
-            //  color: 'yellow' // Couleur jaune
-            //},
-            smooth: false,
-            animationDuration : 0,
-            animationDurationUpdate : 0,
-            animation: false
-            }
-        ]
-        };
-    
-
-        chartPower.setOption(option);
-        window.addEventListener('resize', chartPower.resize);
+    var chartPower = echarts.init(domPower);
 
 
-        function updateCharts()
-        {
-            if(trainingSession == null)
-            {
-              option.series[0].data = dataPowerDisplay;
-              option.series[0].step = 'end';
-            }
-            else
-            {
-              //option.series[0].data = trainingGraph;
-              option.series[0].data = mergeArraysByDuration(dataPowerDisplay, trainingGraph, (timeElapsed/1000));
-              option.series[0].step = 'end';
-
-
-              option.series[0].markLine = { // Ajout de la configuration markLine
-                label: {
-                    show: false,
-                  },
-                  data: [
-                    {
-                      xAxis: (timeElapsed/1000), // Valeur de l'axe des x où afficher la ligne
-                      lineStyle: {
-                        color: 'red',
-                        width: 2,
-                        type: 'dotted' //or solid
-                      }
-                    }
-                  ]
-                }; 
-            }
-
-            chartPower.setOption(option);
+    var option;
+    option = {
+      //title: {
+      //    text: 'Power'
+      //  },
+      backgroundColor: '#0000',
+      /*xAxis: {
+          type: 'value',
+          splitLine:{ show: false },
+          axisLine: { show: false },
+          axisTick: { show: false },
+          axisLabel: { show: false }
+      },*/
+      xAxis: {
+        type: 'value',
+        splitLine: { show: false },
+        axisLine: { show: false },
+        axisTick: { show: false },
+        axisLabel: {
+          formatter: function (value, index) {
+            // value is the data value in seconds
+            var minutes = value / 60;
+            return minutes.toFixed(0) + ' min'; // Format to one decimal place and add ' min'
+          }
         }
-
-
-        window.addEventListener( "keydown",  (event) => {
-          if (event.defaultPrevented) {
-            return; // Do nothing if the event was already processed
+      },
+      yAxis: {
+        type: 'value',
+        min: 'dataMin'
+      },
+      visualMap: {
+        show: false,
+        pieces: [
+          {
+            gt: 0,
+            lte: .6 * myTrainingFTP,
+            color: '#93CE07'
+          },
+          {
+            gt: .6 * myTrainingFTP,
+            lte: .75 * myTrainingFTP,
+            color: '#FBDB0F'
+          },
+          {
+            gt: .75 * myTrainingFTP,
+            lte: .9 * myTrainingFTP,
+            color: '#FC7D02'
+          },
+          {
+            gt: .9 * myTrainingFTP,
+            lte: 1.05 * myTrainingFTP,
+            color: '#FD0100'
+          },
+          {
+            gt: 1.05 * myTrainingFTP,
+            lte: 1.2 * myTrainingFTP,
+            color: '#AA069F'
+          },
+          {
+            gt: 1.2 * myTrainingFTP,
+            color: '#AC3B2A'
           }
+        ]
+      },
+      series: [
+        {
+          data: [],
+          type: 'line',
+          //lineStyle: { // Style de la ligne
+          //  color: 'yellow' // Couleur jaune
+          //},
+          smooth: false,
+          animationDuration: 0,
+          animationDurationUpdate: 0,
+          animation: false
+        }
+      ]
+    };
 
-          switch (event.key) {
-            case "ArrowDown":
-              // Do something for "down arrow" key press.
-              updateFTP(-10);
-              updateWatt(-10);
-              break;
-            case "ArrowUp":
-              // Do something for "up arrow" key press.
-              updateFTP(10);
-              updateWatt(10);
-              break;
-            case "ArrowLeft":
-              // Do something for "left arrow" key press.
-              updateFTP(-1);
-              updateWatt(-1);
-              break;
-            case "ArrowRight":
-              // Do something for "right arrow" key press.
-              updateFTP(1);
-              updateWatt(1);
-              break;
-            default:
-              return; // Quit when this doesn't handle the key event.
-          }
 
-          // Cancel the default action to avoid it being handled twice
-          event.preventDefault();
-        },
-        true,
-);
+    chartPower.setOption(option);
+    window.addEventListener('resize', chartPower.resize);
+
+
+    function updateCharts() {
+      if (trainingSession == null) {
+        option.series[0].data = dataPowerDisplay;
+        option.series[0].step = 'end';
+      }
+      else {
+        //option.series[0].data = trainingGraph;
+        option.series[0].data = mergeArraysByDuration(dataPowerDisplay, trainingGraph, (timeElapsed / 1000));
+        option.series[0].step = 'end';
+
+
+        option.series[0].markLine = { // Ajout de la configuration markLine
+          label: {
+            show: false,
+          },
+          data: [
+            {
+              xAxis: (timeElapsed / 1000), // Valeur de l'axe des x où afficher la ligne
+              lineStyle: {
+                color: 'red',
+                width: 2,
+                type: 'dotted' //or solid
+              }
+            }
+          ]
+        };
+      }
+
+      chartPower.setOption(option);
+    }
+
+
+    window.addEventListener("keydown", (event) => {
+      if (event.defaultPrevented) {
+        return; // Do nothing if the event was already processed
+      }
+
+      switch (event.key) {
+        case "ArrowDown":
+          // Do something for "down arrow" key press.
+          updateFTP(-10);
+          updateWatt(-10);
+          break;
+        case "ArrowUp":
+          // Do something for "up arrow" key press.
+          updateFTP(10);
+          updateWatt(10);
+          break;
+        case "ArrowLeft":
+          // Do something for "left arrow" key press.
+          updateFTP(-1);
+          updateWatt(-1);
+          break;
+        case "ArrowRight":
+          // Do something for "right arrow" key press.
+          updateFTP(1);
+          updateWatt(1);
+          break;
+        default:
+          return; // Quit when this doesn't handle the key event.
+      }
+
+      // Cancel the default action to avoid it being handled twice
+      event.preventDefault();
+    },
+      true,
+    );
 
     // Pause/Resume button functionality
-    document.getElementById('pauseResumeButton').addEventListener('click', function() {
-        if (isPaused) {
-            // Resume functionality
-            isPaused = false;
-            
-            // Calculate total paused time and add it to the running total
-            if (pauseStartTime) {
-                pausedTime += new Date().getTime() - pauseStartTime.getTime();
-                pauseStartTime = null;
-            }
-            
-            // Change button text back to "Pause"
-            document.getElementById('pauseResumeButton').textContent = 'Pause';
-            
-            console.log('Session resumed');
-        } else {
-            // Pause functionality
-            isPaused = true;
-            pauseStartTime = new Date();
-            
-            // Change button text to "Resume"
-            document.getElementById('pauseResumeButton').textContent = 'Resume';
-            
-            console.log('Session paused');
+    document.getElementById('pauseResumeButton').addEventListener('click', function () {
+      if (isPaused) {
+        // Resume functionality
+        isPaused = false;
+
+        // Calculate total paused time and add it to the running total
+        if (pauseStartTime) {
+          pausedTime += new Date().getTime() - pauseStartTime.getTime();
+          pauseStartTime = null;
         }
+
+        // Change button text back to "Pause"
+        document.getElementById('pauseResumeButton').textContent = 'Pause';
+
+        console.log('Session resumed');
+      } else {
+        // Pause functionality
+        isPaused = true;
+        pauseStartTime = new Date();
+
+        // Change button text to "Resume"
+        document.getElementById('pauseResumeButton').textContent = 'Resume';
+
+        console.log('Session paused');
+      }
     });
 
-    
-</script>    
+
+  </script>
 
 
 
   <script>
-        //Declare three.js variables
-	var camera, scene, renderer, stars=[];
+    //Declare three.js variables
+    var camera, scene, renderer, stars = [];
 
     var inverted_power = 300;
-	 
-     //assign three.js objects to each variable
-     function init(){
-          
-         //camera
-         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-         camera.position.z = 5;	 
- 
-         //scene
-         scene = new THREE.Scene();
-          
-         //renderer
-         renderer = new THREE.WebGLRenderer();
-         //set the size of the renderer
-         renderer.setSize( window.innerWidth, window.innerHeight );
-          
-         //add the renderer to the html document body
-         document.body.appendChild( renderer.domElement );
-     }
- 
- 
-     function addSphere(){
- 
-                 // The loop will move from z position of -1000 to z position 1000, adding a random particle at each position. 
-                 for ( var z= -1000; z < 1000; z+=20 ) {
-         
-                     // Make a sphere (exactly the same as before). 
-                     //var geometry   = new THREE.SphereGeometry(2, 32, 32)
-                     var geometry   = new THREE.IcosahedronGeometry(2,0);
-                     
-                     var material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
-                     var sphere = new THREE.Mesh(geometry, material)
-         
-                     // This time we give the sphere random x and y positions between -500 and 500
-                     sphere.position.x = Math.random() * 1000 - 500;
-                     sphere.position.y = Math.random() * 1000 - 500;
-         
-                     // Then set the z position to where it is in the loop (distance of camera)
-                     sphere.position.z = z;
-         
-                     // scale it up a bit
-                     sphere.scale.x = sphere.scale.y = 2;
-         
-                     //add the sphere to the scene
-                     scene.add( sphere );
-         
-                     //finally push it to the stars array 
-                     stars.push(sphere); 
-                 }
-     }
- 
-     function animateStars() { 
-                 
-         // loop through each star
-         for(var i=0; i<stars.length; i++) {
-             
-             star = stars[i]; 
-                 
-             // and move it forward dependent on the mouseY position. 
-             star.position.z +=  i * Math.pow((power + 10), 3) / Math.pow(inverted_power, 3);
-                 
-             // if the particle is too close move it to the back
-             if(star.position.z>1000) star.position.z-=2000; 
-             
-         }
-     
-     }
- 
-     function render() {
-         //get the frame
-         requestAnimationFrame( render );
- 
-         //render the scene
-         renderer.render( scene, camera );
-             animateStars();
- 
-     }
-     
-     init();
-     addSphere();
-     render();
-  </script>
-    
 
-  </body>
+    //assign three.js objects to each variable
+    function init() {
+
+      //camera
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+      camera.position.z = 5;
+
+      //scene
+      scene = new THREE.Scene();
+
+      //renderer
+      renderer = new THREE.WebGLRenderer();
+      //set the size of the renderer
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      //add the renderer to the html document body
+      document.body.appendChild(renderer.domElement);
+    }
+
+
+    function addSphere() {
+
+      // The loop will move from z position of -1000 to z position 1000, adding a random particle at each position. 
+      for (var z = -1000; z < 1000; z += 20) {
+
+        // Make a sphere (exactly the same as before). 
+        //var geometry   = new THREE.SphereGeometry(2, 32, 32)
+        var geometry = new THREE.IcosahedronGeometry(2, 0);
+
+        var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        var sphere = new THREE.Mesh(geometry, material)
+
+        // This time we give the sphere random x and y positions between -500 and 500
+        sphere.position.x = Math.random() * 1000 - 500;
+        sphere.position.y = Math.random() * 1000 - 500;
+
+        // Then set the z position to where it is in the loop (distance of camera)
+        sphere.position.z = z;
+
+        // scale it up a bit
+        sphere.scale.x = sphere.scale.y = 2;
+
+        //add the sphere to the scene
+        scene.add(sphere);
+
+        //finally push it to the stars array 
+        stars.push(sphere);
+      }
+    }
+
+    function animateStars() {
+
+      // loop through each star
+      for (var i = 0; i < stars.length; i++) {
+
+        star = stars[i];
+
+        // and move it forward dependent on the mouseY position. 
+        star.position.z += i * Math.pow((power + 10), 3) / Math.pow(inverted_power, 3);
+
+        // if the particle is too close move it to the back
+        if (star.position.z > 1000) star.position.z -= 2000;
+
+      }
+
+    }
+
+    function render() {
+      //get the frame
+      requestAnimationFrame(render);
+
+      //render the scene
+      renderer.render(scene, camera);
+      animateStars();
+
+    }
+
+    init();
+    addSphere();
+    render();
+  </script>
+
+
+</body>
+
 </html>
