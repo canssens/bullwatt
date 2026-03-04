@@ -205,26 +205,16 @@
 
 
   <div id="containerTimer">
+    <button id="startConnection" class="button">Start</button>
+    <button id="pauseResumeButton" class="button" disabled>Pause</button>
+    <button id="stopButton" class="button" disabled>Stop</button>
+
     <table style="width:100%">
       <tr>
-        <td>TIME</td>
-        <td>
-          CONTROL
-          <br />
-          <button id="startConnection" class="button">Start</button>
-          <button id="pauseResumeButton" class="button" disabled>Pause</button>
-          <button id="stopButton" class="button" disabled>Stop</button>
-
-        </td>
-        <td>DISTANCE</td>
-      </tr>
-      <tr>
-        <td width="33%" valign="top">
+        <td width="33%">TIME
           <div id="elapsedTimer">00:00</div>
-          <div id="trainingSessionNextSteps" class="indicators">
-          </div>
         </td>
-        <td width="33%" valign="top">
+        <td width="33%">
           <table>
             <tr>
               <td>
@@ -239,17 +229,16 @@
               </td>
             </tr>
           </table>
-
         </td>
-
-
-        <td width="33%" valign="top">
+        <td width="33%">DISTANCE
+          <br />
           <span id="valueDistance">0</span> KM
         </td>
       </tr>
     </table>
 
-
+    <div id="trainingSessionNextSteps" class="indicators">
+    </div>
   </div>
 
 
@@ -616,7 +605,7 @@
               durationTextFormat = min + "min " + (sec < 10 ? "0" + sec : sec) + 'sec';
 
             if (trainingNextSteps == "")
-              trainingNextSteps = '<br><span style="font-size: 2vw">' + durationTextFormat + ' @ ' + initText + "</span>";
+              trainingNextSteps = '<br><span style="font-size: 4vw">' + durationTextFormat + ' @ ' + initText + "</span>";
             else
               trainingNextSteps += '<br>' + durationTextFormat + ' @ ' + initText;
             initRefTime = phase.start;
