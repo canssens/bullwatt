@@ -42,6 +42,14 @@
       margin-right: auto;
     }
 
+    /* Metric cell: always lay out AVG | VALUE | BEST in a horizontal row */
+    .metric-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+    }
+
     #containerTimer {
       position: absolute;
       top: 0;
@@ -137,39 +145,17 @@
         overflow: hidden;
       }
 
-      /* Prevent inner metric tables from overflowing their parent td */
-      #containerData table table {
-        width: 100%;
-        table-layout: fixed;
-      }
-
-      /* Each outer td already has width:33% — ensure content wraps inside it */
-      #containerData>table>tbody>tr>td,
-      #containerData>table>tr>td {
-        overflow: hidden;
-        max-width: 0;
-        width: 33%;
+      /* Hide AVG / BEST columns on mobile */
+      .metric-side {
+        display: none;
       }
 
       /* Main metric values (CADENCE / POWER / SPEED) */
       #valueTabCadence,
       #valueTabPower,
       #valueTabSpeed {
-        font-size: 200% !important;
-      }
-
-      /* AVG / BEST indicator labels and values */
-      .indicators {
-        font-size: 80% !important;
-      }
-
-      #valueTabCadenceAVG,
-      #valueTabCadenceBEST,
-      #valueTabPowerAVG,
-      #valueTabPowerBEST,
-      #valueTabSpeedAVG,
-      #valueTabSpeedBEST {
-        font-size: 4vw !important;
+        font-size: 14vw !important;
+        line-height: 1;
       }
 
       /* --- Buttons: large touch targets --- */
@@ -272,68 +258,50 @@
         <td>SPEED</td>
       </tr>
       <tr>
+        <!-- CADENCE -->
         <td width="33%">
-          <table>
-            <tr>
-              <td>
-                <span class="indicators">AVG</span>
-                <br />
-                <span id="valueTabCadenceAVG">0</span>
-              </td>
-              <td id="valueTabCadence" style="font-size: 300%;">
-                0
-              </td>
-              <td>
-                <span class="indicators">BEST</span>
-                <br />
-                <span id="valueTabCadenceBEST">0</span>
-              </td>
-            </tr>
-          </table>
+          <div class="metric-cell">
+            <div class="metric-side">
+              <span class="indicators">AVG</span><br />
+              <span id="valueTabCadenceAVG">0</span>
+            </div>
+            <div id="valueTabCadence" style="font-size: 300%;">0</div>
+            <div class="metric-side">
+              <span class="indicators">BEST</span><br />
+              <span id="valueTabCadenceBEST">0</span>
+            </div>
+          </div>
         </td>
 
-
+        <!-- POWER -->
         <td width="33%">
-          <table>
-            <tr>
-              <td>
-                <span class="indicators">AVG</span>
-                <br />
-                <span id="valueTabPowerAVG">0</span>
-              </td>
-              <td id="valueTabPower" style="font-size: 300%;">
-                0
-              </td>
-              <td>
-                <span class="indicators">BEST</span>
-                <br />
-                <span id="valueTabPowerBEST">0</span>
-              </td>
-            </tr>
-          </table>
+          <div class="metric-cell">
+            <div class="metric-side">
+              <span class="indicators">AVG</span><br />
+              <span id="valueTabPowerAVG">0</span>
+            </div>
+            <div id="valueTabPower" style="font-size: 300%;">0</div>
+            <div class="metric-side">
+              <span class="indicators">BEST</span><br />
+              <span id="valueTabPowerBEST">0</span>
+            </div>
+          </div>
         </td>
 
+        <!-- SPEED -->
         <td width="33%">
-          <table>
-            <tr>
-              <td>
-                <span class="indicators">AVG</span>
-                <br />
-                <span id="valueTabSpeedAVG">0</span>
-              </td>
-              <td id="valueTabSpeed" style="font-size: 300%;">
-                0
-              </td>
-              <td>
-                <span class="indicators">BEST</span>
-                <br />
-                <span id="valueTabSpeedBEST">0</span>
-              </td>
-            </tr>
-          </table>
-
+          <div class="metric-cell">
+            <div class="metric-side">
+              <span class="indicators">AVG</span><br />
+              <span id="valueTabSpeedAVG">0</span>
+            </div>
+            <div id="valueTabSpeed" style="font-size: 300%;">0</div>
+            <div class="metric-side">
+              <span class="indicators">BEST</span><br />
+              <span id="valueTabSpeedBEST">0</span>
+            </div>
+          </div>
         </td>
-
       </tr>
     </table>
 
