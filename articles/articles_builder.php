@@ -8,7 +8,7 @@ $articleDir = __DIR__ ;
 // Example data for a guide (adapt as needed)
 $articleData = [
     [
-        'title' => 'General Information about BullWatt: A Free, Web-Based Indoor Cycling Training Tool.',
+        'title' => 'General Information about BullWatt: A Free, Web-Based Indoor Cycling Training Tool',
         'content' => './html_blocks/production-information.html',
         'slug' => 'production-information.html'
     ],
@@ -18,7 +18,7 @@ $articleData = [
         'slug' => 'bullwatt-vs-zwift.html'
     ],
     [
-        'title' => 'The Quick Guide: How to Train Indoors on Web Without a Subscription.',
+        'title' => 'The Quick Guide: How to Train Indoors on Web Without a Subscription',
         'content' => './html_blocks/bullwatt-no-subscription.html',
         'slug' => 'bullwatt-no-subscription.html'
     ],
