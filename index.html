@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BullWatt - Fast and simple tool to control your indoor cycling training by watt with your home trainer or connected bike. Perfect for structured workouts with precise power targets.">
-    <meta name="keywords" content="indoor cycling, home trainer, connected bike, watt control, ERG mode, cycling workout, power training, cycling app, fitness">
+    <meta name="description"
+        content="BullWatt - Fast and simple tool to control your indoor cycling training by watt with your home trainer or connected bike. Perfect for structured workouts with precise power targets.">
+    <meta name="keywords"
+        content="indoor cycling, home trainer, connected bike, watt control, ERG mode, cycling workout, power training, cycling app, fitness">
     <meta name="author" content="Charles Anssens">
     <meta name="robots" content="index, follow">
     <title>BullWatt - Training sessions for Indoor Cycling with connected Home trainer</title>
-    
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -28,38 +31,39 @@
             --dark-color: #2c3e50;
             --light-color: #f8f9fc;
         }
-        
+
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fc;
         }
-        
+
         /* Navigation */
         .navbar {
             padding: 1rem 0;
             background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--dark-color);
         }
-        
+
         .nav-link {
             font-weight: 500;
             color: var(--dark-color);
             margin: 0 0.5rem;
             transition: all 0.3s ease;
         }
-        
-        .nav-link:hover, .nav-link.active {
+
+        .nav-link:hover,
+        .nav-link.active {
             color: var(--primary-color);
         }
-        
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #4e73df 0%, #2c3e50 100%);
@@ -68,19 +72,19 @@
             margin-bottom: 4rem;
             border-radius: 0 0 20px 20px;
         }
-        
+
         .hero h1 {
             font-weight: 700;
             margin-bottom: 1.5rem;
             font-size: 2.5rem;
         }
-        
+
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
-        
+
         .btn-primary {
             background-color: var(--accent-color);
             border: none;
@@ -90,13 +94,13 @@
             transition: all 0.3s ease;
             color: black;
         }
-        
+
         .btn-primary:hover {
             background-color: #e05f2d;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
         }
-        
+
         /* Badges */
         .badge-container {
             display: flex;
@@ -105,7 +109,7 @@
             justify-content: center;
             margin: 2rem 0;
         }
-        
+
         .badge {
             padding: 0.5rem 1rem;
             border-radius: 50px;
@@ -114,12 +118,12 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         /* Sections */
         .section {
             padding: 4rem 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
@@ -127,7 +131,7 @@
             color: var(--dark-color);
             position: relative;
         }
-        
+
         .section-title:after {
             content: '';
             display: block;
@@ -137,7 +141,7 @@
             margin: 1rem auto 0;
             border-radius: 2px;
         }
-        
+
         /* Cards */
         .card {
             border: none;
@@ -147,24 +151,24 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             height: 100%;
         }
-        
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .card-title {
             font-weight: 600;
             color: var(--dark-color);
         }
-        
+
         /* Features */
         .feature-icon {
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
-        
+
         /* FAQ */
         .accordion-item {
             margin-bottom: 1rem;
@@ -172,13 +176,13 @@
             border-radius: 8px !important;
             overflow: hidden;
         }
-        
+
         .accordion-button:not(.collapsed) {
             background-color: rgba(78, 115, 223, 0.05);
             color: var(--primary-color);
             font-weight: 600;
         }
-        
+
         /* Footer */
         footer {
             background-color: var(--dark-color);
@@ -186,19 +190,19 @@
             padding: 3rem 0 2rem;
             margin-top: 4rem;
         }
-        
+
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             margin: 0 1rem 1rem 0;
             transition: all 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: white;
             text-decoration: none;
         }
-        
+
         .social-links a {
             display: inline-flex;
             align-items: center;
@@ -211,38 +215,40 @@
             margin-right: 0.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .social-links a:hover {
             background: var(--accent-color);
             transform: translateY(-3px);
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero {
                 padding: 4rem 0;
             }
-            
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .section {
                 padding: 3rem 0;
             }
         }
+
         /* Browser Warning Banner */
         .browser-warning {
             display: none;
             background-color: #ffc107;
-            
+
             font-weight: 500;
             position: sticky;
             top: 0;
-            z-index: 1080; /* Above navbar */
+            z-index: 1080;
+            /* Above navbar */
             border-bottom: 1px solid #ffeeba;
         }
-        
+
         .browser-warning.show {
             display: block;
         }
@@ -255,15 +261,16 @@
             // Check if 'chrome' is in the user agent and it's not Edge or other Chrome-based browsers
             return !userAgent.includes('chrome') || userAgent.includes('edg/');
         }
-        
+
         // Show warning banner if not using Chrome
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             if (isNotChrome()) {
                 document.getElementById('browserWarning').classList.add('show');
             }
         });
     </script>
 </head>
+
 <body class="d-flex flex-column h-100">
     <!-- Browser Warning Banner -->
     <div id="browserWarning" class="browser-warning">
@@ -271,12 +278,13 @@
             WARNING : BullWatt requires Google Chrome in order to manage the Bluetooth connection
         </div>
     </div>
-    
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">BullWatt</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -285,10 +293,10 @@
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#trainingsession">Training Sessions</a>
+                        <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
+                        <a class="nav-link" href="#trainingsession">Training Sessions</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#faq">FAQ</a>
@@ -301,7 +309,8 @@
                     </li>
                     <li class="nav-item">
                         <a id="stravaLink" class="nav-link" href="https://www.strava.com/oauth/authorize">
-                            <img src="./assets/btn_strava_connectwith_orange.png" alt="Connect to Strava" style="height: 30px; width: auto;" />
+                            <img src="./assets/btn_strava_connectwith_orange.png" alt="Connect to Strava"
+                                style="height: 30px; width: auto;" />
                         </a>
                     </li>
                 </ul>
@@ -313,13 +322,15 @@
     <header class="hero" id="home">
         <div class="container text-center">
             <h1>Instantly launch a watt-controlled session on your indoor home trainer</h1>
-            <p class="lead">BullWatt uses ERG mode, which automatically sets your resistance to a precise power target according to your cadence. This ensures a constant Watt effort and you are free to choose and change the Watt target.</p>
+            <p class="lead">BullWatt uses ERG mode, which automatically sets your resistance to a precise power target
+                according to your cadence. This ensures a constant Watt effort and you are free to choose and change the
+                Watt target.</p>
             <div class="mt-4">
                 <a href="#trainingsession" class="btn btn-primary btn-lg">
                     <i class="fas fa-bolt me-2"></i> Start a training session Now
                 </a>
             </div>
-            
+
             <div class="badge-container">
                 <span class="badge bg-success"><i class="fas fa-check"></i> Easy & Simple</span>
                 <span class="badge bg-success"><i class="fas fa-star"></i> Minimalist Design</span>
@@ -332,56 +343,20 @@
     </header>
 
     <main class="flex-shrink-0">
-        <!-- Training Density Section -->
+
+        <!-- Training Density Section
         <section class="section bg-light" id="training-density">
             <div class="container">
                 <h2 class="section-title">Your Training Density</h2>
-                <p class="text-center mb-5">This graph shows your training density for the last 365 days. The more you train, the more you will see the green squares.</p>
+                <p class="text-center mb-5">This graph shows your training density for the last 365 days. The more you
+                    train, the more you will see the green squares.</p>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div id="densityTraining" class="bg-white p-4 rounded shadow-sm"></div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Training Sessions Section -->
-        <section class="section" id="trainingsession">
-            <div class="container">
-                <h2 class="section-title">Training Sessions</h2>
-                
-                <div class="mb-5">
-                    <h3 class="h4 mb-4 text-center">Setup Your FTP</h3>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="card border-0 shadow-sm p-4">
-                                <div class="d-flex align-items-center">
-                                    <label for="valueSlider" class="form-label mb-0 me-3 fw-bold">FTP (Watts): <span id="sliderValue" class="text-primary">225</span></label>
-                                    <input type="range" class="form-range flex-grow-1" id="valueSlider" min="100" max="300" step="1" value="200" oninput="updateSliderValue(this.value)">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="trainingCards">
-                    <!-- Training cards Free session here -->
-                    <div class="col">
-                        <div class="card h-100">
-                            <a href="star-bike.html" class="text-decoration-none text-dark">
-                                <div class="card-body">
-                                    <h5 class="card-title">Free session</h5>
-                                    <p class="card-text">You manage the power target</p>
-                                    <img src="./assets/bullwatt_features.png" alt="BullWatt free session" class="img-fluid rounded shadow" style="width: auto; max-height: 100px;margin: auto;display: block;">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Training cards will be dynamically inserted here -->
-                </div>
-            </div>
-        </section>
+        </section> -->
 
         <!-- Features Section -->
         <section class="section bg-light" id="features">
@@ -394,7 +369,8 @@
                                 <i class="fas fa-tachometer-alt"></i>
                             </div>
                             <h3>Precise Power Control</h3>
-                            <p>Maintain exact wattage targets with our advanced ERG mode that automatically adjusts resistance based on your cadence.</p>
+                            <p>Maintain exact wattage targets with our advanced ERG mode that automatically adjusts
+                                resistance based on your cadence.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -403,7 +379,8 @@
                                 <i class="fas fa-bolt"></i>
                             </div>
                             <h3>Lightning Fast</h3>
-                            <p>Get started instantly with no loading times. Our minimalistic design ensures you spend more time training and less time waiting.</p>
+                            <p>Get started instantly with no loading times. Our minimalistic design ensures you spend
+                                more time training and less time waiting.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -416,9 +393,52 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="mt-5 text-center">
-                    <img src="./assets/bullwatt_features.png" alt="BullWatt Features Overview" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
+                    <img src="./assets/bullwatt_features.png" alt="BullWatt Features Overview"
+                        class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Sessions Section -->
+        <section class="section" id="trainingsession">
+            <div class="container">
+                <h2 class="section-title">Training Sessions</h2>
+
+                <div class="mb-5">
+                    <h3 class="h4 mb-4 text-center">Setup Your FTP</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="card border-0 shadow-sm p-4">
+                                <div class="d-flex align-items-center">
+                                    <label for="valueSlider" class="form-label mb-0 me-3 fw-bold">FTP (Watts): <span
+                                            id="sliderValue" class="text-primary">225</span></label>
+                                    <input type="range" class="form-range flex-grow-1" id="valueSlider" min="100"
+                                        max="300" step="1" value="200" oninput="updateSliderValue(this.value)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="trainingCards">
+                    <!-- Training cards Free session here -->
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="star-bike.html" class="text-decoration-none text-dark">
+                                <div class="card-body">
+                                    <h5 class="card-title">Free session</h5>
+                                    <p class="card-text">You manage the power target</p>
+                                    <img src="./assets/bullwatt_features.png" alt="BullWatt free session"
+                                        class="img-fluid rounded shadow"
+                                        style="width: auto; max-height: 100px;margin: auto;display: block;">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Training cards will be dynamically inserted here -->
                 </div>
             </div>
         </section>
@@ -427,121 +447,157 @@
         <section class="section" id="faq">
             <div class="container">
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                
+
                 <div class="accordion" id="faqAccordion">
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Why did I build BullWatt?
                             </button>
                         </h3>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                I was bored by long loading times in other apps (like Zwift, MyWhoosh, Roovy...). My goal was to create a fast way to launch an activity and record it. For me, a good session means working on wattage zones, which is why wattage control is the only option.
+                                I was bored by long loading times in other apps (like Zwift, MyWhoosh, Roovy...). My
+                                goal was to create a fast way to launch an activity and record it. For me, a good
+                                session means working on wattage zones, which is why wattage control is the only option.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 How does it work?
                             </button>
                         </h3>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Click on Start, then click on Connect. You can adjust your power with buttons or key arrows (up, down, left, right). That's it! Don't forget to click on Stop to store the activity.
+                                Click on Start, then click on Connect. You can adjust your power with buttons or key
+                                arrows (up, down, left, right). That's it! Don't forget to click on Stop to store the
+                                activity.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 What is FTMS?
                             </button>
                         </h3>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Bluetooth FTMS (Fitness Machine Service) is a Bluetooth profile that enables standardized communication between fitness equipment and apps for data exchange and control.
+                                Bluetooth FTMS (Fitness Machine Service) is a Bluetooth profile that enables
+                                standardized communication between fitness equipment and apps for data exchange and
+                                control.
                             </div>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingThreeBis">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeBis" aria-expanded="false" aria-controls="collapseThreeBis">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThreeBis" aria-expanded="false"
+                                aria-controls="collapseThreeBis">
                                 What is FTP?
                             </button>
                         </h3>
-                        <div id="collapseThreeBis" class="accordion-collapse collapse" aria-labelledby="headingThreeBis" data-bs-parent="#faqAccordion">
+                        <div id="collapseThreeBis" class="accordion-collapse collapse" aria-labelledby="headingThreeBis"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Functional Threshold Power (FTP) is the highest average power a cyclist can sustain for approximately one hour, measured in watts. It's a key metric used to gauge a rider's fitness, track progress, and establish personalized training zones.
+                                Functional Threshold Power (FTP) is the highest average power a cyclist can sustain for
+                                approximately one hour, measured in watts. It's a key metric used to gauge a rider's
+                                fitness, track progress, and establish personalized training zones.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                 How to export the activity recorded?
                             </button>
                         </h3>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                You can find all your sessions stored in <a href="tcx.html">TCX format</a>. The last sessions are registered in your browser; there is no server-side backup/save.
+                                You can find all your sessions stored in <a href="tcx.html">TCX format</a>. The last
+                                sessions are registered in your browser; there is no server-side backup/save.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                 What are the requirements?
                             </button>
                         </h3>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                A computer with Google Chrome, a home trainer, or an exercise bike compatible with Bluetooth FTMS and with support for setting a target power (ERG mode = the resistance automatically changes based on your cadence to deliver constant wattage).
+                                A computer with Google Chrome, a home trainer, or an exercise bike compatible with
+                                Bluetooth FTMS and with support for setting a target power (ERG mode = the resistance
+                                automatically changes based on your cadence to deliver constant wattage).
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingSix">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                 How to prevent my laptop/tablet from sleeping?
                             </button>
                         </h3>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                We use the same mechanism as YouTube to prevent sleeping. You need to keep the training tab visible. You can use the split-screen feature to watch YouTube or Netflix while training.
+                                We use the same mechanism as YouTube to prevent sleeping. You need to keep the training
+                                tab visible. You can use the split-screen feature to watch YouTube or Netflix while
+                                training.
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingSeven">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                 It doesn't detect my connected product!
                             </button>
                         </h3>
-                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Check the requirements. If your device meets the requirements and still doesn't work, please contact us for assistance.
+                                Check the requirements. If your device meets the requirements and still doesn't work,
+                                please contact us for assistance.
                             </div>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingEight">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight   ">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight   ">
                                 Is there a free alternative to Zwift that doesn't require a subscription?
                             </button>
                         </h3>
-                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Yes! BullWatt is a 100% free indoor cycling app. Unlike Zwift or TrainerRoad, there are no monthly fees, no "free trial" limits, and no credit card required. It is designed for cyclists who want to train on their home trainer without the overhead of a expensive subscription.
+                                Yes! BullWatt is a 100% free indoor cycling app. Unlike Zwift or TrainerRoad, there are
+                                no monthly fees, no "free trial" limits, and no credit card required. It is designed for
+                                cyclists who want to train on their home trainer without the overhead of a expensive
+                                subscription.
                             </div>
                         </div>
                     </div>
@@ -550,13 +606,18 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="headingNine">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine ">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine ">
                                 How can I use my smart trainer in ERG mode without an app installation?
                             </button>
                         </h3>
-                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                BullWatt runs directly in your Google Chrome browser using Web Bluetooth. This means you don't need to download or install any software. Simply open the website, connect your FTMS-compatible trainer, and start your ERG mode workout instantly on any PC, Mac, or Android device.
+                                BullWatt runs directly in your Google Chrome browser using Web Bluetooth. This means you
+                                don't need to download or install any software. Simply open the website, connect your
+                                FTMS-compatible trainer, and start your ERG mode workout instantly on any PC, Mac, or
+                                Android device.
                             </div>
                         </div>
                     </div>
@@ -565,13 +626,17 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading10">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
                                 Can I use BullWatt on my phone or tablet?
                             </button>
                         </h3>
-                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#faqAccordion">
+                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Absolutely. As long as you use Google Chrome, BullWatt works on Android phones, tablets, and laptops. It leverages the Web Bluetooth API to talk directly to your bike, making it one of the most lightweight mobile training solutions available.
+                                Absolutely. As long as you use Google Chrome, BullWatt works on Android phones, tablets,
+                                and laptops. It leverages the Web Bluetooth API to talk directly to your bike, making it
+                                one of the most lightweight mobile training solutions available.
                             </div>
                         </div>
                     </div>
@@ -580,13 +645,18 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading11">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
                                 How do I connect my Domyos, Wahoo, or Tacx trainer to a browser?
                             </button>
                         </h3>
-                        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#faqAccordion">
+                        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                BullWatt supports any smart trainer that uses the standard Bluetooth FTMS protocol. This includes popular models like the Wahoo KICKR, Tacx Neo/Flow, Elite Suito/Direto, and Decathlon Domyos bikes. If your trainer supports "Controllable" Bluetooth, it will work with BullWatt.
+                                BullWatt supports any smart trainer that uses the standard Bluetooth FTMS protocol. This
+                                includes popular models like the Wahoo KICKR, Tacx Neo/Flow, Elite Suito/Direto, and
+                                Decathlon Domyos bikes. If your trainer supports "Controllable" Bluetooth, it will work
+                                with BullWatt.
                             </div>
                         </div>
                     </div>
@@ -595,13 +665,19 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading12">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
                                 Is BullWatt compatible with Strava?
                             </button>
                         </h3>
-                        <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#faqAccordion">
+                        <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Yes. Just connect your Strava account from the homepage and each session will be autmatically uploaded. Or after finishing your training session, you can export your data by TCX and upload it to Strava. This allows you to keep track of your fitness, mileage, and power data alongside your outdoor rides without needing a paid platform to manage the sync.
+                                Yes. Just connect your Strava account from the homepage and each session will be
+                                autmatically uploaded. Or after finishing your training session, you can export your
+                                data by TCX and upload it to Strava. This allows you to keep track of your fitness,
+                                mileage, and power data alongside your outdoor rides without needing a paid platform to
+                                manage the sync.
                             </div>
                         </div>
                     </div>
@@ -610,13 +686,18 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading13">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
                                 What is the best browser-based app for structured indoor cycling workouts?
                             </button>
                         </h3>
-                        <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#faqAccordion">
+                        <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                BullWatt is specifically designed for structured training. It offers a catalog of pre-set sessions—from SST (Sweet Spot Training) to VO2 Max intervals—all controlled via ERG mode. It's the ideal tool for riders who want a "no-nonsense" workout player that loads in seconds.
+                                BullWatt is specifically designed for structured training. It offers a catalog of
+                                pre-set sessions—from SST (Sweet Spot Training) to VO2 Max intervals—all controlled via
+                                ERG mode. It's the ideal tool for riders who want a "no-nonsense" workout player that
+                                loads in seconds.
                             </div>
                         </div>
                     </div>
@@ -625,13 +706,18 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading14">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
                                 Can I watch YouTube or Netflix while using BullWatt?
                             </button>
                         </h3>
-                        <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" data-bs-parent="#faqAccordion">
+                        <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                Yes! Because BullWatt is a web app, you can use split-screen mode or a second tab to watch your favorite shows or races. BullWatt includes a "Wake Lock" feature (similar to YouTube) to ensure your laptop doesn't go to sleep while you are in the middle of a hard interval.
+                                Yes! Because BullWatt is a web app, you can use split-screen mode or a second tab to
+                                watch your favorite shows or races. BullWatt includes a "Wake Lock" feature (similar to
+                                YouTube) to ensure your laptop doesn't go to sleep while you are in the middle of a hard
+                                interval.
                             </div>
                         </div>
                     </div>
@@ -640,13 +726,17 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading15">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
                                 Do I need an ANT+ dongle to use BullWatt?
                             </button>
                         </h3>
-                        <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" data-bs-parent="#faqAccordion">
+                        <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                No. BullWatt uses native Bluetooth through your browser. As long as your device (laptop/phone) has Bluetooth enabled and you are using Chrome, you can connect directly to your smart trainer without any extra dongles or hardware.
+                                No. BullWatt uses native Bluetooth through your browser. As long as your device
+                                (laptop/phone) has Bluetooth enabled and you are using Chrome, you can connect directly
+                                to your smart trainer without any extra dongles or hardware.
                             </div>
                         </div>
                     </div>
@@ -655,13 +745,18 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading16">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
                                 How do I set my FTP in BullWatt?
                             </button>
                         </h3>
-                        <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16" data-bs-parent="#faqAccordion">
+                        <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                On the BullWatt home page, you can easily input your FTP (Functional Threshold Power) in the "Setup Your FTP" box. All the catalog workouts will then automatically scale the resistance to your specific fitness level, ensuring you are training in the correct power zones.
+                                On the BullWatt home page, you can easily input your FTP (Functional Threshold Power) in
+                                the "Setup Your FTP" box. All the catalog workouts will then automatically scale the
+                                resistance to your specific fitness level, ensuring you are training in the correct
+                                power zones.
                             </div>
                         </div>
                     </div>
@@ -669,25 +764,32 @@
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading17">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
                                 Why should I use BullWatt instead of MyWhoosh or other free apps?
                             </button>
                         </h3>
-                        <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17" data-bs-parent="#faqAccordion">
+                        <div id="collapse17" class="accordion-collapse collapse" aria-labelledby="heading17"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
-                                While other apps require huge downloads (often 10GB+) and high-end graphics cards, BullWatt is instant. There is no registration, no loading screens, and no heavy 3D graphics. It is the fastest way to get on your bike and start a high-quality, power-regulated workout.
+                                While other apps require huge downloads (often 10GB+) and high-end graphics cards,
+                                BullWatt is instant. There is no registration, no loading screens, and no heavy 3D
+                                graphics. It is the fastest way to get on your bike and start a high-quality,
+                                power-regulated workout.
                             </div>
                         </div>
-                    </div>                    
+                    </div>
 
 
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="heading18">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
                                 List of known supported devices
                             </button>
                         </h3>
-                        <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18" data-bs-parent="#faqAccordion">
+                        <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18"
+                            data-bs-parent="#faqAccordion">
                             <div class="accordion-body">
                                 <ul class="mb-0">
                                     <li>Domyos Challenge Bike</li>
@@ -710,24 +812,33 @@
             <div class="container">
                 <h2 class="section-title">Articles</h2>
                 <div class="row g-4">
-                    
+
                     <!-- Articles cards will be dynamically inserted here -->
 
                     <div class="col-md-4"><a href="articles/production-information.html">
-                        <div class="card h-100 border-0 text-center p-4"><h3>General Information about BullWatt: A Free, Web-Based Indoor Cycling Training Tool</h3> </div>
-                    </a></div>
+                            <div class="card h-100 border-0 text-center p-4">
+                                <h3>General Information about BullWatt: A Free, Web-Based Indoor Cycling Training Tool
+                                </h3>
+                            </div>
+                        </a></div>
 
                     <div class="col-md-4"><a href="articles/bullwatt-vs-zwift.html">
-                        <div class="card h-100 border-0 text-center p-4"><h3>Bullwatt vs. Zwift: Why Choose an Open-Source Cycling Training Application?</h3> </div>
-                    </a></div>
+                            <div class="card h-100 border-0 text-center p-4">
+                                <h3>Bullwatt vs. Zwift: Why Choose an Open-Source Cycling Training Application?</h3>
+                            </div>
+                        </a></div>
 
                     <div class="col-md-4"><a href="articles/bullwatt-no-subscription.html">
-                        <div class="card h-100 border-0 text-center p-4"><h3>The Quick Guide: How to Train Indoors on Web Without a Subscription</h3> </div>
-                    </a></div>
+                            <div class="card h-100 border-0 text-center p-4">
+                                <h3>The Quick Guide: How to Train Indoors on Web Without a Subscription</h3>
+                            </div>
+                        </a></div>
 
                     <div class="col-md-4"><a href="articles/compatible-hardware.html">
-                        <div class="card h-100 border-0 text-center p-4"><h3>Compatible Hardware</h3> </div>
-                    </a></div>
+                            <div class="card h-100 border-0 text-center p-4">
+                                <h3>Compatible Hardware</h3>
+                            </div>
+                        </a></div>
 
                     <!-- End of Articles->
                 </div>
@@ -737,24 +848,24 @@
 
 
         <!-- Contact Section -->
-        <section class="section bg-light" id="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <p class="lead mb-5">Have questions or feedback? We'd love to hear from you!</p>
-                        <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
-                            <a href="mailto:charles@superbarbicane.com" class="btn btn-primary btn-lg">
-                                <i class="fas fa-envelope me-2"></i> Email Us
-                            </a>
-                            <a href="https://wa.me/33659746415" class="btn btn-success btn-lg">
-                                <i class="fab fa-whatsapp me-2"></i> WhatsApp
-                            </a>
+                    <section class="section bg-light" id="contact">
+                        <div class="container">
+                            <h2 class="section-title">Get In Touch</h2>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 text-center">
+                                    <p class="lead mb-5">Have questions or feedback? We'd love to hear from you!</p>
+                                    <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
+                                        <a href="mailto:charles@superbarbicane.com" class="btn btn-primary btn-lg">
+                                            <i class="fas fa-envelope me-2"></i> Email Us
+                                        </a>
+                                        <a href="https://wa.me/33659746415" class="btn btn-success btn-lg">
+                                            <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </section>
     </main>
 
     <!-- Footer -->
@@ -764,32 +875,35 @@
                 <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
                     <h5 class="mb-3">BullWatt</h5>
                     <p class="small mb-0">Instant power control for indoor cycling enthusiasts.</p>
-                    <p class="small mb-0">Github <a href="https://github.com/canssens/bullwatt" target="_blank">BullWatt Repository</a></p>
+                    <p class="small mb-0">Github <a href="https://github.com/canssens/bullwatt" target="_blank">BullWatt
+                            Repository</a></p>
                     <p class="small mt-3">2026 BullWatt</p>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end">
                     <div class="mb-3">
-                        <img src="./assets/api_logo_cptblWith_strava_stack_white.png" alt="Compatible with Strava" style="height: 40px;" class="mb-3">
+                        <img src="./assets/api_logo_cptblWith_strava_stack_white.png" alt="Compatible with Strava"
+                            style="height: 40px;" class="mb-3">
                     </div>
                     <div class="footer-links mb-3">
                         <a href="#home">Home</a>
-                        <a href="#trainingsession">Training</a>
                         <a href="#features">Features</a>
+                        <a href="#trainingsession">Training</a>
                         <a href="#faq">FAQ</a>
                         <a href="#contact">Contact</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </div>
-                    
+
                     <div class="social-links">
-                    <!--
+                        <!--
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     -->
-                        <a href="https://www.strava.com/clubs/bullwatt" target="_blank" aria-label="Strava"><img class="fab" src="./assets/strava-icon.svg" alt="Strava logo"></a>
+                        <a href="https://www.strava.com/clubs/bullwatt" target="_blank" aria-label="Strava"><img
+                                class="fab" src="./assets/strava-icon.svg" alt="Strava logo"></a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -799,61 +913,61 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
-    <script src="./assets/github_contribution.js"></script>
+    <!--<script src="./assets/github_contribution.js"></script>-->
     <script src="./assets/utils.js"></script>
-    
+
     <script>
         // Initialize tooltips
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
-        
-       
+
+
 
         // load training data
-    function loadTrainingDataHomePage() {
-      // load Json file data
-      let trainingSessionData = null;
-      fetch('./trainings/trainings.json')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Process the JSON data here      
-          //return data;
-          console.log(data);
-          trainingSessionData = data;
-          trainingSessionData.forEach(element => {
-            //console.log(element.id);
-            //console.log(element.training_name);
-            //console.log(element.duration);
+        function loadTrainingDataHomePage() {
+            // load Json file data
+            let trainingSessionData = null;
+            fetch('./trainings/trainings.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Process the JSON data here      
+                    //return data;
+                    console.log(data);
+                    trainingSessionData = data;
+                    trainingSessionData.forEach(element => {
+                        //console.log(element.id);
+                        //console.log(element.training_name);
+                        //console.log(element.duration);
 
-            data = [];
+                        data = [];
 
-            // from trainingContent, get the data from phases
-            // for each phase, get the data from the graph
-            for (let i = 0; i < element.phases.length; i++) {
-              const phase = element.phases[i];
-              data.push([phase.start, phase.value]);
-            }
-            //console.log("data : " + data);
+                        // from trainingContent, get the data from phases
+                        // for each phase, get the data from the graph
+                        for (let i = 0; i < element.phases.length; i++) {
+                            const phase = element.phases[i];
+                            data.push([phase.start, phase.value]);
+                        }
+                        //console.log("data : " + data);
 
-            trainingGraph = data;
+                        trainingGraph = data;
 
-            //append card to the trainingCards div
-            $('#trainingCards').append(`
+                        //append card to the trainingCards div
+                        $('#trainingCards').append(`
 
                     <div class="col">
                         <div class="card h-100">
-                            <a href="star-bike.html?training=`+element.id+`" class="text-decoration-none text-dark">
+                            <a href="star-bike.html?training=`+ element.id + `" class="text-decoration-none text-dark">
                                 <div class="card-body">
-                                    <h5 class="card-title">`+element.training_name+`</h5>
-                                    <p class="card-text">`+element.description+`</p>
-                                    <div id="chartTraining`+element.id+`" style="width: 100%;height:100%;"></div>
+                                    <h5 class="card-title">`+ element.training_name + `</h5>
+                                    <p class="card-text">`+ element.description + `</p>
+                                    <div id="chartTraining`+ element.id + `" style="width: 100%;height:100%;"></div>
                                 </div>
                             </a>
                         </div>
@@ -863,78 +977,78 @@
 
             `);
 
-            // create the chart
-            var chartDom = document.getElementById('chartTraining' + element.id);
-            var myChart = echarts.init(chartDom);
-            var option;
-            option = {
-              //title: {
-              //    text: 'Power'
-              //  },
-            backgroundColor: '#000',
-            xAxis: {
-                type: 'value',
-                splitLine:{ show: false },
-                axisLine: { show: false },
-                axisTick: { show: false },
-                axisLabel: { show: false }
-            },
-            yAxis: {
-                type: 'value',
-                min: 'dataMin',
-                axisLabel: { show: false }
-            },
-            visualMap: {
-              show: false,
-              pieces: [
-                {
-                  gt: 0,
-                  lte: .6,
-                  color: '#93CE07'
-                },
-                {
-                  gt: .6,
-                  lte: .75,
-                  color: '#FBDB0F'
-                },
-                {
-                  gt: .75,
-                  lte: .9,
-                  color: '#FC7D02'
-                },
-                {
-                  gt: .9,
-                  lte: 1.05,
-                  color: '#FD0100'
-                },
-                {
-                  gt: 1.05,
-                  lte: 1.2,
-                  color: '#AA069F'
-                },
-                {
-                  gt: 1.2,
-                  color: '#AC3B2A'
-                }
-              ]
-            },
-            series: [
-                {
-                data: trainingGraph,
-                type: 'line',
-                smooth: false,
-                step: 'end'
-                }
-            ]
-            };
+                        // create the chart
+                        var chartDom = document.getElementById('chartTraining' + element.id);
+                        var myChart = echarts.init(chartDom);
+                        var option;
+                        option = {
+                            //title: {
+                            //    text: 'Power'
+                            //  },
+                            backgroundColor: '#000',
+                            xAxis: {
+                                type: 'value',
+                                splitLine: { show: false },
+                                axisLine: { show: false },
+                                axisTick: { show: false },
+                                axisLabel: { show: false }
+                            },
+                            yAxis: {
+                                type: 'value',
+                                min: 'dataMin',
+                                axisLabel: { show: false }
+                            },
+                            visualMap: {
+                                show: false,
+                                pieces: [
+                                    {
+                                        gt: 0,
+                                        lte: .6,
+                                        color: '#93CE07'
+                                    },
+                                    {
+                                        gt: .6,
+                                        lte: .75,
+                                        color: '#FBDB0F'
+                                    },
+                                    {
+                                        gt: .75,
+                                        lte: .9,
+                                        color: '#FC7D02'
+                                    },
+                                    {
+                                        gt: .9,
+                                        lte: 1.05,
+                                        color: '#FD0100'
+                                    },
+                                    {
+                                        gt: 1.05,
+                                        lte: 1.2,
+                                        color: '#AA069F'
+                                    },
+                                    {
+                                        gt: 1.2,
+                                        color: '#AC3B2A'
+                                    }
+                                ]
+                            },
+                            series: [
+                                {
+                                    data: trainingGraph,
+                                    type: 'line',
+                                    smooth: false,
+                                    step: 'end'
+                                }
+                            ]
+                        };
 
-            // Use the specified configurations and data to show the chart.
-            myChart.setOption(option);
-          });
+                        // Use the specified configurations and data to show the chart.
+                        myChart.setOption(option);
+                    });
 
 
-          // Add card to ask contact to add new training session
-          $('#trainingCards').append(`
+                    // Add card to ask contact to add new training session
+                    $('#trainingCards').append(`
           <div class="col">
                         <div class="card h-100">
                             <a href="#contact" class="text-decoration-none text-dark">
@@ -947,20 +1061,20 @@
                     </div>
                     `);
 
-        })
-        .catch(error => {
-          console.error('There was a problem with the fetch operation:', error);
-        });
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
 
-        
 
-    }
+
+        }
 
         // Load training data
         function loadTrainingDataHomePage2() {
             // Implementation for loading training data
             console.log('Loading training data...');
-            
+
             // This would be replaced with actual data loading logic
             // The following is a placeholder for the training cards
             const trainingCards = document.getElementById('trainingCards');
@@ -979,7 +1093,7 @@
                         </div>
                     </div>
                 `;
-                
+
                 // Initialize chart for the example card
                 setTimeout(() => {
                     const chart = echarts.init(document.getElementById('chartTrainingBasic'));
@@ -996,25 +1110,25 @@
                         grid: { top: 0, right: 0, bottom: 0, left: 0 }
                     };
                     chart.setOption(option);
-                    window.addEventListener('resize', function() {
+                    window.addEventListener('resize', function () {
                         chart.resize();
                     });
                 }, 100);
             }
         }
-        
+
         // Initialize training data when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadTrainingDataHomePage();
 
             // Finalize build link to Strava login
             // TODO : remove client_id from code
             document.getElementById("stravaLink").href = "https://www.strava.com/oauth/authorize?scope=activity:write,activity:read&client_id=" + APP_CONFIG.STRAVA_APP_ID + "&response_type=code&redirect_uri=" + APP_CONFIG.BASE_URL + "/service/strava.php";
-            
+
             checkConnectionStrava();
-            
+
             // Initialize training density graph
-            getActivitiesDate(); // and also update the graph widget
+            // getActivitiesDate(); // and also update the graph widget
 
 
             // Load the FTP value for the id slide valueSlider
@@ -1027,4 +1141,5 @@
         });
     </script>
 </body>
+
 </html>
