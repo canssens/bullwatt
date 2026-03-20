@@ -26,6 +26,11 @@ $articleData = [
         'title' => 'Compatible Hardware',
         'content' => './html_blocks/compatible-hardware.html',
         'slug' => 'compatible-hardware.html'
+    ],
+    [
+        'title' => 'Why BullWatt is a good Zwift Alternative for Older PCs',
+        'content' => './html_blocks/hardware-zwift-slow.html',
+        'slug' => 'hardware-zwift-slow.html'
     ]
     // Add more howto here
 
@@ -45,7 +50,7 @@ $articleList = '';
 foreach ($articleData as $guide) {
     $articleList .= '<div class="col-md-4"><a href="articles/'.$guide["slug"].'">'."\n";
     $articleList .= '    <div class="card h-100 border-0 text-center p-4"><h3>'.$guide["title"].'</h3> </div>'."\n";
-    $articleList .= "</a></div>\n\n";
+    $articleList .= "</a>\n</div>\n\n";
 }
 
 
