@@ -319,6 +319,7 @@
         }
     </style>
     <script src="../assets/config.js"></script>
+    <script src="../assets/i18n.js"></script>
     <script>
         // Detect if the browser is not Chrome
         function isNotChrome() {
@@ -355,22 +356,36 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.html?#home">Home</a>
+                        <a class="nav-link active" href="../index.html?#home" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#features">Features</a>
+                        <a class="nav-link" href="../index.html?#features" data-i18n="nav.features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#trainingsession">Training Sessions</a>
+                        <a class="nav-link" href="../index.html?#trainingsession" data-i18n="nav.training">Training
+                            Sessions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#faq">FAQ</a>
+                        <a class="nav-link" href="../index.html?#faq" data-i18n="nav.faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#articles">Articles</a>
+                        <a class="nav-link" href="../index.html?#articles" data-i18n="nav.articles">Articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#contact">Contact</a>
+                        <a class="nav-link" href="../index.html?#contact" data-i18n="nav.contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-globe me-1"></i><span id="currentLangDisplay">EN</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            style="background-color:#161B22;border:1px solid rgba(255,255,255,0.1);min-width:auto;">
+                            <li><a class="dropdown-item text-light" href="#"
+                                    onclick="i18n.setLanguage('en');return false;">🇬🇧 English</a></li>
+                            <li><a class="dropdown-item text-light" href="#"
+                                    onclick="i18n.setLanguage('fr');return false;">🇫🇷 Français</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -382,22 +397,22 @@
         <!-- Training Density Section -->
         <section class="section bg-light" id="training-density">
             <div class="container">
-                <h1 class="section-title">Bullwatt vs. Zwift: Why Choose an Open-Source Cycling Training Application?</h1>
+                <h1 class="section-title" data-i18n="articles.bullwatt-vs-zwift.html">Bullwatt vs. Zwift: Why Choose an Open-Source Cycling Training Application?</h1>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <p class="text-center mb-5"><h2>Some people pay to ride indoor</h2>
-<p>Many cyclists choose platforms like Zwift, which require a subscription fee, to access a wide range of virtual routes, structured workouts, and social features. These services offer a polished experience with extensive community engagement and gamification elements.</p>
-<p>Others prefer to use open-source or free alternatives like BullWatt, which allow them to train without recurring costs. These platforms focus on core training functionalities, privacy, and community-driven development, providing a minimalist yet effective indoor cycling experience.</p>
+                        <p class="text-center mb-5"><h2 data-i18n="article.bullwatt-vs-zwift.h1">Some people pay to ride indoor</h2>
+<p data-i18n="article.bullwatt-vs-zwift.p1">Many cyclists choose platforms like Zwift, which require a subscription fee, to access a wide range of virtual routes, structured workouts, and social features. These services offer a polished experience with extensive community engagement and gamification elements.</p>
+<p data-i18n="article.bullwatt-vs-zwift.p2">Others prefer to use open-source or free alternatives like BullWatt, which allow them to train without recurring costs. These platforms focus on core training functionalities, privacy, and community-driven development, providing a minimalist yet effective indoor cycling experience.</p>
 
 
-<h2>Some people wait to ride indoor</h2>
-<p>Have you ever faced the frustration of waiting for a software update or dealing with connectivity issues during your indoor training sessions? Open-source platforms like BullWatt eliminate these barriers, allowing you to focus on your workout without interruptions.</p>
+<h2 data-i18n="article.bullwatt-vs-zwift.h2">Some people wait to ride indoor</h2>
+<p data-i18n="article.bullwatt-vs-zwift.p3">Have you ever faced the frustration of waiting for a software update or dealing with connectivity issues during your indoor training sessions? Open-source platforms like BullWatt eliminate these barriers, allowing you to focus on your workout without interruptions.</p>
 
-<h2>Why choose BullWatt?</h2>
-<p>Choosing an open-source, web-based application like BullWatt over a heavy platform like Zwift comes down to <b>speed, simplicity, and cost</b>. While Zwift is known for its gamified virtual 3D worlds, BullWatt is specifically designed for cyclists who want a frictionless, "no-nonsense" structured workout.</p>
+<h2 data-i18n="article.bullwatt-vs-zwift.h3">Why choose BullWatt?</h2>
+<p data-i18n="article.bullwatt-vs-zwift.p4.html">Choosing an open-source, web-based application like BullWatt over a heavy platform like Zwift comes down to <b>speed, simplicity, and cost</b>. While Zwift is known for its gamified virtual 3D worlds, BullWatt is specifically designed for cyclists who want a frictionless, "no-nonsense" structured workout.</p>
 
-Here are the primary advantages of choosing BullWatt:
-<ul>
+<span data-i18n="article.bullwatt-vs-zwift.p5">Here are the primary advantages of choosing BullWatt:</span>
+<ul data-i18n="article.bullwatt-vs-zwift.list.html">
 <li><b>Completely Free:</b> Unlike Zwift, which requires a paid subscription, BullWatt is a <b>100% free indoor cycling app</b>. There are no monthly fees, no credit cards required, and no limits tied to free trials.</li>
 <li><b>Zero Downloads or Installations:</b> Apps like Zwift and MyWhoosh often require massive downloads (sometimes 10GB+) and high-end graphics cards. BullWatt bypasses this entirely by running natively in your Google Chrome browser using Web Bluetooth. You can start a session instantly on a PC, Mac, or Android device without downloading any software.</li>
 <li><b>No Loading Screens or Registration:</b> The creator built BullWatt directly to solve the frustration of long loading times on other apps. It features a minimalist design with <b>no loading times, no ads, and no user registration required</b>. It is the fastest way to get on your bike and start training.</li>
@@ -408,7 +423,7 @@ Here are the primary advantages of choosing BullWatt:
 </ul>
 
 
-<p>Ultimately, if you want to avoid expensive overhead and heavy 3D graphics in favor of <b>instant, high-quality, power-regulated workouts</b>, BullWatt provides a streamlined alternative to Zwift.</p>
+<p data-i18n="article.bullwatt-vs-zwift.conclusion.html">Ultimately, if you want to avoid expensive overhead and heavy 3D graphics in favor of <b>instant, high-quality, power-regulated workouts</b>, BullWatt provides a streamlined alternative to Zwift.</p>
 </p>
                     </div>
                 </div>
@@ -420,16 +435,17 @@ Here are the primary advantages of choosing BullWatt:
         <!-- Contact Section -->
         <section class="section bg-light" id="contact">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <p class="lead mb-5">Have questions or feedback? We'd love to hear from you!</p>
+                        <p class="lead mb-5" data-i18n="contact.subtitle">Have questions or feedback? We'd love to hear
+                            from you!</p>
                         <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
                             <a href="mailto:charles@superbarbicane.com" class="btn btn-primary btn-lg">
-                                <i class="fas fa-envelope me-2"></i> Email Us
+                                <i class="fas fa-envelope me-2"></i> <span data-i18n="contact.email">Email Us</span>
                             </a>
                             <a href="https://wa.me/33659746415" class="btn btn-success btn-lg">
-                                <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                                <i class="fab fa-whatsapp me-2"></i> <span data-i18n="contact.whatsapp">WhatsApp</span>
                             </a>
                         </div>
                     </div>
