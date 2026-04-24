@@ -2,7 +2,7 @@
 header("Content-Type: text/plain");
 // Path to the template and folders
 $templatePath = __DIR__ . '/template.html';
-$articleDir = __DIR__ ;
+$articleDir = __DIR__;
 
 
 // Example data for a guide (adapt as needed)
@@ -40,7 +40,8 @@ $articleData = [
 foreach ($articleData as $guide) {
     $template = file_get_contents($templatePath);
     $content = file_get_contents($guide['content']);
-    $pageContent = str_replace('{TITLE}', $guide['title'], $template);
+    $pageContent = str_replace('{SLUG}', $guide['slug'], $template);
+    $pageContent = str_replace('{TITLE}', $guide['title'], $pageContent);
     $pageContent = str_replace('{CONTENT}', $content, $pageContent);
     file_put_contents($articleDir . '/' . $guide['slug'], $pageContent);
 }
@@ -48,8 +49,8 @@ foreach ($articleData as $guide) {
 // Generate the list of howto for the index
 $articleList = '';
 foreach ($articleData as $guide) {
-    $articleList .= '<div class="col-md-4"><a href="articles/'.$guide["slug"].'">'."\n";
-    $articleList .= '    <div class="card h-100 border-0 text-center p-4"><h3>'.$guide["title"].'</h3> </div>'."\n";
+    $articleList .= '<div class="col-md-4"><a href="articles/' . $guide["slug"] . '">' . "\n";
+    $articleList .= '    <div class="card h-100 border-0 text-center p-4"><h3 data-i18n="articles.' . $guide["slug"] . '">' . $guide["title"] . '</h3> </div>' . "\n";
     $articleList .= "</a>\n</div>\n\n";
 }
 

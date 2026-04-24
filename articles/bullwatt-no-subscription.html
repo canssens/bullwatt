@@ -319,6 +319,7 @@
         }
     </style>
     <script src="../assets/config.js"></script>
+    <script src="../assets/i18n.js"></script>
     <script>
         // Detect if the browser is not Chrome
         function isNotChrome() {
@@ -355,22 +356,36 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.html?#home">Home</a>
+                        <a class="nav-link active" href="../index.html?#home" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#features">Features</a>
+                        <a class="nav-link" href="../index.html?#features" data-i18n="nav.features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#trainingsession">Training Sessions</a>
+                        <a class="nav-link" href="../index.html?#trainingsession" data-i18n="nav.training">Training
+                            Sessions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#faq">FAQ</a>
+                        <a class="nav-link" href="../index.html?#faq" data-i18n="nav.faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#articles">Articles</a>
+                        <a class="nav-link" href="../index.html?#articles" data-i18n="nav.articles">Articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#contact">Contact</a>
+                        <a class="nav-link" href="../index.html?#contact" data-i18n="nav.contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-globe me-1"></i><span id="currentLangDisplay">EN</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            style="background-color:#161B22;border:1px solid rgba(255,255,255,0.1);min-width:auto;">
+                            <li><a class="dropdown-item text-light" href="#"
+                                    onclick="i18n.setLanguage('en');return false;">🇬🇧 English</a></li>
+                            <li><a class="dropdown-item text-light" href="#"
+                                    onclick="i18n.setLanguage('fr');return false;">🇫🇷 Français</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -382,46 +397,46 @@
         <!-- Training Density Section -->
         <section class="section bg-light" id="training-density">
             <div class="container">
-                <h1 class="section-title">The Quick Guide: How to Train Indoors on Web Without a Subscription</h1>
+                <h1 class="section-title" data-i18n="articles.bullwatt-no-subscription.html">The Quick Guide: How to Train Indoors on Web Without a Subscription</h1>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <p class="text-center mb-5"><p>BullWatt allows you to train indoors without the need for a subscription. 
+                        <p class="text-center mb-5"><p data-i18n="article.bullwatt-no-subscription.intro">BullWatt allows you to train indoors without the need for a subscription. 
     By leveraging web technologies and Bluetooth FTMS, 
     you can connect directly to your smart trainer and perform structured workouts without any recurring fees. 
     This guide will walk you through the steps to get started and make the most of your indoor cycling sessions.</p>
 
-    <h2>What you don't have to worry about</h2>
-    <ul>
+    <h2 data-i18n="article.bullwatt-no-subscription.h1">What you don't have to worry about</h2>
+    <ul data-i18n="article.bullwatt-no-subscription.list1.html">
         <li><b>No Subscription Fees:</b> BullWatt is completely free to use, allowing you to access all features without any recurring costs.</li>
         <li><b>No Software Downloads:</b> Since BullWatt runs in your web browser, there's no need to download or install any software on your device.</li>
         <li><b>No Complex Setup:</b> Connecting to your smart trainer is straightforward with Bluetooth FTMS, and the app guides you through the process.</li>
     </ul>
 
 
-    <h2>Quick guide : Getting Started</h2>
-    <p>
+    <h2 data-i18n="article.bullwatt-no-subscription.h2">Quick guide : Getting Started</h2>
+    <p data-i18n="article.bullwatt-no-subscription.p1.html">
 You can train indoors on the web without a subscription by using <b>BullWatt</b>, a 100% free indoor cycling app that requires no monthly fees, credit cards, or account registrations. Because it runs natively in your web browser, there is no need to download or install any heavy software.
 </p>
-<p> 
+<p data-i18n="article.bullwatt-no-subscription.p2"> 
 Here is exactly how you can set it up and start training:
 </p>
 
-<h3>1. Prepare your equipment:</h3>
-<p>You will need a device (PC, Mac or tablet) running <b>Google Chrome</b> with Bluetooth enabled. You also need a smart trainer or exercise bike that supports the standard <b>Bluetooth FTMS</b> protocol and ERG mode, such as popular models from Wahoo, Tacx, Elite, or Zwift Hub. It connects directly via native Bluetooth, so you do not need an ANT+ dongle.
+<h3 data-i18n="article.bullwatt-no-subscription.step1.title">1. Prepare your equipment:</h3>
+<p data-i18n="article.bullwatt-no-subscription.step1.desc.html">You will need a device (PC, Mac or tablet) running <b>Google Chrome</b> with Bluetooth enabled. You also need a smart trainer or exercise bike that supports the standard <b>Bluetooth FTMS</b> protocol and ERG mode, such as popular models from Wahoo, Tacx, Elite, or Zwift Hub. It connects directly via native Bluetooth, so you do not need an ANT+ dongle.
 </p>
 
-<h3>2. Set your fitness baseline:</h3>
-<p>Open the BullWatt homepage and enter your Functional Threshold Power (FTP) into the "Setup Your FTP" box. This step is crucial because it allows the app to automatically scale the resistance of the catalog workouts to your specific fitness level.</p>
+<h3 data-i18n="article.bullwatt-no-subscription.step2.title">2. Set your fitness baseline:</h3>
+<p data-i18n="article.bullwatt-no-subscription.step2.desc">Open the BullWatt homepage and enter your Functional Threshold Power (FTP) into the "Setup Your FTP" box. This step is crucial because it allows the app to automatically scale the resistance of the catalog workouts to your specific fitness level.</p>
 
-<h3>3. Select a training session:</h3>
-<p>Choose a structured workout from the catalog. The app offers a variety of sessions, ranging from quick 16-minute "Flash Burns" to VO2 Max intervals, Sweet Spot Training (SST), and longer endurance rides inspired by famous climbs like Alpe d'Huez and Mont Ventoux. Alternatively, you can select a "Free session" to manually manage your own power targets.</p>
+<h3 data-i18n="article.bullwatt-no-subscription.step3.title">3. Select a training session:</h3>
+<p data-i18n="article.bullwatt-no-subscription.step3.desc">Choose a structured workout from the catalog. The app offers a variety of sessions, ranging from quick 16-minute "Flash Burns" to VO2 Max intervals, Sweet Spot Training (SST), and longer endurance rides inspired by famous climbs like Alpe d'Huez and Mont Ventoux. Alternatively, you can select a "Free session" to manually manage your own power targets.</p>
 
-<h3>4. Connect and start riding:</h3>
-<p>Click <b>Connect</b> to pair your smart trainer using Web Bluetooth. Once connected, BullWatt uses ERG mode to automatically adjust your trainer's resistance based on your cadence, ensuring you hit the exact wattage targets for your workout. If needed, you can manually adjust the power using your device's arrow keys or on-screen buttons.</p>
+<h3 data-i18n="article.bullwatt-no-subscription.step4.title">4. Connect and start riding:</h3>
+<p data-i18n="article.bullwatt-no-subscription.step4.desc.html">Click <b>Connect</b> to pair your smart trainer using Web Bluetooth. Once connected, BullWatt uses ERG mode to automatically adjust your trainer's resistance based on your cadence, ensuring you hit the exact wattage targets for your workout. If needed, you can manually adjust the power using your device's arrow keys or on-screen buttons.</p>
 
-<h3>5. Save your progress:</h3>
-<p>When your workout is complete, be sure to click <b>Stop</b> to store the activity. BullWatt does not use server-side backups, but your recent sessions are saved locally in your browser. You can export your workout as a TCX file or set up an automatic sync to upload your ride directly to Strava.</p>
-<p>As an added bonus, because BullWatt operates in a browser and features a "Wake Lock" to prevent your screen from sleeping, you can easily use split-screen mode to watch YouTube or Netflix while you train.</p></p>
+<h3 data-i18n="article.bullwatt-no-subscription.step5.title">5. Save your progress:</h3>
+<p data-i18n="article.bullwatt-no-subscription.step5.desc.html">When your workout is complete, be sure to click <b>Stop</b> to store the activity. BullWatt does not use server-side backups, but your recent sessions are saved locally in your browser. You can export your workout as a TCX file or set up an automatic sync to upload your ride directly to Strava.</p>
+<p data-i18n="article.bullwatt-no-subscription.bonus">As an added bonus, because BullWatt operates in a browser and features a "Wake Lock" to prevent your screen from sleeping, you can easily use split-screen mode to watch YouTube or Netflix while you train.</p></p>
                     </div>
                 </div>
             </div>
@@ -432,16 +447,17 @@ Here is exactly how you can set it up and start training:
         <!-- Contact Section -->
         <section class="section bg-light" id="contact">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <p class="lead mb-5">Have questions or feedback? We'd love to hear from you!</p>
+                        <p class="lead mb-5" data-i18n="contact.subtitle">Have questions or feedback? We'd love to hear
+                            from you!</p>
                         <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
                             <a href="mailto:charles@superbarbicane.com" class="btn btn-primary btn-lg">
-                                <i class="fas fa-envelope me-2"></i> Email Us
+                                <i class="fas fa-envelope me-2"></i> <span data-i18n="contact.email">Email Us</span>
                             </a>
                             <a href="https://wa.me/33659746415" class="btn btn-success btn-lg">
-                                <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                                <i class="fab fa-whatsapp me-2"></i> <span data-i18n="contact.whatsapp">WhatsApp</span>
                             </a>
                         </div>
                     </div>

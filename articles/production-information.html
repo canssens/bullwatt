@@ -319,6 +319,7 @@
         }
     </style>
     <script src="../assets/config.js"></script>
+    <script src="../assets/i18n.js"></script>
     <script>
         // Detect if the browser is not Chrome
         function isNotChrome() {
@@ -355,22 +356,36 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.html?#home">Home</a>
+                        <a class="nav-link active" href="../index.html?#home" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#features">Features</a>
+                        <a class="nav-link" href="../index.html?#features" data-i18n="nav.features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#trainingsession">Training Sessions</a>
+                        <a class="nav-link" href="../index.html?#trainingsession" data-i18n="nav.training">Training
+                            Sessions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#faq">FAQ</a>
+                        <a class="nav-link" href="../index.html?#faq" data-i18n="nav.faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#articles">Articles</a>
+                        <a class="nav-link" href="../index.html?#articles" data-i18n="nav.articles">Articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html?#contact">Contact</a>
+                        <a class="nav-link" href="../index.html?#contact" data-i18n="nav.contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-globe me-1"></i><span id="currentLangDisplay">EN</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            style="background-color:#161B22;border:1px solid rgba(255,255,255,0.1);min-width:auto;">
+                            <li><a class="dropdown-item text-light" href="#"
+                                    onclick="i18n.setLanguage('en');return false;">🇬🇧 English</a></li>
+                            <li><a class="dropdown-item text-light" href="#"
+                                    onclick="i18n.setLanguage('fr');return false;">🇫🇷 Français</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -382,18 +397,18 @@
         <!-- Training Density Section -->
         <section class="section bg-light" id="training-density">
             <div class="container">
-                <h1 class="section-title">General Information about BullWatt: A Free, Web-Based Indoor Cycling Training Tool</h1>
+                <h1 class="section-title" data-i18n="articles.production-information.html">General Information about BullWatt: A Free, Web-Based Indoor Cycling Training Tool</h1>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <p class="text-center mb-5"><p>BullWatt is a web-based indoor cycling platform designed for athletes who prioritize minimalist, high-efficiency training without the burden of subscriptions or software downloads.
+                        <p class="text-center mb-5"><p data-i18n="article.production-information.p1">BullWatt is a web-based indoor cycling platform designed for athletes who prioritize minimalist, high-efficiency training without the burden of subscriptions or software downloads.
 </p>
-<p> 
+<p data-i18n="article.production-information.p2"> 
     By utilizing Google Chrome and Bluetooth FTMS, the tool enables users to connect directly to smart trainers to execute precise, power-controlled workouts via ERG mode.
 </p>
-    <p>The service offers a diverse catalog of structured sessions, ranging from brief intervals to long-distance endurance rides, all scaled to the user's Functional Threshold Power (FTP). 
+    <p data-i18n="article.production-information.p3">The service offers a diverse catalog of structured sessions, ranging from brief intervals to long-distance endurance rides, all scaled to the user's Functional Threshold Power (FTP). 
     Because it runs in a browser, it eliminates loading times and allows cyclists to easily multi-task with entertainment while their performance data is recorded. Users can seamlessly export their activities or sync them with Strava to maintain a comprehensive history of their fitness progress. 
  </p>
-<p> 
+<p data-i18n="article.production-information.p4"> 
     Ultimately, it serves as a free, lightweight alternative to traditional cycling apps for those seeking a straightforward and functional workout experience.
 </p></p>
                     </div>
@@ -406,16 +421,17 @@
         <!-- Contact Section -->
         <section class="section bg-light" id="contact">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <p class="lead mb-5">Have questions or feedback? We'd love to hear from you!</p>
+                        <p class="lead mb-5" data-i18n="contact.subtitle">Have questions or feedback? We'd love to hear
+                            from you!</p>
                         <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
                             <a href="mailto:charles@superbarbicane.com" class="btn btn-primary btn-lg">
-                                <i class="fas fa-envelope me-2"></i> Email Us
+                                <i class="fas fa-envelope me-2"></i> <span data-i18n="contact.email">Email Us</span>
                             </a>
                             <a href="https://wa.me/33659746415" class="btn btn-success btn-lg">
-                                <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                                <i class="fab fa-whatsapp me-2"></i> <span data-i18n="contact.whatsapp">WhatsApp</span>
                             </a>
                         </div>
                     </div>
