@@ -173,5 +173,73 @@ function getFTP() {
   return ftp;
 }
 
+// --- Unit system detection and management (miles vs metric) ---
+
+// Locales that prefer miles: US, UK, Myanmar (MM), Liberia (LR)
+const MILES_COUNTRY_CODES = ['US', 'GB', 'MM', 'LR'];
+
+/**
+ * Detect the user's locale and set the unit system preference in localStorage.
+ * Only sets the value if it has not been set before (first visit).
+ * Returns the current unit system: 'miles' or 'metric'.
+ */
+function detectAndSetUnitSystem() {
+  // If already set by the user, keep their choice
+  if (localStorage.unitSystem === 'miles' || localStorage.unitSystem === 'metric') {
+    return localStorage.unitSystem;
+  }
+
+  let prefersMiles = false;
+
+  try {
+    // navigator.languages gives an array like ["en-US", "en"], navigator.language gives "en-US"
+    const locales = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || 'en'];
+
+    // Check the primary locale for a country code suffix (e.g. "en-US" -> "US")
+    for (const locale of locales) {
+      const parts = locale.split('-');
+      if (parts.length >= 2) {
+        const country = parts[parts.length - 1].toUpperCase();
+        if (MILES_COUNTRY_CODES.includes(country)) {
+          prefersMiles = true;
+        }
+        break; // Only check the first locale that has a country code
+      }
+    }
+  } catch (e) {
+    console.warn('Could not detect locale for unit system:', e);
+  }
+
+  const unit = prefersMiles ? 'miles' : 'metric';
+  localStorage.unitSystem = unit;
+  return unit;
+}
+
+/**
+ * Get the current unit system preference.
+ * @returns {'miles'|'metric'}
+ */
+function getUnitSystem() {
+  return localStorage.unitSystem === 'miles' ? 'miles' : 'metric';
+}
+
+/**
+ * Manually set the unit system preference.
+ * @param {'miles'|'metric'} unit
+ */
+function setUnitSystem(unit) {
+  localStorage.unitSystem = (unit === 'miles') ? 'miles' : 'metric';
+}
+
+/**
+ * Convenience check: returns true if current unit system is miles.
+ * @returns {boolean}
+ */
+function isMiles() {
+  return getUnitSystem() === 'miles';
+}
+
 
 
