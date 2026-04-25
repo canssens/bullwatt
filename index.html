@@ -511,6 +511,13 @@
                                     <input type="range" class="form-range flex-grow-1" id="valueSlider" min="100"
                                         max="300" step="1" value="200" oninput="updateSliderValue(this.value)">
                                 </div>
+                                <div class="form-check form-switch mt-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="unitToggle"
+                                        onchange="onUnitToggleChange(this)">
+                                    <label class="form-check-label text-light" for="unitToggle" id="unitToggleLabel">Use
+                                        miles
+                                        instead metric system</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1254,7 +1261,26 @@
                 document.getElementById('sliderValue').textContent = ftpValue;
             }
 
+            // Detect locale and initialize unit system (miles vs metric)
+            detectAndSetUnitSystem();
+            syncUnitToggleUI();
+
         });
+        /**
+         * Sync the unit toggle UI with the current localStorage value.
+         */
+        function syncUnitToggleUI() {
+            const toggle = document.getElementById('unitToggle');
+            const useMiles = isMiles();
+            toggle.checked = useMiles;
+        }
+
+        /**
+         * Called when the user manually toggles the unit switch.
+         */
+        function onUnitToggleChange(checkbox) {
+            setUnitSystem(checkbox.checked ? 'miles' : 'metric');
+        }
     </script>
 </body>
 

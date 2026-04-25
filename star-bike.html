@@ -218,7 +218,7 @@
         </td>
         <td width="33%">DISTANCE
           <br />
-          <span id="valueDistance">0</span> KM
+          <span id="valueDistance">0</span> <span id="unitDistance">KM</span>
         </td>
       </tr>
     </table>
@@ -398,7 +398,13 @@
         delta = now.getTime() - activity.endTime.getTime();
         distanceDelta = speed * delta / 3600000;
         activity.distance = activity.distance + distanceDelta;
-        dist = parseFloat(activity.distance).toFixed(2);
+        if (unitSystem == "metric") {
+          dist = parseFloat(activity.distance).toFixed(2);
+        }
+        else {
+          dist = parseFloat(activity.distance / 1.609).toFixed(2);
+        }
+
         document.getElementById("valueDistance").textContent = dist;
       }
 
@@ -651,9 +657,17 @@
       speed = getSpeedFromWatt(res.power);
 
       //Speed management
-      document.querySelector('#valueTabSpeed').textContent = Math.round(speed);
-      document.querySelector('#valueTabSpeedAVG').textContent = getAvg(dataSpeed);
-      document.querySelector('#valueTabSpeedBEST').textContent = getMax(dataSpeed);
+      if (unitSystem == "metric") {
+        document.querySelector('#valueTabSpeed').textContent = Math.round(speed);
+        document.querySelector('#valueTabSpeedAVG').textContent = getAvg(dataSpeed);
+        document.querySelector('#valueTabSpeedBEST').textContent = getMax(dataSpeed);
+      }
+      else {
+        document.querySelector('#valueTabSpeed').textContent = Math.round(speed / 1.609);
+        document.querySelector('#valueTabSpeedAVG').textContent = Math.round(getAvg(dataSpeed) / 1.609);
+        document.querySelector('#valueTabSpeedBEST').textContent = Math.round(getMax(dataSpeed) / 1.609);
+      }
+
 
       document.querySelector('#valueTabCadence').textContent = res.cadence;
       document.querySelector('#valueTabCadenceAVG').textContent = getAvg(dataCadence);
@@ -877,6 +891,10 @@
     var trainingGraph = null;
     var trainingCurrentPhase = -1;
     var myTrainingFTP = getFTP();
+
+    // var metric system
+    var unitSystem = getUnitSystem();
+    if (unitSystem !== "metric") document.getElementById("unitDistance").textContent = "MI";
 
     // Appeler la fonction lorsque la page est chargée
     // window.onload = getParameters;
