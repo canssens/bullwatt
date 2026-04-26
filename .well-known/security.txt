@@ -1,0 +1,5 @@
+Contact: mailto:charles@superbarbicane.com
+Contact: https://www.bullwatt.com/privacy.html
+Expires: 2027-04-26T00:00:00Z
+Preferred-Languages: en, fr
+Canonical: https://www.bullwatt.com/.well-known/security.txt
