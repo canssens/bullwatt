@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /output_tcx/
+Sitemap: https://www.bullwatt.com/sitemap.xml
