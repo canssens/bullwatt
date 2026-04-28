@@ -15,78 +15,7 @@ function myUUID() {
 
 myUUID();
 
-// retun the unix timestamp of activities stored in locale storage
-function getActivitiesDate() {
-      let activitiesDate = [];
-      let activities = null;
-      let activitiesJson = localStorage.activities;
-      if(activitiesJson != null && activitiesJson != "")
-      {
-        activities = JSON.parse(activitiesJson);
 
-        activities["activities"].forEach(element => {
-          let dateactivity = Date.parse(element.startTime);
-          activitiesDate.push(dateactivity);
-          
-          
-          //purge activity timeseries older than 1 month
-          let now = new Date();
-          let oneMonthAgo = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate());
-          if(dateactivity < oneMonthAgo.getTime())
-          {
-            element.timeseries = [];
-          }
-
-        });
-
-        // save the activities back to local storage
-        localStorage.activities = JSON.stringify(activities);
-      }
-
-      $('#densityTraining').github_graph({
-        data: activitiesDate,
-        texts: ['completed training', 'completed trainings']
-      });
-
-    // load Strava activities
-    let url = './service/strava_get_activities.php';
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-
-    xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            console.log('Reponse:', JSON.parse(xhr.responseText));
-            let obj = JSON.parse(xhr.responseText);
-            console.log(obj);
-            if(obj["status"]=="ok")
-            {
-                obj["activities_date"].forEach(element => {
-                  let dateactivity = Date.parse(element);
-                  activitiesDate.push(dateactivity);
-                  });
-
-
-              $('#densityTraining').github_graph({
-              data: activitiesDate,
-              texts: ['completed training', 'completed trainings']
-            }); 
-            }
-            
-
-        } else {
-            console.error('Error:', xhr.status, xhr.statusText);
-        }
-    };
-
-    xhr.onerror = function() {
-        console.error('Error strava connection');
-    };
-
-    xhr.send();
-
-    
-
-    }
 
 
 function checkConnectionStrava()
