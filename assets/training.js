@@ -1,5 +1,5 @@
 
-function loadTrainingData() {
+function loadTrainingData(trainingId) {
   // load Json file data
   fetch('./trainings/trainings.json')
     .then(response => {
@@ -12,7 +12,7 @@ function loadTrainingData() {
       // Process the JSON data here      
       // Find the training session with the given ID
       const trainingSessionData = data.find(training => training.id === trainingId);
-      trainingContent = trainingSessionData;
+      window.trainingContent = trainingSessionData;
       calculateGraph();
       
     })
@@ -27,11 +27,11 @@ function getParameters() {
     // Création d'un objet URLSearchParams pour manipuler facilement les paramètres
     const params = new URLSearchParams(queryString);
     // Récupération des valeurs des paramètres
-    trainingId = params.get('training');
-    if(trainingId !== null){
-      trainingSession = true;
-      console.log("training session : " + trainingId);
-      loadTrainingData();
+    window.trainingId = params.get('training');
+    if(window.trainingId !== null){
+      window.trainingSession = true;
+      console.log("training session : " + window.trainingId);
+      loadTrainingData(window.trainingId);
       
     }
 }
@@ -40,21 +40,23 @@ function getParameters() {
 function calculateGraph()
 {
 
-  data = [];
+  const data = [];
 
   // from trainingContent, get the data from phases
   // for each phase, get the data from the graph
-  for (let i = 0; i < trainingContent.phases.length; i++) {
-    const phase = trainingContent.phases[i];
-    let powerPhase = Math.round((phase.value * myTrainingFTP ) / 5) * 5;
+  for (let i = 0; i < window.trainingContent.phases.length; i++) {
+    const phase = window.trainingContent.phases[i];
+    let powerPhase = Math.round((phase.value * window.myTrainingFTP ) / 5) * 5;
     data.push([phase.start, powerPhase]);
   }
 
   //console.log("data : " + data);
 
-  trainingGraph = data;
+  window.trainingGraph = data;
 
-  updateCharts();
+  if (typeof window.updateCharts === 'function') {
+    window.updateCharts();
+  }
 
 }
 

@@ -319,12 +319,16 @@
       return {
         log: function (text) {
           oldCons.log(text);
-          pushTechnicalLog(text);
+          if (typeof window.pushTechnicalLog === 'function') {
+            window.pushTechnicalLog(text);
+          }
 
         },
         error: function (text) {
           oldCons.error(text);
-          pushTechnicalLog(text);
+          if (typeof window.pushTechnicalLog === 'function') {
+            window.pushTechnicalLog(text);
+          }
         }
       };
     }(window.console));
@@ -350,6 +354,7 @@
     var cadence = 0;
     var currentPower = 50;
     var timeElapsed = 0;
+    var unitSystem = "metric";
 
 
     var connectableDevice = null;
@@ -878,23 +883,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.js"></script>
   <script type="module" src="./assets/connectable.js"></script>
-  <script src="./assets/utils.js"></script>
   <script src="./assets/training.js"></script>
 
 
-  <script>
+  <script type="module">
+    import {
+      getFTP,
+      getUnitSystem
+    } from './src/utils.js';
 
     //declare global variables
-    var trainingSession = null;
-    var trainingId = null;
-    var trainingContent = null;
-    var trainingGraph = null;
-    var trainingCurrentPhase = -1;
-    var myTrainingFTP = getFTP();
+    window.trainingSession = null;
+    window.trainingId = null;
+    window.trainingContent = null;
+    window.trainingGraph = null;
+    window.trainingCurrentPhase = -1;
+    window.myTrainingFTP = getFTP();
 
     // var metric system
-    var unitSystem = getUnitSystem();
-    if (unitSystem !== "metric") document.getElementById("unitDistance").textContent = "MI";
+    window.unitSystem = getUnitSystem();
+    console.log("metric system " + window.unitSystem);
+    if (window.unitSystem !== "metric") document.getElementById("unitDistance").textContent = "MI";
 
     // Appeler la fonction lorsque la page est chargée
     // window.onload = getParameters;
@@ -1020,6 +1029,8 @@
 
       chartPower.setOption(option);
     }
+
+    window.updateCharts = updateCharts;
 
 
     window.addEventListener("keydown", (event) => {
