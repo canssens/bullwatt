@@ -85,6 +85,30 @@
       text-align: center;
     }
 
+    .loading-dots::after {
+      content: "";
+      animation: loadingDots 1.2s steps(4, end) infinite;
+    }
+
+    @keyframes loadingDots {
+      0% {
+        content: "";
+      }
+
+      25% {
+        content: ".";
+      }
+
+      50% {
+        content: "..";
+      }
+
+      75%,
+      100% {
+        content: "...";
+      }
+    }
+
     .button {
       background-color: #4CAF50;
       color: white;
@@ -238,6 +262,12 @@
       </p>
       <br />
       <a href="index.html">Return home page</a>
+    </div>
+  </div>
+
+  <div id="connectionPopup" class="popup">
+    <div class="popup-content">
+      <p class="loading-dots" style="font-size: 1.5em;">Connecting</p>
     </div>
   </div>
 
@@ -429,9 +459,21 @@
       activity.duration = (activity.endTime.getTime() - activity.startTime.getTime()) / 1000;
     }
 
+    function showConnectionPopup() {
+      document.getElementById('connectionPopup').style.display = 'block';
+    }
+
+    function hideConnectionPopup() {
+      document.getElementById('connectionPopup').style.display = 'none';
+    }
+
     async function connectBLE() {
+      let isConnecting = false;
       try {
         if (connectableDevice == null) {
+          isConnecting = true;
+          showConnectionPopup();
+
           const filter = {
             filters: [
               { services: ['00001826-0000-1000-8000-00805f9b34fb'] }
@@ -464,6 +506,10 @@
 
       } catch (error) {
         console.log('Argh! ' + error);
+      } finally {
+        if (isConnecting) {
+          hideConnectionPopup();
+        }
       }
     }
 
