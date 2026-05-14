@@ -303,6 +303,50 @@
         "source": "User Input"
     },
     {
+        "id": "recovery_flow_25",
+        "training_name": "Recovery Flow 25",
+        "description": "Easy recovery spin 25min",
+        "duration": "1500",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.45",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 1200,
+                "value": "0.45",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "0.45",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
         "id": "training1",
         "training_name": "First training",
         "description": "Relax session 25min",
@@ -533,6 +577,620 @@
         ]
     },
     {
+        "id": "sprint_kicks_38",
+        "training_name": "Sprint Kicks",
+        "description": "Short sprint repeats 38min",
+        "duration": "2280",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.75",
+                "notes": ""
+            },
+            {
+                "start": 720,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 735,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 915,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1080,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 1095,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1260,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 1275,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 1515,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1680,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 1695,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1860,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 1875,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 2040,
+                "value": "1.8",
+                "notes": ""
+            },
+            {
+                "start": 2055,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 2160,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 2280,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
+        "id": "tempo_builder_40",
+        "training_name": "Tempo Builder",
+        "description": "Tempo intervals 40min",
+        "duration": "2400",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.8",
+                "notes": ""
+            },
+            {
+                "start": 1080,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1200,
+                "value": "0.83",
+                "notes": ""
+            },
+            {
+                "start": 1680,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 2280,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 2400,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
+        "id": "thirty_thirty_ignite_40",
+        "training_name": "30-30 Ignite",
+        "description": "HIIT 30-30 intervals 40min",
+        "duration": "2400",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 630,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 660,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 690,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 720,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 750,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 780,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 810,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 840,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 870,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 930,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 990,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1020,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1050,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1320,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1350,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1380,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1410,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1440,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1470,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1530,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1560,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1590,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1620,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1650,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1680,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1710,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1740,
+                "value": "1.2",
+                "notes": ""
+            },
+            {
+                "start": 1770,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 2100,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 2400,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
+        "id": "vo2_five_by_three_45",
+        "training_name": "VO2 Five by Three",
+        "description": "VO2 Max intervals 45min",
+        "duration": "2700",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "1.15",
+                "notes": ""
+            },
+            {
+                "start": 780,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "1.15",
+                "notes": ""
+            },
+            {
+                "start": 1140,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1320,
+                "value": "1.15",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 1680,
+                "value": "1.15",
+                "notes": ""
+            },
+            {
+                "start": 1860,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 2040,
+                "value": "1.15",
+                "notes": ""
+            },
+            {
+                "start": 2220,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 2520,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 2700,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
+        "id": "zone2_cruise_45",
+        "training_name": "Zone 2 Cruise",
+        "description": "Steady endurance ride 45min",
+        "duration": "2700",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.68",
+                "notes": ""
+            },
+            {
+                "start": 1200,
+                "value": "0.72",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "0.68",
+                "notes": ""
+            },
+            {
+                "start": 2400,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 2700,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
+        "id": "over_under_engine_48",
+        "training_name": "Over Under Engine",
+        "description": "Threshold over-under 48min",
+        "duration": "2880",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.95",
+                "notes": ""
+            },
+            {
+                "start": 720,
+                "value": "1.05",
+                "notes": ""
+            },
+            {
+                "start": 840,
+                "value": "0.95",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "1.05",
+                "notes": ""
+            },
+            {
+                "start": 1080,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1260,
+                "value": "0.95",
+                "notes": ""
+            },
+            {
+                "start": 1380,
+                "value": "1.05",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "0.95",
+                "notes": ""
+            },
+            {
+                "start": 1620,
+                "value": "1.05",
+                "notes": ""
+            },
+            {
+                "start": 1740,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1920,
+                "value": "0.95",
+                "notes": ""
+            },
+            {
+                "start": 2040,
+                "value": "1.05",
+                "notes": ""
+            },
+            {
+                "start": 2160,
+                "value": "0.95",
+                "notes": ""
+            },
+            {
+                "start": 2280,
+                "value": "1.05",
+                "notes": ""
+            },
+            {
+                "start": 2400,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 2700,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 2880,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
         "id": "endsoft50min",
         "training_name": "Endurance soft",
         "description": "Endurance soft 50min",
@@ -686,6 +1344,70 @@
         "source": "User Input"
     },
     {
+        "id": "sweet_spot_ladder_50",
+        "training_name": "Sweet Spot Ladder",
+        "description": "Progressive sweet spot 50min",
+        "duration": "3000",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.88",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1140,
+                "value": "0.9",
+                "notes": ""
+            },
+            {
+                "start": 1620,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "0.92",
+                "notes": ""
+            },
+            {
+                "start": 2400,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 2700,
+                "value": "0.55",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
         "id": "alpehuez01",
         "training_name": "Alpe d'Huez",
         "description": "A training inspirated by the Alpe d'Huez 55min",
@@ -805,6 +1527,60 @@
         "source": "User Input"
     },
     {
+        "id": "ftp_anchor_55",
+        "training_name": "FTP Anchor",
+        "description": "Sustained threshold 55min",
+        "duration": "3300",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.98",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "1",
+                "notes": ""
+            },
+            {
+                "start": 2700,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 3000,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 3300,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
+    },
+    {
         "id": "sst55min",
         "training_name": "SST 55min",
         "description": "Endurance - SST 55min",
@@ -887,6 +1663,115 @@
         ],
         "creation_date": "2025-05-25T11:10:39+02:00",
         "source": "User Input"
+    },
+    {
+        "id": "climb_surges_60",
+        "training_name": "Climb Surges",
+        "description": "Climbing tempo with surges 60min",
+        "duration": "3600",
+        "units": {
+            "time": "seconds",
+            "value": "number"
+        },
+        "phases": [
+            {
+                "start": 0,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 300,
+                "value": "0.65",
+                "notes": ""
+            },
+            {
+                "start": 600,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 900,
+                "value": "1.1",
+                "notes": ""
+            },
+            {
+                "start": 960,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 1260,
+                "value": "1.1",
+                "notes": ""
+            },
+            {
+                "start": 1320,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 1500,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 1800,
+                "value": "1.1",
+                "notes": ""
+            },
+            {
+                "start": 1860,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 2160,
+                "value": "1.1",
+                "notes": ""
+            },
+            {
+                "start": 2220,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 2400,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 2700,
+                "value": "1.1",
+                "notes": ""
+            },
+            {
+                "start": 2760,
+                "value": "0.85",
+                "notes": ""
+            },
+            {
+                "start": 3060,
+                "value": "1.1",
+                "notes": ""
+            },
+            {
+                "start": 3120,
+                "value": "0.6",
+                "notes": ""
+            },
+            {
+                "start": 3360,
+                "value": "0.5",
+                "notes": ""
+            },
+            {
+                "start": 3600,
+                "value": "0.5",
+                "notes": ""
+            }
+        ],
+        "creation_date": "2026-05-14T21:45:00+02:00",
+        "source": "BullWatt Catalog Expansion"
     },
     {
         "id": "sprint10",

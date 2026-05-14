@@ -1,0 +1,84 @@
+{
+  "id": "vo2_five_by_three_45",
+  "training_name": "VO2 Five by Three",
+  "description": "VO2 Max intervals 45min",
+  "duration": "2700",
+  "units": {
+    "time": "seconds",
+    "value": "number"
+  },
+  "phases": [
+    {
+      "start": 0,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 300,
+      "value": "0.65",
+      "notes": ""
+    },
+    {
+      "start": 600,
+      "value": "1.15",
+      "notes": ""
+    },
+    {
+      "start": 780,
+      "value": "0.55",
+      "notes": ""
+    },
+    {
+      "start": 960,
+      "value": "1.15",
+      "notes": ""
+    },
+    {
+      "start": 1140,
+      "value": "0.55",
+      "notes": ""
+    },
+    {
+      "start": 1320,
+      "value": "1.15",
+      "notes": ""
+    },
+    {
+      "start": 1500,
+      "value": "0.55",
+      "notes": ""
+    },
+    {
+      "start": 1680,
+      "value": "1.15",
+      "notes": ""
+    },
+    {
+      "start": 1860,
+      "value": "0.55",
+      "notes": ""
+    },
+    {
+      "start": 2040,
+      "value": "1.15",
+      "notes": ""
+    },
+    {
+      "start": 2220,
+      "value": "0.55",
+      "notes": ""
+    },
+    {
+      "start": 2520,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 2700,
+      "value": "0.5",
+      "notes": ""
+    }
+  ],
+  "creation_date": "2026-05-14T21:45:00+02:00",
+  "source": "BullWatt Catalog Expansion"
+}

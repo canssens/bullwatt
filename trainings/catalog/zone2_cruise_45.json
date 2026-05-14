@@ -1,0 +1,49 @@
+{
+  "id": "zone2_cruise_45",
+  "training_name": "Zone 2 Cruise",
+  "description": "Steady endurance ride 45min",
+  "duration": "2700",
+  "units": {
+    "time": "seconds",
+    "value": "number"
+  },
+  "phases": [
+    {
+      "start": 0,
+      "value": "0.5",
+      "notes": ""
+    },
+    {
+      "start": 300,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 600,
+      "value": "0.68",
+      "notes": ""
+    },
+    {
+      "start": 1200,
+      "value": "0.72",
+      "notes": ""
+    },
+    {
+      "start": 1800,
+      "value": "0.68",
+      "notes": ""
+    },
+    {
+      "start": 2400,
+      "value": "0.6",
+      "notes": ""
+    },
+    {
+      "start": 2700,
+      "value": "0.5",
+      "notes": ""
+    }
+  ],
+  "creation_date": "2026-05-14T21:45:00+02:00",
+  "source": "BullWatt Catalog Expansion"
+}
