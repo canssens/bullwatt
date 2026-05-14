@@ -613,7 +613,7 @@
           else phase = trainingContent.phases[y];
 
           if (y == trainingCurrentPhase) {
-            initText = (phase.value * 100) + '% FTP';
+            initText = Math.round(phase.value * 100) + '% FTP';
             initRefTime = (timeElapsed / 1000);
           }
           else {
@@ -634,7 +634,7 @@
             else
               trainingNextSteps += '<br>' + durationTextFormat + ' @ ' + initText;
             initRefTime = phase.start;
-            initText = (phase.value * 100) + '% FTP';
+            initText = Math.round(phase.value * 100) + '% FTP';
 
             // launch sound play
             if (duration == 2 || duration == 1) {
