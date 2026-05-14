@@ -12,7 +12,7 @@
 - Keep DOM manipulation separate from business logic when possible.
 - Use descriptive function names.
 - Avoid large functions.
-- Variables, functions and comments are writen in english
+- Variables, functions and comments are written in English
 
 ## Before finishing a task
 - Explain what files were changed.
@@ -20,3 +20,16 @@
 - Run available tests or explain why none were run.
 - Do not modify unrelated files.
 - Verify if there is translation to add.
+
+## Tests
+- The project is tested manually through Docker.
+- Start the local server from the repository root with:
+  ```powershell
+  docker compose up
+  ```
+- URL to test: http://localhost:8000
+- Stop the test server with `Ctrl+C`.
+- If needed, clean up containers with:
+  ```powershell
+  docker compose down
+  ```
