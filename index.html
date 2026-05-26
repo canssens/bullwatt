@@ -66,17 +66,41 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #6C63FF 0%, #0D1117 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            min-height: 560px;
+            background:
+                linear-gradient(90deg, rgba(13, 17, 23, 0.96) 0%, rgba(13, 17, 23, 0.78) 42%, rgba(13, 17, 23, 0.34) 100%),
+                url("./assets/hero-bullwatt-indoor-cycling.jpg") center right / cover no-repeat;
             color: white;
-            padding: 3rem 0;
+            padding: 6rem 0 5rem;
             margin-bottom: 4rem;
             border-radius: 0 0 20px 20px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 72% 48%, rgba(0, 229, 160, 0.12), transparent 28%),
+                linear-gradient(180deg, rgba(13, 17, 23, 0.1) 0%, rgba(13, 17, 23, 0.68) 100%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            max-width: 920px;
         }
 
         .hero h1 {
             font-weight: 700;
             margin-bottom: 1.5rem;
             font-size: 2.5rem;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
         }
 
         .hero p {
@@ -240,11 +264,20 @@
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero {
-                padding: 4rem 0;
+                min-height: 640px;
+                padding: 5rem 0 3.5rem;
+                background:
+                    linear-gradient(180deg, rgba(13, 17, 23, 0.9) 0%, rgba(13, 17, 23, 0.76) 48%, rgba(13, 17, 23, 0.94) 100%),
+                    url("./assets/hero-bullwatt-indoor-cycling.jpg") 58% center / cover no-repeat;
             }
 
             .hero h1 {
                 font-size: 2rem;
+            }
+
+            .hero .btn {
+                max-width: calc(100vw - 1.5rem);
+                white-space: normal;
             }
 
             .section {
