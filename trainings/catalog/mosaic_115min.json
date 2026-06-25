@@ -1,0 +1,304 @@
+{
+    "id":  "mosaic_115min",
+    "training_name":  "Mosaic 115min",
+    "description":  "Converted from Mosaic__1_ 115min",
+    "duration":  "6900",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.6",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1080,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1260,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1440,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1620,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1800,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1980,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2160,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2340,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2520,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2700,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3060,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3120,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3180,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3240,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3300,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3360,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3420,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3480,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3540,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3660,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3720,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3780,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3840,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3900,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3960,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4020,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4080,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4140,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4200,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4500,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4800,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4860,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5160,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5220,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5520,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5580,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5640,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5700,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5760,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5820,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5880,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5940,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6240,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6300,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6600,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6660,
+                       "value":  "0.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6900,
+                       "value":  "0.4",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Mosaic__1_.zwo"
+}

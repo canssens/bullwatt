@@ -1,0 +1,104 @@
+{
+    "id":  "attack_60min",
+    "training_name":  "Attack 60min",
+    "description":  "Converted from Attack___1_ 60min",
+    "duration":  "3600",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  930,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1680,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1710,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2340,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2520,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2550,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3300,
+                       "value":  "0.525",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.525",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Attack___1_.zwo"
+}

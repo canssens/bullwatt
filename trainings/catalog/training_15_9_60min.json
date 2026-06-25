@@ -1,0 +1,119 @@
+{
+    "id":  "training_15_9_60min",
+    "training_name":  "15.9 60min",
+    "description":  "Converted from 15.9__1_ 60min",
+    "duration":  "3600",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1050,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1230,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1380,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1560,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1710,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1890,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2040,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2220,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2370,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2550,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3150,
+                       "value":  "0.575",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.575",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from 15.9__1_.zwo"
+}

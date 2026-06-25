@@ -9,10 +9,19 @@ foreach ($files as $file) {
         $trainings[] = $json;
     } else {
         echo "Error parsing JSON in file: $file\n";
+        echo "  JSON error: " . json_last_error_msg() . "\n";
+        echo "  File size: " . strlen($content) . " bytes\n";
+
+        if (strncmp($content, "\xEF\xBB\xBF", 3) === 0) {
+            echo "  Hint: file starts with a UTF-8 BOM. Save it as UTF-8 without BOM.\n";
+        }
+
+        $firstBytes = unpack('H*', substr($content, 0, 16));
+        echo "  First bytes: " . strtoupper($firstBytes[1]) . "\n";
     }
 }   
 
-var_dump($trainings);
+//var_dump($trainings);
 // sort the array by the "duration" key
 usort($trainings, function ($a, $b) {
     return intval($a['duration']) <=> intval($b['duration']);

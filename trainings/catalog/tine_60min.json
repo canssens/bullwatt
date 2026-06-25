@@ -1,0 +1,139 @@
+{
+    "id":  "tine_60min",
+    "training_name":  "Tine 60min",
+    "description":  "Converted from Tine__1_ 60min",
+    "duration":  "3600",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.575",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1080,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1170,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1260,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1440,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1680,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1860,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1950,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2040,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2220,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2460,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2640,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2730,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2820,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3240,
+                       "value":  "0.375",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.375",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Tine__1_.zwo"
+}

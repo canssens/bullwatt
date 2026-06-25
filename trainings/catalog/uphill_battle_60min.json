@@ -1,0 +1,209 @@
+{
+    "id":  "uphill_battle_60min",
+    "training_name":  "Uphill Battle 60min",
+    "description":  "Converted from Uphill_Battle__1_ 60min",
+    "duration":  "3600",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  810,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  930,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1230,
+                       "value":  "1.25",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1260,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1410,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1710,
+                       "value":  "1.25",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1740,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1890,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2190,
+                       "value":  "1.25",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2220,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2400,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2430,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2460,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2490,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2520,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2550,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2580,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2610,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2640,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2670,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2700,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2880,
+                       "value":  "1.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2910,
+                       "value":  "0.6",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2940,
+                       "value":  "1.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2970,
+                       "value":  "0.6",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "1.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3030,
+                       "value":  "0.6",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3060,
+                       "value":  "1.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3090,
+                       "value":  "0.6",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3120,
+                       "value":  "1.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3150,
+                       "value":  "0.6",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3180,
+                       "value":  "0.375",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.375",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Uphill_Battle__1_.zwo"
+}

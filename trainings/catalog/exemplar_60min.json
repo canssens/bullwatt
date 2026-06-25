@@ -1,0 +1,119 @@
+{
+    "id":  "exemplar_60min",
+    "training_name":  "Exemplar 60min",
+    "description":  "Converted from Exemplar__1_ 60min",
+    "duration":  "3600",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.525",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  300,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "0.93",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1380,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "0.93",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1980,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2100,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2280,
+                       "value":  "0.93",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2400,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2520,
+                       "value":  "0.93",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2640,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2760,
+                       "value":  "0.93",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2880,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "0.93",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3120,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3240,
+                       "value":  "0.93",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3360,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3480,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.45",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Exemplar__1_.zwo"
+}
