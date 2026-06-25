@@ -1,0 +1,319 @@
+{
+    "id":  "purple_unicorn_105min",
+    "training_name":  "Purple Unicorn 105min",
+    "description":  "Converted from Purple_Unicorn__1_ 105min",
+    "duration":  "6300",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1080,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1140,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1170,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1350,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1410,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1440,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1620,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1680,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1710,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1890,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1950,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1980,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2280,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2460,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2520,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2550,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2730,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2790,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2820,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3060,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3090,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3270,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3330,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3360,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3660,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3840,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3900,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3930,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4110,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4170,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4200,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4380,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4440,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4470,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4650,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4710,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4740,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5040,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5220,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5280,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5310,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5490,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5550,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5580,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5760,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5820,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5850,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6030,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6090,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6120,
+                       "value":  "0.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6300,
+                       "value":  "0.4",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Purple_Unicorn__1_.zwo"
+}

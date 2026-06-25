@@ -1,0 +1,294 @@
+{
+    "id":  "tenacity_120min",
+    "training_name":  "Tenacity 120min",
+    "description":  "Converted from Tenacity__1_ 120min",
+    "duration":  "7200",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  300,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  810,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  870,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  960,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1020,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1200,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1505,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1805,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1810,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2110,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2115,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2415,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2420,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2720,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2725,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3025,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3030,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3390,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3690,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3695,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3995,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4000,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4300,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4305,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4605,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4610,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4910,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4915,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5215,
+                       "value":  "2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5220,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5580,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5640,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5700,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5760,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5820,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5880,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5940,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6000,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6060,
+                       "value":  "0.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6180,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6240,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6300,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6360,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6420,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6480,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6540,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6600,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6660,
+                       "value":  "0.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  7200,
+                       "value":  "0.4",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Tenacity__1_.zwo"
+}

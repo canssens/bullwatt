@@ -1,0 +1,214 @@
+{
+    "id":  "serrated_90min",
+    "training_name":  "Serrated 90min",
+    "description":  "Converted from Serrated__1_ 90min",
+    "duration":  "5400",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.525",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  300,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1020,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1140,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1260,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1380,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1620,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1740,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1860,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1980,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2100,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2220,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2700,
+                       "value":  "1.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2730,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2910,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2970,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3150,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3210,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3390,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3450,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3630,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3690,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3870,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3930,
+                       "value":  "1.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3960,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4140,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4200,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4380,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4440,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4620,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4680,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4860,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4920,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5100,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5160,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5400,
+                       "value":  "0.45",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Serrated__1_.zwo"
+}

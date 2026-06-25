@@ -1,0 +1,299 @@
+{
+    "id":  "bricolage_120min",
+    "training_name":  "Bricolage 120min",
+    "description":  "Converted from Bricolage__1_ 120min",
+    "duration":  "7200",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1620,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1800,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1860,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1920,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1980,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2040,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2100,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2160,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2220,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2280,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2400,
+                       "value":  "0.77",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2580,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2600,
+                       "value":  "0.77",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2780,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2800,
+                       "value":  "0.77",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2980,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "0.77",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3180,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3200,
+                       "value":  "0.77",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3380,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3400,
+                       "value":  "0.77",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3580,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3720,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3900,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3960,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4020,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4080,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4140,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4200,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4260,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4320,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4380,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4500,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4560,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4680,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4740,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4860,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4920,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5040,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5100,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5220,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5280,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5400,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6300,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  6900,
+                       "value":  "0.425",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  7200,
+                       "value":  "0.425",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Bricolage__1_.zwo"
+}

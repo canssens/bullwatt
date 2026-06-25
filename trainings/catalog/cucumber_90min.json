@@ -1,0 +1,184 @@
+{
+    "id":  "cucumber_90min",
+    "training_name":  "Cucumber 90min",
+    "description":  "Converted from Cucumber__1_ 90min",
+    "duration":  "5400",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.425",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  300,
+                       "value":  "0.6",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  930,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  960,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  975,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1095,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1695,
+                       "value":  "0.67",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1815,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2415,
+                       "value":  "0.67",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2535,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2735,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2935,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3135,
+                       "value":  "0.67",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3255,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3285,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3315,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3330,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3450,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3750,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4050,
+                       "value":  "0.67",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4170,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4320,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4470,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4620,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4770,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4920,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5070,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5100,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5130,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5145,
+                       "value":  "0.425",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5400,
+                       "value":  "0.425",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Cucumber__1_.zwo"
+}

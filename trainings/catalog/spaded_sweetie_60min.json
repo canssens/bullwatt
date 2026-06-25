@@ -1,0 +1,204 @@
+{
+    "id":  "spaded_sweetie_60min",
+    "training_name":  "Spaded Sweetie 60min",
+    "description":  "Converted from Spaded_Sweetie__1_ 60min",
+    "duration":  "3600",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  915,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  945,
+                       "value":  "1.35",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  975,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1035,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1095,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1155,
+                       "value":  "1.35",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1185,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1245,
+                       "value":  "1.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1260,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1380,
+                       "value":  "0.765",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1410,
+                       "value":  "0.88",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1650,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1710,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1725,
+                       "value":  "0.785",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1755,
+                       "value":  "0.92",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1995,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2055,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2085,
+                       "value":  "0.805",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2115,
+                       "value":  "0.96",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2355,
+                       "value":  "1.06",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2415,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2475,
+                       "value":  "0.825",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2505,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2745,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2805,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2925,
+                       "value":  "0.845",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2955,
+                       "value":  "1.04",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3195,
+                       "value":  "1.12",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3255,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.5",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Spaded_Sweetie__1_.zwo"
+}

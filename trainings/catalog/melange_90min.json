@@ -1,0 +1,234 @@
+{
+    "id":  "melange_90min",
+    "training_name":  "Melange 90min",
+    "description":  "Converted from Melange__1_ 90min",
+    "duration":  "5400",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  300,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  930,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  990,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1020,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1080,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1110,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1170,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1320,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1920,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2520,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2640,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2700,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2820,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2880,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3060,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3180,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3240,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3360,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3420,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3540,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4200,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4220,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4260,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4280,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4320,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4340,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4380,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4400,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4440,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4460,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4500,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4520,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4560,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4580,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4620,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4640,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4680,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5280,
+                       "value":  "0.375",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5400,
+                       "value":  "0.375",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Melange__1_.zwo"
+}

@@ -1,0 +1,244 @@
+{
+    "id":  "amalgam_85min",
+    "training_name":  "Amalgam 85min",
+    "description":  "Converted from Amalgam__1_ 85min",
+    "duration":  "5100",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.575",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1020,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1080,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1200,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1260,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1320,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1380,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1440,
+                       "value":  "0.85",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1800,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2400,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2550,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2730,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2745,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2790,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2805,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2850,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2865,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2910,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2925,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2970,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2985,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3030,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3045,
+                       "value":  "0.45",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3090,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3390,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3450,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3510,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3570,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3630,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3750,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3810,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3870,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4020,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4200,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4800,
+                       "value":  "0.525",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5100,
+                       "value":  "0.525",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Amalgam__1_.zwo"
+}

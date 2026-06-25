@@ -1,0 +1,209 @@
+{
+    "id":  "mishmash_90min",
+    "training_name":  "Mishmash 90min",
+    "description":  "Converted from Mishmash__1_ 90min",
+    "duration":  "5400",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  840,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1080,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1140,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1200,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1380,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1440,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1680,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1740,
+                       "value":  "0.65",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1860,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2100,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2340,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2580,
+                       "value":  "0.9",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2820,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3060,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3300,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4020,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4140,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4200,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4320,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4380,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4500,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4560,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4620,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4680,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4740,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4800,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4860,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4920,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  4980,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5040,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5100,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5160,
+                       "value":  "0.75",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5220,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  5400,
+                       "value":  "0.5",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Mishmash__1_.zwo"
+}

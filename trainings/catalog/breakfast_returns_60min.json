@@ -1,0 +1,379 @@
+{
+    "id":  "breakfast_returns_60min",
+    "training_name":  "Breakfast Returns 60min",
+    "description":  "Converted from Breakfast_Returns__1_ 60min",
+    "duration":  "3600",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  600,
+                       "value":  "0.95",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  630,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  660,
+                       "value":  "1.05",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  690,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.15",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  750,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  780,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  900,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  930,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  960,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  990,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1020,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1050,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1080,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1110,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1140,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1170,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1200,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1230,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1260,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1290,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1320,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1350,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1380,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1410,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1440,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1470,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1500,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1680,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1710,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1740,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1770,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1800,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1830,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1860,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1890,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1920,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1950,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1980,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2010,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2040,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2070,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2100,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2130,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2160,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2190,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2220,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2250,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2280,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2460,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2490,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2520,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2550,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2580,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2610,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2640,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2670,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2700,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2730,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2760,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2790,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2820,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2850,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2880,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2910,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2940,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2970,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3000,
+                       "value":  "1.3",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3030,
+                       "value":  "0.7",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3060,
+                       "value":  "0.55",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3240,
+                       "value":  "0.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  3600,
+                       "value":  "0.4",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from Breakfast_Returns__1_.zwo"
+}

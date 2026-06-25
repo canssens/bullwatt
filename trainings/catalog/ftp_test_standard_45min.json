@@ -1,0 +1,69 @@
+{
+    "id":  "ftp_test_standard_45min",
+    "training_name":  "FTP Test Standard 45min",
+    "description":  "Converted from FTP_Test__Standard___1_ 45min",
+    "duration":  "2700",
+    "units":  {
+                  "time":  "seconds",
+                  "value":  "number"
+              },
+    "phases":  [
+                   {
+                       "start":  0,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  300,
+                       "value":  "0.8",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  320,
+                       "value":  "1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  340,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  360,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  540,
+                       "value":  "1.1",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  720,
+                       "value":  "1.2",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  840,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  1200,
+                       "value":  "0.5",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2400,
+                       "value":  "0.4",
+                       "notes":  ""
+                   },
+                   {
+                       "start":  2700,
+                       "value":  "0.4",
+                       "notes":  ""
+                   }
+               ],
+    "creation_date":  "2026-06-25T00:00:00+02:00",
+    "source":  "Converted from FTP_Test__Standard___1_.zwo"
+}
