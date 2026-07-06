@@ -11,6 +11,7 @@ $UUID = $_COOKIE["userBullWatt"];
 $answer = array();
 $answer["status"] = "error";
 $answer["status_strava"] = "ko";
+$answer["strava_http_code"] = null;
 
 include('strava_refresh.php');
 
@@ -133,6 +134,8 @@ if($UUID != null)
 
         // Execute the request
         $response = curl_exec($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curl_error = curl_error($ch);
 
         // Close cURL
         curl_close($ch);
@@ -140,8 +143,19 @@ if($UUID != null)
         
 
         $answer["message"] = $response;
-        $answer["status"] = "ok";
-        $answer["status_strava"] = "ok";
+        $answer["strava_http_code"] = $http_code;
+
+        if ($response === false) {
+            $answer["message"] = $curl_error;
+        }
+        else if ($http_code >= 200 && $http_code < 300) {
+            $answer["status"] = "ok";
+            $answer["status_strava"] = "ok";
+        }
+        else {
+            $answer["message"] = "Strava API error: HTTP code " . $http_code;
+            $answer["strava_response"] = $response;
+        }
     }
 
 }

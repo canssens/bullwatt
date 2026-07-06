@@ -824,11 +824,16 @@
             if (obj.status_strava == "ok") {
               popup_strava_upload.textContent = "Strava upload OK";
             }
+            else 
+            {
+              popup_strava_upload.textContent = "Strava upload FAILED";
+            }
 
 
             console.log(obj);
           } else {
             console.error('Erreur:', xhr.status, xhr.statusText);
+            popup_strava_upload.textContent = "Strava upload FAILED";
           }
         };
 
