@@ -46,7 +46,7 @@ function calculateGraph()
   // for each phase, get the data from the graph
   for (let i = 0; i < window.trainingContent.phases.length; i++) {
     const phase = window.trainingContent.phases[i];
-    let powerPhase = Math.round((phase.value * window.myTrainingFTP ) / 5) * 5;
+    let powerPhase = Math.round((phase.ftp_ratio * window.myTrainingFTP ) / 5) * 5;
     data.push([phase.start, powerPhase]);
   }
 

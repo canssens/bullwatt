@@ -408,3 +408,5 @@ strava_settings.php
 copilot-instructions.md
 *.private.php
 config.js
+
+vendor/

@@ -11,7 +11,7 @@ function getI18nLabel(key, fallback) {
 }
 
 function buildTrainingGraph(phases = []) {
-    return phases.map((phase) => [Number(phase.start), Number(phase.value)]);
+    return phases.map((phase) => [Number(phase.start), Number(phase.ftp_ratio)]);
 }
 
 function buildChartOptions(trainingGraph) {

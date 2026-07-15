@@ -19,7 +19,7 @@ phases: A JSON array where each element represents a phase of the time sequence.
 
 start: The start time of the phase, in seconds (or the unit specified in units.time).
 
-value: The value to apply during this phase. The value is a decimal which will be mulitply with the FTP (example value = 0.5 and FTP = 200W, so during this phase the training will be at 0.5 * 200 = 100W).
+ftp_ratio: The value to apply during this phase. The value is a decimal which will be mulitply with the FTP (example ftp_ratio = 0.5 and FTP = 200W, so during this phase the training will be at 0.5 * 200 = 100W).
 
 notes: (Optional) A string to add notes or annotations specific to this phase. Can be null if no note is needed.
 
