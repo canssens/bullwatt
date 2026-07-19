@@ -1,6 +1,8 @@
 
-function loadTrainingData(trainingId) {
+function loadTrainingData(source, trainingId) {
   // load Json file data
+  if(source == "catalog")
+  {
   fetch('./trainings/trainings.json')
     .then(response => {
       if (!response.ok) {
@@ -13,12 +15,33 @@ function loadTrainingData(trainingId) {
       // Find the training session with the given ID
       const trainingSessionData = data.find(training => training.id === trainingId);
       window.trainingContent = trainingSessionData;
+      console.log('show graph');
       calculateGraph();
       
     })
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
     });
+    }
+    else if(source == "generated")
+    {
+        fetch('./trainings/generated/' + trainingId)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Process the JSON data here      
+        window.trainingContent = data;
+        calculateGraph();
+        
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+    }
 }
 
 
@@ -31,9 +54,16 @@ function getParameters() {
     if(window.trainingId !== null){
       window.trainingSession = true;
       console.log("training session : " + window.trainingId);
-      loadTrainingData(window.trainingId);
-      
+      loadTrainingData('catalog', window.trainingId);
     }
+
+    window.trainingIdGenerated = params.get('generated');
+    if(window.trainingIdGenerated !== null){
+      window.trainingSession = true;
+      console.log("training session generated : " + window.trainingIdGenerated);
+      loadTrainingData('generated', window.trainingIdGenerated);
+    }
+
 }
 
 
