@@ -5,367 +5,367 @@
     "duration":  "3600",
     "units":  {
                   "time":  "seconds",
-                  "value":  "number"
+                  "ftp_ratio":  "number"
               },
     "phases":  [
                    {
                        "start":  0,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  600,
-                       "value":  "0.95",
+                       "ftp_ratio":  "0.95",
                        "notes":  ""
                    },
                    {
                        "start":  630,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  660,
-                       "value":  "1.05",
+                       "ftp_ratio":  "1.05",
                        "notes":  ""
                    },
                    {
                        "start":  690,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  720,
-                       "value":  "1.15",
+                       "ftp_ratio":  "1.15",
                        "notes":  ""
                    },
                    {
                        "start":  750,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  780,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  900,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  940,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  960,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1000,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1020,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1060,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1080,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1120,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1140,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1180,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1200,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1240,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1260,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1300,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1320,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1360,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1380,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1420,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1440,
-                       "value":  "1.2",
+                       "ftp_ratio":  "1.2",
                        "notes":  ""
                    },
                    {
                        "start":  1480,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1500,
-                       "value":  "0.65",
+                       "ftp_ratio":  "0.65",
                        "notes":  ""
                    },
                    {
                        "start":  1800,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  1830,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1860,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  1890,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1920,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  1950,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  1980,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  2010,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2040,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  2070,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2100,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  2130,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2160,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  2190,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2220,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  2250,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2280,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  2310,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2340,
-                       "value":  "1.3",
+                       "ftp_ratio":  "1.3",
                        "notes":  ""
                    },
                    {
                        "start":  2370,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2400,
-                       "value":  "0.65",
+                       "ftp_ratio":  "0.65",
                        "notes":  ""
                    },
                    {
                        "start":  2700,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  2720,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2760,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  2780,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2820,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  2840,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2880,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  2900,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  2940,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  2960,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  3000,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  3020,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  3060,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  3080,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  3120,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  3140,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  3180,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  3200,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  3240,
-                       "value":  "1.4",
+                       "ftp_ratio":  "1.4",
                        "notes":  ""
                    },
                    {
                        "start":  3260,
-                       "value":  "0.55",
+                       "ftp_ratio":  "0.55",
                        "notes":  ""
                    },
                    {
                        "start":  3300,
-                       "value":  "0.4",
+                       "ftp_ratio":  "0.4",
                        "notes":  ""
                    },
                    {
                        "start":  3600,
-                       "value":  "0.4",
+                       "ftp_ratio":  "0.4",
                        "notes":  ""
                    }
                ],

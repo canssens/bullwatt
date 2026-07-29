@@ -5,57 +5,57 @@
   "duration": "3000",
   "units": {
     "time": "seconds",
-    "value": "number"
+    "ftp_ratio": "number"
   },
   "phases": [
     {
       "start": 0,
-      "value": "0.5",
+      "ftp_ratio": "0.5",
       "notes": ""
     },
     {
       "start": 300,
-      "value": "0.65",
+      "ftp_ratio": "0.65",
       "notes": ""
     },
     {
       "start": 600,
-      "value": "0.88",
+      "ftp_ratio": "0.88",
       "notes": ""
     },
     {
       "start": 960,
-      "value": "0.6",
+      "ftp_ratio": "0.6",
       "notes": ""
     },
     {
       "start": 1140,
-      "value": "0.9",
+      "ftp_ratio": "0.9",
       "notes": ""
     },
     {
       "start": 1620,
-      "value": "0.6",
+      "ftp_ratio": "0.6",
       "notes": ""
     },
     {
       "start": 1800,
-      "value": "0.92",
+      "ftp_ratio": "0.92",
       "notes": ""
     },
     {
       "start": 2400,
-      "value": "0.65",
+      "ftp_ratio": "0.65",
       "notes": ""
     },
     {
       "start": 2700,
-      "value": "0.55",
+      "ftp_ratio": "0.55",
       "notes": ""
     },
     {
       "start": 3000,
-      "value": "0.5",
+      "ftp_ratio": "0.5",
       "notes": ""
     }
   ],

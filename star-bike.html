@@ -591,9 +591,9 @@
 
           //launch a new phase of the training, update watt, etc...
           if (phase.start < (timeElapsed / 1000) && trainingCurrentPhase < i) {
-            console.log('> Phase ' + i + ' start , value' + phase.value + ' W');
+            console.log('> Phase ' + i + ' start , value' + phase.ftp_ratio + ' W');
             trainingCurrentPhase = i;
-            currentPower = parseInt(phase.value * myTrainingFTP);
+            currentPower = parseInt(phase.ftp_ratio * myTrainingFTP);
             //console.log('> Phase ' + i + ' set power to ' + currentPower + ' W');
             updateWatt(0);
             handlerGraph();
@@ -613,7 +613,7 @@
           else phase = trainingContent.phases[y];
 
           if (y == trainingCurrentPhase) {
-            initText = Math.round(phase.value * 100) + '% FTP';
+            initText = Math.round(phase.ftp_ratio * 100) + '% FTP';
             initRefTime = (timeElapsed / 1000);
           }
           else {
@@ -634,7 +634,7 @@
             else
               trainingNextSteps += '<br>' + durationTextFormat + ' @ ' + initText;
             initRefTime = phase.start;
-            initText = Math.round(phase.value * 100) + '% FTP';
+            initText = Math.round(phase.ftp_ratio * 100) + '% FTP';
 
             // launch sound play
             if (duration == 2 || duration == 1) {

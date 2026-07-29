@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bullwatt://schema/training",
+  "title": "Bullwatt training",
+  "description": "Canonical format for newly generated Bullwatt FTP-based cycling sessions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "training_name",
+    "description",
+    "duration",
+    "units",
+    "phases"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[a-z0-9][a-z0-9_-]*$",
+      "description": "Lowercase slug used as the logical training identifier."
+    },
+    "training_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "duration": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 86400,
+      "description": "Total session duration in seconds."
+    },
+    "units": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["time", "ftp_ratio"],
+      "properties": {
+        "time": {
+          "const": "seconds"
+        },
+        "ftp_ratio": {
+          "enum": ["number", "ftp_ratio"],
+          "description": "Phase ftp_ratio are decimal multipliers of the athlete FTP."
+        }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/phase"
+      }
+    },
+    "creation_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 500
+    }
+  },
+  "$defs": {
+    "phase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "ftp_ratio"],
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Phase start in seconds from the beginning of the session."
+        },
+        "ftp_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Target power as a decimal FTP multiplier."
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "id": "threshold-3x8-45",
+      "training_name": "Threshold 3 x 8 minutes",
+      "description": "45-minute threshold session with three eight-minute efforts.",
+      "duration": 2700,
+      "units": {
+        "time": "seconds",
+        "ftp_ratio": "number"
+      },
+      "phases": [
+        {"start": 0, "ftp_ratio": 0.5, "notes": "Warm-up"},
+        {"start": 600, "ftp_ratio": 1.0, "notes": "Interval 1"},
+        {"start": 1080, "ftp_ratio": 0.55, "notes": "Recovery"},
+        {"start": 1260, "ftp_ratio": 1.0, "notes": "Interval 2"},
+        {"start": 1740, "ftp_ratio": 0.55, "notes": "Recovery"},
+        {"start": 1920, "ftp_ratio": 1.0, "notes": "Interval 3"},
+        {"start": 2400, "ftp_ratio": 0.5, "notes": "Cool-down"},
+        {"start": 2700, "ftp_ratio": 0.5, "notes": "End marker"}
+      ],
+      "source": "bullwatt-ai"
+    }
+  ]
+}

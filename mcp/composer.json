@@ -1,0 +1,18 @@
+{
+    "require": {
+        "mcp/sdk": "^0.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bullwatt\\Mcp\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "php tests/run.php"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

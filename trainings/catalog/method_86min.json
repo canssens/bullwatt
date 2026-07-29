@@ -5,162 +5,162 @@
     "duration":  "5160",
     "units":  {
                   "time":  "seconds",
-                  "value":  "number"
+                  "ftp_ratio":  "number"
               },
     "phases":  [
                    {
                        "start":  0,
-                       "value":  "0.575",
+                       "ftp_ratio":  "0.575",
                        "notes":  ""
                    },
                    {
                        "start":  600,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  630,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  660,
-                       "value":  "0.95",
+                       "ftp_ratio":  "0.95",
                        "notes":  ""
                    },
                    {
                        "start":  690,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  720,
-                       "value":  "1.05",
+                       "ftp_ratio":  "1.05",
                        "notes":  ""
                    },
                    {
                        "start":  750,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  900,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  1500,
-                       "value":  "0.75",
+                       "ftp_ratio":  "0.75",
                        "notes":  ""
                    },
                    {
                        "start":  2100,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  2220,
-                       "value":  "0.8",
+                       "ftp_ratio":  "0.8",
                        "notes":  ""
                    },
                    {
                        "start":  2520,
-                       "value":  "0.8",
+                       "ftp_ratio":  "0.8",
                        "notes":  ""
                    },
                    {
                        "start":  2820,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  2940,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3060,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3090,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3210,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3240,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3360,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3390,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3510,
-                       "value":  "0.85",
+                       "ftp_ratio":  "0.85",
                        "notes":  ""
                    },
                    {
                        "start":  3540,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  3660,
-                       "value":  "0.8",
+                       "ftp_ratio":  "0.8",
                        "notes":  ""
                    },
                    {
                        "start":  4260,
-                       "value":  "0.5",
+                       "ftp_ratio":  "0.5",
                        "notes":  ""
                    },
                    {
                        "start":  4380,
-                       "value":  "0.75",
+                       "ftp_ratio":  "0.75",
                        "notes":  ""
                    },
                    {
                        "start":  4500,
-                       "value":  "0.75",
+                       "ftp_ratio":  "0.75",
                        "notes":  ""
                    },
                    {
                        "start":  4620,
-                       "value":  "0.75",
+                       "ftp_ratio":  "0.75",
                        "notes":  ""
                    },
                    {
                        "start":  4740,
-                       "value":  "0.75",
+                       "ftp_ratio":  "0.75",
                        "notes":  ""
                    },
                    {
                        "start":  4860,
-                       "value":  "0.75",
+                       "ftp_ratio":  "0.75",
                        "notes":  ""
                    },
                    {
                        "start":  4980,
-                       "value":  "0.375",
+                       "ftp_ratio":  "0.375",
                        "notes":  ""
                    },
                    {
                        "start":  5160,
-                       "value":  "0.375",
+                       "ftp_ratio":  "0.375",
                        "notes":  ""
                    }
                ],

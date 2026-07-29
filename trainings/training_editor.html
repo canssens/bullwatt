@@ -123,12 +123,12 @@
   "duration": 0,
   "units": {
     "time": "seconds",
-    "value": "Unit of the value (e.g., °C, mV, Hz, number)"
+    "ftp_ratio": "Unit of the value (e.g., °C, mV, Hz, number)"
   },
   "phases": [
     {
       "start": 0,
-      "value": 25.5,
+      "ftp_ratio": 25.5,
       "notes": "Description or annotation specific to this phase (optional)."
     }
   ],
@@ -234,7 +234,7 @@
 
              phasesData = phases.map(phase => ({
                 time: phase.start,
-                value: parseFloat(phase.value)
+                value: parseFloat(phase.ftp_ratio)
             }));
 
             const trainingId = trainingIdInput.value;
@@ -253,7 +253,7 @@
                 duration : duration,
                 units: {
                     time: timeUnit,
-                    value: valueUnit,
+                    ftp_ratio: valueUnit,
                 },
                 phases: phases,
                 creation_date: creationDate,
@@ -330,9 +330,9 @@
             // Prepare the data for the stepped line - IMPORTANT
             const steppedData = [];
             data.forEach((phase, index) => {
-                steppedData.push({ time: phase.time, value: phase.value });
+                steppedData.push({ time: phase.time, value: phase.ftp_ratio });
                 if (index < data.length - 1) {
-                    steppedData.push({ time: data[index+1].time, value: phase.value });
+                    steppedData.push({ time: data[index+1].time, value: phase.ftp_ratio });
                 }
             });
 
