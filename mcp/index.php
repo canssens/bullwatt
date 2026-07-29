@@ -18,7 +18,7 @@ $request = ServerRequest::fromGlobals();
 $factory = new HttpFactory();
 $middleware = [
     new CorsMiddleware(),
-    new DnsRebindingProtectionMiddleware(['localhost', '127.0.0.1', '[::1]'], $factory, $factory),
+    //new DnsRebindingProtectionMiddleware(['localhost', '127.0.0.1', '[::1]'], $factory, $factory),
     new ProtocolVersionMiddleware(null, $factory, $factory),
 ];
 $transport = new StreamableHttpTransport($request, $factory, $factory, middleware: $middleware);
