@@ -68,6 +68,11 @@ final class TrainingStorage
             return $this->failure('WRITE_FAILED', 'The temporary training file could not be written.');
         }
 
+        if (!chmod($temporary, 0644)) {
+            @unlink($temporary);
+            return $this->failure('PERMISSIONS_FAILED', 'The generated training file could not be made publicly readable.');
+        }
+
         if (!rename($temporary, $path)) {
             @unlink($temporary);
             return $this->failure('ATOMIC_MOVE_FAILED', 'The training could not be moved atomically into generated storage.');
