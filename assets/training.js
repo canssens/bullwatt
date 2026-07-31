@@ -108,7 +108,7 @@ function mergeArraysByDuration(array1, array2, mergeDuration) {
   // Add elements from array2 after the mergeDuration
   for (const element of array2) {
     const [duration, value] = element;
-    if (duration => mergeDuration) {
+    if (duration >= mergeDuration) {
       mergedArray.push(element);
     }
   }
