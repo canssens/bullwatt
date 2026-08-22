@@ -35,6 +35,12 @@ git add .
 git commit -m "Add submodule Auuki"
 ```
 
+Load submodule
+```
+git submodule update --init --recursive
+```
+
+
 
 ## Quick Start
 

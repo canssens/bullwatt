@@ -6,6 +6,9 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 #RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Redirect /mcp/ to the index endpoint
+RewriteRule ^mcp/?$ /mcp/index.php [L,R=302]
+
 # Rewrite /foo/bar to /foo/bar.php
 RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
 
