@@ -13,8 +13,12 @@ final class ServerFactory
     {
         $capabilities = $application->capabilities;
         $builder = Server::builder()
-            ->setServerInfo('Bullwatt MCP Server', '1.0.0', 'Bullwatt context, deterministic validation, search, and safe generated-session storage.')
-            ->setInstructions('Read the Bullwatt format and generation guidelines before generating JSON. Always validate before saving; save only after explicit user approval.')
+            ->setServerInfo(
+                'Bullwatt MCP Server',
+                '1.0.0',
+                'AI integration for Bullwatt, a browser-based indoor cycling app for structured FTP-based workouts on Bluetooth FTMS trainers. Provides workout documentation and examples, search, deterministic JSON validation, and safe storage of generated sessions for launch in Bullwatt.',
+            )
+            ->setInstructions('Read the Indoor bike training Bullwatt format and generation guidelines before generating JSON. Always validate before saving; save only after explicit user approval.')
             ->addResource(
                 static fn (): string => $capabilities->trainingFormat(),
                 'bullwatt://training-format',
