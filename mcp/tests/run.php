@@ -182,7 +182,9 @@ $runner->test('save: valid training uses random id and logical path', static fun
     assertTrue($result['saved']);
     assertTrue(preg_match('/^generated-[a-f0-9]{32}$/D', $result['id']) === 1);
     assertSameValue('trainings/generated/' . $result['id'] . '.json', $result['path']);
-    assertTrue(is_file($temporaryDirectory . '/' . $result['id'] . '.json'));
+    $storedPath = $temporaryDirectory . '/' . $result['id'] . '.json';
+    assertTrue(is_file($storedPath));
+    assertSameValue(0644, fileperms($storedPath) & 0777, 'Expected the stored training to be readable by the web server.');
 });
 
 $runner->test('save: invalid training refused', static function () use ($capabilities): void {
