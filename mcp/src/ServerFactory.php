@@ -74,7 +74,7 @@ final class ServerFactory
                 inputSchema: self::trainingToolSchema(false),
             )
             ->addTool(
-                static fn (array $training, bool $overwrite = false): array => $capabilities->saveTraining($training, $overwrite),
+                static fn (array $training): array => $capabilities->saveTraining($training),
                 'save_training',
                 'Save a Bullwatt training',
                 'Revalidates and atomically saves a valid session in order to get an URL to launch the session.',

@@ -110,9 +110,9 @@ MARKDOWN;
     }
 
     /** @param array<string, mixed> $training */
-    public function saveTraining(array $training, bool $overwrite = false): array
+    public function saveTraining(array $training): array
     {
-        return $this->storage->save($training, $overwrite);
+        return $this->storage->save($training);
     }
 
     /** @return list<array{role: string, content: string}> */

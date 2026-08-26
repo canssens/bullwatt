@@ -6,6 +6,8 @@ namespace Bullwatt\Mcp;
 
 final class TrainingStorage
 {
+    private const MAX_JSON_SIZE_BYTES = 50 * 1024;
+
     public function __construct(
         private readonly string $generatedDirectory,
         private readonly CatalogRepository $repository,
@@ -14,7 +16,7 @@ final class TrainingStorage
     }
 
     /** @param array<string, mixed> $training @return array<string, mixed> */
-    public function save(array $training, bool $overwrite = false): array
+    public function save(array $training): array
     {
         $validation = $this->validator->validate($training);
         if (!$validation['valid']) {
@@ -28,6 +30,8 @@ final class TrainingStorage
             ];
         }
 
+        /*
+        // As a new ID is created no need to check if the id is uniq
         if ($overwrite) {
             return $this->failure('OVERWRITE_NOT_SUPPORTED', 'Bullwatt generated storage never overwrites an existing file.');
         }
@@ -36,6 +40,7 @@ final class TrainingStorage
         if ($this->repository->exists($requestedId)) {
             return $this->failure('TRAINING_ID_EXISTS', "Training id '{$requestedId}' already exists and cannot be overwritten.");
         }
+        */
 
         if (!is_dir($this->generatedDirectory) && !mkdir($this->generatedDirectory, 0775, true) && !is_dir($this->generatedDirectory)) {
             return $this->failure('STORAGE_UNAVAILABLE', 'The generated training directory could not be created.');
@@ -58,6 +63,10 @@ final class TrainingStorage
             $json = json_encode($storedTraining, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR) . PHP_EOL;
         } catch (\JsonException $exception) {
             return $this->failure('JSON_ENCODING_FAILED', $exception->getMessage());
+        }
+
+        if (strlen($json) > self::MAX_JSON_SIZE_BYTES) {
+            return $this->failure('TRAINING_JSON_TOO_LARGE', 'The training JSON exceeds the maximum size of 50 KiB.');
         }
 
         $temporary = tempnam($this->generatedDirectory, '.bullwatt-');
