@@ -9,22 +9,14 @@ use Mcp\Exception\ResourceNotFoundException;
 final class CatalogRepository
 {
     public function __construct(
-        private readonly string $catalogDirectory,
-        private readonly string $generatedDirectory,
+        private readonly string $catalogFile,
     ) {
     }
 
     /** @return list<array<string, mixed>> */
     public function all(): array
     {
-        $trainings = [];
-        foreach ($this->jsonFiles() as $file) {
-            $training = $this->decodeFile($file);
-            if ($training !== null) {
-                $trainings[] = $training;
-            }
-        }
-
+        $trainings = $this->decodeCatalog();
         usort($trainings, static function (array $left, array $right): int {
             $durationComparison = ((int) ($left['duration'] ?? 0)) <=> ((int) ($right['duration'] ?? 0));
             return $durationComparison !== 0
@@ -76,30 +68,24 @@ final class CatalogRepository
         return false;
     }
 
-    /** @return list<string> */
-    private function jsonFiles(): array
+    /** @return list<array<string, mixed>> */
+    private function decodeCatalog(): array
     {
-        $files = glob($this->catalogDirectory . DIRECTORY_SEPARATOR . '*.json') ?: [];
-        $generated = glob($this->generatedDirectory . DIRECTORY_SEPARATOR . '*.json') ?: [];
-        $files = array_merge($files, $generated);
-        sort($files, SORT_STRING);
-        return $files;
-    }
-
-    /** @return array<string, mixed>|null */
-    private function decodeFile(string $file): ?array
-    {
-        $content = file_get_contents($file);
+        $content = file_get_contents($this->catalogFile);
         if ($content === false) {
-            return null;
+            return [];
         }
 
         try {
             $decoded = json_decode($content, true, 512, JSON_THROW_ON_ERROR);
         } catch (\JsonException) {
-            return null;
+            return [];
         }
 
-        return is_array($decoded) ? $decoded : null;
+        if (!is_array($decoded) || !array_is_list($decoded)) {
+            return [];
+        }
+
+        return array_values(array_filter($decoded, 'is_array'));
     }
 }

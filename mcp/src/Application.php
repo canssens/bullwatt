@@ -16,7 +16,7 @@ final class Application
     {
         $root = $projectRoot ?? dirname(__DIR__, 2);
         $generated = $generatedDirectory ?? $root . '/trainings/generated';
-        $this->repository = new CatalogRepository($root . '/trainings/catalog', $generated);
+        $this->repository = new CatalogRepository($root . '/trainings/trainings.json');
         $this->validator = new TrainingValidator();
         $this->search = new TrainingSearch($this->repository);
         $this->storage = new TrainingStorage($generated, $this->repository, $this->validator);
