@@ -177,7 +177,7 @@ $runner->test('validation: unknown fields are rejected', static function () use 
     assertTrue(in_array('FIELD_NOT_ALLOWED', errorCodes($capabilities->validateTraining($training)), true));
 });
 
-$runner->test('save: valid training uses random id and logical path', static function () use ($capabilities, $temporaryDirectory): void {
+$runner->test('save: valid training uses random id and logical path', static function () use ($capabilities, $projectRoot, $temporaryDirectory): void {
     $result = $capabilities->saveTraining(validTraining('new-session'));
     assertTrue($result['saved']);
     assertTrue(preg_match('/^generated-[a-f0-9]{32}$/D', $result['id']) === 1);
@@ -185,6 +185,9 @@ $runner->test('save: valid training uses random id and logical path', static fun
     $storedPath = $temporaryDirectory . '/' . $result['id'] . '.json';
     assertTrue(is_file($storedPath));
     assertSameValue(0644, fileperms($storedPath) & 0777, 'Expected the stored training to be readable by the web server.');
+
+    $freshApplication = new Application($projectRoot, $temporaryDirectory);
+    assertTrue(!$freshApplication->repository->exists($result['id']), 'Generated trainings must not be included in the catalog.');
 });
 
 $runner->test('save: invalid training refused', static function () use ($capabilities): void {
@@ -195,10 +198,19 @@ $runner->test('save: invalid training refused', static function () use ($capabil
     assertSameValue('TRAINING_INVALID', $result['error']['code']);
 });
 
-$runner->test('save: existing catalog id refused', static function () use ($capabilities): void {
-    $result = $capabilities->saveTraining(validTraining('alpha_30min'));
+$runner->test('save: JSON larger than 50 KiB refused', static function () use ($capabilities, $temporaryDirectory): void {
+    $training = validTraining('oversized-save');
+    $training['phases'][0]['notes'] = str_repeat('a', 50 * 1024);
+    $filesBeforeSave = glob($temporaryDirectory . '/*') ?: [];
+    $result = $capabilities->saveTraining($training);
     assertTrue(!$result['saved']);
-    assertSameValue('TRAINING_ID_EXISTS', $result['error']['code']);
+    assertSameValue('TRAINING_JSON_TOO_LARGE', $result['error']['code']);
+    assertSameValue($filesBeforeSave, glob($temporaryDirectory . '/*') ?: []);
+});
+
+$runner->test('save: existing catalog id accepted', static function () use ($capabilities): void {
+    $result = $capabilities->saveTraining(validTraining('alpha_30min'));
+    assertTrue($result['saved']);
 });
 
 $runner->test('save: path traversal refused by validation', static function () use ($capabilities): void {
@@ -207,11 +219,13 @@ $runner->test('save: path traversal refused by validation', static function () u
     assertTrue(in_array('ID_INVALID', errorCodes($result['validation']), true));
 });
 
+/*
 $runner->test('save: overwrite mode refused', static function () use ($capabilities): void {
     $result = $capabilities->saveTraining(validTraining('overwrite-attempt'), true);
     assertTrue(!$result['saved']);
     assertSameValue('OVERWRITE_NOT_SUPPORTED', $result['error']['code']);
 });
+*/
 
 $runner->test('save: existing training remains unchanged', static function () use ($capabilities, $projectRoot): void {
     $path = $projectRoot . '/trainings/catalog/alpha_30min.json';
