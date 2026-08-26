@@ -91,8 +91,8 @@
                     <input type="text" id="timeUnit" value="seconds" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                 <div>
-                    <label for="valueUnit" class="block text-gray-700 text-sm font-bold mb-2">Value Unit:</label>
-                    <input type="text" id="valueUnit" value="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <label for="valueUnit" class="block text-gray-700 text-sm font-bold mb-2">ftp_ratio Unit:</label>
+                    <input type="text" id="valueUnit" value="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                  <div>
                     <label for="creationDate" class="block text-gray-700 text-sm font-bold mb-2">Creation Date:</label>
@@ -123,12 +123,12 @@
   "duration": 0,
   "units": {
     "time": "seconds",
-    "ftp_ratio": "Unit of the value (e.g., °C, mV, Hz, number)"
+    "ftp_ratio": "Unit of the value (number)"
   },
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": 25.5,
+      "ftp_ratio": 0.85,
       "notes": "Description or annotation specific to this phase (optional)."
     }
   ],
@@ -227,14 +227,14 @@
             const phaseInputs = phasesContainer.querySelectorAll('.phase-input-group');
             phaseInputs.forEach(phaseInput => {
                 const start = parseFloat(phaseInput.querySelector('input[id^="start"]').value);
-                const value = phaseInput.querySelector('input[id^="value"]').value;
+                const ftp_ratio = phaseInput.querySelector('input[id^="value"]').value;
                 const notes = phaseInput.querySelector('input[id^="notes"]').value;
                 phases.push({ start, value, notes });
             });
 
              phasesData = phases.map(phase => ({
                 time: phase.start,
-                value: parseFloat(phase.ftp_ratio)
+                ftp_ratio: parseFloat(phase.ftp_ratio)
             }));
 
             const trainingId = trainingIdInput.value;
