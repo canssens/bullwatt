@@ -2,7 +2,7 @@
     "id":  "uphill_battle_60min",
     "training_name":  "Uphill Battle 60min",
     "description":  "Converted from Uphill_Battle__1_ 60min",
-    "duration":  "3600",
+    "duration": 3600,
     "units":  {
                   "time":  "seconds",
                   "ftp_ratio":  "number"
@@ -10,197 +10,197 @@
     "phases":  [
                    {
                        "start":  0,
-                       "ftp_ratio":  "0.5",
+                       "ftp_ratio":  0.5,
                        "notes":  ""
                    },
                    {
                        "start":  600,
-                       "ftp_ratio":  "0.8",
+                       "ftp_ratio":  0.8,
                        "notes":  ""
                    },
                    {
                        "start":  630,
-                       "ftp_ratio":  "0.65",
+                       "ftp_ratio":  0.65,
                        "notes":  ""
                    },
                    {
                        "start":  690,
-                       "ftp_ratio":  "0.9",
+                       "ftp_ratio":  0.9,
                        "notes":  ""
                    },
                    {
                        "start":  720,
-                       "ftp_ratio":  "0.65",
+                       "ftp_ratio":  0.65,
                        "notes":  ""
                    },
                    {
                        "start":  780,
-                       "ftp_ratio":  "1.05",
+                       "ftp_ratio":  1.05,
                        "notes":  ""
                    },
                    {
                        "start":  810,
-                       "ftp_ratio":  "0.5",
+                       "ftp_ratio":  0.5,
                        "notes":  ""
                    },
                    {
                        "start":  930,
-                       "ftp_ratio":  "0.95",
+                       "ftp_ratio":  0.95,
                        "notes":  ""
                    },
                    {
                        "start":  1230,
-                       "ftp_ratio":  "1.25",
+                       "ftp_ratio":  1.25,
                        "notes":  ""
                    },
                    {
                        "start":  1260,
-                       "ftp_ratio":  "0.5",
+                       "ftp_ratio":  0.5,
                        "notes":  ""
                    },
                    {
                        "start":  1410,
-                       "ftp_ratio":  "0.95",
+                       "ftp_ratio":  0.95,
                        "notes":  ""
                    },
                    {
                        "start":  1710,
-                       "ftp_ratio":  "1.25",
+                       "ftp_ratio":  1.25,
                        "notes":  ""
                    },
                    {
                        "start":  1740,
-                       "ftp_ratio":  "0.5",
+                       "ftp_ratio":  0.5,
                        "notes":  ""
                    },
                    {
                        "start":  1890,
-                       "ftp_ratio":  "0.95",
+                       "ftp_ratio":  0.95,
                        "notes":  ""
                    },
                    {
                        "start":  2190,
-                       "ftp_ratio":  "1.25",
+                       "ftp_ratio":  1.25,
                        "notes":  ""
                    },
                    {
                        "start":  2220,
-                       "ftp_ratio":  "0.5",
+                       "ftp_ratio":  0.5,
                        "notes":  ""
                    },
                    {
                        "start":  2400,
-                       "ftp_ratio":  "1.3",
+                       "ftp_ratio":  1.3,
                        "notes":  ""
                    },
                    {
                        "start":  2430,
-                       "ftp_ratio":  "0.7",
+                       "ftp_ratio":  0.7,
                        "notes":  ""
                    },
                    {
                        "start":  2460,
-                       "ftp_ratio":  "1.3",
+                       "ftp_ratio":  1.3,
                        "notes":  ""
                    },
                    {
                        "start":  2490,
-                       "ftp_ratio":  "0.7",
+                       "ftp_ratio":  0.7,
                        "notes":  ""
                    },
                    {
                        "start":  2520,
-                       "ftp_ratio":  "1.3",
+                       "ftp_ratio":  1.3,
                        "notes":  ""
                    },
                    {
                        "start":  2550,
-                       "ftp_ratio":  "0.7",
+                       "ftp_ratio":  0.7,
                        "notes":  ""
                    },
                    {
                        "start":  2580,
-                       "ftp_ratio":  "1.3",
+                       "ftp_ratio":  1.3,
                        "notes":  ""
                    },
                    {
                        "start":  2610,
-                       "ftp_ratio":  "0.7",
+                       "ftp_ratio":  0.7,
                        "notes":  ""
                    },
                    {
                        "start":  2640,
-                       "ftp_ratio":  "1.3",
+                       "ftp_ratio":  1.3,
                        "notes":  ""
                    },
                    {
                        "start":  2670,
-                       "ftp_ratio":  "0.7",
+                       "ftp_ratio":  0.7,
                        "notes":  ""
                    },
                    {
                        "start":  2700,
-                       "ftp_ratio":  "0.5",
+                       "ftp_ratio":  0.5,
                        "notes":  ""
                    },
                    {
                        "start":  2880,
-                       "ftp_ratio":  "1.4",
+                       "ftp_ratio":  1.4,
                        "notes":  ""
                    },
                    {
                        "start":  2910,
-                       "ftp_ratio":  "0.6",
+                       "ftp_ratio":  0.6,
                        "notes":  ""
                    },
                    {
                        "start":  2940,
-                       "ftp_ratio":  "1.4",
+                       "ftp_ratio":  1.4,
                        "notes":  ""
                    },
                    {
                        "start":  2970,
-                       "ftp_ratio":  "0.6",
+                       "ftp_ratio":  0.6,
                        "notes":  ""
                    },
                    {
                        "start":  3000,
-                       "ftp_ratio":  "1.4",
+                       "ftp_ratio":  1.4,
                        "notes":  ""
                    },
                    {
                        "start":  3030,
-                       "ftp_ratio":  "0.6",
+                       "ftp_ratio":  0.6,
                        "notes":  ""
                    },
                    {
                        "start":  3060,
-                       "ftp_ratio":  "1.4",
+                       "ftp_ratio":  1.4,
                        "notes":  ""
                    },
                    {
                        "start":  3090,
-                       "ftp_ratio":  "0.6",
+                       "ftp_ratio":  0.6,
                        "notes":  ""
                    },
                    {
                        "start":  3120,
-                       "ftp_ratio":  "1.4",
+                       "ftp_ratio":  1.4,
                        "notes":  ""
                    },
                    {
                        "start":  3150,
-                       "ftp_ratio":  "0.6",
+                       "ftp_ratio":  0.6,
                        "notes":  ""
                    },
                    {
                        "start":  3180,
-                       "ftp_ratio":  "0.375",
+                       "ftp_ratio":  0.375,
                        "notes":  ""
                    },
                    {
                        "start":  3600,
-                       "ftp_ratio":  "0.375",
+                       "ftp_ratio":  0.375,
                        "notes":  ""
                    }
                ],

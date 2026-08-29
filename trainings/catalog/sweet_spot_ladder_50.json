@@ -2,7 +2,7 @@
   "id": "sweet_spot_ladder_50",
   "training_name": "Sweet Spot Ladder",
   "description": "Progressive sweet spot 50min",
-  "duration": "3000",
+  "duration":3000,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,52 +10,52 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 300,
-      "ftp_ratio": "0.65",
+      "ftp_ratio": 0.65,
       "notes": ""
     },
     {
       "start": 600,
-      "ftp_ratio": "0.88",
+      "ftp_ratio": 0.88,
       "notes": ""
     },
     {
       "start": 960,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 1140,
-      "ftp_ratio": "0.9",
+      "ftp_ratio": 0.9,
       "notes": ""
     },
     {
       "start": 1620,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 1800,
-      "ftp_ratio": "0.92",
+      "ftp_ratio": 0.92,
       "notes": ""
     },
     {
       "start": 2400,
-      "ftp_ratio": "0.65",
+      "ftp_ratio": 0.65,
       "notes": ""
     },
     {
       "start": 2700,
-      "ftp_ratio": "0.55",
+      "ftp_ratio": 0.55,
       "notes": ""
     },
     {
       "start": 3000,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     }
   ],

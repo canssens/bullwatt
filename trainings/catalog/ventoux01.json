@@ -2,7 +2,7 @@
   "id": "ventoux01",
   "training_name": "Ventoux by Bedoin",
   "description": "A training inspirated by the Ventoux 1h30",
-  "duration": "5400",
+  "duration":5400,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,97 +10,97 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 250,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 750,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 900,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 1500,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 1750,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 2000,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 2150,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 2750,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 3000,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 3500,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 3600,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 3700,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 3800,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 3900,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 4050,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 4500,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 5250,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 5400,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     }
   ],

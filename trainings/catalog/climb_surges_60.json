@@ -2,7 +2,7 @@
   "id": "climb_surges_60",
   "training_name": "Climb Surges",
   "description": "Climbing tempo with surges 60min",
-  "duration": "3600",
+  "duration":3600,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,97 +10,97 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 300,
-      "ftp_ratio": "0.65",
+      "ftp_ratio": 0.65,
       "notes": ""
     },
     {
       "start": 600,
-      "ftp_ratio": "0.85",
+      "ftp_ratio": 0.85,
       "notes": ""
     },
     {
       "start": 900,
-      "ftp_ratio": "1.1",
+      "ftp_ratio": 1.1,
       "notes": ""
     },
     {
       "start": 960,
-      "ftp_ratio": "0.85",
+      "ftp_ratio": 0.85,
       "notes": ""
     },
     {
       "start": 1260,
-      "ftp_ratio": "1.1",
+      "ftp_ratio": 1.1,
       "notes": ""
     },
     {
       "start": 1320,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 1500,
-      "ftp_ratio": "0.85",
+      "ftp_ratio": 0.85,
       "notes": ""
     },
     {
       "start": 1800,
-      "ftp_ratio": "1.1",
+      "ftp_ratio": 1.1,
       "notes": ""
     },
     {
       "start": 1860,
-      "ftp_ratio": "0.85",
+      "ftp_ratio": 0.85,
       "notes": ""
     },
     {
       "start": 2160,
-      "ftp_ratio": "1.1",
+      "ftp_ratio": 1.1,
       "notes": ""
     },
     {
       "start": 2220,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 2400,
-      "ftp_ratio": "0.85",
+      "ftp_ratio": 0.85,
       "notes": ""
     },
     {
       "start": 2700,
-      "ftp_ratio": "1.1",
+      "ftp_ratio": 1.1,
       "notes": ""
     },
     {
       "start": 2760,
-      "ftp_ratio": "0.85",
+      "ftp_ratio": 0.85,
       "notes": ""
     },
     {
       "start": 3060,
-      "ftp_ratio": "1.1",
+      "ftp_ratio": 1.1,
       "notes": ""
     },
     {
       "start": 3120,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 3360,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 3600,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     }
   ],

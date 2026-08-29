@@ -2,7 +2,7 @@
   "id": "alpehuez01",
   "training_name": "Alpe d'Huez",
   "description": "A training inspirated by the Alpe d'Huez 55min",
-  "duration": "3300",
+  "duration":3300,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,107 +10,107 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 250,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 500,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 600,
-      "ftp_ratio": "1.1",
+      "ftp_ratio": 1.1,
       "notes": ""
     },
     {
       "start": 700,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 900,
-      "ftp_ratio": "0.9",
+      "ftp_ratio": 0.9,
       "notes": ""
     },
     {
       "start": 950,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 1000,
-      "ftp_ratio": "0.9",
+      "ftp_ratio": 0.9,
       "notes": ""
     },
     {
       "start": 1100,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 1300,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 1400,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 1600,
-      "ftp_ratio": "0.9",
+      "ftp_ratio": 0.9,
       "notes": ""
     },
     {
       "start": 2000,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 2030,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 2060,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 2100,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 2130,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 2200,
-      "ftp_ratio": "0.9",
+      "ftp_ratio": 0.9,
       "notes": ""
     },
     {
       "start": 2900,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 3100,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 3300,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     }
   ],

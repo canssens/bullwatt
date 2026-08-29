@@ -3,7 +3,7 @@
     "id": "sst55min",
     "training_name": "SST 55min",
     "description": "Endurance - SST 55min",
-    "duration": "3300",
+    "duration":3300,
     "units": {
       "time": "seconds",
       "ftp_ratio": "number"
@@ -11,72 +11,72 @@
     "phases": [
       {
         "start": 0,
-        "ftp_ratio": "0.6",
+        "ftp_ratio": 0.6,
         "notes": ""
       },
       {
         "start": 150,
-        "ftp_ratio": "0.7",
+        "ftp_ratio": 0.7,
         "notes": ""
       },
       {
         "start": 300,
-        "ftp_ratio": "0.9",
+        "ftp_ratio": 0.9,
         "notes": ""
       },
       {
         "start": 600,
-        "ftp_ratio": "0.8",
+        "ftp_ratio": 0.8,
         "notes": ""
       },
       {
         "start": 900,
-        "ftp_ratio": "0.9",
+        "ftp_ratio": 0.9,
         "notes": ""
       },
       {
         "start": 1200,
-        "ftp_ratio": "0.8",
+        "ftp_ratio": 0.8,
         "notes": ""
       },
       {
         "start": 1500,
-        "ftp_ratio": "0.9",
+        "ftp_ratio": 0.9,
         "notes": ""
       },
       {
         "start": 1800,
-        "ftp_ratio": "0.8",
+        "ftp_ratio": 0.8,
         "notes": ""
       },
       {
         "start": 2100,
-        "ftp_ratio": "0.9",
+        "ftp_ratio": 0.9,
         "notes": ""
       },
       {
         "start": 2400,
-        "ftp_ratio": "0.8",
+        "ftp_ratio": 0.8,
         "notes": ""
       },
       {
         "start": 2700,
-        "ftp_ratio": "0.9",
+        "ftp_ratio": 0.9,
         "notes": ""
       },
       {
         "start": 3000,
-        "ftp_ratio": "0.8",
+        "ftp_ratio": 0.8,
         "notes": ""
       },
       {
         "start": 3150,
-        "ftp_ratio": "0.7",
+        "ftp_ratio": 0.7,
         "notes": ""
       },
       {
         "start": 3300,
-        "ftp_ratio": "0.6",
+        "ftp_ratio": 0.6,
         "notes": ""
       }
     ],

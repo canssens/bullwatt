@@ -2,7 +2,7 @@
   "id": "zone2_cruise_45",
   "training_name": "Zone 2 Cruise",
   "description": "Steady endurance ride 45min",
-  "duration": "2700",
+  "duration":2700,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,37 +10,37 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 300,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 600,
-      "ftp_ratio": "0.68",
+      "ftp_ratio": 0.68,
       "notes": ""
     },
     {
       "start": 1200,
-      "ftp_ratio": "0.72",
+      "ftp_ratio": 0.72,
       "notes": ""
     },
     {
       "start": 1800,
-      "ftp_ratio": "0.68",
+      "ftp_ratio": 0.68,
       "notes": ""
     },
     {
       "start": 2400,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 2700,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     }
   ],

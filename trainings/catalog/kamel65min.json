@@ -2,7 +2,7 @@
   "id": "kamel65min",
   "training_name": "Kamel 65min",
   "description": "Kamel Training 65min",
-  "duration": "3900",
+  "duration":3900,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,112 +10,112 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 240,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 420,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 600,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 720,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 900,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 930,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 990,
-      "ftp_ratio": "1.2",
+      "ftp_ratio": 1.2,
       "notes": ""
     },
     {
       "start": 1020,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 1320,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 1350,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 1860,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 1920,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 2220,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 2280,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 2760,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 2820,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 3120,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 3200,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 3660,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 3720,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 3900,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     }
   ],

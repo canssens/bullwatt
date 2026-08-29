@@ -2,7 +2,7 @@
   "id": "tempo82min",
   "training_name": "Tempo 82",
   "description": "Tempo 82min",
-  "duration": "4920",
+  "duration":4920,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,107 +10,107 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 300,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 900,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 930,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 960,
-      "ftp_ratio": "0.9",
+      "ftp_ratio": 0.9,
       "notes": ""
     },
     {
       "start": 990,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 1020,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 1050,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 1080,
-      "ftp_ratio": "0.7",
+      "ftp_ratio": 0.7,
       "notes": ""
     },
     {
       "start": 1380,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 1560,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 2160,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 2340,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 2880,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 3000,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 3360,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 3570,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 4170,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 4350,
-      "ftp_ratio": "0.8",
+      "ftp_ratio": 0.8,
       "notes": ""
     },
     {
       "start": 4650,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 4920,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     }
   ],

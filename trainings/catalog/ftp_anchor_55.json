@@ -2,7 +2,7 @@
   "id": "ftp_anchor_55",
   "training_name": "FTP Anchor",
   "description": "Sustained threshold 55min",
-  "duration": "3300",
+  "duration":3300,
   "units": {
     "time": "seconds",
     "ftp_ratio": "number"
@@ -10,42 +10,42 @@
   "phases": [
     {
       "start": 0,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 300,
-      "ftp_ratio": "0.65",
+      "ftp_ratio": 0.65,
       "notes": ""
     },
     {
       "start": 600,
-      "ftp_ratio": "0.98",
+      "ftp_ratio": 0.98,
       "notes": ""
     },
     {
       "start": 1500,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 1800,
-      "ftp_ratio": "1",
+      "ftp_ratio": 1,
       "notes": ""
     },
     {
       "start": 2700,
-      "ftp_ratio": "0.6",
+      "ftp_ratio": 0.6,
       "notes": ""
     },
     {
       "start": 3000,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     },
     {
       "start": 3300,
-      "ftp_ratio": "0.5",
+      "ftp_ratio": 0.5,
       "notes": ""
     }
   ],

@@ -2,7 +2,7 @@
     "id":  "alpha_30min",
     "training_name":  "Alpha 30min",
     "description":  "Converted from Alpha__1_ 30min",
-    "duration":  "1800",
+    "duration": 1800,
     "units":  {
                   "time":  "seconds",
                   "ftp_ratio":  "number"
@@ -10,77 +10,77 @@
     "phases":  [
                    {
                        "start":  0,
-                       "ftp_ratio":  "0.4",
+                       "ftp_ratio":  0.4,
                        "notes":  ""
                    },
                    {
                        "start":  240,
-                       "ftp_ratio":  "0.53",
+                       "ftp_ratio":  0.53,
                        "notes":  ""
                    },
                    {
                        "start":  480,
-                       "ftp_ratio":  "0.67",
+                       "ftp_ratio":  0.67,
                        "notes":  ""
                    },
                    {
                        "start":  720,
-                       "ftp_ratio":  "0.8",
+                       "ftp_ratio":  0.8,
                        "notes":  ""
                    },
                    {
                        "start":  960,
-                       "ftp_ratio":  "0.55",
+                       "ftp_ratio":  0.55,
                        "notes":  ""
                    },
                    {
                        "start":  1080,
-                       "ftp_ratio":  "1.05",
+                       "ftp_ratio":  1.05,
                        "notes":  ""
                    },
                    {
                        "start":  1260,
-                       "ftp_ratio":  "0.55",
+                       "ftp_ratio":  0.55,
                        "notes":  ""
                    },
                    {
                        "start":  1380,
-                       "ftp_ratio":  "1.15",
+                       "ftp_ratio":  1.15,
                        "notes":  ""
                    },
                    {
                        "start":  1440,
-                       "ftp_ratio":  "0.55",
+                       "ftp_ratio":  0.55,
                        "notes":  ""
                    },
                    {
                        "start":  1560,
-                       "ftp_ratio":  "1.2",
+                       "ftp_ratio":  1.2,
                        "notes":  ""
                    },
                    {
                        "start":  1590,
-                       "ftp_ratio":  "0.55",
+                       "ftp_ratio":  0.55,
                        "notes":  ""
                    },
                    {
                        "start":  1620,
-                       "ftp_ratio":  "1.2",
+                       "ftp_ratio":  1.2,
                        "notes":  ""
                    },
                    {
                        "start":  1650,
-                       "ftp_ratio":  "0.55",
+                       "ftp_ratio":  0.55,
                        "notes":  ""
                    },
                    {
                        "start":  1680,
-                       "ftp_ratio":  "0.4",
+                       "ftp_ratio":  0.4,
                        "notes":  ""
                    },
                    {
                        "start":  1800,
-                       "ftp_ratio":  "0.4",
+                       "ftp_ratio":  0.4,
                        "notes":  ""
                    }
                ],
