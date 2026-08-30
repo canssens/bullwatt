@@ -3,6 +3,8 @@ header('Content-Type: application/json');
 
 ini_set('display_errors', 0);
 //error_reporting(E_ALL);
+//error_log("test log", 0);
+//error_log("test log php", 3, "/var/log/apache2/php.log");
 
 
 $UUID = $_COOKIE["userBullWatt"];
@@ -41,7 +43,7 @@ if(isset($_GET['code'])==true)
 
     $data = json_decode($server_output, true);
 
-    //$txt_output .="<h1>AT</h1>".$data["access_token"];
+    //print_r($data);
 
     if(isset($data["access_token"]))
     {
@@ -51,7 +53,7 @@ if(isset($_GET['code'])==true)
         $arr["expires_at"] = $data["expires_at"];
         $arr["athlete.id"] = $data["athlete"]["id"];
         $arr["athlete.sex"] = $data["athlete"]["sex"];
-        $arr["athlete.weight"] = $data["athlete"]["weight"];
+        //$arr["athlete.weight"] = $data["athlete"]["weight"]; //no weight in the current response
 
         curl_close ($ch);
         
@@ -110,10 +112,10 @@ elseif(isset($arr["access_token"])==true)
 
     $answer["athlete.id"] = $arr["athlete.id"];
     $answer["athlete.sex"] = $arr["athlete.sex"];
-    $answer["athlete.weight"] = $arr["athlete.weight"];
+    //$answer["athlete.weight"] = $arr["athlete.weight"];
 
     // get by strava api athlete history
-
+    // Not implemented
 }
 
 
