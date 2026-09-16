@@ -38,6 +38,8 @@
   "faq.a3": "Le Bluetooth FTMS (Fitness Machine Service) est un profil Bluetooth qui permet une communication standardisée entre les équipements de fitness et les applications pour l'échange de données et le contrôle.",
   "faq.q4": "Qu'est-ce que la FTP ?",
   "faq.a4": "La Puissance au Seuil Fonctionnel (FTP) est la puissance moyenne la plus élevée qu'un cycliste peut maintenir pendant environ une heure, mesurée en watts. C'est un indicateur clé utilisé pour évaluer la forme physique, suivre les progrès et établir des zones d'entraînement personnalisées.",
+  "faq.q20": "BullWatt prend-il également en charge les capteurs de fréquence cardiaque ?",
+  "faq.a20": "Oui. Si votre capteur de fréquence cardiaque est compatible BLE, vous pouvez le connecter avant ou pendant votre séance.",
   "faq.q5": "Comment exporter l'activité enregistrée ?",
   "faq.a5.html": "Vous pouvez retrouver toutes vos séances au <a href=\"tcx.html\">format TCX</a>. Les dernières séances sont enregistrées dans votre navigateur ; il n'y a pas de sauvegarde côté serveur.",
   "faq.q6": "Quelles sont les conditions requises ?",

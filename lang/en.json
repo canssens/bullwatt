@@ -38,6 +38,8 @@
   "faq.a3": "Bluetooth FTMS (Fitness Machine Service) is a Bluetooth profile that enables standardized communication between fitness equipment and apps for data exchange and control.",
   "faq.q4": "What is FTP?",
   "faq.a4": "Functional Threshold Power (FTP) is the highest average power a cyclist can sustain for approximately one hour, measured in watts. It's a key metric used to gauge a rider's fitness, track progress, and establish personalized training zones.",
+  "faq.q20": "Does BullWatt also support heart rate monitors?",
+  "faq.a20": "Yes. If your heart rate monitor is BLE-compatible, you can connect it before or during your workout.",
   "faq.q5": "How to export the activity recorded?",
   "faq.a5.html": "You can find all your sessions stored in <a href=\"tcx.html\">TCX format</a>. The last sessions are registered in your browser; there is no server-side backup/save.",
   "faq.q6": "What are the requirements?",
