@@ -390,7 +390,7 @@
     console.log('BullWatt Training');
 
     // define a new console
-    /*
+    
     var console = (function (oldCons) {
       return {
         log: function (text) {
@@ -417,7 +417,7 @@
 
     //Then redefine the old console
     window.console = console;
-    */
+    
 
     var samplingLog = 20;
 
@@ -630,7 +630,7 @@
     }
 
     function handleOnDataCardio(event) {
-      console.log(event);
+      //console.log(event);
       var nextHeartRate = Number(event.heartRate);
 
       if (!Number.isFinite(nextHeartRate) || nextHeartRate <= 0) {
