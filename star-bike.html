@@ -466,7 +466,7 @@
         cadence: cadence,
         distance: parseFloat(activity.distance * 1000).toFixed(2)
       };
-
+      // Only add HeartRate value if available (so >0)
       if (heartRate > 0) {
         point.heartRate = heartRate;
       }
@@ -592,6 +592,8 @@
       console.log(event);
       heartRate = event.heartRate;
       dataHR.push(event.heartRate);
+
+      // TODO update the displayed values
       //document.querySelector('#valueTabheartRate').textContent = res.heartRate;
       //document.querySelector('#valueTabheartRateAVG').textContent = getAvg(dataheartRate);
       //document.querySelector('#valueTabheartRateBEST').textContent = getMax(dataheartRate);
