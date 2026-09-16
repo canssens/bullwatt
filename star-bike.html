@@ -215,9 +215,10 @@
 
 
   <div id="containerTimer">
-    <button id="startConnection" class="button">Start</button>
-    <button id="pauseResumeButton" class="button" disabled>Pause</button>
-    <button id="stopButton" class="button" disabled>Stop</button>
+    <button id="startConnectionCardio" class="button">➕❤️</button>
+    <button id="startConnection" class="button">▶️ Start</button>
+    <button id="pauseResumeButton" class="button" disabled>⏸️ Pause</button>
+    <button id="stopButton" class="button" disabled>⏹️ Stop</button>
 
     <table style="width:100%">
       <tr>
@@ -348,6 +349,7 @@
     console.log('BullWatt Training');
 
     // define a new console
+    /*
     var console = (function (oldCons) {
       return {
         log: function (text) {
@@ -362,18 +364,25 @@
           if (typeof window.pushTechnicalLog === 'function') {
             window.pushTechnicalLog(text);
           }
+        },
+        warn: function (text) {
+          oldCons.warn(text);
+          if (typeof window.pushTechnicalLog === 'function') {
+            window.pushTechnicalLog(text);
+          }
         }
       };
     }(window.console));
 
     //Then redefine the old console
     window.console = console;
+    */
 
     var samplingLog = 20;
 
     var myUUID = null;
 
-    var bluetoothDevice;
+    var bluetoothDevice; //todo remove
     var FTMSService;
     var FTMSMeasureCharacteristic;
 
@@ -385,12 +394,14 @@
     var speed = 0;
     var power = 0;
     var cadence = 0;
+    var heartRate = 0;
     var currentPower = 50;
     var timeElapsed = 0;
     var unitSystem = "metric";
 
 
     var connectableDevice = null;
+    var connectableDeviceCardio = null;
 
 
 
@@ -455,6 +466,10 @@
         cadence: cadence,
         distance: parseFloat(activity.distance * 1000).toFixed(2)
       };
+
+      if (heartRate > 0) {
+        point.heartRate = heartRate;
+      }
 
       activity.timeseries.push(point);
 
@@ -532,12 +547,65 @@
     }
 
 
+    async function connectBLECardio() {
+      let isConnecting = false;
+      try {
+        if (connectableDeviceCardio == null) {
+          isConnecting = true;
+          showConnectionPopup();
+
+          const filter = {
+            filters: [
+              { services: ['0000180d-0000-1000-8000-00805f9b34fb'] }
+            ]
+          };
+          const deviceCardio = await navigator.bluetooth.requestDevice(filter);
+          //connectableDeviceCardio = Connectable({ deviceCardio, onConnected: handleOnConnectedCardio, onData: handleOnDataCardio });
+          connectableDeviceCardio = Connectable({
+              device: deviceCardio,
+              onConnected: handleOnConnectedCardio,
+              onData: handleOnDataCardio,
+              onDisconnect: handleOnDisconnectCardio,
+              onConnectFail: handleOnDisconnectCardio
+            });
+          
+          await connectableDeviceCardio.connect({});
+
+        }
+
+      } catch (error) {
+        console.log('Argh! ' + error);
+      } finally {
+        if (isConnecting) {
+          hideConnectionPopup();
+        }
+      }
+    }
 
 
 
+    function handleOnConnectedCardio(event) {
+      // TODO modify the UI to integrate HeartRate values
+    }
 
+    function handleOnDataCardio(event) {
+      console.log(event);
+      heartRate = event.heartRate;
+      dataHR.push(event.heartRate);
+      //document.querySelector('#valueTabheartRate').textContent = res.heartRate;
+      //document.querySelector('#valueTabheartRateAVG').textContent = getAvg(dataheartRate);
+      //document.querySelector('#valueTabheartRateBEST').textContent = getMax(dataheartRate);
 
+    }
 
+    function handleOnDisconnectCardio(event) {
+      console.log(event);
+      connectableDeviceCardio = null;
+      heartRate = 0;
+
+    }
+
+    
 
 
 
@@ -745,6 +813,13 @@
       }
     });
 
+    // Initialize the BLE heart rate
+    document.querySelector('#startConnectionCardio').addEventListener('click', function () {
+      if (isWebBluetoothEnabled()) {
+        connectBLECardio();
+      }
+    });
+
     // Finish the activity
     document.querySelector('#stopButton').addEventListener('click', function () {
       if (confirm('Are you sure you want to stop?')) {
@@ -752,6 +827,11 @@
         if (connectableDevice.isConnected()) {
           connectableDevice.disconnect();
           connectableDevice = null;
+        }
+
+        if (connectableDeviceCardio.isConnected()) {
+          connectableDeviceCardio.disconnect();
+          connectableDeviceCardio = null;
         }
 
         // TODO refactor
