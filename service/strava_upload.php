@@ -51,14 +51,19 @@ if($UUID != null)
         {
     
             $xml .= '
-                <Trackpoint>
-                    <Time>'.$value['time'].'</Time>
-                    <DistanceMeters>'.$value['distance'].'</DistanceMeters>
-                    <Cadence>'.$value['cadence'].'</Cadence>
-                    <Extensions>
-                        <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
+            <Trackpoint>
+            <Time>'.$value['time'].'</Time>
+            <DistanceMeters>'.$value['distance'].'</DistanceMeters>
+            <Cadence>'.$value['cadence'].'</Cadence>
+            ';
+            if(isset($value['heartRate']))  $xml .= '<HeartRateBpm><Value>'.$value['heartRate'].'</Value></HeartRateBpm>
+            ';
+
+            $xml .= '
+                <Extensions>
+                    <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
                 ';
-    
+
             if(isset($value['speed']))  $xml .= '<Speed>'.($value['speed']/ 3.6).'</Speed>
             ';
             if(isset($value['power']))  $xml .= '<Watts>'.$value['power'].'</Watts>
