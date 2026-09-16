@@ -28,9 +28,18 @@
       position: absolute;
       bottom: 0;
       width: 100%;
+      z-index: 1;
       color: white;
       font-family: system-ui;
       text-align: center;
+    }
+
+    .starfield-canvas {
+      position: fixed;
+      inset: 0;
+      display: block;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .indicators {
@@ -50,10 +59,16 @@
       gap: 0.5em;
     }
 
+    #metricsTable {
+      width: 100%;
+      table-layout: fixed;
+    }
+
     #containerTimer {
       position: absolute;
       top: 0;
       width: 100%;
+      z-index: 1;
       color: white;
       font-family: system-ui;
       /*padding: 15px;*/
@@ -177,9 +192,19 @@
       /* Main metric values (CADENCE / POWER / SPEED) */
       #valueTabCadence,
       #valueTabPower,
-      #valueTabSpeed {
+      #valueTabSpeed,
+      #valueTabHeartRate {
         font-size: 14vw !important;
         line-height: 1;
+      }
+
+      /* Keep four live metrics readable when the heart-rate sensor is connected. */
+      #metricsTable.has-heart-rate>tbody>tr:first-child>td {
+        font-size: 3.2vw !important;
+      }
+
+      #metricsTable.has-heart-rate .metric-value {
+        font-size: 12vw !important;
       }
 
       /* --- Buttons: large touch targets --- */
@@ -215,9 +240,10 @@
 
 
   <div id="containerTimer">
-    <button id="startConnection" class="button">Start</button>
-    <button id="pauseResumeButton" class="button" disabled>Pause</button>
-    <button id="stopButton" class="button" disabled>Stop</button>
+    <button id="startConnectionCardio" class="button">➕❤️</button>
+    <button id="startConnection" class="button">▶️ Start</button>
+    <button id="pauseResumeButton" class="button" disabled>⏸️ Pause</button>
+    <button id="stopButton" class="button" disabled>⏹️ Stop</button>
 
     <table style="width:100%">
       <tr>
@@ -284,21 +310,22 @@
       <div id="graphPower" style="width: 100%;  height: 100%;"></div>
     </div>
 
-    <table style="width:100%">
+    <table id="metricsTable">
       <tr>
         <td>CADENCE</td>
         <td>POWER</td>
         <td>SPEED</td>
+        <td class="heart-rate-column" hidden>CARDIO</td>
       </tr>
       <tr>
         <!-- CADENCE -->
-        <td width="33%">
+        <td>
           <div class="metric-cell">
             <div class="metric-side">
               <span class="indicators">AVG</span><br />
               <span id="valueTabCadenceAVG">0</span>
             </div>
-            <div id="valueTabCadence" style="font-size: 300%;">0</div>
+            <div id="valueTabCadence" class="metric-value" style="font-size: 300%;">0</div>
             <div class="metric-side">
               <span class="indicators">BEST</span><br />
               <span id="valueTabCadenceBEST">0</span>
@@ -307,13 +334,13 @@
         </td>
 
         <!-- POWER -->
-        <td width="33%">
+        <td>
           <div class="metric-cell">
             <div class="metric-side">
               <span class="indicators">AVG</span><br />
               <span id="valueTabPowerAVG">0</span>
             </div>
-            <div id="valueTabPower" style="font-size: 300%;">0</div>
+            <div id="valueTabPower" class="metric-value" style="font-size: 300%;">0</div>
             <div class="metric-side">
               <span class="indicators">BEST</span><br />
               <span id="valueTabPowerBEST">0</span>
@@ -322,16 +349,31 @@
         </td>
 
         <!-- SPEED -->
-        <td width="33%">
+        <td>
           <div class="metric-cell">
             <div class="metric-side">
               <span class="indicators">AVG</span><br />
               <span id="valueTabSpeedAVG">0</span>
             </div>
-            <div id="valueTabSpeed" style="font-size: 300%;">0</div>
+            <div id="valueTabSpeed" class="metric-value" style="font-size: 300%;">0</div>
             <div class="metric-side">
               <span class="indicators">BEST</span><br />
               <span id="valueTabSpeedBEST">0</span>
+            </div>
+          </div>
+        </td>
+
+        <!-- HEART RATE -->
+        <td class="heart-rate-column" hidden>
+          <div class="metric-cell">
+            <div class="metric-side">
+              <span class="indicators">AVG</span><br />
+              <span id="valueTabHeartRateAVG">0</span>
+            </div>
+            <div id="valueTabHeartRate" class="metric-value" style="font-size: 300%;">0</div>
+            <div class="metric-side">
+              <span class="indicators">BEST</span><br />
+              <span id="valueTabHeartRateBEST">0</span>
             </div>
           </div>
         </td>
@@ -348,6 +390,7 @@
     console.log('BullWatt Training');
 
     // define a new console
+    
     var console = (function (oldCons) {
       return {
         log: function (text) {
@@ -362,18 +405,25 @@
           if (typeof window.pushTechnicalLog === 'function') {
             window.pushTechnicalLog(text);
           }
+        },
+        warn: function (text) {
+          oldCons.warn(text);
+          if (typeof window.pushTechnicalLog === 'function') {
+            window.pushTechnicalLog(text);
+          }
         }
       };
     }(window.console));
 
     //Then redefine the old console
     window.console = console;
+    
 
     var samplingLog = 20;
 
     var myUUID = null;
 
-    var bluetoothDevice;
+    var bluetoothDevice; //todo remove
     var FTMSService;
     var FTMSMeasureCharacteristic;
 
@@ -385,12 +435,14 @@
     var speed = 0;
     var power = 0;
     var cadence = 0;
+    var heartRate = 0;
     var currentPower = 50;
     var timeElapsed = 0;
     var unitSystem = "metric";
 
 
     var connectableDevice = null;
+    var connectableDeviceCardio = null;
 
 
 
@@ -417,7 +469,7 @@
     }
 
 
-
+    // TODO : add avg cardio for tcx lap AverageHeartRateBpm
     var activity;
     activity = {
       startTime: 0,
@@ -455,6 +507,10 @@
         cadence: cadence,
         distance: parseFloat(activity.distance * 1000).toFixed(2)
       };
+      // Only add HeartRate value if available (so >0)
+      if (heartRate > 0) {
+        point.heartRate = heartRate;
+      }
 
       activity.timeseries.push(point);
 
@@ -532,12 +588,83 @@
     }
 
 
+    async function connectBLECardio() {
+      let isConnecting = false;
+      try {
+        if (connectableDeviceCardio == null) {
+          isConnecting = true;
+          showConnectionPopup();
+
+          const filter = {
+            filters: [
+              { services: ['0000180d-0000-1000-8000-00805f9b34fb'] }
+            ]
+          };
+          const deviceCardio = await navigator.bluetooth.requestDevice(filter);
+          //connectableDeviceCardio = Connectable({ deviceCardio, onConnected: handleOnConnectedCardio, onData: handleOnDataCardio });
+          connectableDeviceCardio = Connectable({
+              device: deviceCardio,
+              onConnected: handleOnConnectedCardio,
+              onData: handleOnDataCardio,
+              onDisconnect: handleOnDisconnectCardio,
+              onConnectFail: handleOnDisconnectCardio
+            });
+          
+          await connectableDeviceCardio.connect({});
+
+        }
+
+      } catch (error) {
+        console.log('Argh! ' + error);
+      } finally {
+        if (isConnecting) {
+          hideConnectionPopup();
+        }
+      }
+    }
 
 
 
+    function handleOnConnectedCardio(event) {
+      setHeartRateColumnVisibility(true);
+    }
 
+    function handleOnDataCardio(event) {
+      //console.log(event);
+      var nextHeartRate = Number(event.heartRate);
 
+      if (!Number.isFinite(nextHeartRate) || nextHeartRate <= 0) {
+        return;
+      }
 
+      heartRate = nextHeartRate;
+      dataHR.push(heartRate);
+
+      document.querySelector('#valueTabHeartRate').textContent = heartRate;
+      document.querySelector('#valueTabHeartRateAVG').textContent = getAvg(dataHR);
+      document.querySelector('#valueTabHeartRateBEST').textContent = getMax(dataHR);
+
+    }
+
+    function handleOnDisconnectCardio(event) {
+      console.log(event);
+      connectableDeviceCardio = null;
+      heartRate = 0;
+      document.querySelector('#valueTabHeartRate').textContent = heartRate;
+      setHeartRateColumnVisibility(false);
+
+    }
+
+    function setHeartRateColumnVisibility(isVisible) {
+      document.querySelectorAll('.heart-rate-column').forEach(function (column) {
+        column.hidden = !isVisible;
+      });
+
+      document.querySelector('#metricsTable').classList.toggle('has-heart-rate', isVisible);
+
+    }
+
+    
 
 
 
@@ -745,6 +872,13 @@
       }
     });
 
+    // Initialize the BLE heart rate
+    document.querySelector('#startConnectionCardio').addEventListener('click', function () {
+      if (isWebBluetoothEnabled()) {
+        connectBLECardio();
+      }
+    });
+
     // Finish the activity
     document.querySelector('#stopButton').addEventListener('click', function () {
       if (confirm('Are you sure you want to stop?')) {
@@ -752,6 +886,11 @@
         if (connectableDevice.isConnected()) {
           connectableDevice.disconnect();
           connectableDevice = null;
+        }
+
+        if (connectableDeviceCardio.isConnected()) {
+          connectableDeviceCardio.disconnect();
+          connectableDeviceCardio = null;
         }
 
         // TODO refactor
@@ -1166,7 +1305,7 @@
     function init() {
 
       //camera
-      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+      camera = new THREE.PerspectiveCamera(45, 1, 1, 1000);
       camera.position.z = 5;
 
       //scene
@@ -1174,11 +1313,22 @@
 
       //renderer
       renderer = new THREE.WebGLRenderer();
-      //set the size of the renderer
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.domElement.classList.add('starfield-canvas');
 
       //add the renderer to the html document body
       document.body.appendChild(renderer.domElement);
+
+      resizeRenderer();
+      window.addEventListener('resize', resizeRenderer);
+    }
+
+    function resizeRenderer() {
+      var viewportWidth = document.documentElement.clientWidth;
+      var viewportHeight = document.documentElement.clientHeight;
+
+      renderer.setSize(viewportWidth, viewportHeight);
+      camera.aspect = viewportWidth / viewportHeight;
+      camera.updateProjectionMatrix();
     }
 
 

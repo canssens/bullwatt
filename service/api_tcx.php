@@ -42,6 +42,11 @@ $xml = '<?xml version="1.0" encoding="UTF-8"?>
             <Time>'.$value['time'].'</Time>
             <DistanceMeters>'.$value['distance'].'</DistanceMeters>
             <Cadence>'.$value['cadence'].'</Cadence>
+            ';
+        if(isset($value['heartRate']))  $xml .= '<HeartRateBpm><Value>'.$value['heartRate'].'</Value></HeartRateBpm>
+        ';
+
+        $xml .= '
             <Extensions>
                 <TPX xmlns="http://www.garmin.com/xmlschemas/ActivityExtension/v2">
             ';
