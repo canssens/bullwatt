@@ -31,6 +31,11 @@ $articleData = [
         'title' => 'Why BullWatt is a good Zwift Alternative for Older PCs',
         'content' => './html_blocks/hardware-zwift-slow.html',
         'slug' => 'hardware-zwift-slow.html'
+    ],
+    [
+        'title' => 'Create Your Own BullWatt Workout with ChatGPT or Claude via MCP',
+        'content' => './html_blocks/create-workout-with-mcp.html',
+        'slug' => 'create-workout-with-mcp.html'
     ]
     // Add more howto here
 

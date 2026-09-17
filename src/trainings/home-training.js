@@ -88,6 +88,23 @@ function createContactCard() {
     return col;
 }
 
+function createMCPCard() {
+    const col = document.createElement('div');
+    col.className = 'col';
+    col.innerHTML = `
+        <div class="card h-100">
+            <a href="articles/create-workout-with-mcp.html" class="text-decoration-none text-light">
+                <div class="card-body">
+                    <h5 class="card-title" data-i18n="training.need_more_mcp">${getI18nLabel('training.need_more_mcp', 'Training with AI?')}</h5>
+                    <p class="card-text" data-i18n="training.need_more_mcp2">${getI18nLabel('training.need_more_mcp2', 'Create your own workout with ChatGPT or Claude via MCP')}</p>
+                </div>
+            </a>
+        </div>
+    `;
+
+    return col;
+}
+
 function renderTrainingChart(chartId, trainingGraph) {
     if (typeof window.echarts === 'undefined') {
         return null;
@@ -135,6 +152,7 @@ export async function initHomeTrainingCatalog() {
         });
 
         trainingCards.appendChild(createContactCard());
+        trainingCards.appendChild(createMCPCard());
 
         if (charts.length > 0) {
             window.addEventListener('resize', () => {
