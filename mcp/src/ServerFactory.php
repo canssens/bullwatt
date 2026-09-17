@@ -6,6 +6,7 @@ namespace Bullwatt\Mcp;
 
 use Mcp\Server;
 use Mcp\Server\Session\FileSessionStore;
+use Mcp\Schema\ToolAnnotations;
 
 final class ServerFactory
 {
@@ -64,6 +65,10 @@ final class ServerFactory
                 'search_trainings',
                 'Search Bullwatt trainings',
                 'Lexical search and deterministic filters over names, descriptions, notes, duration, intensity, and phase count.',
+                annotations: new ToolAnnotations(
+                    readOnlyHint: true,
+                    openWorldHint: false,
+                ),
                 inputSchema: self::searchSchema(),
             )
             ->addTool(
@@ -71,6 +76,10 @@ final class ServerFactory
                 'validate_training',
                 'Validate a Bullwatt training',
                 'Deterministically validates a generated session and returns blocking errors, warnings, and metrics.',
+                annotations: new ToolAnnotations(
+                    readOnlyHint: true,
+                    openWorldHint: false,
+                ),
                 inputSchema: self::trainingToolSchema(false),
             )
             ->addTool(
@@ -78,6 +87,12 @@ final class ServerFactory
                 'save_training',
                 'Save a Bullwatt training',
                 'Revalidates and atomically saves a valid session in order to get an URL to launch the session.',
+                annotations: new ToolAnnotations(
+                    readOnlyHint: false,
+                    destructiveHint: false,
+                    idempotentHint: false,
+                    openWorldHint: false,
+                ),
                 inputSchema: self::trainingToolSchema(true),
             )
             ->addPrompt(
