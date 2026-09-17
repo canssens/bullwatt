@@ -68,6 +68,7 @@ final class ServerFactory
                 annotations: new ToolAnnotations(
                     readOnlyHint: true,
                     openWorldHint: false,
+                    destructiveHint: false,
                 ),
                 inputSchema: self::searchSchema(),
             )
@@ -79,6 +80,7 @@ final class ServerFactory
                 annotations: new ToolAnnotations(
                     readOnlyHint: true,
                     openWorldHint: false,
+                    destructiveHint: false,
                 ),
                 inputSchema: self::trainingToolSchema(false),
             )
