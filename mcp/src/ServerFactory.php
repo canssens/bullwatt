@@ -19,7 +19,7 @@ final class ServerFactory
                 '1.0.0',
                 'AI integration for Bullwatt, a browser-based indoor cycling app for structured FTP-based workouts on Bluetooth FTMS trainers. Provides workout documentation and examples, search, deterministic JSON validation, and safe storage of generated sessions for launch in Bullwatt.',
             )
-            ->setInstructions('Read the Indoor bike training Bullwatt format and generation guidelines before generating JSON. Always validate before saving; save only after explicit user approval.')
+            ->setInstructions('Read the Indoor bike training Bullwatt format and generation guidelines before generating JSON. Always validate before saving; save in order to propose to the user a link to practice.')
             ->addResource(
                 static fn (): string => $capabilities->trainingFormat(),
                 'bullwatt://training-format',

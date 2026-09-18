@@ -103,7 +103,7 @@ The `generate_bullwatt_training` prompt accepts an optional `request` string. It
 3. Generate Bullwatt JSON directly in the client model.
 4. Call `validate_training` and correct all blocking errors.
 5. Present the JSON and a readable summary.
-6. Call `save_training` only after explicit user approval.
+6. Call `save_training` to provide a link to practice.
 
 For example, for “45 minutes, three eight-minute threshold blocks, three-minute recoveries, maximum 100% FTP,” the model should inspect threshold examples, calculate a 2700-second timeline, emit numeric `ftp_ratio` phases, validate, and only then offer to save. The MCP server does not generate or silently adjust the sports plan.
 
