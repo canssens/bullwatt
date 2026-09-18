@@ -883,15 +883,19 @@
     document.querySelector('#stopButton').addEventListener('click', function () {
       if (confirm('Are you sure you want to stop?')) {
         //Close BLE connection
-        if (connectableDevice.isConnected()) {
-          connectableDevice.disconnect();
-          connectableDevice = null;
+        if (connectableDevice !== null){
+          if( connectableDevice.isConnected()) {
+            connectableDevice.disconnect();
+          }
         }
+        connectableDevice = null;
 
-        if (connectableDeviceCardio.isConnected()) {
-          connectableDeviceCardio.disconnect();
-          connectableDeviceCardio = null;
+        if (connectableDeviceCardio !== null) {
+          if(connectableDeviceCardio.isConnected()) {
+            connectableDeviceCardio.disconnect();
+          }
         }
+        connectableDeviceCardio = null;
 
         // TODO refactor
         power = 0;
@@ -1014,7 +1018,7 @@
     }
 
     async function updateWatt(val) {
-      if (connectableDevice.isConnected()) {
+      if (connectableDevice !== null && connectableDevice.isConnected()) {
 
 
         currentPower = currentPower + val;
