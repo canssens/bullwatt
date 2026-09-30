@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developers.openai.com/apps-sdk/schemas/chatgpt-app-submission.v1.json",
+  "schema_version": 1,
+  "app_info": {
+    "display_name": "BullWatt",
+    "subtitle": "Create indoor bike workouts",
+    "description": "BullWatt helps users find structured indoor cycling workouts, validate FTP-based workout plans, and save valid sessions for use in the BullWatt browser app.",
+    "category": "LIFESTYLE"
+  },
+  "tools": {
+    "search_trainings": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Searches the existing BullWatt workout catalog and returns matching summaries without changing stored data.",
+        "open_world_justification": "Only reads BullWatt's private server-side catalog and does not change public or third-party systems.",
+        "destructive_justification": "Does not delete, overwrite, revoke access, or perform any irreversible action."
+      }
+    },
+    "validate_training": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Computes validation results and workout metrics from the supplied training without storing or modifying it.",
+        "open_world_justification": "Performs local deterministic validation without contacting or changing external systems.",
+        "destructive_justification": "Does not delete, overwrite, revoke access, or perform any irreversible action."
+      }
+    },
+    "save_training": {
+      "annotations": {
+        "readOnlyHint": false,
+        "openWorldHint": true,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Creates a new generated workout file after validation and returns a URL for opening it in BullWatt.",
+        "open_world_justification": "Creates a workout that is accessible through a newly generated BullWatt web URL.",
+        "destructive_justification": "Always assigns a random new identifier and does not delete or overwrite existing workouts."
+      }
+    }
+  },
+  "test_cases": [
+    {
+      "description": "Find short workouts that fit a limited training window.",
+      "user_prompt": "Find BullWatt workouts between 30 and 45 minutes long.",
+      "file_attachment_urls": null,
+      "tools_triggered": "search_trainings",
+      "expected_output": "Returns matching catalog workouts with their names, durations, phase counts, and intensity metrics.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Find workouts matching a training style and intensity ceiling.",
+      "user_prompt": "Find threshold workouts whose maximum intensity does not exceed 100% FTP.",
+      "file_attachment_urls": null,
+      "tools_triggered": "search_trainings",
+      "expected_output": "Returns only catalog workouts matching the threshold terms and requested maximum FTP ratio.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Validate a correctly structured generated workout.",
+      "user_prompt": "Validate this BullWatt workout: {\"id\":\"easy-ride\",\"training_name\":\"Easy Ride\",\"description\":\"A short recovery ride.\",\"duration\":600,\"units\":{\"time\":\"seconds\",\"ftp_ratio\":\"number\"},\"phases\":[{\"start\":0,\"ftp_ratio\":0.5,\"notes\":\"Easy riding\"},{\"start\":600,\"ftp_ratio\":0,\"notes\":\"End\"}]}",
+      "file_attachment_urls": null,
+      "tools_triggered": "validate_training",
+      "expected_output": "Reports that the workout is valid and returns its calculated duration and intensity metrics.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Reject a workout with phases in an invalid chronological order.",
+      "user_prompt": "Validate this BullWatt workout and explain any blocking errors: {\"id\":\"bad-order\",\"training_name\":\"Bad Order\",\"description\":\"Test invalid phase order.\",\"duration\":600,\"units\":{\"time\":\"seconds\",\"ftp_ratio\":\"number\"},\"phases\":[{\"start\":0,\"ftp_ratio\":0.5},{\"start\":300,\"ftp_ratio\":0.8},{\"start\":200,\"ftp_ratio\":0.5}]}",
+      "file_attachment_urls": null,
+      "tools_triggered": "validate_training",
+      "expected_output": "Reports that the workout is invalid and identifies the non-increasing phase start as a blocking error.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Save a valid workout and provide a practice link.",
+      "user_prompt": "Save this valid BullWatt workout so I can practice it: {\"id\":\"recovery-spin\",\"training_name\":\"Recovery Spin\",\"description\":\"A gentle recovery session.\",\"duration\":600,\"units\":{\"time\":\"seconds\",\"ftp_ratio\":\"number\"},\"phases\":[{\"start\":0,\"ftp_ratio\":0.5,\"notes\":\"Easy riding\"},{\"start\":600,\"ftp_ratio\":0,\"notes\":\"End\"}]}",
+      "file_attachment_urls": null,
+      "tools_triggered": "save_training",
+      "expected_output": "Confirms that the workout was saved under a new identifier and provides its BullWatt practice URL.",
+      "expected_output_url": null
+    }
+  ],
+  "negative_test_cases": [
+    {
+      "description": "Do not trigger for analysis of completed ride data.",
+      "user_prompt": "Analyze my completed ride file and tell me how my heart rate changed over time.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because it does not analyze completed activities or heart-rate files.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for live smart-trainer control.",
+      "user_prompt": "Set my smart trainer resistance to 250 watts right now.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because its MCP tools do not directly control connected fitness hardware.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for medical clearance or diagnosis.",
+      "user_prompt": "Is interval training medically safe for my heart condition?",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because technical workout validation is not medical advice or medical clearance.",
+      "expected_output_url": null
+    }
+  ]
+}
