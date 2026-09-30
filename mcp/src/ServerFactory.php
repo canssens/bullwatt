@@ -71,6 +71,7 @@ final class ServerFactory
                     destructiveHint: false,
                 ),
                 inputSchema: self::searchSchema(),
+                outputSchema: self::searchOutputSchema(),
             )
             ->addTool(
                 static fn (array $training): array => $capabilities->validateTraining($training),
@@ -83,6 +84,7 @@ final class ServerFactory
                     destructiveHint: false,
                 ),
                 inputSchema: self::trainingToolSchema(false),
+                outputSchema: self::validationOutputSchema(),
             )
             ->addTool(
                 static fn (array $training): array => $capabilities->saveTraining($training),
@@ -93,9 +95,10 @@ final class ServerFactory
                     readOnlyHint: false,
                     destructiveHint: false,
                     idempotentHint: false,
-                    openWorldHint: false,
+                    openWorldHint: true,
                 ),
                 inputSchema: self::trainingToolSchema(true),
+                outputSchema: self::saveOutputSchema(),
             )
             ->addPrompt(
                 static fn (?string $request = null): array => $capabilities->generatePrompt($request),
@@ -151,6 +154,176 @@ final class ServerFactory
             'required' => ['training'],
             'properties' => $properties,
             '$defs' => ['training' => $trainingSchema],
+        ];
+    }
+
+    /** @return array<string, mixed> */
+    private static function searchOutputSchema(): array
+    {
+        return [
+            'type' => 'object',
+            'additionalProperties' => false,
+            'required' => ['trainings'],
+            'properties' => [
+                'trainings' => [
+                    'type' => 'array',
+                    'description' => 'Matching trainings, ordered by lexical relevance and then by id.',
+                    'items' => [
+                        'type' => 'object',
+                        'additionalProperties' => false,
+                        'required' => [
+                            'id',
+                            'training_name',
+                            'duration',
+                            'description',
+                            'phase_count',
+                            'minimum_ftp_ratio',
+                            'maximum_ftp_ratio',
+                            'weighted_average_ftp_ratio',
+                        ],
+                        'properties' => [
+                            'id' => ['type' => 'string'],
+                            'training_name' => ['type' => 'string'],
+                            'duration' => ['type' => 'integer', 'minimum' => 0, 'description' => 'Total duration in seconds.'],
+                            'description' => ['type' => 'string'],
+                            'phase_count' => ['type' => 'integer', 'minimum' => 0],
+                            'minimum_ftp_ratio' => self::nullableRatioSchema(),
+                            'maximum_ftp_ratio' => self::nullableRatioSchema(),
+                            'weighted_average_ftp_ratio' => self::nullableRatioSchema(),
+                        ],
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    /** @return array<string, mixed> */
+    private static function validationOutputSchema(): array
+    {
+        $schema = self::validationSchema();
+        $schema['$defs'] = self::validationDefinitions();
+
+        return $schema;
+    }
+
+    /** @return array<string, mixed> */
+    private static function saveOutputSchema(): array
+    {
+        return [
+            'type' => 'object',
+            'description' => 'A successful save result or a structured failure result.',
+            'oneOf' => [
+                [
+                    'additionalProperties' => false,
+                    'required' => ['saved', 'id', 'path', 'url', 'validation'],
+                    'properties' => [
+                        'saved' => ['const' => true],
+                        'id' => ['type' => 'string', 'pattern' => '^generated-[a-f0-9]{32}$'],
+                        'path' => ['type' => 'string', 'description' => 'Logical path of the generated training JSON file.'],
+                        'url' => ['type' => 'string', 'format' => 'uri', 'description' => 'URL used to launch the saved training in Bullwatt.'],
+                        'validation' => ['$ref' => '#/$defs/validation'],
+                    ],
+                ],
+                [
+                    'additionalProperties' => false,
+                    'required' => ['saved', 'error'],
+                    'properties' => [
+                        'saved' => ['const' => false],
+                        'error' => ['$ref' => '#/$defs/saveError'],
+                        'validation' => ['$ref' => '#/$defs/validation'],
+                    ],
+                ],
+            ],
+            '$defs' => array_merge(self::validationDefinitions(), [
+                'validation' => self::validationSchema(),
+                'saveError' => [
+                    'type' => 'object',
+                    'additionalProperties' => false,
+                    'required' => ['code', 'message'],
+                    'properties' => [
+                        'code' => ['type' => 'string'],
+                        'message' => ['type' => 'string'],
+                    ],
+                ],
+            ]),
+        ];
+    }
+
+    /** @return array<string, mixed> */
+    private static function validationSchema(): array
+    {
+        return [
+            'type' => 'object',
+            'additionalProperties' => false,
+            'required' => ['valid', 'errors', 'warnings', 'metrics'],
+            'properties' => [
+                'valid' => ['type' => 'boolean', 'description' => 'Whether the training has no blocking validation errors.'],
+                'errors' => [
+                    'type' => 'array',
+                    'description' => 'Blocking validation issues that must be corrected.',
+                    'items' => ['$ref' => '#/$defs/validationError'],
+                ],
+                'warnings' => [
+                    'type' => 'array',
+                    'description' => 'Non-blocking advice about the training.',
+                    'items' => ['$ref' => '#/$defs/validationWarning'],
+                ],
+                'metrics' => ['$ref' => '#/$defs/metrics'],
+            ],
+        ];
+    }
+
+    /** @return array<string, array<string, mixed>> */
+    private static function validationDefinitions(): array
+    {
+        return [
+            'validationError' => [
+                'type' => 'object',
+                'additionalProperties' => false,
+                'required' => ['path', 'code', 'message'],
+                'properties' => [
+                    'path' => ['type' => 'string', 'description' => 'Path to the invalid field; empty for a root-level issue.'],
+                    'code' => ['type' => 'string'],
+                    'message' => ['type' => 'string'],
+                ],
+            ],
+            'validationWarning' => [
+                'type' => 'object',
+                'additionalProperties' => false,
+                'required' => ['code', 'message'],
+                'properties' => [
+                    'code' => ['type' => 'string'],
+                    'message' => ['type' => 'string'],
+                ],
+            ],
+            'metrics' => [
+                'type' => 'object',
+                'additionalProperties' => false,
+                'required' => [
+                    'duration',
+                    'phase_count',
+                    'minimum_ftp_ratio',
+                    'maximum_ftp_ratio',
+                    'weighted_average_ftp_ratio',
+                ],
+                'properties' => [
+                    'duration' => ['type' => 'number', 'minimum' => 0, 'description' => 'Total duration in seconds.'],
+                    'phase_count' => ['type' => 'integer', 'minimum' => 0],
+                    'minimum_ftp_ratio' => self::nullableRatioSchema(),
+                    'maximum_ftp_ratio' => self::nullableRatioSchema(),
+                    'weighted_average_ftp_ratio' => self::nullableRatioSchema(),
+                ],
+            ],
+        ];
+    }
+
+    /** @return array<string, mixed> */
+    private static function nullableRatioSchema(): array
+    {
+        return [
+            'type' => ['number', 'null'],
+            'minimum' => 0,
+            'description' => 'FTP ratio, where 1.0 means 100% FTP; null when it cannot be calculated.',
         ];
     }
 
