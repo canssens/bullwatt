@@ -539,19 +539,28 @@
             ]
           };
           const device = await navigator.bluetooth.requestDevice(filter);
-          connectableDevice = Connectable({ device, onConnected: handleOnConnected, onData: handleOnData });
+          connectableDevice = Connectable({ device,
+            onConnected: handleOnConnected,
+            onData: handleOnData,
+            onDisconnect: handleOnDisconnectFTMS,
+            onConnectFail: handleOnConnectFailFTMS
+          });
           await connectableDevice.connect({});
 
-          //Start Chrono
-          startTime = new Date();
-          activity.startTime = startTime;
-          intervalTimerId = setInterval(handler, 1000);
-          handler();
+          if (isPaused) {
+            resumeSession();
+          } else {
+            //Start Chrono
+            startTime = new Date();
+            activity.startTime = startTime;
+            intervalTimerId = setInterval(handler, 1000);
+            handler();
 
 
-          //start timer Watt Graph
-          intervalGraphId = setInterval(handlerGraph, 5000);
-          handlerGraph();
+            //start timer Watt Graph
+            intervalGraphId = setInterval(handlerGraph, 5000);
+            handlerGraph();
+          }
 
 
 
@@ -586,6 +595,64 @@
     function handleOnData(event) {
       //console.log(event);
     }
+
+    function pauseSession() {
+      if (isPaused || activity.startTime === 0) {
+        return;
+      }
+
+      isPaused = true;
+      pauseStartTime = new Date();
+      document.getElementById('pauseResumeButton').textContent = 'Resume';
+
+      console.log('Session paused');
+    }
+
+    function resumeSession() {
+      if (!isPaused) {
+        return;
+      }
+
+      isPaused = false;
+
+      if (pauseStartTime) {
+        pausedTime += new Date().getTime() - pauseStartTime.getTime();
+        pauseStartTime = null;
+      }
+
+      document.getElementById('pauseResumeButton').textContent = 'Pause';
+
+      console.log('Session resumed');
+    }
+
+    function toggleSessionPause() {
+      if (isPaused) {
+        resumeSession();
+      } else {
+        pauseSession();
+      }
+    }
+
+    function handleOnDisconnectFTMS(event) {
+      console.log(event);
+   
+      connectableDevice = null;
+      speed = 0;
+      //Pause
+      pauseSession();
+      //Reactivate Start Button to reconnect
+      document.getElementById("startConnection").textContent = "RE-CONNECT";
+
+    }
+
+    function handleOnConnectFailFTMS(event) {
+      console.log(event);
+   
+      connectableDevice = null;
+      hideConnectionPopup();
+    }
+
+    
 
 
     async function connectBLECardio() {
@@ -1266,33 +1333,7 @@
       true,
     );
 
-    // Pause/Resume button functionality
-    document.getElementById('pauseResumeButton').addEventListener('click', function () {
-      if (isPaused) {
-        // Resume functionality
-        isPaused = false;
-
-        // Calculate total paused time and add it to the running total
-        if (pauseStartTime) {
-          pausedTime += new Date().getTime() - pauseStartTime.getTime();
-          pauseStartTime = null;
-        }
-
-        // Change button text back to "Pause"
-        document.getElementById('pauseResumeButton').textContent = 'Pause';
-
-        console.log('Session resumed');
-      } else {
-        // Pause functionality
-        isPaused = true;
-        pauseStartTime = new Date();
-
-        // Change button text to "Resume"
-        document.getElementById('pauseResumeButton').textContent = 'Resume';
-
-        console.log('Session paused');
-      }
-    });
+    document.getElementById('pauseResumeButton').addEventListener('click', toggleSessionPause);
 
 
   </script>
