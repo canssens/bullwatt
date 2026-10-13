@@ -7,7 +7,7 @@
   "nav.contact": "Contact",
   "browser_warning": "ATTENTION : BullWatt nécessite Google Chrome pour gérer la connexion Bluetooth",
   "hero.title": "Lancez instantanément une séance contrôlée en watts sur votre home trainer",
-  "hero.description": "BullWatt utilise le mode ERG, qui ajuste automatiquement la résistance à une puissance cible précise en fonction de votre cadence. Cela garantit un effort constant en watts et vous êtes libre de choisir et de modifier la cible.",
+  "hero.description": "BullWatt utilise le mode ERG, qui ajuste automatiquement la résistance à une puissance cible précise en fonction de votre cadence.",
   "hero.cta": "Démarrer un entraînement maintenant",
   "hero.badge.easy": "Simple & Facile",
   "hero.badge.minimalist": "Design Minimaliste",
