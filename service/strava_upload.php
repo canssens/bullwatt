@@ -35,7 +35,7 @@ if($UUID != null)
     <Activities>
     <Activity Sport="Biking">
     <Id>'.$json['startTime'].'</Id>
-    <Notes>'.$json['deviceName'].'</Notes>
+    <Notes>'.$json['deviceName'].' - '.$activity_name.'</Notes>
     <Lap StartTime="'.$json['startTime'].'">
         <TotalTimeSeconds>'.$json['duration'].'</TotalTimeSeconds>
         <DistanceMeters>'.($json['distance']*1000).'</DistanceMeters>
