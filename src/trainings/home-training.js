@@ -10,44 +10,86 @@ function getI18nLabel(key, fallback) {
     return window.i18n.t(key);
 }
 
-function buildTrainingGraph(phases = []) {
-    return phases.map((phase) => [Number(phase.start), Number(phase.ftp_ratio)]);
+function getPowerColor(ratio) {
+    if (ratio < 0.6) return '#93CE07';
+    if (ratio < 0.76) return '#FBDB0F';
+    if (ratio < 0.9) return '#FC7D02';
+    if (ratio < 1.05) return '#FD0100';
+    if (ratio <= 1.2) return '#AA069F';
+    return '#AC3B2A';
+}
+
+
+
+function buildTrainingGraph(phases = [], duration) {
+    return phases.flatMap((phase, index) => {
+        const start = Number(phase.start);
+        const end = Number(phases[index + 1]?.start ?? duration);
+        const ratio = Number(phase.ftp_ratio);
+
+        if (!Number.isFinite(start) || !Number.isFinite(end) ||
+            !Number.isFinite(ratio) || start < 0 || end <= start || ratio < 0) {
+            return [];
+        }
+
+        return [{ value: [start, end, ratio], itemStyle: { color: getPowerColor(ratio) } }];
+    });
+}
+
+function renderPowerBlock(params, api) {
+    const start = api.coord([api.value(0), api.value(2)]);
+    const end = api.coord([api.value(1), 0]);
+    const width = end[0] - start[0];
+    const gap = Math.min(2, width * 0.15);
+
+    return {
+        type: 'rect',
+        shape: {
+            x: start[0] + gap / 2,
+            y: start[1],
+            width: Math.max(0, width - gap),
+            height: Math.max(0, end[1] - start[1]),
+            r: [Math.min(3, width / 4), Math.min(3, width / 4), 0, 0]
+        },
+        style: api.style()
+    };
 }
 
 function buildChartOptions(trainingGraph) {
     return {
-        backgroundColor: '#000',
+        backgroundColor: 'transparent',
+        grid: { left: 24, right: 24, top: 12, bottom: 24 },
         xAxis: {
             type: 'value',
+            min: 0,
+            max: trainingGraph.length ? trainingGraph[trainingGraph.length - 1].value[1] : 1,
+            splitNumber: 3,
             splitLine: { show: false },
+            axisLine: { lineStyle: { color: '#777' } },
+            axisTick: { show: false },
+            axisLabel: {
+                color: '#aaa',
+                hideOverlap: true,
+                formatter: (seconds) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`
+            }
+        },
+        yAxis: {
+            type: 'value',
+            min: 0,
+            max: (extent) => Math.max(1.2, extent.max * 1.1),
+            splitNumber: 3,
+            splitLine: { lineStyle: { color: 'rgba(255, 255, 255, 0.12)' } },
             axisLine: { show: false },
             axisTick: { show: false },
             axisLabel: { show: false }
         },
-        yAxis: {
-            type: 'value',
-            min: 'dataMin',
-            axisLabel: { show: false }
-        },
-        visualMap: {
-            show: false,
-            pieces: [
-                { gt: 0, lte: 0.6, color: '#93CE07' },
-                { gt: 0.6, lte: 0.75, color: '#FBDB0F' },
-                { gt: 0.75, lte: 0.9, color: '#FC7D02' },
-                { gt: 0.9, lte: 1.05, color: '#FD0100' },
-                { gt: 1.05, lte: 1.2, color: '#AA069F' },
-                { gt: 1.2, color: '#AC3B2A' }
-            ]
-        },
-        series: [
-            {
-                data: trainingGraph,
-                type: 'line',
-                smooth: false,
-                step: 'end'
-            }
-        ]
+        series: [{
+            type: 'custom',
+            renderItem: renderPowerBlock,
+            encode: { x: [0, 1], y: 2 },
+            data: trainingGraph,
+            silent: true
+        }]
     };
 }
 
@@ -62,7 +104,7 @@ function createTrainingCard(training) {
                 <div class="card-body">
                     <h5 class="card-title">${training.training_name}</h5>
                     <p class="card-text">${training.description}</p>
-                    <div id="${chartId}" style="width: 100%; height: 100%;"></div>
+                    <div id="${chartId}" style="width: 100%; height: 160px;"></div>
                 </div>
             </a>
         </div>
@@ -144,7 +186,7 @@ export async function initHomeTrainingCatalog() {
             const { card, chartId } = createTrainingCard(training);
             trainingCards.appendChild(card);
 
-            const trainingGraph = buildTrainingGraph(training.phases);
+            const trainingGraph = buildTrainingGraph(training.phases, training.duration);
             const chart = renderTrainingChart(chartId, trainingGraph);
             if (chart) {
                 charts.push(chart);
