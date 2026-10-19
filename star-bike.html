@@ -1029,7 +1029,7 @@
 
         xhr.onload = function () {
           if (xhr.status >= 200 && xhr.status < 300) {
-            console.log('Reponse:', JSON.parse(xhr.responseText));
+            console.log('Strava Reponse:', JSON.parse(xhr.responseText));
             let obj = JSON.parse(xhr.responseText);
 
             popup_tcx_link.href = obj.filename + "?dl=ok";
@@ -1043,7 +1043,7 @@
             }
 
 
-            console.log(obj);
+            //console.log(obj);
           } else {
             console.error('Erreur:', xhr.status, xhr.statusText);
             popup_strava_upload.textContent = "Strava upload FAILED";

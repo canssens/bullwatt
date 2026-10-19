@@ -11,6 +11,7 @@ if (!preg_match('/^[a-zA-Z0-9\-_]+$/', $uuid)) {
 
 $filename = '../technical_log/tl_' . $uuid . '.log';
 
+$msg = '[' . date('Y-m-d H:i:s') . '] ' . $msg;
 file_put_contents($filename, $msg."\n", FILE_APPEND | LOCK_EX);
 
 

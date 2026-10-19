@@ -74,15 +74,7 @@ export function pushTechnicalLog(messageLog) {
         params.set('done', '1');
     }
 
-    fetch('./service/technical_log.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params.toString()
-    }).catch(() => {
-        // Avoid logging here because star-bike overrides console.log/error through this function.
-    });
+    navigator.sendBeacon('./service/technical_log.php', params);
 }
 
 export function updateSliderValue(value) {
