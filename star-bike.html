@@ -274,6 +274,7 @@
     </table>
 
     <div id="trainingSessionNextSteps" class="indicators">
+      <h1>Click on "▶️ Start" to begin</h1>
     </div>
   </div>
 
@@ -563,7 +564,7 @@
           }
 
 
-
+          document.getElementById("trainingSessionNextSteps").innerHTML = "";
           document.getElementById("startConnection").textContent = "CONNECTED";
           document.querySelector('#stopButton').disabled = false;
           document.querySelector('#pauseResumeButton').disabled = false;
