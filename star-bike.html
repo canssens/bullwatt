@@ -234,6 +234,7 @@
     }
   </style>
   <script src="assets/config.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
 </head>
 
 <body style="margin:0px;width: 100%;background-color: black;">
@@ -760,6 +761,21 @@
     }
 
 
+    function celebrateSessionCompletion() {
+      try {
+        window.confetti({
+          particleCount: 150,
+          spread: 95,
+          origin: { y: 0.65 },
+          colors: ['#00E5A0', '#6C63FF', '#FFD700', '#FFFFFF'],
+          zIndex: 1001,
+          disableForReducedMotion: true
+        });
+      } catch (error) {
+        console.warn('Unable to display session confetti: ' + error.message);
+      }
+    }
+
     var handler = function () {
 
       // Display time elasped
@@ -1011,6 +1027,7 @@
         // display the pop up
         const popup = document.getElementById('popup');
         popup.style.display = 'block'; // Show the pop-up
+        celebrateSessionCompletion();
 
         const popup_feedback_link = document.getElementById('popup_feedback_link');
         popup_feedback_link.href = APP_CONFIG.FEEDBACK_FORM_URL;
