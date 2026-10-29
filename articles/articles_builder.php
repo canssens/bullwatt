@@ -36,6 +36,11 @@ $articleData = [
         'title' => 'Create Your Own BullWatt Workout with ChatGPT or Claude via MCP',
         'content' => './html_blocks/create-workout-with-mcp.html',
         'slug' => 'create-workout-with-mcp.html'
+    ],
+    [
+        'title' => 'About me',
+        'content' => './html_blocks/about-me.html',
+        'slug' => 'about-me.html'
     ]
     // Add more howto here
 
