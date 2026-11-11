@@ -23,5 +23,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}       # SSH username on the server
           password: ${{ secrets.SSH_PASSWORD }} # SSH private key (stored as a secret)
           port: 22                                # SSH port (default 22)
-          source: "*"                        # Path of files to copy from the runner
+          source: "*,!docker-compose.yml"         # Path of files to copy from the runner
           target: "."          # Destination path on the server
