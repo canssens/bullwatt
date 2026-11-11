@@ -242,6 +242,7 @@
 
   <div id="containerTimer">
     <button id="startConnectionCardio" class="button">➕❤️</button>
+    <button id="startConnectionController" class="button">➕🎮</button>
     <button id="startConnection" class="button">▶️ Start</button>
     <button id="pauseResumeButton" class="button" disabled>⏸️ Pause</button>
     <button id="stopButton" class="button" disabled>⏹️ Stop</button>
@@ -1173,6 +1174,10 @@
       getFTP,
       getUnitSystem
     } from './src/utils.js';
+    import {
+      OBC_SERVICE_UUID,
+      connectOpenBikeControl
+    } from './src/openbikecontrol.js';
 
     //declare global variables
     window.trainingSession = null;
@@ -1352,6 +1357,67 @@
     );
 
     document.getElementById('pauseResumeButton').addEventListener('click', toggleSessionPause);
+
+
+    // OpenBikeControl controller (handlebar buttons, BikeControl, ...)
+    var controllerConnected = false;
+
+    async function connectBLEController() {
+      if (controllerConnected) {
+        return;
+      }
+
+      try {
+        const filter = {
+          filters: [
+            { services: [OBC_SERVICE_UUID] }
+          ]
+        };
+        const deviceController = await navigator.bluetooth.requestDevice(filter);
+        showConnectionPopup();
+        await connectOpenBikeControl(deviceController, {
+          onAction: handleControllerAction,
+          onDisconnect: handleOnDisconnectController
+        });
+        controllerConnected = true;
+        document.getElementById('startConnectionController').textContent = '🎮 ' + (deviceController.name || 'Controller');
+      } catch (error) {
+        console.log('Argh! ' + error);
+      } finally {
+        hideConnectionPopup();
+      }
+    }
+
+    function handleControllerAction(action) {
+      switch (action) {
+        case 'increase':
+          updateFTP(10);
+          updateWatt(10);
+          break;
+        case 'decrease':
+          updateFTP(-10);
+          updateWatt(-10);
+          break;
+        case 'pause':
+          pauseSession();
+          break;
+        case 'resume':
+          resumeSession();
+          break;
+      }
+    }
+
+    function handleOnDisconnectController(event) {
+      console.log('Controller disconnected');
+      controllerConnected = false;
+      document.getElementById('startConnectionController').textContent = '➕🎮';
+    }
+
+    document.querySelector('#startConnectionController').addEventListener('click', function () {
+      if (isWebBluetoothEnabled()) {
+        connectBLEController();
+      }
+    });
 
 
   </script>
